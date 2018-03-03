@@ -127,6 +127,8 @@
 	    var sea = {lat: 47.615, lng: -122.336};
 	    var grc = {lat: 42.394, lng: -72.526};
 	    var wut = {lat: 30.512, lng: 114.343};
+	    var erz = {lat: 30.606, lng: 114.308};
+	    var gzj = {lat: 23.117, lng: 113.320};
 	    var map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 2,
 	        center: sea, grc, wut
@@ -143,6 +145,14 @@
 	    });
 	    var marker3 = new google.maps.Marker({
 	        position: wut,
+	        map: map
+	    });
+	    var marker4 = new google.maps.Marker({
+	        position: erz,
+	        map: map
+	    });
+	    var marker5 = new google.maps.Marker({
+	        position: gzj,
 	        map: map
 	    });
         }
