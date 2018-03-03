@@ -118,11 +118,38 @@ var _clustrmaps = {'url' : 'http://yimingpeng.com', 'user' : 1175860, 'server' :
 </noscript>
 </div>
 
+<style>
+	#map {
+		height: 400px;
+		width: 100%;
+	}
+</style>
+</head>
+<body>
+	<h3>My Google Maps</h3>
+	<div id="map"></div>
+	<script>
+		function initMap() {
+			var uluru = {lat: -25.363, lng: 131.044};
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 4,
+				center: uluru
+			});
+			var marker = new google.maps.Marker({
+				position: uluru,
+				map: map
+			});
+		}
+	</script>
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+	</script>
+</body>
+	
 <div id="footer" align=center>
-   <hr size="1">
+	<hr size="1">
 	<p align=center style="color:#535353"><small>YIMING PENG &copy; 2015 - 2018</small></p>
 </div>
 
-  </body>
-
+</body>
 </html>
