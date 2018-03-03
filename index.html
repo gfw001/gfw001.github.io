@@ -119,10 +119,12 @@
 	<div id="map"></div>
 	<script>
 	function initMap() {
-	// Create a new StyledMapType object, passing it an array of styles,
-        // and the name to be displayed on the map type control.
-        var styledMapType = new google.maps.StyledMapType(
-            [
+			
+	    var sea = {lat: 47.616, lng: -122.333};
+	    var map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 4,
+	        center: sea
+		styles: [
               {elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},
               {elementType: 'labels.text.fill', stylers: [{color: '#523735'}]},
               {elementType: 'labels.text.stroke', stylers: [{color: '#f5f1e6'}]},
@@ -231,20 +233,8 @@
                 elementType: 'labels.text.fill',
                 stylers: [{color: '#92998d'}]
               }
-            ],
-            {name: 'Styled Map'});
-			
-	    var sea = {lat: 47.616, lng: -122.333};
-	    var map = new google.maps.Map(document.getElementById('map'), {
-		zoom: 4,
-	        center: sea
-		mapTypeControlOptions: {
-		   mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain', 'styled_map']
-	        }
+            ]
 	    });
-	    
-            map.mapTypes.set('styled_map', styledMapType);
-	    map.setMapTypeId('styled_map');
 	
 	    var marker = new google.maps.Marker({
 	        position: sea,
