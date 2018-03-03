@@ -152,6 +152,22 @@
 	        position: gzj,
 	        map: map
 	    });
+	    var flightPlanCoordinates = [
+                erz,
+                wut,
+                gzj,
+                grc,
+		sea
+            ];
+            var flightPath = new google.maps.Polyline({
+                path: flightPlanCoordinates,
+                geodesic: true,
+                strokeColor: '#6495ED',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            });
+
+            flightPath.setMap(map);
         }
 	</script>
 	<script async defer
