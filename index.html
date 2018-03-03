@@ -122,12 +122,12 @@
 	<script>
 	function initMap() {
 			
-	    var sea = {lat: 47.616, lng: -122.333};
+	    var sea = {lat: 47.615, lng: -122.336};
 	    var grc = {lat: 42.394, lng: -72.526};
 	    var wut = {lat: 30.512, lng: 114.343};
 	    var map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 4,
-	        center: sea
+	        center: sea, grc, wut
 	    });
 	
 	    var marker1 = new google.maps.Marker({
