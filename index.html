@@ -123,13 +123,23 @@
 	function initMap() {
 			
 	    var sea = {lat: 47.616, lng: -122.333};
+	    var grc = {lat: 42.394, lng: -72.526};
+	    var wut = {lat: 30.512, lng: 114.343};
 	    var map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 4,
 	        center: sea
 	    });
 	
-	    var marker = new google.maps.Marker({
+	    var marker1 = new google.maps.Marker({
 	        position: sea,
+	        map: map
+	    });
+	    var marker2 = new google.maps.Marker({
+	        position: grc,
+	        map: map
+	    });
+	    var marker3 = new google.maps.Marker({
+	        position: wut,
 	        map: map
 	    });
         }
