@@ -136,22 +136,7 @@
 		animation: google.maps.Animation.DROP,
 	        map: map
 	    });
-	    var marker2 = new google.maps.Marker({
-	        position: grc,
-	        map: map
-	    });
-	    var marker3 = new google.maps.Marker({
-	        position: wut,
-	        map: map
-	    });
-	    var marker4 = new google.maps.Marker({
-	        position: erz,
-	        map: map
-	    });
-	    var marker5 = new google.maps.Marker({
-	        position: gzj,
-	        map: map
-	    });
+	    
 	    var flightPlanCoordinates = [
                 erz,
                 wut,
@@ -159,11 +144,22 @@
                 grc,
 		sea
             ];
+		
+	    var lineSymbol = {
+		    path: 'M 0,-1 0,1',
+		    strokeOpacity: 1,
+		    scale: 4
+	    };
             var flightPath = new google.maps.Polyline({
                 path: flightPlanCoordinates,
                 geodesic: true,
                 strokeColor: '#87CEFA',
                 strokeOpacity: 1.0,
+		icons: [{ 
+			icon: lineSymbol,
+			offset: '0',
+			repeat: '20px'
+		}],
                 strokeWeight: 2
             });
 
