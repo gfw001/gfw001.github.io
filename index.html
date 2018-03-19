@@ -139,6 +139,12 @@
 		    strokeWeight: 2,
 		    strokeColor: '#000000',
 	    };
+	    
+            var forkIcon = {
+		    path: 'M -2,-2 2,2 M 2,-2 -2,2',
+		    strokeColor: '#4169E1',
+                    strokeWeight: 4
+	    };
 	
 	    var marker1 = new google.maps.Marker({
 	        position: sea,
@@ -148,7 +154,7 @@
 		
 	    var marker2 = new google.maps.Marker({
 	        position: erz,
-		icon: redStar,
+		icon: forkIcon,
 	        map: map
 	    });
 	    
