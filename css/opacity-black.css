@@ -1,3 +1,0 @@
-.opacity-black { width: 460px; height: 460px; background-color: #000; }
-.opacity-black a { transition: opacity .5s; opacity: 1; }
-.opacity-black a:hover { opacity: 0.4; }
