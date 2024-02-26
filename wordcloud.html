@@ -44,6 +44,21 @@
 
 <style>
 
+.tag-cloud a {
+  display: inline-block;
+  position: relative;
+  margin: 8px 10px;
+  word-wrap: break-word;
+  transition-duration: 0.2s;
+  transition-property: transform;
+  transition-timing-function: ease-out; }
+
+.tag-cloud a:active,
+.tag-cloud a:focus,
+.tag-cloud a:hover {
+  color: #104d92;
+  transform: scale(1.2); }
+	
 #stag a:hover {
     font-size:110%;
 }
@@ -78,124 +93,6 @@
 }
 </style>
 
-<div id="stag">
-      
-        
-        
-        
-        <a href="" style="font-size:1.9808597661330818rem">Affective Computing</a>
-      
-        
-        
-        
-        <a href="" style="font-size:1.3797423688644388rem">Communication and Language</a>
-      
-        
-        
-        
-        <a href="" style="font-size:0.8624203575907899rem">Cooperation</a>
-      
-        
-        
-        
-        <a href="" style="font-size:1.9610478096093238rem">Generative AI</a>
-      
-        
-        
-        
-        <a href="" style="font-size:0.8624203575907899rem">Electrodermal Activity</a>
-      
-        
-        
-        
-        <a href="" style="font-size:0.8624203575907899rem">Emergent Complexity</a>
-      
-        
-        
-        
-        <a href="" style="font-size:1.4826779887263513rem">Generalization</a>
-      
-        
-        
-        
-        <a href="" style="font-size:0.7rem">Generative Models</a>
-      
-        
-        
-        
-        <a href="" style="font-size:1.4826779887263513rem">Healthcare</a>
-      
-        
-        
-        
-        <a href="" style="font-size:1.6086610056368245rem">Human-AI Interaction</a>
-      
-        
-        
-        
-        <a href="" style="font-size:0.7rem">Human-Computer Interaction</a>
-      
-        
-        
-        
-        <a href="" style="font-size:0.8624203575907899rem">Intelligent Tutoring Systems</a>
-      
-        
-        
-        
-        <a href="" style="font-size:1.9808597661330818rem">Machine Learning</a>
-      
-        
-        
-        
-        <a href="" style="font-size:1.4826779887263513rem">Multi-Agent</a>
-      
-        
-        
-        
-        <a href="" style="font-size:1.4826779887263513rem">Physiology</a>
-      
-        
-        
-        
-        <a href="" style="font-size:1.7710813632276143rem">Reinforcement Learning</a>
-      
-        
-        
-        
-        <a href="" style="font-size:1.3797423688644388rem">Sensors</a>
-      
-        
-        
-        
-        <a href="" style="font-size:0.8624203575907899rem">Sequence Modeling</a>
-      
-        
-        
-        
-        <a href="" style="font-size:1.1783698208829727rem">Social Learning</a>
-      
-        
-        
-        
-        <a href="" style="font-size:1.2537593519539654rem">Wellbeing</a>
-      
-    </div>
-
-<div class="axero-widget {{CustomCSSClass}} {{#if HideContainerBorder}}axero-widget-no-border{{/if}}" id="tagCloud">
-    {{#if ShowWidgetHeader}}
-    <div class="axero-widget-header">
-        <h3>{{{WidgetTitle}}}</h3>
-    </div>
-    {{/if}}
-	<div class="axero-widget-content axero-widget-content-padded">
-		<div class="axero-tag-cloud">
-		{{#each Contents}}
-		<a class="label" href='{{TagURL}}'>{{{TagName}}}</a>		
-		{{/each}}
-		</div>
-	</div>
-</div>
 
 <section id="tags" class="home-section wg-tag-cloud  "  >
    <div class="home-section-bg " ></div>
