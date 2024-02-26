@@ -42,22 +42,22 @@
 <script src="/en/js/wowchemy.min.26bc5a5b73c468c9e767656a378ac5e3.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-<div class="project-toolbar">
-   <div class="project-filters">
-      <div class="btn-toolbar">
-         <div class="btn-group flex-wrap">
-            <a href="#" data-filter="*" class="btn btn-primary btn-lg active">All</a>
-            <a href="#" data-filter=".js-id-Affective-Computing" class="btn btn-primary btn-lg">Affective Computing</a>
-            <a href="#" data-filter=".js-id-Social-Learning" class="btn btn-primary btn-lg">Social Learning</a>
-            <a href="#" data-filter=".js-id-Multi-Agent" class="btn btn-primary btn-lg">Multi-Agent</a>
-            <a href="#" data-filter=".js-id-Emergent-Complexity" class="btn btn-primary btn-lg">Emergent Complexity</a>
-            <a href="#" data-filter=".js-id-Cooperation" class="btn btn-primary btn-lg">Cooperation</a>
-            <a href="#" data-filter=".js-id-Communication-and-Language" class="btn btn-primary btn-lg">Communication and Language</a>
-            <a href="#" data-filter=".js-id-Human-AI-Interaction" class="btn btn-primary btn-lg">Human-AI Interaction</a>
-            <a href="#" data-filter=".js-id-Generalization" class="btn btn-primary btn-lg">Generalization</a>
-         </div>
-      </div>
-   </div>
+
+
+
+<div class="axero-widget {{CustomCSSClass}} {{#if HideContainerBorder}}axero-widget-no-border{{/if}}" id="tagCloud">
+    {{#if ShowWidgetHeader}}
+    <div class="axero-widget-header">
+        <h3>{{{WidgetTitle}}}</h3>
+    </div>
+    {{/if}}
+	<div class="axero-widget-content axero-widget-content-padded">
+		<div class="axero-tag-cloud">
+		{{#each Contents}}
+		<a class="label" href='{{TagURL}}'>{{{TagName}}}</a>		
+		{{/each}}
+		</div>
+	</div>
 </div>
 
 <section id="tags" class="home-section wg-tag-cloud  "  >
