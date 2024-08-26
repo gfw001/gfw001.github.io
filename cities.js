@@ -15,5 +15,5 @@ CITIES =
    {name: 'BDL', latitude: 41.9389, longitude: 72.6860, radius: 3, fillKey: 'city', date: '2013-08'},
    // Not really a city, but we define just one type of "POI" (fillKey here) in index.html, you can define more.
    {name: 'Wuchang, Hubei', latitude: 30.5420, longitude: 114.3160, radius: 3, fillKey: 'city', date: ''},
-   {name: 'Hankow, Hubei', latitude: 30.5820, longitude: 114.2719, radius: 3, fillKey: 'city', date: ''},
+   {name: 'Wuhan, Hubei', latitude: 30.5820, longitude: 114.2719, radius: 3, fillKey: 'city', date: ''},
 ]
