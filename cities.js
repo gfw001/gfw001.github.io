@@ -28,6 +28,12 @@ CITIES =
    {name: 'SF, CA', latitude: 37.7749, longitude: -122.4194, radius: 3, fillKey: 'city', date: ''},
    {name: 'NYC, NY', latitude: 40.7128, longitude: -74.0060, radius: 3, fillKey: 'city', date: ''},
    {name: 'Boston, MA', latitude: 42.3601, longitude: -71.0589, radius: 3, fillKey: 'city', date: ''},
+   {name: 'Waco, TX', latitude: 31.5493, longitude: -97.1467, radius: 3, fillKey: 'city', date: '2014'},
+   {name: 'Key West, FL', latitude: 24.5551, longitude: -81.7800, radius: 3, fillKey: 'city', date: '2013'},
+   {name: 'Miami, FL', latitude: 25.7617, longitude: -80.1918, radius: 3, fillKey: 'city', date: '2013'},
+   {name: 'Orlando, FL', latitude: 28.5475, longitude: -81.3791, radius: 3, fillKey: 'city', date: '2013'},
+   {name: 'New Orleans, LA', latitude: 29.9511, longitude: -90.0715, radius: 3, fillKey: 'city', date: '2013'},
+   {name: 'TAMU, TX', latitude: 30.6189, longitude: -96.3361, radius: 3, fillKey: 'city', date: '2013'},
    {name: 'Pioneer Valley, MA', latitude: 42.2914, longitude: -72.5967, radius: 3, fillKey: 'city', date: ''},
    {name: 'BDL', latitude: 41.9389, longitude: -72.6860, radius: 3, fillKey: 'city', date: '2013-08'},
    // Not really a city, but we define just one type of "POI" (fillKey here) in index.html, you can define more.
