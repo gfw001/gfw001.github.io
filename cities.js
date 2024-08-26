@@ -49,7 +49,7 @@ CITIES =
    {name: 'Xianning, Hubei', latitude: 29.8413, longitude: 114.3225, radius: 3, fillKey: 'city', date: ''},
    {name: 'Nanjing, Jiangsu', latitude: 32.0584, longitude: 118.7965, radius: 3, fillKey: 'city', date: ''},
    {name: 'Huashan Mountain, Shaanxi', latitude: 34.4779, longitude: 110.0848, radius: 3, fillKey: 'city', date: ''},
-   {name: 'Xi'An, Shaanxi', latitude: 34.2658, longitude: 108.9541, radius: 3, fillKey: 'city', date: ''},
+   {name: 'XiAn, Shaanxi', latitude: 34.2658, longitude: 108.9541, radius: 3, fillKey: 'city', date: ''},
    {name: 'Xiangyang, Hubei', latitude: 32.0090, longitude: 112.1226, radius: 3, fillKey: 'city', date: ''},
    {name: 'Guiyang, Guizhou', latitude: 26.6476, longitude: 106.6302, radius: 3, fillKey: 'city', date: ''},
    {name: 'Zhangjiajie, Hunan', latitude: 29.1167, longitude: 110.4784, radius: 3, fillKey: 'city', date: ''},
