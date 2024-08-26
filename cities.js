@@ -1,6 +1,6 @@
 CITIES =
 [
-   {name: 'Seattle, WA', latitude: 47.60621, longitude: -122.33207, radius: 10, fillKey: 'city', date: ''},
+   {name: 'Seattle, WA', latitude: 47.60621, longitude: -122.33207, radius: 3, fillKey: 'city', date: ''},
    {name: 'Brussels, Belgium', latitude: 50.85045, longitude: 4.34878, radius: 3, fillKey: 'city', date: '2023-03'},
    {name: 'Amsterdam, Netherlands', latitude: 52.3676, longitude: 4.9041, radius: 3, fillKey: 'city', date: '2023-03'},
    
