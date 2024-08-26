@@ -22,7 +22,7 @@ CITIES =
    {name: 'The Big Island, HI', latitude: 19.5429, longitude: -155.6659, radius: 3, fillKey: 'city', date: '2017'},
    {name: 'Honolulu, HI', latitude: 21.3099, longitude: -157.8581, radius: 3, fillKey: 'city', date: '2017'},
    {name: 'Las Vegas, NV', latitude: 36.1716, longitude: -115.1391, radius: 3, fillKey: 'city', date: ''},
-   {name: 'Fairbanks, AS', latitude: 64.8401, longitude: -147.7200, radius: 3, fillKey: 'city', date: ''},
+   {name: 'Fairbanks, AK', latitude: 64.8401, longitude: -147.7200, radius: 3, fillKey: 'city', date: ''},
    {name: 'Washington, D.C.', latitude: 38.9072, longitude: -77.0369, radius: 3, fillKey: 'city', date: '2014'},
    {name: 'LA, CA', latitude: 34.0549, longitude: -118.2426, radius: 3, fillKey: 'city', date: ''},
    {name: 'SF, CA', latitude: 37.7749, longitude: -122.4194, radius: 3, fillKey: 'city', date: ''},
