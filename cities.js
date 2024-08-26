@@ -29,6 +29,8 @@ CITIES =
    {name: 'SF, CA', latitude: 37.7749, longitude: -122.4194, radius: 3, fillKey: 'city', date: ''},
    {name: 'NYC, NY', latitude: 40.7128, longitude: -74.0060, radius: 3, fillKey: 'city', date: ''},
    {name: 'Boston, MA', latitude: 42.3601, longitude: -71.0589, radius: 3, fillKey: 'city', date: ''},
+   {name: 'Dallas, TX', latitude: 32.7767, longitude: -96.7970, radius: 3, fillKey: 'city', date: '2017'},
+   {name: 'San Antonio, TX', latitude: 29.4252, longitude: -98.4946, radius: 3, fillKey: 'city', date: '2014'},
    {name: 'Waco, TX', latitude: 31.5493, longitude: -97.1467, radius: 3, fillKey: 'city', date: '2014'},
    {name: 'Key West, FL', latitude: 24.5551, longitude: -81.7800, radius: 3, fillKey: 'city', date: '2013'},
    {name: 'Miami, FL', latitude: 25.7617, longitude: -80.1918, radius: 3, fillKey: 'city', date: '2013'},
