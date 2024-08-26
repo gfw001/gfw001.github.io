@@ -25,6 +25,7 @@ CITIES =
    {name: 'Fairbanks, AK', latitude: 64.8401, longitude: -147.7200, radius: 3, fillKey: 'city', date: ''},
    {name: 'Washington, D.C.', latitude: 38.9072, longitude: -77.0369, radius: 3, fillKey: 'city', date: '2014'},
    {name: 'LA, CA', latitude: 34.0549, longitude: -118.2426, radius: 3, fillKey: 'city', date: ''},
+   {name: 'San Jose, CA', latitude: 37.3387, longitude: -121.8853, radius: 3, fillKey: 'city', date: '2014'},
    {name: 'SF, CA', latitude: 37.7749, longitude: -122.4194, radius: 3, fillKey: 'city', date: ''},
    {name: 'NYC, NY', latitude: 40.7128, longitude: -74.0060, radius: 3, fillKey: 'city', date: ''},
    {name: 'Boston, MA', latitude: 42.3601, longitude: -71.0589, radius: 3, fillKey: 'city', date: ''},
