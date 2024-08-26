@@ -10,6 +10,7 @@ CITIES =
    {name: 'Portland, OR', latitude: 45.5152, longitude: 122.6784, radius: 3, fillKey: 'city', date: ''},
    {name: 'Brussels, Belgium', latitude: 50.85045, longitude: 4.34878, radius: 3, fillKey: 'city', date: '2023-03'},
    {name: 'Amsterdam, Netherlands', latitude: 52.3676, longitude: 4.9041, radius: 3, fillKey: 'city', date: '2023-03'},
+   {name: 'Washington, D.C.', latitude: 38.9072, longitude: 77.0369, radius: 3, fillKey: 'city', date: '2014'},
    {name: 'LA, CA', latitude: 34.0549, longitude: 118.2426, radius: 3, fillKey: 'city', date: ''},
    {name: 'SF, CA', latitude: 37.7749, longitude: 122.4194, radius: 3, fillKey: 'city', date: ''},
    {name: 'NYC, NY', latitude: 40.7128, longitude: 74.0060, radius: 3, fillKey: 'city', date: ''},
