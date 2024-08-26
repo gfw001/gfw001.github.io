@@ -12,6 +12,7 @@ CITIES =
    {name: 'Amsterdam, Netherlands', latitude: 52.3676, longitude: 4.9041, radius: 3, fillKey: 'city', date: '2023-03'},
    {name: 'Irvine, CA', latitude: 33.6846, longitude: -117.8265, radius: 3, fillKey: 'city', date: '2019'},
    {name: 'San Diego, CA', latitude: 32.7157, longitude: -117.1611, radius: 3, fillKey: 'city', date: '2019'},
+   {name: 'UCONN, CT', latitude: 41.8135, longitude: -72.2453, radius: 3, fillKey: 'city', date: '2017'},
    {name: 'Glacier NP, MT', latitude: 48.7596, longitude: -113.7870, radius: 3, fillKey: 'city', date: '2018'},
    {name: 'Grand Teton NP, WY', latitude: 43.7904, longitude: -110.6818, radius: 3, fillKey: 'city', date: '2018'},
    {name: 'Yellowstone NP, MT', latitude: 44.5979, longitude: -110.5612, radius: 3, fillKey: 'city', date: '2018'},
