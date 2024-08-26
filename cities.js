@@ -3,6 +3,7 @@ CITIES =
    {name: 'Seattle, WA', latitude: 47.6061, longitude: -122.3328, radius: 7, fillKey: 'city', date: ''},
    {name: 'Whidbey Island, WA', latitude: 47.9983, longitude: -122.4395, radius: 3, fillKey: 'city', date: '2024'},
    {name: 'Olympic NP, WA', latitude: 47.8021, longitude: -123.6044, radius: 3, fillKey: 'city', date: '2024'},
+   {name: 'Port Townsend, WA', latitude: 48.1170, longitude: -122.7604, radius: 3, fillKey: 'city', date: '2023'},
    {name: 'Crater Lake NP, OR', latitude: 42.9295, longitude: -122.1279, radius: 3, fillKey: 'city', date: '2023'},
    {name: 'North Cascades NP, WA', latitude: 48.7718, longitude: -121.2985, radius: 3, fillKey: 'city', date: '2017'},
    {name: 'Mount Rainier NP, WA', latitude: 46.8523, longitude: -121.7603, radius: 3, fillKey: 'city', date: '2023'},
