@@ -19,6 +19,8 @@ CITIES =
    {name: 'Yoho NP, AB', latitude: 51.4667, longitude: -116.5833, radius: 3, fillKey: 'city', date: '2017'},
    {name: 'Calgary, AB', latitude: 51.0447, longitude: -114.0719, radius: 3, fillKey: 'city', date: '2017'},
    {name: 'Banff NP, AB', latitude: 51.4968, longitude: -115.9281, radius: 3, fillKey: 'city', date: '2017'},
+   {name: 'The Big Island, HI', latitude: 19.5429, longitude: -155.6659, radius: 3, fillKey: 'city', date: '2017'},
+   {name: 'Honolulu, HI', latitude: 21.3099, longitude: -157.8581, radius: 3, fillKey: 'city', date: '2017'},
    {name: 'Las Vegas, NV', latitude: 36.1716, longitude: -115.1391, radius: 3, fillKey: 'city', date: ''},
    {name: 'Fairbanks, AS', latitude: 64.8401, longitude: -147.7200, radius: 3, fillKey: 'city', date: ''},
    {name: 'Washington, D.C.', latitude: 38.9072, longitude: -77.0369, radius: 3, fillKey: 'city', date: '2014'},
