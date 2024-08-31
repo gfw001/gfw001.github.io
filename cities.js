@@ -3,6 +3,8 @@ CITIES =
    {name: 'Seattle, WA', latitude: 47.6061, longitude: -122.3328, radius: 7, fillKey: 'city', date: ''},
    {name: 'Whidbey Island, WA', latitude: 47.9983, longitude: -122.4395, radius: 3, fillKey: 'city', date: '2024'},
    {name: 'Olympic NP, WA', latitude: 47.8021, longitude: -122.2021, radius: 3, fillKey: 'city', date: '2024'},
+   {name: 'Stanford Shopping Center, CA', latitude: 37.4435, longitude: -122.1713, radius: 3, fillKey: 'city', date: '2024'},
+   {name: 'Google Bay View, CA', latitude: 37.4235, longitude: -122.0666, radius: 3, fillKey: 'city', date: '2024'},
    {name: 'Everett, WA', latitude: 47.9790, longitude: -122.7604, radius: 3, fillKey: 'city', date: '2023'},
    {name: 'Port Townsend, WA', latitude: 48.1170, longitude: -122.7604, radius: 3, fillKey: 'city', date: '2023'},
    {name: 'Crater Lake NP, OR', latitude: 42.9295, longitude: -122.1279, radius: 3, fillKey: 'city', date: '2023'},
