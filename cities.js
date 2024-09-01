@@ -29,7 +29,7 @@ CITIES =
    {name: 'The Big Island, HI', latitude: 19.5429, longitude: -155.6659, radius: 3, fillKey: 'city', date: '2017'},
    {name: 'Honolulu, HI', latitude: 21.3099, longitude: -157.8581, radius: 3, fillKey: 'city', date: '2017'},
    {name: 'Las Vegas, NV', latitude: 36.1716, longitude: -115.1391, radius: 3, fillKey: 'city', date: '2016'},
-   {name: 'Dalton Highway Arctic Circle 66° 33', AK', latitude: 66.5560, longitude: -155.2931, radius: 3, fillKey: 'city', date: '2016'},
+   {name: 'Dalton Highway Arctic Circle 66°33, AK', latitude: 66.5560, longitude: -155.2931, radius: 3, fillKey: 'city', date: '2016'},
    {name: 'Fairbanks, AK', latitude: 64.8401, longitude: -147.7200, radius: 3, fillKey: 'city', date: '2016'},
    {name: 'Cannon Beach, OR', latitude: 45.8918, longitude: -123.9615, radius: 3, fillKey: 'city', date: '2016'},
    {name: 'Washington, D.C.', latitude: 38.9072, longitude: -77.0369, radius: 3, fillKey: 'city', date: '2014'},
