@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Testimonials</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .testimonial {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: calc(50% - 20px);
+            min-width: 280px;
+            margin-bottom: 20px;
+        }
+        .quote {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .author {
+            font-weight: bold;
+        }
+        .author-title {
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .testimonial {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="testimonial">
+            <p class="quote">"I had the pleasure of hosting Andy as a guest lecturer for my "Generative AI in the Era of Cloud Computing" course in Spring 2024. Andy's insider perspective and technical expertise on the latest advancements in Generative AI significantly enriched our classroom experience. His contributions extended beyond lectures; he provided invaluable mentorship to students, offering guidance on job searches and emerging tech priorities. Andy's insightful feedback on course projects and active engagement in class discussions were also instrumental in elevating the learning experience. And he helped everyone become AI champions. Many thanks for your contributions!"</p>
+            <p class="author">Professor Boussioux</p>
+            <p class="author-title">University of Washington</p>
+        </div>
+        <div class="testimonial">
+            <p class="quote">"I know Andy from his community work with open source events like Open Source Summit and AI_Dev where he has served as program committee member. He is a passionate supporter of open source and has independently promoted open source through his outreach to groups like students at the University of Washington Foster School of Business. Andy is approachable and collaborative, and wonderful to work with. I know I can count on Andy to provide support in community endeavors as well as initiate relationships to make open source even stronger. I love that he is receptive to making new connections, and I was able to connect him to projects like GenAI Commons and PyTorch. Andy is truly an asset to open source communities."</p>
+            <p class="author">Jennifer</p>
+            <p class="author-title">Chief of Staff, The Linux Foundation</p>
+        </div>
+        <div class="testimonial">
+            <p class="quote">"Andy consistently demonstrated a strong grasp of the broader organizational landscape, as well as ability to effectively navigate complex organizational structures. Andy was cognizant of his organization's overall operations."</p>
+            <p class="author">Yi</p>
+            <p class="author-title">Principal Engineer, AWS</p>
+        </div>
+        <div class="testimonial">
+            <p class="quote">"Andy is detail oriented, thorough and completes the work on time. He exhibits long-term thinking in design, architecture discussions. He is calm under pressure and relentlessly works through various issues under tight deadlines. He mentors his peers and is in an excellent communicator. It was pleasure working with him."</p>
+            <p class="author">Dr. Holavanahali</p>
+            <p class="author-title">Senior Principal Systems Architect</p>
+        </div>
+    </div>
+</body>
+</html>
