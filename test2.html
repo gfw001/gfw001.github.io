@@ -131,68 +131,68 @@
       }
 
       /* CSS */
-.button-16 {
-  background-color: #f8f9fa;
-  border: 1px solid #f8f9fa;
-  border-radius: 4px;
-  color: #3c4043;
-  cursor: pointer;
-  font-family: arial,sans-serif;
-  font-size: 14px;
-  height: 36px;
-  line-height: 27px;
-  min-width: 54px;
-  padding: 0 16px;
-  text-align: center;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: pre;
-}
+      .button-16 {
+        background-color: #f8f9fa;
+        border: 1px solid #f8f9fa;
+        border-radius: 4px;
+        color: #3c4043;
+        cursor: pointer;
+        font-family: arial,sans-serif;
+        font-size: 14px;
+        height: 36px;
+        line-height: 27px;
+        min-width: 54px;
+        padding: 0 16px;
+        text-align: center;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: pre;
+      }
 
-.button-16:hover {
-  border-color: #dadce0;
-  box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
-  color: #202124;
-}
+      .button-16:hover {
+        border-color: #dadce0;
+        box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
+        color: #202124;
+      }
+      
+      .button-16:focus {
+        border-color: #4285f4;
+        outline: none;
+      }
+      /* CSS */
+      .button-13 {
+        background-color: #fff;
+        border: 1px solid #d5d9d9;
+        border-radius: 8px;
+        box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+        box-sizing: border-box;
+        color: #0f1111;
+        cursor: pointer;
+        display: inline-block;
+        font-family: "Amazon Ember",sans-serif;
+        font-size: 14px;
+        line-height: 50px;
+        padding: 0 10px 0 11px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: middle;
+        width: 150px;
+      }
 
-.button-16:focus {
-  border-color: #4285f4;
-  outline: none;
-}
-   /* CSS */
-.button-13 {
-  background-color: #fff;
-  border: 1px solid #d5d9d9;
-  border-radius: 8px;
-  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
-  box-sizing: border-box;
-  color: #0f1111;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Amazon Ember",sans-serif;
-  font-size: 14px;
-  line-height: 50px;
-  padding: 0 10px 0 11px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
-  width: 150px;
-}
-
-.button-13:hover {
-  background-color: #f7fafa;
-}
-
-.button-13:focus {
-  border-color: #008296;
-  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
-  outline: 0;
-}
+      .button-13:hover {
+        background-color: #f7fafa;
+      }
+      
+      .button-13:focus {
+        border-color: #008296;
+        box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+        outline: 0;
+      }
      .blockquote-custom {
       position: relative;
       font-size: 1.1rem;
@@ -208,6 +208,20 @@
       position: absolute;
       top: -40px;
       left: 19px;
+    }
+    @media (max-width: 1200px) {
+        .col-flex {
+            flex: 0 0 calc(100% - 40px);
+            max-width: calc(100% - 40px);
+        }
+    }
+    @media (max-width: 768px) {
+        .container-center-flex {
+            padding: 0 20px; /* Reduce padding on smaller screens */
+        }
+        .col-flex {
+            margin: 0 0 30px; /* Adjust margins for mobile */
+        }
     }
 
    </style>
