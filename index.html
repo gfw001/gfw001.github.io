@@ -209,6 +209,20 @@
       top: -40px;
       left: 19px;
     }
+    @media (max-width: 1200px) {
+        .col-flex {
+            flex: 0 0 calc(100% - 40px);
+            max-width: calc(100% - 40px);
+        }
+    }
+    @media (max-width: 768px) {
+        .container-center-flex {
+            padding: 0 20px; /* Reduce padding on smaller screens */
+        }
+        .col-flex {
+            margin: 0 0 30px; /* Adjust margins for mobile */
+        }
+    }
 
    </style>
    <body class="fixed-top-nav ">
