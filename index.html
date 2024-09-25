@@ -59,6 +59,25 @@
          text-align: left;
          align-items: left;
       }
+      .container-center-flex {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+      }
+      .row-flex {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 20px;
+        }
+      .col-flex {
+            flex: 0 0 calc(50% - 150px);
+            max-width: calc(50% - 150px);
+            margin: 0 20px 40px;
+      }
       .tag-cloud a {
         display: inline-block;
         position: relative;
@@ -245,9 +264,8 @@
                   </ul>
                </div>
                <div class="container-center" style="margin-top: 50px;">
-                    <div class="container py-1 h-100">
-                      <div class="row d-flex justify-content-center align-items-center h-100">
-                        <div class="col col-md-9 col-lg-7 col-xl-5">
+                    <div class="row-flex">
+                        <div class="col-flex">
                           <div class="card">
                             <div class="card-body">
                               <blockquote class="blockquote blockquote-custom bg-white px-3 pt-4">
@@ -265,7 +283,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col col-md-9 col-lg-7 col-xl-5">
+                        <div class="col-flex">
                           <div class="card">
                             <div class="card-body">
                               <blockquote class="blockquote blockquote-custom bg-white px-3 pt-4">
@@ -284,10 +302,8 @@
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="container py-1 h-100">
-                      <div class="row d-flex justify-content-center align-items-center h-100">
-                        <div class="col col-md-9 col-lg-7 col-xl-5">
+                      <div class="row-flex">
+                        <div class="col-flex">
                           <div class="card">
                             <div class="card-body">
                               <blockquote class="blockquote blockquote-custom bg-white px-3 pt-4">
@@ -305,7 +321,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col col-md-9 col-lg-7 col-xl-5">
+                        <div class="col-flex">
                           <div class="card">
                             <div class="card-body">
                               <blockquote class="blockquote blockquote-custom bg-white px-3 pt-4">
@@ -324,7 +340,6 @@
                           </div>
                         </div>
                       </div>
-                  </div>
                </div>
                <div class="container-center" style="margin-top: 45px;">
                   <p>
