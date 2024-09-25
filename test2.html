@@ -55,6 +55,25 @@
          text-align: center;
          align-items: center;
       }
+      .container-center-flex {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+      }
+      .row-flex {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 20px;
+        }
+      .col-flex {
+            flex: 0 0 calc(50% - 20px);
+            max-width: calc(50% - 20px);
+            margin: 0 10px 20px;
+      }
       .container-left {
          text-align: left;
          align-items: left;
@@ -244,9 +263,9 @@
                      </li>
                   </ul>
                </div>
-               <div class="container-center" style="margin-top: 50px;">
-                      <div class="row">
-                        <div class="col">
+               <div class="container-center-flex" style="margin-top: 50px;">
+                      <div class="row-flex">
+                        <div class="col-flex">
                           <div class="card">
                             <div class="card-body">
                               <blockquote class="blockquote blockquote-custom bg-white px-3 pt-4">
@@ -264,7 +283,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col">
+                        <div class="col-flex">
                           <div class="card">
                             <div class="card-body">
                               <blockquote class="blockquote blockquote-custom bg-white px-3 pt-4">
@@ -283,8 +302,8 @@
                           </div>
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col">
+                      <div class="row-flex">
+                        <div class="col-flex">
                           <div class="card">
                             <div class="card-body">
                               <blockquote class="blockquote blockquote-custom bg-white px-3 pt-4">
@@ -302,7 +321,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col">
+                        <div class="col-flex">
                           <div class="card">
                             <div class="card-body">
                               <blockquote class="blockquote blockquote-custom bg-white px-3 pt-4">
