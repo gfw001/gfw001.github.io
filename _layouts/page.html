@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include page_head.html %}
+
+<body {% if page.type=="about" %} itemscope itemtype="http://schema.org/Person" {% endif %}>
+    {% if page.type=="about" %}
+    <script>
+        window.onload = function() {
+            var toggleFloatingMenu = function() {
+                $('.js-floating-nav').toggleClass('is-visible');
+                $('.js-floating-nav-trigger').toggleClass('is-open');
+            };
+            $(".background-card").css("min-height", window.screen.availHeight + "px");
+            $("[rel=tooltip]").tooltip();
+            $('.js-floating-nav-trigger').on('click', function(e) {
+                e.preventDefault();
+                toggleFloatingMenu();
+            });
+            $('.js-floating-nav a').on('click', toggleFloatingMenu);
+        }
+    </script>
+    {% endif %}
+    <div class="container">
+        {% if page.type=="about" %} {% include about.html %} {% else %}
+        <header class="masthead">
+            <h3 class="masthead-title">
+                <a href="{{ site.url }}" title="{{ page.title }}">Home</a>
+            </h3>
+            <small>{{ site.tagline }}</small>
+        </header>
+
+        <hr> {{ content }}
+
+        <hr>
+        <footer class="text-center">
+            &copy; {{ site.time | date: '%Y' }}. All rights reserved.
+        </footer>
+        {% endif %}
+    </div>
+
+    {% if page.type=="about" %}
+    <script defer src="/js/jquery-3.6.0.min.js"></script>
+    <script defer src="/js/bootstrap.min.js"></script>
+    {% endif %}
+    <script defer src="/js/anchor.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function(event) {
+        anchors.options.placement = 'left';
+        anchors.add("div>p");
+    });
+    </script>
+</body>
+
+</html>
