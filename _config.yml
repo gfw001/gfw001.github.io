@@ -1,7 +1,14 @@
-source:      .
-destination: ./_site
-includes:    ./_includes
-
-collections:
-  projects:
-    output: true
+title: Qingqing Cao
+description: Qingqing Cao's website
+url: 'https://awk.ai'
+permalink: '/:year-:month-:day-:title/'
+# Build settings
+markdown: kramdown
+theme: minima
+sass:
+  sass_dir: _scss
+  style: compressed
+plugins:
+  - jekyll-minifier
+  - jekyll-redirect-from
+  - jekyll-compose
