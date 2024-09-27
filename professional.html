@@ -206,24 +206,22 @@
 	
 </head>
 
- <body class="fixed-top-nav ">
+ <body>
    <nav class="navbar">
-    <a href="#" class="navbar-brand">PengAndy</a>
-    <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
-    <div class="navbar-links">
-        <a href="/">Home</a>
-        <a href="/portfolio">Portfolio</a>
-        <a href="/publications">Publications</a>
-        <a href="/products">Projects</a>
-    </div>
+     <div class="navbar-content">
+       <a href="#" class="navbar-brand">Peng Andy</a>
+       <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
+       <div class="navbar-links">
+         <a href="#">Home</a>
+         <a href="#">About</a>
+         <a href="#">Publications</a>
+         <a href="#">Service</a>
+         <a href="#">Projects</a>
+         <a href="#">Contact</a>
+       </div>
+     </div>
    </nav>
-	
-   <script>
-   function toggleNavbar() {
-       const navbarLinks = document.querySelector('.navbar-links');
-       navbarLinks.classList.toggle('active');
-   }
-   </script>
+   
 
 <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -306,6 +304,12 @@
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script>
+   function toggleNavbar() {
+     const navbarLinks = document.querySelector('.navbar-links');
+     navbarLinks.classList.toggle('active');
+   }
+   </script>
 </body>
 </html>
 
