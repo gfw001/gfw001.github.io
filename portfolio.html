@@ -82,26 +82,35 @@
 	touch-action: manipulation;
   }
 
-  /* CSS */
-.button-11 {
-  display: inline-block;
-  align-items: center;
-  padding: 6px 5px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
-  border-radius: 6px;
-  color: #3D3D3D;
-  background: #fff;
-  border: none;
-  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.button-11:focus {
-  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
-  outline: 0;
-}
+        /* CSS */
+	.button-11 {
+	  display: inline-block;
+	  align-items: center;
+	  padding: 6px 5px;
+	  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+	  border-radius: 6px;
+	  color: #3D3D3D;
+	  background: #fff;
+	  border: none;
+	  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+	  user-select: none;
+	  -webkit-user-select: none;
+	  touch-action: manipulation;
+	}
+	
+	.button-11:focus {
+	  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+	  outline: 0;
+	}
+    .language-footer {
+         position: fixed;
+         bottom: 0;
+         right: 0;
+         font-size: 14px;
+         padding: 10px 20px;
+         line-height: 1.5; /* Match the line height of the copyright footer */
+         background-color: transparent;
+     }
 </style>
 
 <div class="container-sm container-all">
@@ -796,4 +805,7 @@
   <footer class="fixed-bottom">
        <div class="container mt-0"> © Copyright 2024 Andy Peng. </div>
   </footer>
+  <div class="language-footer">
+         <a href="/">Homepage</a> | <a href="/cn">Chinese 中文</a>
+  </div>
 </div> 
