@@ -1,0 +1,191 @@
+<div class="row main clearfix">
+    <a href="#" class="js-floating-nav-trigger floating-nav-trigger">
+        <i class="fa fa-bars"></i>
+        <span class="close-icon"></span>
+    </a>
+    <nav class="floating-nav js-floating-nav">
+        <ul class="list-unstyled">
+            <li>
+                <a href="#bio">
+                    <i class="fa fa-user nav-icon-width"></i>Bio</a>
+            </li>
+            <li>
+                <a href="#education">
+                    <i class="fas fa-university nav-icon-width"></i>Education</a>
+            </li>
+            <li>
+                <a href="#experience">
+                    <i class="fas fa-building nav-icon-width"></i>Experience</a>
+            </li>
+            <li>
+                <a href="#publications">
+                    <i class="fab fa-leanpub nav-icon-width"></i>Publications</a>
+            </li>
+            <li>
+                <a href="#awards">
+                    <i class="fa fa-trophy nav-icon-width"></i>Awards</a>
+            </li>
+            <li>
+                <a href="#service">
+                    <i class="fas fa-hand-paper nav-icon-width"></i>Service</a>
+            </li>
+            <!-- <li>
+                <a href="#skills">
+                    <i class="fas fa-code nav-icon-width"></i>Skills</a>
+            </li>
+            <li>
+                <a href="#interests">
+                    <i class="fas fa-heart nav-icon-width"></i>Interests</a>
+            </li> -->
+        </ul>
+    </nav>
+    <section class="col-md-3 card-wrapper profile-card-wrapper">
+        <div class="card profile-card">
+            <div class="profile-pic">
+                <img class="media-object img-circle center-block" alt="avatar" itemprop="image" src="{{ page.avatar }}">
+            </div>
+            <div class="name-and-profession">
+                <h3 class="text-center text-bolder name" itemprop="name">{{ page.title }}{% if page.native-name %} | {{ page.native-name }}{% endif %}</h3>
+                <h5 class="text-muted text-center" itemprop="jobTitle">{{ page.intro }}</h5>
+            </div>
+            <hr>
+            <div class="social-links text-center">{% for item in page.social %}
+                <a href="{{ item.link }}" target="_blank"><i class="{{ item.style }}"></i></a>{% endfor %}
+            </div>
+            <div class="contact-mod">
+            <div class="contact-details clearfix">
+                {% for item in page.contact %}
+                <div class="detail">
+                    <span class="icon"><i class="fas fa fa-{{ item.style }}"></i></span>
+                    <span class="info">{{ item.info | markdownify  | remove: '<p>' | remove: '</p>' }}</span>
+                </div>{% endfor %}
+            </div>
+            </div>
+            <hr>
+            <div class="contact-details clearfix">
+                <p class="text-bolder text-center" id="updates">{{ page.news-name }}</p>
+                <ul class="flex-more text-left justify-content-center">
+                    {% for i in (0..2) %} {% assign item = page.news[i] %}
+                    <li>
+                        <p>
+                            <span class="{% if i==0 %}new{% else %}old{% endif %}">{{ item.date }}</span> {{ item.info | markdownify | remove: '<p>' | remove: '</p>' }}
+                        </p>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div class="text-center">
+                    <button class="btn text-toogle" data-toggle="collapse" data-target="#more-items" aria-expanded="false">
+                        <span class="text-collapsed btn-text">More...</span>
+                        <span class="text-expanded btn-text">Less...</span>
+                    </button>
+                </div>
+
+                <ul class="collapse flex-more text-left justify-content-center text-muted" id="more-items">
+                    {% for item in page.news offset:3 %}
+                    <li>
+                        <p>
+                            <span class="old">{{ item.date }}</span> {{ item.info  | markdownify }}
+                        </p>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="col-md-7 card-wrapper pull-right">
+
+        <div class="card background-card background-details">
+            <div class="detail" id="{{ page.bio.name | downcase}}">
+                <div class="icon">
+                    <i class="fa-lg {{ page.bio.style }}"></i>
+                    <span class="mobile-title">{{ page.bio.name }}</span>
+                </div>
+                <div class="info">
+                    <h4 class="title text-uppercase"> Bio </h4>
+                    <div class="content card card-nested" itemprop="description">{{ page.bio.content | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+                </div>
+            </div>
+            <div class="detail" id="{{ page.info.name | downcase}}">
+                <div class="icon">
+                    <i class="fa-lg {{ page.info.style }}"></i>
+                    <span class="mobile-title">{{ page.info.name }}</span>
+                </div>
+                <div class="info">
+                    <h4 class="title text-uppercase"> {{ page.info.name }} </h4>
+                    <div class="content card card-nested" itemprop="description">{{ page.info.content | markdownify |remove: '<p>' | remove: '</p>' }}</div>
+                </div>
+            </div>
+            {% for history-item in page.history %}
+            <div class="detail" id="{{ history-item.name | downcase }}">
+                <div class="icon">
+                    <i class="fa-lg {{ history-item.style }}"></i>
+                    <span class="mobile-title">{{ history-item.name }}</span>
+                </div>
+                <div class="info">
+                    <h4 class="title text-uppercase">{{ history-item.name }}</h4>
+                    <div class="content">
+                        <ul class="flex">
+                            {% assign item-size = history-item.items | size | minus: 1 %}{% for i in (0..item-size) %}{% assign item = history-item.items[i] %}
+                            <li class="content card card-nested space-right">
+                                <p class="clear-margin relative">
+                                    <i class="fas fa-circle {% if i==0 %}current{% else %}previous{% endif %}-event" data-placement="left"></i>
+                                    <strong>{{ item.position }}</strong>,&nbsp; {{ item.location }}</p>
+                                <p class="text-muted clear-margin">
+                                    <small>{{ item.duration }}</small>
+                                </p>{% if item.extra %}
+                                <p class="clear-margin">{{ item.extra | markdownify | remove: '<p>' | remove: '</p>' }}</p>{% endif %}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="detail" id="{{ page.pub.name | downcase}}">
+                <div class="icon">
+                    <i class="fa-lg {{ page.pub.style }}"></i>
+                    <span class="mobile-title">{{ page.pub.name }}</span>
+                </div>
+                <div class="info">
+                    <h4 class="title text-uppercase">{{ page.pub.name }}</h4>
+                    <div class="content card card-nested">{% for item in page.pub.items %}
+                        <p id="{{ item.id }}">
+                            <span class="conf-text">{{ item.type }}</span><span class="text-bolder">{{ item.paper }}</span> <br>
+                            {{ item.author }}<br>
+                            {{ item.conference }}<br>
+                            {{ item.resource | markdownify | remove: '<p>' | remove: '</p>' }}
+                        </p>{% endfor %}
+                    </div>
+                </div>
+            </div>{% for notable-item in page.notable %}
+            <div class="detail" id="{{ notable-item.name | downcase }}">
+                <div class="icon">
+                    <i class="fa-lg {{ notable-item.style }}"></i>
+                    <span class="mobile-title">{{ notable-item.name }}</span>
+                </div>
+                <div class="info">
+                    <h4 class="title text-uppercase">{{ notable-item.name }}</h4>
+                    <div class="content card card-nested">{% for item in notable-item.items %}
+                        <p>{{ item.name | markdownify | remove: '<p>' | remove: '</p>'}}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>{% endfor %}{% for misc-item in page.misc %}
+            <div class="detail" id="{{ misc-item.name | downcase }}">
+                <div class="icon">
+                    <i class="fa-lg {{ misc-item.style }}"></i>
+                    <span class="mobile-title">{{ misc-item.name }}</span>
+                </div>
+                <div class="info">
+                    <h4 class="title text-uppercase">{{ misc-item.name }}</h4>
+                    <div class="content card card-nested">
+                        <div class="space-top labels">{% for item in misc-item.items %}
+                            <span class="label label-keyword">{{ item | markdownify  | remove: '<p>' | remove: '</p>' }}</span>{% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
