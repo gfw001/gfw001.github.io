@@ -99,25 +99,80 @@
   a:hover {
     color: rgba(20, 20, 20, 0.6);
   }
+  .navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+.navbar-links {
+    display: flex;
+    gap: 1.5rem;
+}
+.navbar-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+.navbar-links a:hover {
+    color: #007bff;
+}
+.navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .navbar-links {
+	display: none;
+	flex-direction: column;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	background-color: #ffffff;
+	padding: 1rem;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .navbar-links.active {
+	display: flex;
+    }
+    .navbar-toggle {
+	display: block;
+    }
+}
 </style>
 	
 </head>
 <body class="fixed-top-nav ">
-   <header>
-   <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
-    <div class="container">
-       <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> 
-       <div class="collapse navbar-collapse text-right" id="navbarNav">
-	  <ul class="navbar-nav ml-auto flex-nowrap">
-	     <li class="nav-item "> <a class="nav-link" href="/">About<span class="sr-only">(current)</span></a> </li>
-	     <li class="nav-item "> <a class="nav-link" href="/portfolio">Portfolio</a> </li>
-	     <li class="nav-item "> <a class="nav-link" href="/publications">Publications</a> </li>
-	     <li class="nav-item "> <a class="nav-link" href="/products">Projects</a> </li>
-	  </ul>
-       </div>
-    </div>
- </nav>
- </header>
+   <nav class="navbar">
+	<a href="#" class="navbar-brand">PengAndy</a>
+	<button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
+	<div class="navbar-links">
+	    <a href="#">Home</a>
+	    <a href="#">About</a>
+	    <a href="#">Publications</a>
+	    <a href="#">Contact</a>
+	</div>
+	</nav>
+	
+	<script>
+	function toggleNavbar() {
+	    const navbarLinks = document.querySelector('.navbar-links');
+	    navbarLinks.classList.toggle('active');
+	}
+	</script>
 
 <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -125,6 +180,7 @@
 	  
 <!-- ========== RESUME ========== -->
 <div class="docs-section" id="resume">
+  
   <h4>Professional Experience</h4>
 
   <!-- The Timeline -->
