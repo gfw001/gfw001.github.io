@@ -17,6 +17,7 @@
 <html lang="en">
 	
 <head>
+  
 
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -80,62 +81,39 @@
   a:hover {
     color: rgba(20, 20, 20, 0.6);
   }
-  .navbar {
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
-}
-.navbar-links {
-    display: flex;
-    gap: 1.5rem;
-}
-.navbar-links a {
-    color: #333;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-.navbar-links a:hover {
-    color: #007bff;
-}
-.navbar-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-@media (max-width: 768px) {
-    .navbar-links {
-	display: none;
-	flex-direction: column;
-	position: absolute;
-	top: 100%;
-	left: 0;
-	right: 0;
-	background-color: #ffffff;
-	padding: 1rem;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  .navbar-links a {
+      color: #333;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      margin-left: 1.5rem;
     }
-    .navbar-links.active {
-	display: flex;
-    }
-    .navbar-toggle {
-	display: block;
+    .navbar-links a:hover {
+      color: #007bff;
     }
 }
 </style>
 	
 </head>
+
+ <body class="fixed-top-nav ">
+   <nav class="navbar">
+    <a href="#" class="navbar-brand">PengAndy</a>
+    <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
+    <div class="navbar-links">
+        <a href="/">Home</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/publications">Publications</a>
+        <a href="/products">Projects</a>
+    </div>
+   </nav>
+	
+   <script>
+   function toggleNavbar() {
+       const navbarLinks = document.querySelector('.navbar-links');
+       navbarLinks.classList.toggle('active');
+   }
+   </script>
 
 <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
