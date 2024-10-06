@@ -605,18 +605,7 @@
       }
       // Typography
 
-      p,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      em,
-      div,
-      li,
-      span,
-      strong {
+      p,h1,h2,h3,h4,h5,h6,em,div,li,span,strong {
         color: var(--global-text-color);
       }
       
@@ -624,37 +613,32 @@
         border-top: 1px solid var(--global-divider-color);
       }
       
-      table {
-        td,
-        th {
-          font-size: 1rem;
-        }
-      
-        th {
-          font-weight: bold;
-        }
+      table td {
+         font-size: 1.2rem
+      }
+      table th {
+         font-size: 1rem;
+         font-weight: bold
       }
       
-      a,
-      table.table a {
+      a,table.table a {
         color: var(--global-theme-color);
+      }
       
-        &:hover {
+      a:hover,table.table a:hover {
           color: var(--global-theme-color);
           text-decoration: underline;
-        }
+      }
       
-        &:hover:after :not(.nav-item.dropdown) {
-          width: 100%;
-        }
+      a:hover:after :not(.nav-item.dropdown),table.table a:hover:after :not(.nav-item.dropdown) {
+         width: 100%
       }
       
       .table-dark {
         background-color: transparent;
       }
       
-      figure,
-      img {
+      figure,img {
         max-width: 90vw;
       }
       
@@ -686,30 +670,29 @@
       
       .card {
         background-color: var(--global-card-bg-color);
+      }
       
-        img {
+      .card img {
           width: 100%;
-        }
+      }
       
-        .card-title {
+      .card .card-title {
           color: var(--global-text-color);
         }
-      
-        .card-item {
-          width: auto;
-          margin-bottom: 10px;
-      
-          .row {
-            display: flex;
-            align-items: center;
-          }
-        }
+      .card .card-item {
+         width: auto;
+         margin-bottom: 10px
       }
+      
+      .card .card-item .row {
+         display: flex;
+         align-items: center
+      }
+
       
       // Citation
       
-      .citation,
-      .citation-number {
+      .citation,.citation-number {
         color: var(--global-theme-color);
       }
       
