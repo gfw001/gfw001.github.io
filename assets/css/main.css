@@ -315,42 +315,21 @@ blockquote{
 .social .contact-note{
     font-size:.8rem
 }
-footer.fixed-bottom{
-    background-color:var(--global-footer-bg-color);
-    font-size:.75rem
+
+.cv {
+margin-bottom: 40px
 }
-footer.fixed-bottom .container{
-    color:var(--global-footer-text-color);
-    padding-top:9px;
-    padding-bottom:8px
+.cv .card {
+background-color: var(--global-card-bg-color);
+border: 1px solid var(--global-divider-color)
 }
-footer.fixed-bottom a{
-    color:var(--global-footer-link-color)
+.cv .card .list-group-item {
+background-color: inherit;
+border-color: var(--global-divider-color)
 }
-footer.fixed-bottom a:hover{
-    color:var(--global-theme-color);
-    text-decoration:none
-}
-footer.sticky-bottom{
-    border-top:1px solid var(--global-divider-color);
-    padding-top:40px;
-    padding-bottom:40px;
-    font-size:.9rem
-}
-.cv{
-    margin-bottom:40px
-}
-.cv .card{
-    background-color:var(--global-card-bg-color);
-    border:1px solid var(--global-divider-color)
-}
-.cv .card .list-group-item{
-    background-color:inherit;
-    border-color:var(--global-divider-color)
-}
-.cv .card .list-group-item .badge{
-    color:var(--global-card-bg-color)!important;
-    background-color:var(--global-theme-color)!important
+.cv .card .list-group-item .badge {
+color: var(--global-card-bg-color)!important;
+background-color: var(--global-theme-color)!important
 }
 .table-cv-map{
     background-color:transparent;
