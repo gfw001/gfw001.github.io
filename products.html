@@ -73,6 +73,8 @@
       .abbr {
         height: 2rem;
         margin-bottom: 0.5rem;
+        min-width: 120px;
+        text-align: center;
         abbr {
           display: inline-block;
           background-color: #00369f;
@@ -195,42 +197,25 @@
     }
   }
 }
-     .grid-item .card-body {
-        display: flex;
-        flex-direction: column;
-      }
-      
-      .grid-item .card-body > div:first-of-type {
-        display: flex;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        margin-bottom: 10px;
-      }
-      
-      .grid-item .badge {
-        flex-shrink: 0;
-        margin-right: 10px;
-        margin-bottom: 5px;
-      }
-      
-      .grid-item h5.card-title {
-        flex: 1;
-        min-width: 0;
-        margin: 0;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      
-      @media (max-width: 576px) {
-        .grid-item .card-body > div:first-of-type {
-          flex-direction: column;
-        }
-        
-        .grid-item h5.card-title {
-          margin-top: 5px;
-        }
-      }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+#mao2023agent {
+  flex: 1;
+  min-width: 0;
+}
+@media (max-width: 576px) {
+  .abbr {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  #mao2023agent {
+    width: 100%;
+  }
+}
 </style>
 
 <body class="fixed-top-nav ">
