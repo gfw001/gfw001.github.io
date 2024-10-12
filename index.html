@@ -235,6 +235,15 @@
       -moz-user-select: none;
       -ms-user-select: none;
     }
+    .profile {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    .profile figure {
+      margin: 0;
+    }
    </style>
    <body class="fixed-top-nav ">
       <div class="container-center mt-5">
@@ -243,21 +252,14 @@
                <h1 class="post-title"> <span class="font-weight-bold">Andy</span> Peng </h1>
                <p class="desc"></p>
             </header>
+            <div class="profile">
+              <figure>
+                <picture>
+                  </source> <img src="img/Memoji.png" class="img-fluid z-depth-1 rounded-circle" width="240" height="auto" alt="headshot.jpg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> 
+                </picture>
+              </figure>
+            </div>
             <article>
-               <div class="profile float-center">
-                  <figure>
-                     <picture>
-                        <!-- 
-                        <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/headshot-480.webp">
-                        </source> 
-                        <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/headshot-800.webp">
-                        </source> 
-                        <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/headshot-1400.webp">
-                        --> 
-                        </source> <img src="img/Memoji.png" class="img-fluid z-depth-1 rounded-circle" width="240" height="auto" alt="headshot.jpg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> 
-                     </picture>
-                  </figure>
-               </div>
                <div class="container-center" style="margin-top: 40px;">
                  <a href="https://pengandy.com/portfolio">Bio</a> | <a href="/publications">Publications</a> | <a href="/products">Projects</a> | <a href="/cv">CV</a>
                  <!-- 
