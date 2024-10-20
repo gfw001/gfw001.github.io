@@ -1,0 +1,38 @@
+.abbr, .abbrd {
+  height: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.abbr abbr, .abbrd abbrd {
+  display: inline-block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.abbr abbr {
+  background-color: #00369f;
+}
+
+.abbrd abbrd {
+  background-color: #B509AC;
+}
+
+.abbr a, .abbrd a {
+  color: white;
+}
+
+.abbr a:hover, .abbrd a:hover {
+  text-decoration: none;
+}
+
+.abbr .badge, .abbrd .badge {
+  color: #ffffff;
+}
+
+.abbr .badge {
+  background-color: #00369f;
+}
+
+.abbrd .badge {
+  background-color: #B509AC;
+}
