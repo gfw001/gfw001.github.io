@@ -26,7 +26,6 @@
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
       <link rel="stylesheet" href="/assets/css/main.css">
-      <link rel="stylesheet" href="/assets/css/custom.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
       <script src="/assets/js/theme.js"></script> <script src="/assets/js/dark_mode.js"></script>
    </head>
@@ -47,7 +46,7 @@
     height: 2rem;
     margin-bottom: 0.5rem;
   }
-  .abbrd abbr {
+  abbr.abbrd {
     display: inline-block;
     padding: $badge-padding-y $badge-padding-x;
     font-size: $badge-font-size;
@@ -58,17 +57,14 @@
     vertical-align: baseline;
     border-radius: $badge-border-radius;
     background-color: #B509AC;
-    color: #ffffff;
-  }
-  .abbrd a {
     color: white;
   }
-  .abbrd a:hover {
+  abbr.abbrd a {
+    color: white;
     text-decoration: none;
   }
-  .abbrd .badge {
-    color: #ffffff;
-    background-color: #B509AC;
+  abbr.abbrd a:hover {
+    text-decoration: none;
   }
   .navbar {
     background-color: rgba(255, 255, 255, 0.8) !important;
