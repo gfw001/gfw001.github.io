@@ -80,6 +80,7 @@
       background: white;
       border: 1px solid #e1e1e1;
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      margin-top: 10px;
     }
 
     .comment {
@@ -117,19 +118,29 @@
       font-size: 13px;
     }
 
-    /* 减少空行间距 */
-    .message br {
-      line-height: 1.2;
-      content: "";
-      display: block;
-      margin: 4px 0;
+    .toggle-comments {
+      color: #0078d4;
+      text-decoration: none;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 8px;
     }
-    bodycomment {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      max-width: 800px;
-      margin: 12px auto;
-      background: #f8f8f8;
-      padding: 12px;
+
+    .toggle-comments:hover {
+      text-decoration: underline;
+    }
+
+    .toggle-icon {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s;
+    }
+
+    .toggle-comments[aria-expanded="true"] .toggle-icon {
+      transform: rotate(180deg);
     }
 </style>
 
@@ -188,6 +199,84 @@
                      <a href="https://aws.amazon.com/about-aws/whats-new/2024/11/anthropics-claude-3-5-haiku-model-amazon-bedrock/" class="btn btn-sm z-depth-0" role="button" rel="noopener noreferrer" target="_blank">What's New</a>
                      <a href="https://www.linkedin.com/posts/swaminathansivasubramanian_anthropics-claude-35-haiku-model-now-available-activity-7259320820903141377-y2He?utm_source=share&utm_medium=member_desktop" class="btn btn-sm z-depth-0" role="button" rel="noopener noreferrer" target="_blank">Swami Sivasubramanian post</a>
                      <a href="https://artificialanalysis.ai/models/claude-3-5-haiku/providers" class="btn btn-sm z-depth-0" role="button" rel="noopener noreferrer" target="_blank">Artificial Analysis | Claude 3.5 Haiku: API Provider Benchmarking & Analysis</a>
+                  </div>
+                  <a class="toggle-comments" data-toggle="collapse" href="#comments-section" role="button" aria-expanded="false" aria-controls="comments-section">
+                    View Endorsements
+                    <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M19 9l-7 7-7-7"/>
+                    </svg>
+                  </a>
+              
+                  <div class="collapse" id="comments-section">
+                    <div class="comments-container">
+                      <div class="comment">
+                        <div class="comment-header">
+                          <div class="username">DeSantis, Peter</div>
+                          <div class="datetime">11/04/2024 8:28 PM</div>
+                        </div>
+                        <p class="message">Awesome and important first step. Gonna be an exciting month. 
+              
+              Thanks to everyone for helping!</p>
+                      </div>
+              
+                      <div class="comment">
+                        <div class="comment-header">
+                          <div class="username">Sivasubramanian, Swami</div>
+                          <div class="datetime">11/04/2024 8:15 PM</div>
+                        </div>
+                        <p class="message">This is a big launch and a major milestone for us - congratulations team!
+              - Swami</p>
+                      </div>
+              
+                      <div class="comment">
+                        <div class="comment-header">
+                          <div class="username">Sridharan, Baskar</div>
+                          <div class="datetime">11/04/2024 7:16 PM</div>
+                        </div>
+                        <p class="message">Great collaboration between the teams to get to this point! 
+              
+              -Baskar</p>
+                      </div>
+              
+                      <div class="comment">
+                        <div class="comment-header">
+                          <div class="username">Anonymous</div>
+                          <div class="datetime">11/04/2024 6:48 PM</div>
+                        </div>
+                        <p class="message">+1. Thank you for the partnership and continued push!! More to come! 
+              
+              Sent from my iPhone</p>
+                      </div>
+              
+                      <div class="comment">
+                        <div class="comment-header">
+                          <div class="username">Liguori, Anthony</div>
+                          <div class="datetime">11/04/2024 6:36 PM</div>
+                        </div>
+                        <p class="message">Thanks both! This is a huge milestone for Amazon overall. 
+              
+              I know this has been a long and trying road for the teams but I am excited about the results that will come from it!
+              
+              Regards,
+              
+              Anthony Liguori</p>
+                      </div>
+              
+                      <div class="comment">
+                        <div class="comment-header">
+                          <div class="username">Anonymous</div>
+                          <div class="datetime">11/04/2024 6:22 PM</div>
+                        </div>
+                        <p class="message">Bedrock team, 
+              
+              Just sending a quick note to say congrats and thank you on the Haiku3.5 launch today.
+              It's a super important milestone for us all, and I'm sure it'll pave the way for many more great achievements together.
+              
+              This is just the beginning… Thanks for phenomenal work pushing this over the finish-line, y'all rock!
+              
+              /Anonymous</p>
+                      </div>
+                    </div>
                   </div>
                   <div class="badges"> 
                      <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span> <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span> 
