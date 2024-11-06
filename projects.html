@@ -114,8 +114,25 @@
       color: #333;
       line-height: 1.4;
       margin: 0;
-      white-space: pre-wrap;
       font-size: 13px;
+      padding: 0;
+    }
+
+    /* Remove default white-space handling */
+    .message {
+      white-space: normal;
+    }
+
+    /* Add specific line breaks only where needed */
+    .message br {
+      display: block;
+      margin: 8px 0;
+      content: "";
+    }
+
+    .signature {
+      margin-top: 8px;
+      display: block;
     }
 
     .toggle-comments {
@@ -214,9 +231,10 @@
                           <div class="username">DeSantis, Peter</div>
                           <div class="datetime">11/04/2024 8:28 PM</div>
                         </div>
-                        <p class="message">Awesome and important first step. Gonna be an exciting month. 
-              
-              Thanks to everyone for helping!</p>
+                        <div class="message">
+                          Awesome and important first step. Gonna be an exciting month.
+                          <span class="signature">Thanks to everyone for helping!</span>
+                        </div>
                       </div>
               
                       <div class="comment">
@@ -224,8 +242,10 @@
                           <div class="username">Sivasubramanian, Swami</div>
                           <div class="datetime">11/04/2024 8:15 PM</div>
                         </div>
-                        <p class="message">This is a big launch and a major milestone for us - congratulations team!
-              - Swami</p>
+                        <div class="message">
+                          This is a big launch and a major milestone for us - congratulations team!
+                          <span class="signature">- Swami</span>
+                        </div>
                       </div>
               
                       <div class="comment">
@@ -233,9 +253,10 @@
                           <div class="username">Sridharan, Baskar</div>
                           <div class="datetime">11/04/2024 7:16 PM</div>
                         </div>
-                        <p class="message">Great collaboration between the teams to get to this point! 
-              
-              -Baskar</p>
+                        <div class="message">
+                          Great collaboration between the teams to get to this point!
+                          <span class="signature">-Baskar</span>
+                        </div>
                       </div>
               
                       <div class="comment">
@@ -243,9 +264,10 @@
                           <div class="username">Anonymous</div>
                           <div class="datetime">11/04/2024 6:48 PM</div>
                         </div>
-                        <p class="message">+1. Thank you for the partnership and continued push!! More to come! 
-              
-              Sent from my iPhone</p>
+                        <div class="message">
+                          +1. Thank you for the partnership and continued push!! More to come!
+                          <span class="signature">Sent from my iPhone</span>
+                        </div>
                       </div>
               
                       <div class="comment">
@@ -253,13 +275,16 @@
                           <div class="username">Liguori, Anthony</div>
                           <div class="datetime">11/04/2024 6:36 PM</div>
                         </div>
-                        <p class="message">Thanks both! This is a huge milestone for Amazon overall. 
-              
-              I know this has been a long and trying road for the teams but I am excited about the results that will come from it!
-              
-              Regards,
-              
-              Anthony Liguori</p>
+                        <div class="message">
+                          Thanks both! This is a huge milestone for Amazon overall.
+                          <br>
+                          I know this has been a long and trying road for the teams but I am excited about the results that will come from it!
+                          <span class="signature">
+                            Regards,
+                            <br>
+                            Anthony Liguori
+                          </span>
+                        </div>
                       </div>
               
                       <div class="comment">
@@ -267,14 +292,15 @@
                           <div class="username">Anonymous</div>
                           <div class="datetime">11/04/2024 6:22 PM</div>
                         </div>
-                        <p class="message">Bedrock team, 
-              
-              Just sending a quick note to say congrats and thank you on the Haiku3.5 launch today.
-              It's a super important milestone for us all, and I'm sure it'll pave the way for many more great achievements together.
-              
-              This is just the beginning… Thanks for phenomenal work pushing this over the finish-line, y'all rock!
-              
-              /Anonymous</p>
+                        <div class="message">
+                          Bedrock team,
+                          <br>
+                          Just sending a quick note to say congrats and thank you on the Haiku3.5 launch today.
+                          It's a super important milestone for us all, and I'm sure it'll pave the way for many more great achievements together.
+                          <br>
+                          This is just the beginning… Thanks for phenomenal work pushing this over the finish-line, y'all rock!
+                          <span class="signature">/Anonymous</span>
+                        </div>
                       </div>
                     </div>
                   </div>
