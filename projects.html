@@ -75,6 +75,55 @@
     color: var(--global-text-color);
     text-decoration: none;
   }
+
+  .comments-container {
+      background: white;
+      border: 1px solid #e1e1e1;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .comment {
+      padding: 10px 16px;
+      border-bottom: 1px solid #e1e1e1;
+    }
+
+    .comment:last-child {
+      border-bottom: none;
+    }
+
+    .comment-header {
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .username {
+      color: #0078d4;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .datetime {
+      color: #666;
+      font-size: 12px;
+    }
+
+    .message {
+      color: #333;
+      line-height: 1.4;
+      margin: 0;
+      white-space: pre-wrap;
+      font-size: 13px;
+    }
+
+    /* 减少空行间距 */
+    .message br {
+      line-height: 1.2;
+      content: "";
+      display: block;
+      margin: 4px 0;
+    }
 </style>
 
 <body class="fixed-top-nav ">
@@ -135,6 +184,77 @@
                   </div>
                   <div class="badges"> 
                      <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span> <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span> 
+                  </div>
+                  <div>
+                    <div class="comments-container">
+                      <div class="comment">
+                        <div class="comment-header">
+                          <div class="username">DeSantis, Peter</div>
+                          <div class="datetime">11/04/2024 8:28 PM</div>
+                        </div>
+                        <p class="message">Awesome and important first step. Gonna be an exciting month. 
+                  
+                  Thanks to everyone for helping!</p>
+                      </div>
+                  
+                      <div class="comment">
+                        <div class="comment-header">
+                          <div class="username">Sivasubramanian, Swami</div>
+                          <div class="datetime">11/04/2024 8:15 PM</div>
+                        </div>
+                        <p class="message">This is a big launch and a major milestone for us - congratulations team!
+                  - Swami</p>
+                      </div>
+                  
+                      <div class="comment">
+                        <div class="comment-header">
+                          <div class="username">Sridharan, Baskar</div>
+                          <div class="datetime">11/04/2024 7:16 PM</div>
+                        </div>
+                        <p class="message">Great collaboration between the teams to get to this point! 
+                  
+                  -Baskar</p>
+                      </div>
+                  
+                      <div class="comment">
+                        <div class="comment-header">
+                          <div class="username">Anonymous</div>
+                          <div class="datetime">11/04/2024 6:48 PM</div>
+                        </div>
+                        <p class="message">+1. Thank you for the partnership and continued push!! More to come! 
+                  
+                  Sent from my iPhone</p>
+                      </div>
+                  
+                      <div class="comment">
+                        <div class="comment-header">
+                          <div class="username">Liguori, Anthony</div>
+                          <div class="datetime">11/04/2024 6:36 PM</div>
+                        </div>
+                        <p class="message">Thanks both! This is a huge milestone for Amazon overall. 
+                  
+                  I know this has been a long and trying road for the teams but I am excited about the results that will come from it!
+                  
+                  Regards,
+                  
+                  Anthony Liguori</p>
+                      </div>
+                  
+                      <div class="comment">
+                        <div class="comment-header">
+                          <div class="username">Anonymous</div>
+                          <div class="datetime">11/04/2024 6:22 PM</div>
+                        </div>
+                        <p class="message">Bedrock team, 
+                  
+                  Just sending a quick note to say congrats and thank you on the Haiku3.5 launch today.
+                  It's a super important milestone for us all, and I'm sure it'll pave the way for many more great achievements together.
+                  
+                  This is just the beginning… Thanks for phenomenal work pushing this over the finish-line, y'all rock!
+                  
+                  /Anonymous</p>
+                      </div>
+                    </div>
                   </div>
                </div>
             </div>
