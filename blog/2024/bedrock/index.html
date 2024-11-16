@@ -23,6 +23,7 @@
       <script src="/al-folio/assets/js/theme.js?9a0c749ec5240d9cda97bc72359a72c0"></script> 
       <script src="/assets/js/theme.js"></script> <script src="/assets/js/dark_mode.js"></script> 
       <script>initTheme();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
    </head>
    <body class="fixed-top-nav ">
       <header>
@@ -85,6 +86,22 @@
 
          </div>
       </div>
+      <p>Page view count <span id="counter" style="font-weight: bold; color: blue;">0</span>.</p>
+      <script>
+       window.onload = function() {
+         // Get current count from cookie or start at 0
+         let count = parseInt(Cookies.get('pageCount')) || 0;
+         
+         // Increment count
+         count++;
+         
+         // Update cookie with no expiration
+         Cookies.set('pageCount', count);
+         
+         // Update display
+         document.getElementById('counter').textContent = count;
+       };
+      </script>
       <footer class="fixed-bottom" role="contentinfo">
          <div class="container mt-0"> © Copyright 2024 Andy Peng.</div>
       </footer>
