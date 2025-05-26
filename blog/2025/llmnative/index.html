@@ -95,9 +95,45 @@
             <h2>LLMs vs Other Apps</h2>
             <p>I spent two years working on LLM SOTA models inference and serving. Recently, I transitioned from hosting Anthropic models to working with open-source models. The closer you get to the models themselves, the more you realize how non-trivial it is to run and optimize them effectively.</p>
             <p>Red Hat AI's <a href="https://x.com/RedHat_AI/status/1924801638700568766">tweets "LLM inference is too slow, too expensive, and too hard to scale."</a> provided an in-depth descriptions of those challenges.</p>
-            <li>
+            <table>
+              <tr>
+                <th>LLMs Apps Workloads</th>
+                <th>Other Apps Workloads</th>
+              </tr>
+              <tr>
+                <td>
+                  <li>
+                    Slow
+                  </li>
+                  <li>
+                    Resource-heavy
+                  </li>
+                  <li>
+                    Non-uniform
+                  </li>
+                  <li>
+                    Highly sensitive to latency
+                  </li>
+                </td>
+                <td>
+                  <li>
+                    Short-lived, uniform requests
+                  </li>
+                  <li>
+                    Consistent SLOs
+                  </li>
+                  <li>
+                    Even replica performance
+                  </li>
+                  <li>
+                    No benefit from coordinating across replicas
+                  </li>
+                </td>
+              </tr>
+            </table>
+            <p>
               Scale out vs Scale up: AI workloads are Scale up workloads. Larger models demand more compute. Science and algorithmic limitations decide simple scale out doesn't work.
-            </li>
+            </p>
             <li>
               Compute vs Memory Bound: Large model inference is two workloads: Prefill and Token genereation. Prefill needs a lot of computing resources to convert input into data structure that gets handed off to the next process. Token generation is that the model generates each token sequentially one at a time. And this puts a very different set of demands on AI infrastructure. Each time a token is generated, the entire model has to be read from memory, but only a small amount of compute is used. For this reason, token generation puts lots of demand on memory but only a small amount of compute, almost the exact opposite of the pre-fill workload. And for agentic AI scenario, customers care about fast prefill and really fast token generation. 
             </li>
