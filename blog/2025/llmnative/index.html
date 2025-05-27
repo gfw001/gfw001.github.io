@@ -147,7 +147,7 @@
             </li>
             <br>
             <h2>Last Mile Delivery</h2>
-            <p>Lately, I’ve seen a flourishing of open-source large model inference frameworks (like llm-d, Dynamo, SGLang…), as well as caching and engine projects such as LMCache, Mooncake, and vLLM. Looking back to early 2023, when running a GPU felt like lugging bricks, it’s clear that LLM inference and optimization are now starting to coalesce around some fuzzy but emerging industry-standard paradigms. As someone who’s been hands-on with large model serving for two years, I find this really encouraging.</p>
+            <p>Lately, I’ve seen a flourishing of open-source large model inference frameworks (like llm-d, Dynamo, SGLang..), as well as caching projects such as LMCache, Mooncake, and engines TensorRT, vLLM. Looking back to early 2023, when running a GPU felt like lugging bricks, it’s clear that LLM inference and optimization are now starting to coalesce around some fuzzy but emerging industry-standard paradigms. As someone who’s been hands-on with large model serving for two years, I find this really encouraging.</p>
             <p>Although this area doesn’t have the academic depth or community influence of model-focused blogs from respected researchers like <a href="https://lilianweng.github.io/posts/2025-05-01-thinking/">Lilian Weng</a> or <a href="https://ysymyth.github.io/The-Second-Half/">Shunyu Yao</a>, and it lacks the accessibility and popularity of agent-level applications, it still plays a vital role. It’s hard to classify, it's not the model itself, not the application layer, not infrastructure, and not hardware either. It’s perhaps closest in relationship to MCP vs agents and K8s vs CPU. Sitting between the model and the hardware, you could call this the 'middleware layer.'</p>
             <p>This middleware layer aims to tackle the real bottlenecks that stand in the way of deploying LLMs at scale: <em>“LLM inference is too slow, too expensive, and too hard to scale.”</em></p>
             <p>These are ‘last mile’ problems, making LLMs run efficiently, reliably, and elastically, and turning model capabilities into real user value. What’s more, nearly every project in this space is choosing open-source collaboration as the path forward, which is incredibly welcoming for those who are passionate about contributing to open-source communities. It feels a lot like the early days of public cloud 10 years ago: from CPU → virtualization → VM → containers → serverless.</p>
@@ -155,6 +155,24 @@
             <br>
             <h2>Next Golden Path</h2>
             <p>At Amazon, there's an internal concept known as 'the golden path', a set of opinionated best practice tooling, architecture, and configuration recommendations for the end-to-end builder experiences, popular options like AWS Lambda and ECS/Fargate. As all CPU-native apps and platforms passed decade, what's the golden path for LLM-native applications?</p>
+            <p>Communities appear to have already draw a few lines:</p>
+            <li>
+              Prefill and Decode Disaggregation 
+            </li>
+            <li>
+              Prefix / KV (key-value) Cache
+            </li>
+            <li>
+              Context-Aware Routing and AI-Aware Network Routing (LB)
+            </li>
+            <li>
+              QoS-Aware Routing 
+            </li>
+            <li>
+              Variant Autoscaling 
+            </li>
+            <p>...</p>
+            <br>
             <p>Rather than highlighting one or two specific software solutions, while waiting the next K8s timing coming, I prefer to talk about a new working model where Product, Engineering, and Research collaborate more closely than ever before. This kind of integration, unlike anything we've seen in the past, is just beginning to take shape. vLLM is a representative example. And the future remains wide open.</p>
             <br>
             <p></p>
