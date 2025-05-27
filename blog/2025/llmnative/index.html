@@ -94,7 +94,7 @@
             <br>
             <h2>LLMs vs Other Apps</h2>
             <p>I spent two years working on SOTA LLM inference, both closed-source models (Anthropic) and open-source models (Llama and DeepSeek). More recently, I transitioned concentration on model optimization and inference acceleration. The closer you get to the models themselves, the more you realize how non-trivial it is to run and optimize them effectively.</p>
-            <p>Red Hat AI's <a href="https://x.com/RedHat_AI/status/1924801638700568766">tweets "LLM inference is too slow, too expensive, and too hard to scale."</a> provided an in-depth descriptions of those challenges.</p>
+            <p>Red Hat AI's <a href="https://x.com/RedHat_AI/status/1924801645654810755">tweets "LLM inference is too slow, too expensive, and too hard to scale."</a> provided an in-depth descriptions of those challenges.</p>
             <table>
               <tr>
                 <th>LLMs Apps Workloads</th>
@@ -140,7 +140,7 @@
               Decode ≠ Prefill: LLM inference is two workloads, Prefill is compute-bound and Decode is memory-bound. Prefill needs a lot of computing resources to convert input into data structure that gets handed off to the next process. Decode (token generation) is that the model generates each token sequentially one at a time. And this puts a very different set of demands on AI infrastructure. Each time a token is generated, the entire model has to be read from memory, but only a small amount of compute is used. For this reason, token generation puts lots of demand on memory but only a small amount of compute. And for agentic AI scenario, customers care about fast prefill and really fast token generation. Standard deployments run both phases on the same GPU—inefficient. Disaggregated serving become necessary, separating these phases to independently scale and optimize them. 
             </li>
             <li>
-              Prompt Caching need: Many workloads are multi-turn (chat agents, tool-use, code completion). Routing to replicas with cached context avoids redundant prefill computation. This improves tail latencies by orders of magnitude when done right.
+              Context vs Latency: Prompt caching required. Many workloads are multi-turn (chat agents, tool-use, code completion). Routing to replicas with cached context avoids redundant prefill computation. This improves tail latencies by orders of magnitude when done right.
             </li>
             <li>
               Capacity Scarcity: GPU / accelerators limited. Computing resources are highly limited for every organization, a major difference compared to CPU-native apps, where resource constraints are typically less severe. In this context, Optimized Inference Scheduler (Cache-aware + disaggregation-aware scoring), QoS-aware inference (align latency-sensitive and latency-tolerant workloads to the right infra with better efficiency) and Variant Autoscaling (Traffic + hardware-aware autoscaler) become important. High availability and utilization are essential in the world of LLMs.
