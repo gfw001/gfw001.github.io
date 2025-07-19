@@ -23,7 +23,7 @@
       <meta name="keywords" content="Blog.">
       <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:title" content="ICML 2025 Recap">
-      <meta name="twitter:description" content="Recap">
+      <meta name="twitter:description" content="@YVR">
       <meta name="twitter:site" content="@pymhq">
       <meta name="twitter:creator" content="@pymhq">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
@@ -77,7 +77,7 @@
       <div class="container mt-5" role="main">
          <div class="post">
             <header class="post-header">
-               <h1 class="post-title">ICML 2025 Recap</h1>
+               <h1 class="post-title">ICML 2025 Summary</h1>
                <p class="post-meta"> Created in July, 2025 </p>
                <p class="post-tags"> <a href="/blog/2025"> <i class="fa-solid fa-calendar fa-sm"></i> 2025 </a>   ·   <a href="/blog/tag/llm"> <i class="fa-solid fa-hashtag fa-sm"></i> LLM</a>   <a href="/blog/tag/icml"> <i class="fa-solid fa-hashtag fa-sm"></i> icml</a>   <a href="/blog/tag/academia"> <i class="fa-solid fa-hashtag fa-sm"></i> academia</a>      ·   <a href="/blog/category/research"> <i class="fa-solid fa-tag fa-sm"></i> research</a> </p>
             </header>
@@ -89,94 +89,67 @@
             <br> 
             <hr>
             <br> 
-            <p>"Transformer" <a href="https://www.reddit.com/r/singularity/comments/1l9ple2/happy_8th_birthday_to_the_paper_that_set_all_this/">turns 8</a>, Cloud Native Computing Foundation (CNCF) turns 10 (refer <a href="https://pengandy.com/blog/2025/cncf10yo/">post</a>), Kubernetes, Lambda, ECS and Alexa turn 11, Bedrock and Claude turn 2. The shift from CPU-native to LLM/GPU-native applications has begun. What's the next golden path for this era ?</p>
+            <p></p>
             <br>
-            <h2>LLMs vs Other Apps</h2>
-            <p>I spent two years working on SOTA LLM inference, both closed-source models (Anthropic) and open-source models (Llama and DeepSeek). More recently, I transitioned concentration on model optimization and inference acceleration. The closer you get to the models themselves, the more you realize how non-trivial it is to run and optimize them effectively.</p>
-            <p>Red Hat AI's <a href="https://x.com/RedHat_AI/status/1924801645654810755">tweets "LLM inference is too slow, too expensive, and too hard to scale."</a> provided an in-depth descriptions of those challenges.</p>
-            <table>
-              <tr>
-                <th>LLMs Apps Workloads</th>
-                <th>Other Apps Workloads</th>
-              </tr>
-              <tr>
-                <td>
-                  <li>
-                    Slow
-                  </li>
-                  <li>
-                    Resource-heavy
-                  </li>
-                  <li>
-                    Non-uniform
-                  </li>
-                  <li>
-                    Highly sensitive to latency
-                  </li>
-                </td>
-                <td>
-                  <li>
-                    Short-lived, uniform requests
-                  </li>
-                  <li>
-                    Consistent SLOs
-                  </li>
-                  <li>
-                    Even replica performance
-                  </li>
-                  <li>
-                    No benefit from coordinating across replicas
-                  </li>
-                </td>
-              </tr>
-            </table>
-            <br>
-            <p>Peter DeSantis had an excellent keynote in re:Invent 2024 that highlighted "AI workloads are Scale up workloads. Larger models demand more compute. Science and algorithmic limitations decide simple scale out doesn't work." </p>
+            <h2></h2>
             <li>
-              Request Variance: LLM requests vary in size and resource use, RAG → long inputs, short outputs, Reasoning → short inputs, long outputs. This unevenness causes overloaded replicas, leading to longer inter-token latency.
+              ICML, along with ICLR and NeurIPS, is considered one of the top three conferences in machine learning. ICML thoughtfully added a “Reviewer” badge for those helping with paper reviews.
             </li>
             <li>
-              Decode ≠ Prefill: LLM inference is two workloads, Prefill is compute-bound and Decode is memory-bound. Prefill needs a lot of computing resources to convert input into data structure that gets handed off to the next process. Decode (token generation) is that the model generates each token sequentially one at a time. And this puts a very different set of demands on AI infrastructure. Each time a token is generated, the entire model has to be read from memory, but only a small amount of compute is used. For this reason, token generation puts lots of demand on memory but only a small amount of compute. And for agentic AI scenario, customers care about fast prefill and really fast token generation. Standard deployments run both phases on the same GPU—inefficient. Disaggregated serving become necessary, separating these phases to independently scale and optimize them. 
+              The venue was the Vancouver Convention Centre. The last time I was here was for NeurIPS 2019, during the early COVID mask era. Although it's the same venue, the conference topics have shifted from NLP to LLMs.
             </li>
             <li>
-              Prompt caching essential. Many workloads are multi-turn (chat agents, tool-use, code completion). Routing to replicas with cached context avoids redundant prefill computation. This improves tail latencies by orders of magnitude when done right.
+              Noticed that attendees, whether students job-hunting or companies and universities recruiting, were actively networking.
             </li>
             <li>
-              Capacity Scarcity: GPU / accelerators limited. Computing resources are highly limited for every organization, a major difference compared to CPU-native apps, where resource constraints are typically less severe. In this context, Optimized Inference Scheduler (Cache-aware + disaggregation-aware scoring), QoS-aware inference (align latency-sensitive and latency-tolerant workloads to the right infra with better efficiency) and Variant Autoscaling (Traffic + hardware-aware autoscaler) become important. High availability and utilization are essential in the world of LLMs.
+              During ICML, I received DMs from several executives at different companies. Many mentioned they had read my blog about LLM middleware. I'm happy that my sharing resonated and was recognized to some extent in the industry.
             </li>
             <br>
-            <h2>Last Mile Delivery</h2>
-            <p>Lately, I’ve seen a flourishing of open-source large model inference frameworks (like llm-d, Dynamo, SGLang..), as well as caching projects such as LMCache, Mooncake, and engines TensorRT, vLLM. Looking back to early 2023, when running a GPU felt like lugging bricks, it’s clear that LLM inference and optimization are now starting to coalesce around some fuzzy but emerging industry-standard paradigms. As someone who’s been hands-on with large model serving for two years, I find this really encouraging.</p>
-            <p>Although this area doesn’t have the academic depth or community influence of blogs from respected researchers like <a href="https://lilianweng.github.io/posts/2025-05-01-thinking/">Lilian Weng</a> or <a href="https://ysymyth.github.io/The-Second-Half/">Shunyu Yao</a>, and it lacks the accessibility and popularity of agent-level applications, it still plays a vital role. It’s hard to classify, it's not the model itself, not the application layer, not infrastructure, and not hardware either. It’s perhaps closest in relationship to MCP vs agents and K8s vs CPU. Sitting between the model and the hardware, you could call this the 'middleware layer.'</p>
-            <p>This middleware layer aims to tackle the real bottlenecks that stand in the way of deploying LLMs at scale: <em>“LLM inference is too slow, too expensive, and too hard to scale.”</em></p>
-            <p>These are ‘last mile’ problems, making LLMs run efficiently, reliably, and elastically, and turning model capabilities into real user value. What’s more, nearly every project in this space is choosing open-source collaboration as the path forward, which is incredibly welcoming for those who are passionate about contributing to open-source communities. It feels a lot like the early days of public cloud 10 years ago: from CPU → virtualization → VM → containers → serverless.</p>
-            <p>The LLM/GPU-native era has begun.</p>
+            <h2>Exhibitor Highlights</h2>
+            <li>
+              Amazon's booth was nicely done, maintaining the rainforest theme. We had T-shirts and two kinds of swag: corgis and bananas. On the first day, only corgis were left; on the second, only bananas — it seems visitor preferences changed daily. Every team member had research chats with various candidates, a great opportunity for students to learn about Amazon teams from the inside.
+            </li>
+            <img src="" height="500">
+            <li>
+              At the exhibit hall entrance, Jump had a robotic arm coffee machine using Artly, a brand started by a couple from Seattle.
+            </li>
+            <li>
+              In M7: GDM (many came from London), Microsoft, Meta; others included IBM, Databricks, Netflix. Didn't see NVIDIA.
+            </li>
+            <li>
+              From China: Tencent (with lots of 🐧plushies), ByteDance, Huawei. Alibaba didn’t attend.
+            </li>
             <br>
-            <h2>Next Golden Path</h2>
-            <p>At Amazon, there's an internal concept known as 'the golden path', a set of opinionated best practice tooling, architecture, and configuration recommendations for the end-to-end builder experiences, popular options like AWS Lambda and ECS/Fargate. As all CPU-native apps and platforms passed decade, what's the golden path for LLM-native applications?</p>
-            <p>Communities appear to have already draw a few lines:</p>
+            <h2>Offline Events Attended (By Invitation)</h2>
             <li>
-              Prefill and Decode Disaggregation: Nvidia's recent research publication <em><a href="https://research.nvidia.com/publication/2025-06_beyond-buzz-pragmatic-take-inference-disaggregation">"Beyond the Buzz: A Pragmatic Take on Inference Disaggregation"</a></em> offers a detailed explanation and presents practical design principles.
+              Anyscale: Invited by co-founder Robert Nishihara. The event was in a bar. We discussed the growing importance of online data quality.
             </li>
             <li>
-              Prefix / KV (key-value) Cache
+              YC Lunch: Held at the “Five Sails”, very upscale. Many people were not ICML attendees but came to pitch projects, seek funding, or find co-founders. Had a long conversation with Pete Koomen (General Partner of YC). Initially, we were listening to a PhD student’s project on a LLM-native programming language. I later debated whether programming would even be needed in the future, or modules like that. Multiple drink options and refined desserts. Ran into the founder of Ollama, who invited me to their product’s 2nd anniversary.
             </li>
             <li>
-              Context-Aware Routing and AI-Aware Network Routing (LB)
+              Perplexity HH Bistro Night: Great vibes and well organized.
             </li>
             <li>
-              QoS-Aware Routing 
+              Turing x Anyscale: Co-hosted event.
             </li>
             <li>
-              Variant Autoscaling 
+              MIT E14 Fund: Later ran into the organizer at the YC event.
             </li>
-            <p>...</p>
+            <li>
+              机器之心 Banquet: Held at the Hyatt. More business-oriented, well-staffed, lots of attendees. There was a photo booth with a dedicated photographer. Even if you arrived late, waitstaff could bring out food.
+            </li>
             <br>
-            <img src="/assets/blog/pd.png" height="500">
-            <p>Figure: Prefill and Decode Phases of the Transformer</p>
-            <br>
-            <p>Now the model itself differentiation is shrinking, in the future, this area will become one of key differentiators: how to run models better.</p>
-            <p>Rather than picking one or two specific software solutions, while waiting the next K8s timing coming, I prefer to talk about a new working model where Product, Engineering, and Research collaborate more closely than ever before. This kind of integration, unlike anything we've seen in the past, is just beginning to take shape. vLLM is a representative example. And the future remains wide open.</p>
+            <h2>Events I Knew About But Didn’t Attend</h2>
+            <li>
+              Amazon AGI SF lab after hours.
+            </li>
+            <li>
+              Huawei and Tencent cruises, shows how actively Chinese companies are expanding abroad, and also the large talent pool of fresh grads from Chinese universities.
+            </li>
+            <li>
+              Cursor, OAI etc.
+            </li>
             <br>
             <p></p>
          </div>
