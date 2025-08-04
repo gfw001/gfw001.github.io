@@ -62,7 +62,35 @@
                <h1>Puget Sound Journal</h1>
                <h2>Andy's Blog</h2>
                <p>an experimental space writing about research (scientific), product, and more.</p>
+               <p>
+                 <form id="subscribe-form">
+                  <form id="subscribe-form">
+                    <input type="email" id="email-input" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                  </form>
+                  <div id="subscribe-msg" style="display:none; color:green;">Thank you for subscribing!</div>
+                  <script>
+                    document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+                      e.preventDefault();
+                      var email = document.getElementById('email-input').value;
+                      fetch('https://script.google.com/macros/s/AKfycbyHuXsM9Z2ykmOTBxo9WRL3MadLMrtJViEKgM8Y6Cae-4fc4_zeL--cn5HXl4iJh-58/exec', {
+                        method: 'POST',
+                        body: JSON.stringify({ email: email }),
+                        headers: { 'Content-Type': 'application/json' }
+                      })
+                      .then(response => response.json())
+                      .then(data => {
+                        document.getElementById('subscribe-form').reset();
+                        document.getElementById('subscribe-msg').style.display = 'block';
+                        setTimeout(function() {
+                          document.getElementById('subscribe-msg').style.display = 'none';
+                        }, 5000);
+                      });
+                    });
+                  </script>
+               </p>
             </div>
+            <div>
             <div class="tag-category-list">
                <ul class="p-0 m-0">
                   <li> <i class="fa-solid fa-hashtag fa-sm"></i> <a href="/blog/tag/llm">llm</a> </li>
