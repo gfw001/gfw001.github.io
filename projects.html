@@ -32,9 +32,10 @@
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
       <link rel="stylesheet" href="/assets/css/main.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
-      <script src="/assets/js/theme.js"></script> <script src="/assets/js/dark_mode.js"></script>
-   </head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
+<script src="/assets/js/theme.js"></script> <script src="/assets/js/dark_mode.js"></script>
+<script src="/assets/js/components.js" defer></script>
+</head>
   
 <style>
    img {
@@ -167,28 +168,8 @@
     }
 </style>
 
-<body class="fixed-top-nav ">
-      <header>
-         <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
-            <div class="container">
-               <a class="navbar-brand title font-weight-lighter" href="/portfolio">Peng, <span class="font-weight-bold">Andy</span></a> 
-               <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> 
-               <div class="collapse navbar-collapse text-right" id="navbarNav">
-                  <ul class="navbar-nav ml-auto flex-nowrap">
-                     <li class="nav-item "> <a class="nav-link" href="/">About</a> </li>
-                     <li class="nav-item "> <a class="nav-link" href="/portfolio">Bio</a> </li>
-                     <li class="nav-item "> <a class="nav-link" href="/blog/">Blog</a> </li>
-                     <li class="nav-item "> <a class="nav-link" href="/publications">Publications</span></a> </li>
-                     <li class="nav-item active"> <a class="nav-link" href="/projects">Projects<span class="sr-only">(current)</a> </li>
-                     <li class="nav-item "> <a class="nav-link" href="/cv">CV</a> </li>
-                  </ul>
-               </div>
-            </div>
-         </nav>
-         <progress id="progress" value="0">
-            <div class="progress-container"> <span class="progress-bar"></span> </div>
-         </progress>
-      </header>
+<body class="fixed-top-nav" data-page="projects">
+      <div id="navbar-placeholder"></div>
       <div class="container mt-5">
       <div class="post">
       <header class="post-header">
@@ -1207,12 +1188,7 @@
          </ol>
          
        
-<footer class="fixed-bottom">
-   <div class="container mt-0 d-flex justify-content-between align-items-center">
-      <div>© Copyright 2025 Andy Peng.</div>
-      <div><a href="/portfolio" class="footer-link">En</a> | <a href="/cn" class="footer-link">Ch</a></div>
-   </div>
-</footer>
+<div id="footer-placeholder"></div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
