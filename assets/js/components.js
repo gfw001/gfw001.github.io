@@ -48,14 +48,17 @@
   function initComponents() {
     const promises = [];
     
+    // Cache busting parameter to force reload of components
+    const cacheBuster = '?v=' + Date.now();
+    
     // Load navbar if placeholder exists
     if (document.getElementById('navbar-placeholder')) {
-      promises.push(loadComponent('/components/navbar.html', '#navbar-placeholder'));
+      promises.push(loadComponent('/components/navbar.html' + cacheBuster, '#navbar-placeholder'));
     }
     
     // Load footer if placeholder exists
     if (document.getElementById('footer-placeholder')) {
-      promises.push(loadComponent('/components/footer.html', '#footer-placeholder'));
+      promises.push(loadComponent('/components/footer.html' + cacheBuster, '#footer-placeholder'));
     }
 
     // Run progress bar setup after navbar is loaded
