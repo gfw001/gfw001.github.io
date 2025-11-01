@@ -1,3 +1,4 @@
+<!DOCTYPE html> 
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HTV795ZMCP"></script>
@@ -9,246 +10,191 @@
   gtag('config', 'G-HTV795ZMCP');
 </script>
 
-<!DOCTYPE html>
 <html lang="en">
-<head>
-
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Paper Readings</title>
-  <meta name="description" content="Paper Readings.">
-  <meta name="author" content="Peng, Andy">
-
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href=/libs/external/skeleton/normalize.css>
-  <link rel="stylesheet" href=/libs/external/skeleton/skeleton.css>
-  <link rel="stylesheet" href=/libs/custom/my_css.css>
-
-  <!-- JQuery
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script src=/libs/external/jquery-3.1.1.min.js></script>
-
-  <!-- Font-Awesome
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href=/libs/external/font-awesome-4.7.0/css/font-awesome.min.css>
-
-  <!-- Skeleton tabs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href=/libs/external/skeleton_tabs/skeleton-tabs.css>
-  <script src=/libs/external/skeleton_tabs/skeleton-tabs.js></script>
-
-  <!-- Timeline
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href=/libs/external/timeline.css>
-
-  <!-- Scripts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <!--<link rel="stylesheet" href=/libs/external/github-prettify-theme.css>-->
-  <script src=/libs/custom/my_js.js></script>
-
-  <!-- Favicon
-       –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <!-- 
-  <link rel="icon" type="image/png" href=/libs/icon.png>
-  <link rel="shortcut icon" type="image/png" href=/libs/icon.png>
-  -->
-
-</head>
-<body>
-
-<!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-
-    <section class="header">
-      <div class="row">
-        <div class="nine columns main-description">
-        </div>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Paper Readings | Andy Peng</title>
+      <meta name="author" content="Peng, Andy">
+      <meta name="description" content="Notable papers and readings">
+      <meta name="keywords" content="Papers, Research">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+      <link defer rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media id="highlight_theme_light">
+      <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
+      <link rel="canonical" href="https://pengandy.com/ReadsPapers">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
+      <link rel="shortcut icon" href="/assets/img/enfj.ico"/>
+      <script src="/assets/js/theme.js?96d6b3e1c3604aca8b6134c7afdd5db6" type="2ef554a3a95c8d10e5edf0a5-text/javascript"></script> 
+      <script src="/assets/js/dark_mode.js?9b17307bb950ffa2e34be0227f53558f" type="2ef554a3a95c8d10e5edf0a5-text/javascript"></script>
+      <script src="/assets/js/components.js" defer></script>
+   </head>
+   <style>
+      // Paper reading list specific styles
+      .paper-list {
+        margin-top: 2rem;
+      }
+      
+      .paper-item {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #e8e8e8;
+      }
+      
+      .paper-item:last-child {
+        border-bottom: none;
+      }
+      
+      .paper-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 0.5rem;
+      }
+      
+      .paper-venue {
+        color: #666;
+        font-style: italic;
+        margin-bottom: 0.5rem;
+      }
+      
+      .paper-year {
+        color: var(--global-theme-color);
+        font-weight: 500;
+      }
+      
+      h2.year-header {
+        color: var(--global-theme-color);
+        font-size: 1.75rem;
+        font-weight: 600;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+        padding-top: 1rem;
+        border-top: 2px solid var(--global-divider-color);
+      }
+      
+      h2.year-header:first-of-type {
+        margin-top: 1rem;
+        border-top: none;
+      }
+   </style>
+   <body class="fixed-top-nav" data-page="">
+      <div id="navbar-placeholder"></div>
+      <div class="container mt-5">
+         <div class="post">
+            <header class="post-header">
+               <h1 class="post-title">Paper Readings</h1>
+               <p class="post-description">Notable papers in distributed systems, cloud computing, and machine learning</p>
+            </header>
+            <article>
+               <div class="paper-list">
+                  
+                  <h2 class="year-header">2023</h2>
+                  
+                  <div class="paper-item">
+                     <div class="paper-title">On-demand Container Loading in AWS Lambda</div>
+                     <div class="paper-venue">USENIX Annual Technical Conference (USENIX ATC '23)</div>
+                  </div>
+                  
+                  <div class="paper-item">
+                     <div class="paper-title">Building and operating a pretty big storage system called S3</div>
+                     <div class="paper-venue">USENIX Conference on File and Storage Technologies (USENIX FAST '23)</div>
+                  </div>
+                  
+                  <h2 class="year-header">2022</h2>
+                  
+                  <div class="paper-item">
+                     <div class="paper-title">Amazon DynamoDB: A Scalable, Predictably Performant, and Fully Managed NoSQL Database Service</div>
+                     <div class="paper-venue">USENIX Annual Technical Conference (USENIX ATC '22)</div>
+                  </div>
+                  
+                  <h2 class="year-header">2021</h2>
+                  
+                  <div class="paper-item">
+                     <div class="paper-title">Using lightweight formal methods to validate a key-value storage node in Amazon S3</div>
+                     <div class="paper-venue">ACM Symposium on Operating Systems Principles (SOSP '21)</div>
+                  </div>
+                  
+                  <h2 class="year-header">2020</h2>
+                  
+                  <div class="paper-item">
+                     <div class="paper-title">Firecracker: Lightweight Virtualization for Serverless Applications</div>
+                     <div class="paper-venue">USENIX Symposium on Networked Systems Design and Implementation (NSDI '20)</div>
+                  </div>
+                  
+                  <h2 class="year-header">2017</h2>
+                  
+                  <div class="paper-item">
+                     <div class="paper-title">Attention Is All You Need</div>
+                     <div class="paper-venue">NeurIPS 2017</div>
+                  </div>
+                  
+                  <h2 class="year-header">2016</h2>
+                  
+                  <div class="paper-item">
+                     <div class="paper-title">Borg, Omega, and Kubernetes: Lessons learned from three container-management systems over a decade</div>
+                     <div class="paper-venue">ACM Queue, Volume 14, Issue 1</div>
+                  </div>
+                  
+                  <h2 class="year-header">2015</h2>
+                  
+                  <div class="paper-item">
+                     <div class="paper-title">Large-scale cluster management at Google with Borg</div>
+                     <div class="paper-venue">Proceedings of the European Conference on Computer Systems (EuroSys '15)</div>
+                  </div>
+                  
+                  <h2 class="year-header">2013</h2>
+                  
+                  <div class="paper-item">
+                     <div class="paper-title">Omega: flexible, scalable schedulers for large compute clusters</div>
+                     <div class="paper-venue">ACM European Conference on Computer Systems (EuroSys '13)</div>
+                  </div>
+                  
+                  <div class="paper-item">
+                     <div class="paper-title">Spanner: Google's Globally Distributed Database</div>
+                     <div class="paper-venue">ACM Transactions on Computer Systems (TOCS), Volume 31, Issue 3</div>
+                  </div>
+                  
+                  <h2 class="year-header">2007</h2>
+                  
+                  <div class="paper-item">
+                     <div class="paper-title">Dynamo: Amazon's Highly Available Key-value Store</div>
+                     <div class="paper-venue">ACM Symposium on Operating Systems Principles (SOSP '07)</div>
+                  </div>
+                  
+                  <h2 class="year-header">2006</h2>
+                  
+                  <div class="paper-item">
+                     <div class="paper-title">Bigtable: A Distributed Storage System for Structured Data</div>
+                     <div class="paper-venue">USENIX Symposium on Operating Systems Design and Implementation (OSDI '06)</div>
+                  </div>
+                  
+                  <h2 class="year-header">2004</h2>
+                  
+                  <div class="paper-item">
+                     <div class="paper-title">MapReduce: Simplified Data Processing on Large Clusters</div>
+                     <div class="paper-venue">USENIX Symposium on Operating Systems Design and Implementation (OSDI '04)</div>
+                  </div>
+                  
+                  <h2 class="year-header">2003</h2>
+                  
+                  <div class="paper-item">
+                     <div class="paper-title">The Google File System</div>
+                     <div class="paper-venue">ACM Symposium on Operating Systems Principles (SOSP '03)</div>
+                  </div>
+                  
+               </div>
+            </article>
+         </div>
       </div>
-    </section>
-
-    <div class="navbar-spacer"></div>
-    <nav class="navbar">
-      <div class="container">
-        <ul class="navbar-list">
-          <li class="navbar-item"><a class="navbar-link" href=/index.html#publications>Papers Readings</a></li>
-          <!---
-          --->
-        </ul>
-      </div>
-    </nav>
-
-<div class="docs-section" id="publications">
-  <h4>Publications</h4>
-
-<div class="paper">
-   <p class="title"><b>On-demand Container Loading in AWS Lambda</b>
-     <a class="button" href="" target="_blank">PDF</a>
-   </p>
-  <p></p>
-  <p><i>USENIX Annual Technical Conference (USENIX ATC '23)</i></p>
-  <div class="paper-buttons">
-    
-  </div>
-</div>
-
-<div class="paper">
-   <p class="title"><b>Building and operating a pretty big storage system called S3</b>
-     <a class="button" href="" target="_blank">PDF</a>
-   </p>
-  <p></p>
-  <p><i>USENIX Conference on File and Storage Technologies (USENIX FAST '23)</i></p>
-  <div class="paper-buttons">
-    
-  </div>
-</div>
-
-<div class="paper">
-   <p class="title"><b>Amazon DynamoDB: A Scalable, Predictably Performant, and Fully Managed NoSQL Database Service</b>
-     <a class="button" href="" target="_blank">PDF</a>
-   </p>
-  <p></p>
-  <p><i>2022</i></p>
-  <div class="paper-buttons">
-    
-  </div>
-</div>
-
-<div class="paper">
-   <p class="title"><b>Using lightweight formal methods to validate a key-value storage node in Amazon S3</b>
-     <a class="button" href="" target="_blank">PDF</a>
-   </p>
-  <p></p>
-  <p><i>ACM Symposium on Operating Systems Principles (SOSP 2021)</i></p>
-  <div class="paper-buttons">
-    
-  </div>
-</div>
-
-<div class="paper">
-   <p class="title"><b>Firecracker: Lightweight Virtualization for Serverless Applications</b>
-     <a class="button" href="" target="_blank">PDF</a>
-   </p>
-  <p></p>
-  <p><i>USENIX Symposium on Networked Systems Design and Implementation (NSDI '20)</i></p>
-  <div class="paper-buttons">
-    
-  </div>
-</div>
-
-<div class="paper">
-   <p class="title"><b>Attention Is All You Need</b>
-     <a class="button" href="" target="_blank">PDF</a>
-   </p>
-  <p></p>
-  <p><i>2017</i></p>
-  <div class="paper-buttons">
-    
-  </div>
-</div>
-
-<div class="paper">
-   <p class="title"><b>Borg, Omega, and Kubernetes: Lessons learned from three container-management systems over a decade</b>
-     <a class="button" href="" target="_blank">PDF</a>
-   </p>
-  <p></p>
-  <p><i>2016</i></p>
-  <div class="paper-buttons">
-    
-  </div>
-</div>
-  
-<div class="paper">
-   <p class="title"><b>Large-scale cluster management at Google with Borg</b>
-     <a class="button" href="" target="_blank">PDF</a>
-   </p>
-  <p></p>
-  <p><i>Proceedings of the European Conference on Computer Systems (EuroSys), ACM, Bordeaux, France (2015)</i></p>
-  <div class="paper-buttons">
-    
-  </div>
-</div>
-
-<div class="paper">
-   <p class="title"><b>Omega: flexible, scalable schedulers for large compute clusters</b>
-     <a class="button" href="" target="_blank">PDF</a>
-   </p>
-  <p></p>
-  <p><i>2013</i></p>
-  <div class="paper-buttons">
-    
-  </div>
-</div>
-
-<div class="paper">
-   <p class="title"><b>Spanner: Google's Globally Distributed Database</b>
-     <a class="button" href="" target="_blank">PDF</a>
-   </p>
-  <p></p>
-  <p><i>2013</i></p>
-  <div class="paper-buttons">
-    
-  </div>
-</div>
-
-<div class="paper">
-   <p class="title"><b>Dynamo: Amazon’s Highly Available Key-value Store</b>
-     <a class="button" href="" target="_blank">PDF</a>
-   </p>
-  <p></p>
-  <p><i>2007</i></p>
-  <div class="paper-buttons">
-    
-  </div>
-</div>
-
-<div class="paper">
-   <p class="title"><b>Bigtable: A Distributed Storage System for Structured Data</b>
-     <a class="button" href="" target="_blank">PDF</a>
-   </p>
-  <p></p>
-  <p><i>2006</i></p>
-  <div class="paper-buttons">
-    
-  </div>
-</div>
-
-<div class="paper">
-   <p class="title"><b>MapReduce: Simplified Data Processing on Large Clusters</b>
-     <a class="button" href="" target="_blank">PDF</a>
-   </p>
-  <p></p>
-  <p><i>2004</i></p>
-  <div class="paper-buttons">
-    
-  </div>
-</div>
-
-<div class="paper">
-   <p class="title"><b>The Google File System</b>
-     <a class="button" href="" target="_blank">PDF</a>
-   </p>
-  <p></p>
-  <p><i>2003</i></p>
-  <div class="paper-buttons">
-    
-  </div>
-</div>
-
-
-
-</div>
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-</body>
+      <div id="footer-placeholder"></div>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" type="2ef554a3a95c8d10e5edf0a5-text/javascript"></script>
+   </body>
 </html>
