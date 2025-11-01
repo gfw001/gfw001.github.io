@@ -300,12 +300,11 @@
       <script>
          // Load service content directly
          (function() {
-           // First create the card structure
+           // First create the card structure (without title to avoid duplication with page title)
            const placeholder = document.getElementById('service-placeholder');
            if (placeholder) {
              placeholder.innerHTML = `
                <div class="card mt-3 p-3">
-                 <h3 class="card-title font-weight-medium">Service</h3>
                  <div id="service-content-placeholder"></div>
                </div>
              `;
