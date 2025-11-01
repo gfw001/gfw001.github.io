@@ -784,14 +784,26 @@
       <script>
          // Load service component for CV
          (function() {
-           fetch('/components/service-cv.html')
-             .then(response => response.text())
-             .then(html => {
-               const placeholder = document.getElementById('service-placeholder');
-               if (placeholder) {
-                 placeholder.innerHTML = html;
-               }
-             });
+           const placeholder = document.getElementById('service-placeholder');
+           if (placeholder) {
+             // Create the card structure
+             placeholder.innerHTML = `
+               <div class="card mt-3 p-3">
+                 <h3 class="card-title font-weight-medium">Service</h3>
+                 <div id="service-content-placeholder-cv"></div>
+               </div>
+             `;
+             
+             // Load the actual content
+             fetch('/components/service-content.html')
+               .then(response => response.text())
+               .then(html => {
+                 const contentPlaceholder = document.getElementById('service-content-placeholder-cv');
+                 if (contentPlaceholder) {
+                   contentPlaceholder.innerHTML = html;
+                 }
+               });
+           }
          })();
       </script>
    </body>

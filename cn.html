@@ -1865,14 +1865,24 @@
       <script>
          // Load service component (Chinese)
          (function() {
-           fetch('/components/service-cn.html')
-             .then(response => response.text())
-             .then(html => {
-               const placeholder = document.getElementById('service-placeholder');
-               if (placeholder) {
-                 placeholder.innerHTML = html;
-               }
-             });
+           const placeholder = document.getElementById('service-placeholder');
+           if (placeholder) {
+             // Create the wrapper structure with Chinese title
+             placeholder.innerHTML = `
+               <h2><a href="/service" style="color: inherit;">服务</a></h2>
+               <div class="service" id="service-content-placeholder-cn"></div>
+             `;
+             
+             // Load the actual content
+             fetch('/components/service-content.html')
+               .then(response => response.text())
+               .then(html => {
+                 const contentPlaceholder = document.getElementById('service-content-placeholder-cn');
+                 if (contentPlaceholder) {
+                   contentPlaceholder.innerHTML = html;
+                 }
+               });
+           }
          })();
       </script>
    </body>

@@ -2378,14 +2378,24 @@
       <script>
          // Load service component
          (function() {
-           fetch('/components/service.html')
-             .then(response => response.text())
-             .then(html => {
-               const placeholder = document.getElementById('service-placeholder');
-               if (placeholder) {
-                 placeholder.innerHTML = html;
-               }
-             });
+           const placeholder = document.getElementById('service-placeholder');
+           if (placeholder) {
+             // Create the wrapper structure
+             placeholder.innerHTML = `
+               <h2><a href="/service" style="color: inherit;">Service</a></h2>
+               <div class="service" id="service-content-placeholder-portfolio"></div>
+             `;
+             
+             // Load the actual content
+             fetch('/components/service-content.html')
+               .then(response => response.text())
+               .then(html => {
+                 const contentPlaceholder = document.getElementById('service-content-placeholder-portfolio');
+                 if (contentPlaceholder) {
+                   contentPlaceholder.innerHTML = html;
+                 }
+               });
+           }
          })();
       </script>
    </body>
