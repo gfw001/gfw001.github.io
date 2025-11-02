@@ -61,8 +61,21 @@
       promises.push(loadComponent('/components/footer.html' + cacheBuster, '#footer-placeholder'));
     }
 
-    // Run progress bar setup after navbar is loaded
+    // Run progress bar setup and set active nav after navbar is loaded
     Promise.all(promises).then(() => {
+      // Set active nav item based on current page
+      const currentPage = document.body.getAttribute('data-page');
+      if (currentPage) {
+        const navItem = document.querySelector(`.navbar-nav [data-page="${currentPage}"]`);
+        if (navItem) {
+          navItem.classList.add('active');
+          const link = navItem.querySelector('.nav-link');
+          if (link) {
+            link.innerHTML += '<span class="sr-only">(current)</span>';
+          }
+        }
+      }
+      
       if (typeof progressBarSetup === 'function') {
         progressBarSetup();
       }
