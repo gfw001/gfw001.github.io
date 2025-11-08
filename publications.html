@@ -89,7 +89,20 @@
 	    text-align: center;
 	    padding: 1rem;
 	}
-	
+
+	/* Book-specific styles - show complete cover image */
+	.publication-item.book-item .publication-image {
+	    width: 200px;
+	    height: 280px;
+	    background-color: #ffffff;
+	}
+
+	.publication-item.book-item .publication-image img {
+	    object-fit: contain;
+	    width: 100%;
+	    height: 100%;
+	}
+
 	.publication-content {
 	    flex: 1;
 	}
@@ -155,8 +168,17 @@
 	        height: 200px;
 	        margin-right: 0;
 	        margin-bottom: 1rem;
+	    }
+
+	    /* Book items on mobile - maintain aspect ratio */
+	    .publication-item.book-item .publication-image {
+	        width: 100%;
+	        height: 350px;
+	        max-width: 250px;
+	        margin-left: auto;
+	        margin-right: auto;
+	    }
 	}
-}
 
 	/* Image protection */
 	.publication-image img {
@@ -230,10 +252,10 @@
 	
 <div class="docs-section" id="publications">
   <h2 class="section-header">Books</h2>
-  
+
   <h2 class="year">2025</h2>
-  
-  <div class="publication-item">
+
+  <div class="publication-item book-item">
     <div class="publication-image">
       <!-- Replace 'path/to/book-cover.jpg' with actual image path -->
       <img src="assets/publications/packt ds.jpg" alt="DeepSeek Essentials Book Cover" onerror="this.parentElement.innerHTML='<div class=\'no-image\'>DeepSeek Essentials</div>'">
