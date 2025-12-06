@@ -34,7 +34,19 @@
       <link rel="stylesheet" href="/assets/css/main.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-      <script src="/assets/js/theme.js"></script> <script src="/assets/js/dark_mode.js"></script> 
+      <script src="/assets/js/theme.js"></script> <script src="/assets/js/dark_mode.js"></script>
+      <style>
+         /* Language toggle styling */
+         .lang-en, .lang-zh {
+            transition: opacity 0.3s ease-in-out;
+         }
+         .btn-group .btn {
+            min-width: 100px;
+         }
+         .btn-group .btn.active {
+            font-weight: 600;
+         }
+      </style>
    </head>
    <style>
       img {
@@ -1651,11 +1663,11 @@
                <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> 
                <div class="collapse navbar-collapse text-right" id="navbarNav">
                   <ul class="navbar-nav ml-auto flex-nowrap">
-		     <li class="nav-item active"> <a class="nav-link" href="/portfolio">Bio <span class="sr-only">(current)</span> </a> </li>
-		     <li class="nav-item "> <a class="nav-link" href="/blog/">Blog</a> </li>
-                     <li class="nav-item "> <a class="nav-link" href="/publications">Books & Invited Talks</a> </li>
-                     <li class="nav-item "> <a class="nav-link" href="/projects">Projects</a> </li>
-                     <li class="nav-item "> <a class="nav-link" href="/service">Services</a> </li>
+		     <li class="nav-item active"> <a class="nav-link" href="/portfolio"><span class="lang-en">Bio</span><span class="lang-zh" style="display: none;">简介</span> <span class="sr-only">(current)</span> </a> </li>
+		     <li class="nav-item "> <a class="nav-link" href="/blog/"><span class="lang-en">Blog</span><span class="lang-zh" style="display: none;">博客</span></a> </li>
+                     <li class="nav-item "> <a class="nav-link" href="/publications"><span class="lang-en">Books & Invited Talks</span><span class="lang-zh" style="display: none;">书籍 & 邀请演讲</span></a> </li>
+                     <li class="nav-item "> <a class="nav-link" href="/projects"><span class="lang-en">Projects</span><span class="lang-zh" style="display: none;">项目</span></a> </li>
+                     <li class="nav-item "> <a class="nav-link" href="/service"><span class="lang-en">Services</span><span class="lang-zh" style="display: none;">服务</span></a> </li>
                      <li class="nav-item "> <a class="nav-link" href="/cv">CV</a> </li>
                   </ul>
                </div>
@@ -1680,7 +1692,9 @@
                   </figure>
                </div>
                <div class="clearfix">
-                  <p>PNW resident. Engineer, researcher, architect, and advisor. Specializing in large-scale distributed systems and cloud computing. <br> UTL & Intrapreneur. Building basic services. Has managed and led both 0-to-1 innovation and 10x product scaling across diverse verticals: Amazon SageMaker and <a href="https://aws.amazon.com/bedrock/">Bedrock</a> <a href="https://www.youtube.com/clip/Ugkxu2jdDijd19_WKhrZjjRMjtplJX-antEM">
+                  <!-- English Bio -->
+                  <div class="lang-en">
+                     <p>PNW resident. Engineer, researcher, architect, and advisor. Specializing in large-scale distributed systems and cloud computing. <br> UTL & Intrapreneur. Building basic services. Has managed and led both 0-to-1 innovation and 10x product scaling across diverse verticals: Amazon SageMaker and <a href="https://aws.amazon.com/bedrock/">Bedrock</a> <a href="https://www.youtube.com/clip/Ugkxu2jdDijd19_WKhrZjjRMjtplJX-antEM">
             		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
                             <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
                             </svg>
@@ -1692,12 +1706,19 @@
             		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
                             <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
                             </svg>
-            		</a> (<a href="https://aws.amazon.com/products/compute/">Serverless Compute</a>, Founding engineer & TLM), <a href="https://aws.amazon.com/fargate/">Fargate</a>, Alexa AI (Healthcare + Conversational AI, Founding engineer of <a href="https://www.cnbc.com/2018/05/10/amazon-is-building-a-health-and-wellness-team-within-alexa.html">Healthcare domain</a>), <a href="https://www.lastweekinaws.com/podcast/screaming-in-the-cloud/stepping-onto-the-aws-commerce-platform-with-james-greenfield/">Commerce Platform</a> (Scale $110B ARR Bill Run) and cross-product line involvement in Lambda, ECS and Elastic Beanstalk. In charge of multiple company wide privileged and confidential programs. Diverse experience encompassing both technical leadership and people management, including cross-company and multidisciplinary organizations collaborations. <br> Organizing committee member for top tier conferences (NeurIPS 25 Co-Chair). Program committee member for ICML, KDD, NeurIPS etc., as well as for Non-Profit Organizations like the Linux Foundation and the Cloud Native Computing Foundation (CNCF). Guest lecturer and mentor at the University of Washington’s Foster School of Business. <a href="https://www.ai2incubator.com/">AI2 Incubator</a> Resident Expert. </p>
-		  <p>Research Areas (current): <span class="keyword">AI + ML</span>, <span class="keyword">LLM Inference and Optimization</span>, <span class="keyword">Model Evaluation and Benchmark</span>, <span class="keyword">Containers, Serverless Compute & Virtualization</span>, <span class="keyword">Open Source</span>. </p>
-		  <p>Fan of Orca, Pickleball, Seattle Kraken, Seahawk, Kosaku Shima, Lorde, Quentin Tarantino, Herman Melville.</p>
-		  <p>Collecting magnets and mugs.</p>
-		  <p>Be concise, be curious, be real, and building primitives.</p>
-		  <p>
+            		</a> (<a href="https://aws.amazon.com/products/compute/">Serverless Compute</a>, Founding engineer & TLM), <a href="https://aws.amazon.com/fargate/">Fargate</a>, Alexa AI (Healthcare + Conversational AI, Founding engineer of <a href="https://www.cnbc.com/2018/05/10/amazon-is-building-a-health-and-wellness-team-within-alexa.html">Healthcare domain</a>), <a href="https://www.lastweekinaws.com/podcast/screaming-in-the-cloud/stepping-onto-the-aws-commerce-platform-with-james-greenfield/">Commerce Platform</a> (Scale $110B ARR Bill Run) and cross-product line involvement in Lambda, ECS and Elastic Beanstalk. In charge of multiple company wide privileged and confidential programs. Diverse experience encompassing both technical leadership and people management, including cross-company and multidisciplinary organizations collaborations. <br> Organizing committee member for top tier conferences (NeurIPS 25 Co-Chair). Program committee member for ICML, KDD, NeurIPS etc., as well as for Non-Profit Organizations like the Linux Foundation and the Cloud Native Computing Foundation (CNCF). Guest lecturer and mentor at the University of Washington's Foster School of Business. <a href="https://www.ai2incubator.com/">AI2 Incubator</a> Resident Expert. </p>
+		     <p>Research Areas (current): <span class="keyword">AI + ML</span>, <span class="keyword">LLM Inference and Optimization</span>, <span class="keyword">Model Evaluation and Benchmark</span>, <span class="keyword">Containers, Serverless Compute & Virtualization</span>, <span class="keyword">Open Source</span>. </p>
+		     <p>Fan of Orca, Pickleball, Seattle Kraken, Seahawk, Kosaku Shima, Lorde, Quentin Tarantino, Herman Melville.</p>
+		     <p>Collecting magnets and mugs.</p>
+		     <p>Be concise, be curious, be real, and building primitives.</p>
+                  </div>
+                  <!-- Chinese Bio -->
+                  <div class="lang-zh" style="display: none;">
+                     <p>📍 美西。互联网/公有云从业者，研发工程师和技术顾问。<br> 内部连续创业者，UTL，技术领队，主导多个垂直领域产品研发 <strong>0-1</strong> 及发布：Amazon SageMaker and <a href="https://aws.amazon.com/cn/bedrock/?nc1=h_ls">Bedrock</a>（LLM 推理，优化，Model Eval等），<a href="https://aws.amazon.com/cn/s3/?nc1=h_ls">S3</a>（基础数据服务），<a href="https://aws.amazon.com/cn/apprunner/">App Runner</a> (容器与无服务器计算服务，创始工程师兼技术主管)，<a href="https://aws.amazon.com/cn/fargate/">Fargate</a>，Alexa Healthcare (Conversational AI + 医疗健康，创始工程师)，Payments 等，跨国家、跨企业、跨产品线协作，团队建设及管理经验。亚马逊云科技 Senior Speaker 兼<a href="https://aws.amazon.com/cn/blogs/containers/author/yimipeng/">博客作者</a>。<br> 行业及学术顶会审稿。开源社区非营利机构计划委员会成员 Linux Foundation & CNCF 云原生布道师；UW Foster 商学院 Guest Lecturer；AI2 孵化器 常驻专家。</p>
+		     <p><a href="/professionalservices">接受业务合作</a>：行业董事 (Board Member, NPO Only) / 高校顾问 (University Mentoring and Advising) / <s>技术顾问 (Technical Advisory Council)</s> / 职业发展规划 (Mentoring and Counseling) / 著作出版 (Book Authoring)</p>
+                  </div>
+		  <!-- English Links -->
+		  <p class="lang-en">
 			[Links]
 			<ul>
 			<li>
@@ -1730,15 +1751,64 @@
 			</li>
 			</ul>
 		   </p>
+		   <!-- Chinese Links -->
+		   <p class="lang-zh" style="display: none;">
+		    [外部链接]
+			<ul>
+			<li>
+				<a href="https://foster.uw.edu/academics/degree-programs/master-of-science-in-information-systems/mentors/">华盛顿大学 Foster 商学院导师主页</a>
+			</li>
+			<li>
+				<a href="https://aws.amazon.com/cn/blogs/containers/author/yimipeng/">亚马逊云科技 (AWS) 博客作者主页</a>
+			</li>
+			<li>
+				<a href="https://neurips.cc/Conferences/2025/Committees">NeurIPS 联合主席主页</a>
+			</li>
+			<li>
+				<a href="https://icml.cc/Conferences/2025/ProgramCommittee">ICML 计划委员会成员主页</a>
+			</li>
+			<li>
+				<a href="https://www.cncf.io/people/ambassadors/?p=andy-peng">云原生计算基金会 (CNCF) 全球大使个人主页</a> <a href="https://youtu.be/uS698pTnw1I">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+		                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+		                </svg>
+				</a>
+			</li>
+			<li>
+				<a href="https://events.linuxfoundation.org/archive/2025/open-source-summit-north-america/program/program-committee/">Open Source Summit 计划委员会成员主页</a>
+			</li>
+			<li>
+				<a href="https://events.linuxfoundation.org/archive/2024/ai-dev-europe/program/program-committee/">Open Source Summit GenAI & ML Summit 计划委员会成员主页</a>
+			</li>
+			<li>
+				<a href="https://seattleregatta2023.sched.com/speaker/yiming_peng.2589xy9k?iframe=no">西雅图 Women in Tech Regatta 嘉宾主页</a>
+			</li>
+			</ul>
+		   </p>
 
                </div>
-               <div class="social">
+               <!-- English Social Media -->
+               <div class="social lang-en">
                   <div class="contact-icons"> <a href="mailto:%70%65%6E%67%61%6E%64%79%2E%62%75%69%6C%64@%67%6D%61%69%6C%2E%63%6F%6D" title="email"><i class="fas fa-envelope"></i></a> <a href="https://www.linkedin.com/in/pengandy-us" title="LinkedIn" rel="external nofollow noopener" target="_blank"><i class="fab fa-linkedin"></i></a> <a href="https://twitter.com/pymhq" title="Twitter" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-x-twitter"></i></a> <a href="https://github.com/pymhq" title="GitHub" rel="external nofollow noopener" target="_blank"><i class="fab fa-github"></i></a> </div>
                   <div class="contact-note"> Email: pengandy [dot] build [at] gmail [dot] com </div>
                   <div class="contact-note"> <a href="/office">Office</a> </div>
                </div>
-               <h2><a href="/portfolio" style="color: inherit;">News</a></h2>
-               <div class="news">
+               <!-- Chinese Social Media -->
+               <div class="social lang-zh" style="display: none;">
+                  <div class="contact-icons">
+			  <a href="mailto:%70%65%6E%67%61%6E%64%79%2E%62%75%69%6C%64@%67%6D%61%69%6C%2E%63%6F%6D" title="email" rel="external nofollow noopener" target="_blank"><img width="81" height="81" src="https://img.icons8.com/color/96/gmail-new.png" alt="gmail-new"/></a>
+			  <a href="https://www.linkedin.com/in/pengandy-us" title="LinkedIn" rel="external nofollow noopener" target="_blank"><img width="81" height="81" src="https://img.icons8.com/color/96/linkedin.png" alt="linkedin"/></a>
+			  <a href="https://twitter.com/pymhq" title="Twitter" rel="external nofollow noopener" target="_blank"><img width="81" height="81" src="https://img.icons8.com/ios/96/twitterx--v2.png" alt="twitterx--v2"/></a>
+			  <a href="https://www.xiaohongshu.com/user/profile/646a8ca2000000000f006c94?xhsshare=CopyLink&appuid=646a8ca2000000000f006c94&apptime=1726950888&share_id=adcee4fb2111492a953479d5aad37577" title="Xiaohongshu" rel="external nofollow noopener" target="_blank"><img width="81" height="81" src="https://img.icons8.com/ios/96/FA5252/xiao-hong-shu.png" alt="xiao-hong-shu"/></a>
+			  <a href="https://github.com/pymhq" title="GitHub" rel="external nofollow noopener" target="_blank"><img width="81" height="81" src="https://img.icons8.com/color/96/github.png" alt="github"/></a>
+		  </div>
+                  <div class="contact-note"> Email: pengandy [dot] build [at] gmail [dot] com </div>
+                  <div class="contact-note"> <a href="/office">Office</a> </div>
+               </div>
+               <!-- News Section (English only) -->
+               <div class="lang-en">
+                  <h2><a href="/portfolio" style="color: inherit;">News</a></h2>
+                  <div class="news">
                   <div class="table-responsive" style="max-height: 60vw">
                      <table class="table table-sm table-borderless">
 					   <tr>
@@ -2229,11 +2299,13 @@
                            <th scope="row" style="width: 20%;font-family: monospace;">September, 2013</th>
                            <td> <a href="https://www.umass.edu/150/">UMass Amherst 150 Years</a> </td>
                         </tr>
-			--> 
+			-->
                      </table>
                   </div>
+                  </div>
                </div>
-	       <h2><a href="/publications" style="color: inherit;">Selected Publications</a></h2>
+               <!-- End News Section -->
+	       <h2><a href="/publications" style="color: inherit;"><span class="lang-en">Selected Publications</span><span class="lang-zh" style="display: none;">分享</span></a></h2>
                <div class="publications">
                   <ol class="bibliography">
 		     <li>
@@ -2375,6 +2447,15 @@
                   </ol>
                </div>
 	       <div id="service-placeholder"></div>
+
+               <!-- Language Toggle at Bottom -->
+               <div class="text-center mb-4 mt-4">
+                  <div class="btn-group" role="group" aria-label="Language selector">
+                     <button type="button" class="btn btn-outline-primary active" id="btn-en" onclick="switchLanguage('en')">English</button>
+                     <button type="button" class="btn btn-outline-primary" id="btn-zh" onclick="switchLanguage('zh')">中文</button>
+                  </div>
+               </div>
+
             </article>
          </div>
       </div>
@@ -2387,9 +2468,9 @@
          (function() {
            const placeholder = document.getElementById('service-placeholder');
            if (placeholder) {
-             // Create the wrapper structure
+             // Create the wrapper structure with bilingual heading
              placeholder.innerHTML = `
-               <h2><a href="/service" style="color: inherit;">Service</a></h2>
+               <h2><a href="/service" style="color: inherit;"><span class="lang-en">Service</span><span class="lang-zh" style="display: none;">服务</span></a></h2>
                <div class="service" id="service-content-placeholder-portfolio"></div>
              `;
              
@@ -2404,6 +2485,41 @@
                });
            }
          })();
+      </script>
+
+      <!-- Language Toggle Script -->
+      <script>
+         function switchLanguage(lang) {
+            // Hide all language content
+            document.querySelectorAll('.lang-en, .lang-zh').forEach(function(el) {
+               el.style.display = 'none';
+            });
+
+            // Show selected language content
+            if (lang === 'en') {
+               document.querySelectorAll('.lang-en').forEach(function(el) {
+                  el.style.display = '';
+               });
+               document.getElementById('btn-en').classList.add('active');
+               document.getElementById('btn-zh').classList.remove('active');
+               document.title = 'Portfolio';
+               localStorage.setItem('preferredLanguage', 'en');
+            } else if (lang === 'zh') {
+               document.querySelectorAll('.lang-zh').forEach(function(el) {
+                  el.style.display = '';
+               });
+               document.getElementById('btn-zh').classList.add('active');
+               document.getElementById('btn-en').classList.remove('active');
+               document.title = '个人简介';
+               localStorage.setItem('preferredLanguage', 'zh');
+            }
+         }
+
+         // Load preferred language on page load
+         document.addEventListener('DOMContentLoaded', function() {
+            var preferredLang = localStorage.getItem('preferredLanguage') || 'en';
+            switchLanguage(preferredLang);
+         });
       </script>
    </body>
 </html>
