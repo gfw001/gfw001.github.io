@@ -34,6 +34,18 @@
       <link rel="shortcut icon" href="/assets/projects/Peng Andys Logo Symbol.png">
       <link rel="canonical" href="https://pengandy.com/professionalservices">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
+      <style>
+         /* Language toggle styling */
+         .lang-en, .lang-zh {
+            transition: opacity 0.3s ease-in-out;
+         }
+         .btn-group .btn {
+            min-width: 100px;
+         }
+         .btn-group .btn.active {
+            font-weight: 600;
+         }
+      </style>
       <script src="/assets/js/theme.js?96d6b3e1c3604aca8b6134c7afdd5db6" type="2ef554a3a95c8d10e5edf0a5-text/javascript"></script> <script src="/assets/js/dark_mode.js?9b17307bb950ffa2e34be0227f53558f" type="2ef554a3a95c8d10e5edf0a5-text/javascript"></script>
       <script src="/assets/js/components.js" defer></script>
    </head>
@@ -43,10 +55,21 @@
          <div class="post">
             <article>
                <div class="cv">
-                  
-                  <a class="anchor" id="Experience"></a> 
+
+                  <!-- Language Toggle -->
+                  <div class="text-center mb-4">
+                     <div class="btn-group" role="group" aria-label="Language selector">
+                        <button type="button" class="btn btn-outline-primary active" id="btn-en" onclick="switchLanguage('en')">English</button>
+                        <button type="button" class="btn btn-outline-primary" id="btn-zh" onclick="switchLanguage('zh')">中文</button>
+                     </div>
+                  </div>
+
+                  <a class="anchor" id="Experience"></a>
                   <div class="card mt-3 p-3">
-                     <h3 class="card-title font-weight-medium">Professional Services（服务）</h3>
+                     <h3 class="card-title font-weight-medium">
+                        <span class="lang-en">Professional Services</span>
+                        <span class="lang-zh" style="display: none;">专业服务</span>
+                     </h3>
                      <div>
                         <ul class="card-text font-weight-light list-group list-group-flush">
                            <li class="list-group-item">
@@ -61,7 +84,10 @@
                                     </table>
                                  </div>
                                  <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-                                    <h6 class="title font-weight-bold ml-1 ml-md-4">Board Member, Non-Profit Organization Only（行业董事, 仅限非营利组织）</h6>
+                                    <h6 class="title font-weight-bold ml-1 ml-md-4">
+                                       <span class="lang-en">Board Member, Non-Profit Organization Only</span>
+                                       <span class="lang-zh" style="display: none;">行业董事, 仅限非营利组织</span>
+                                    </h6>
                                  </div>
                               </div>
                            </li>
@@ -77,7 +103,10 @@
                                     </table>
                                  </div>
                                  <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-                                    <h6 class="title font-weight-bold ml-1 ml-md-4">University Mentoring and Advising（高校顾问）</h6>
+                                    <h6 class="title font-weight-bold ml-1 ml-md-4">
+                                       <span class="lang-en">University Mentoring and Advising</span>
+                                       <span class="lang-zh" style="display: none;">高校顾问</span>
+                                    </h6>
                                  </div>
                               </div>
                            </li>
@@ -93,7 +122,10 @@
                                     </table>
                                  </div>
                                  <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-                                    <h6 class="title font-weight-bold ml-1 ml-md-4">Paper Advise（论文指导）</h6>
+                                    <h6 class="title font-weight-bold ml-1 ml-md-4">
+                                       <span class="lang-en">Paper Advising</span>
+                                       <span class="lang-zh" style="display: none;">论文指导</span>
+                                    </h6>
                                  </div>
                               </div>
                            </li>
@@ -109,7 +141,10 @@
                                     </table>
                                  </div>
                                  <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-                                    <h6 class="title font-weight-bold ml-1 ml-md-4">Paper Collaboration（论文合作）</h6>
+                                    <h6 class="title font-weight-bold ml-1 ml-md-4">
+                                       <span class="lang-en">Paper Collaboration</span>
+                                       <span class="lang-zh" style="display: none;">论文合作</span>
+                                    </h6>
                                  </div>
                               </div>
                            </li>
@@ -125,7 +160,10 @@
                                     </table>
                                  </div>
                                  <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-                                    <h6 class="title font-weight-bold ml-1 ml-md-4">Patent Advise（专利指导）</h6>
+                                    <h6 class="title font-weight-bold ml-1 ml-md-4">
+                                       <span class="lang-en">Patent Advising</span>
+                                       <span class="lang-zh" style="display: none;">专利指导</span>
+                                    </h6>
                                  </div>
                               </div>
                            </li>
@@ -141,7 +179,10 @@
                                     </table>
                                  </div>
                                  <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-                                    <h6 class="title font-weight-bold ml-1 ml-md-4">Patent Collaboration（专利合作）</h6>
+                                    <h6 class="title font-weight-bold ml-1 ml-md-4">
+                                       <span class="lang-en">Patent Collaboration</span>
+                                       <span class="lang-zh" style="display: none;">专利合作</span>
+                                    </h6>
                                  </div>
                               </div>
                            </li>
@@ -157,7 +198,10 @@
                                     </table>
                                  </div>
                                  <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-                                    <h6 class="title font-weight-bold ml-1 ml-md-4">Book Authoring（著作出版）</h6>
+                                    <h6 class="title font-weight-bold ml-1 ml-md-4">
+                                       <span class="lang-en">Book Authoring</span>
+                                       <span class="lang-zh" style="display: none;">著作出版</span>
+                                    </h6>
                                  </div>
                               </div>
                            </li>
@@ -173,7 +217,10 @@
                                     </table>
                                  </div>
                                  <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-                                    <h6 class="title font-weight-bold ml-1 ml-md-4">Book Review</h6>
+                                    <h6 class="title font-weight-bold ml-1 ml-md-4">
+                                       <span class="lang-en">Book Review</span>
+                                       <span class="lang-zh" style="display: none;">书评</span>
+                                    </h6>
                                  </div>
                               </div>
                            </li>
@@ -189,7 +236,10 @@
                                     </table>
                                  </div>
                                  <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-                                    <h6 class="title font-weight-bold ml-1 ml-md-4">Organization Behavior Mentoring (Price may vary depending on the case)</h6>
+                                    <h6 class="title font-weight-bold ml-1 ml-md-4">
+                                       <span class="lang-en">Organization Behavior Mentoring (Price may vary depending on the case)</span>
+                                       <span class="lang-zh" style="display: none;">组织行为指导（价格根据具体情况而定）</span>
+                                    </h6>
                                  </div>
                               </div>
                            </li>
@@ -224,7 +274,10 @@
                                     </table>
                                  </div>
                                  <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-                                    <h6 class="title font-weight-bold ml-1 ml-md-4">Mock Interview - System Design Q&A（系统设计答疑）</h6>
+                                    <h6 class="title font-weight-bold ml-1 ml-md-4">
+                                       <span class="lang-en">Mock Interview - System Design Q&A</span>
+                                       <span class="lang-zh" style="display: none;">模拟面试 - 系统设计答疑</span>
+                                    </h6>
                                  </div>
                               </div>
                            </li>
@@ -240,7 +293,10 @@
                                     </table>
                                  </div>
                                  <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-                                    <h6 class="title font-weight-bold ml-1 ml-md-4">Mock Interview - Behavior Question（模拟面试）</h6>
+                                    <h6 class="title font-weight-bold ml-1 ml-md-4">
+                                       <span class="lang-en">Mock Interview - Behavioral Questions</span>
+                                       <span class="lang-zh" style="display: none;">模拟面试 - 行为面试</span>
+                                    </h6>
                                  </div>
                               </div>
                            </li>
@@ -256,7 +312,10 @@
                                     </table>
                                  </div>
                                  <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-                                    <h6 class="title font-weight-bold ml-1 ml-md-4">Career Management / Team Match / Selection Guide（职业发展规划/选组建议）</h6>
+                                    <h6 class="title font-weight-bold ml-1 ml-md-4">
+                                       <span class="lang-en">Career Management / Team Match / Selection Guide</span>
+                                       <span class="lang-zh" style="display: none;">职业发展规划 / 选组建议</span>
+                                    </h6>
                                  </div>
                               </div>
                            </li>
@@ -272,7 +331,10 @@
                                     </table>
                                  </div>
                                  <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-                                    <h6 class="title font-weight-bold ml-1 ml-md-4">Resume Polishing（简历修改）</h6>
+                                    <h6 class="title font-weight-bold ml-1 ml-md-4">
+                                       <span class="lang-en">Resume Polishing</span>
+                                       <span class="lang-zh" style="display: none;">简历修改</span>
+                                    </h6>
                                  </div>
                               </div>
                            </li>
@@ -288,7 +350,10 @@
                                     </table>
                                  </div>
                                  <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-                                    <h6 class="title font-weight-bold ml-1 ml-md-4">Referral（内推）Prerequisite: The applicant’s resume and background must meet the qualifications and requirements of the role.</h6>
+                                    <h6 class="title font-weight-bold ml-1 ml-md-4">
+                                       <span class="lang-en">Referral - Prerequisite: The applicant's resume and background must meet the qualifications and requirements of the role.</span>
+                                       <span class="lang-zh" style="display: none;">内推 - 前提：申请人的简历和背景必须符合职位的资格和要求。</span>
+                                    </h6>
                                  </div>
                               </div>
                            </li>
@@ -303,16 +368,16 @@
                            <li class="list-group-item">
                               <h5 class="font-italic">About Me</h5>
                               <ul class="subitems">
-                                 <li>A builder with curiosity, motivated by both research and product innovation. Intrapreneur at a leading U.S. tech company (<a href="https://www.fidelity.com/learning-center/smart-money/magnificent-7-stocks">'Magnificent 7'</a>). UTL, has led both 0-to-1 innovation and 10x product scaling across diverse <a href="/blog/2025/horizontalvsvertical">verticals</a>, spanning LLM inference and optimization on Amazon SageMaker & Bedrock, as well as foundational data services (Amazon S3), container and serverless computing (AWS App Runner and AWS Fargate), conversational AI (Alexa Health & Wellness), fintech, and more. Organizing committee member for leading conferences (NeurIPS 25 Chair). Program committee member for ICML, ICLR, and NeurIPS, as well as for non-profit open-source organizations like the Linux Foundation and the Cloud Native Computing Foundation (CNCF). Guest lecturer and mentor at the University of Washington’s Foster School of Business. AI2 Incubator Resident Expert.</li>
-                                 <li><span class="subitem">内部连续创业者。亚马逊高级研发工程师 / MLE。技术领队，主导多产品 0-1 & 10x，多垂直领域研发： Amazon SageMaker & Bedrock LLM 推理和优化；基础数据服务 S3；容器与无服务器计算服务 AWS App Runner & Fargate；Conversational AI: Alexa Health & Wellness；Fintech等。顶会审稿 ICML, ICLR, KDD, NeurIPS (25 Co-Chair) etc.；开源社区非营利机构计划委员会成员 Linux Foundation & CNCF Ambassador；UW Foster 商学院 Guest Lecturer；AI2 Incubator 常驻专家。https://pengandy.com/ </span></li>
-                                 <li><span class="subitem">Email：pengandy [dot] build [at] gmail [dot] com</span></li>
+                                 <li class="lang-en">A builder with curiosity, motivated by both research and product innovation. Intrapreneur at a leading U.S. tech company (<a href="https://www.fidelity.com/learning-center/smart-money/magnificent-7-stocks">'Magnificent 7'</a>). UTL, has led both 0-to-1 innovation and 10x product scaling across diverse <a href="/blog/2025/horizontalvsvertical">verticals</a>, spanning LLM inference and optimization on Amazon SageMaker & Bedrock, as well as foundational data services (Amazon S3), container and serverless computing (AWS App Runner and AWS Fargate), conversational AI (Alexa Health & Wellness), fintech, and more. Organizing committee member for leading conferences (NeurIPS 25 Chair). Program committee member for ICML, ICLR, and NeurIPS, as well as for non-profit open-source organizations like the Linux Foundation and the Cloud Native Computing Foundation (CNCF). Guest lecturer and mentor at the University of Washington's Foster School of Business. AI2 Incubator Resident Expert.</li>
+                                 <li class="lang-zh" style="display: none;"><span class="subitem">内部连续创业者。亚马逊高级研发工程师 / MLE。技术领队，主导多产品 0-1 & 10x，多垂直领域研发： Amazon SageMaker & Bedrock LLM 推理和优化；基础数据服务 S3；容器与无服务器计算服务 AWS App Runner & Fargate；Conversational AI: Alexa Health & Wellness；Fintech等。顶会审稿 ICML, ICLR, KDD, NeurIPS (25 Co-Chair) etc.；开源社区非营利机构计划委员会成员 Linux Foundation & CNCF Ambassador；UW Foster 商学院 Guest Lecturer；AI2 Incubator 常驻专家。https://pengandy.com/ </span></li>
+                                 <li><span class="subitem">Email: pengandy [dot] build [at] gmail [dot] com</span></li>
                               </ul>
                            </li>
                            <li class="list-group-item">
                               <h5 class="font-italic">Disclaimer</h5>
                               <ul class="subitems">
-                                 <li><span class="subitem">Disclaimer：We do not provide any form or type of professional services that would violate Amazon's Conflict of Interest Policy.</span></li>
-                                 <li><span class="subitem">声明：不提供任何形式和内容违反亚马逊的利益冲突政策的服务。</span></li>
+                                 <li class="lang-en"><span class="subitem">We do not provide any form or type of professional services that would violate Amazon's Conflict of Interest Policy.</span></li>
+                                 <li class="lang-zh" style="display: none;"><span class="subitem">不提供任何形式和内容违反亚马逊的利益冲突政策的服务。</span></li>
                               </ul>
                            </li>
                         </ul>
@@ -340,6 +405,40 @@
          </div>
       </div>
       <div id="footer-placeholder"></div>
+
+      <!-- Language Toggle Script -->
+      <script>
+         function switchLanguage(lang) {
+            // Hide all language content
+            document.querySelectorAll('.lang-en, .lang-zh').forEach(function(el) {
+               el.style.display = 'none';
+            });
+
+            // Show selected language content
+            if (lang === 'en') {
+               document.querySelectorAll('.lang-en').forEach(function(el) {
+                  el.style.display = '';
+               });
+               document.getElementById('btn-en').classList.add('active');
+               document.getElementById('btn-zh').classList.remove('active');
+               localStorage.setItem('preferredLanguage', 'en');
+            } else if (lang === 'zh') {
+               document.querySelectorAll('.lang-zh').forEach(function(el) {
+                  el.style.display = '';
+               });
+               document.getElementById('btn-zh').classList.add('active');
+               document.getElementById('btn-en').classList.remove('active');
+               localStorage.setItem('preferredLanguage', 'zh');
+            }
+         }
+
+         // Load preferred language on page load
+         document.addEventListener('DOMContentLoaded', function() {
+            var preferredLang = localStorage.getItem('preferredLanguage') || 'en';
+            switchLanguage(preferredLang);
+         });
+      </script>
+
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
