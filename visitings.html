@@ -367,7 +367,9 @@
             // Add light beams for special cities (Seattle)
             // Note: This is a static SVG element with gradient - no animations, very lightweight
             // Only recalculates position during globe rotation (user interaction)
+            // Light beam is always visible regardless of front/back position
             const seattleData = CITIES.filter(d => d.name === 'Seattle, WA');
+
             const lightBeams = g.selectAll('.light-beam')
                 .data(seattleData)
                 .enter().append('polygon')
@@ -377,24 +379,70 @@
                     if (!coords) return '0,0 0,0 0,0';
 
                     const beamHeight = d.radius * 4; // 2x marker diameter
-                    const baseWidth = d.radius / 1.5; // Base width
-                    const topWidth = d.radius / 4; // Top width (narrow)
+                    const baseWidth = d.radius / 2.5; // Thinner base width
+                    const topWidth = d.radius / 6; // Thinner top width
 
                     // Create cone shape: bottom-left, bottom-right, top-right, top-left
                     return `${coords[0] - baseWidth},${coords[1]} ${coords[0] + baseWidth},${coords[1]} ${coords[0] + topWidth},${coords[1] - beamHeight} ${coords[0] - topWidth},${coords[1] - beamHeight}`;
                 })
                 .attr('fill', 'url(#lightBeamGradient)')
+                .attr('opacity', 1) // Always visible
+                .style('pointer-events', 'none');
+
+            // Add city markers (except Seattle - will render Seattle last for z-index priority)
+            const otherCities = CITIES.filter(d => d.name !== 'Seattle, WA');
+            const cityMarkers = g.selectAll('.city-marker')
+                .data(otherCities)
+                .enter().append('circle')
+                .attr('class', 'city-marker')
+                .attr('r', d => Math.max(3, d.radius / 2))
+                .attr('cx', d => {
+                    const coords = projection([d.longitude, d.latitude]);
+                    return coords ? coords[0] : -1000;
+                })
+                .attr('cy', d => {
+                    const coords = projection([d.longitude, d.latitude]);
+                    return coords ? coords[1] : -1000;
+                })
                 .attr('opacity', d => {
                     const coords = projection([d.longitude, d.latitude]);
                     return coords && coords[0] >= -radius && coords[0] <= radius ? 1 : 0;
                 })
-                .style('pointer-events', 'none');
+                .on('mouseenter', function(event, d) {
+                    const tooltip = document.getElementById('tooltip');
+                    document.getElementById('tooltip-title').textContent = d.name;
+                    document.getElementById('tooltip-date').textContent = d.date || '';
+                    tooltip.style.display = 'block';
+                    tooltip.style.left = (event.pageX + 10) + 'px';
+                    tooltip.style.top = (event.pageY + 10) + 'px';
+                })
+                .on('mousemove', function(event) {
+                    const tooltip = document.getElementById('tooltip');
+                    tooltip.style.left = (event.pageX + 10) + 'px';
+                    tooltip.style.top = (event.pageY + 10) + 'px';
+                })
+                .on('mouseleave', function() {
+                    document.getElementById('tooltip').style.display = 'none';
+                })
+                .on('touchstart', function(event, d) {
+                    event.stopPropagation();
+                    const tooltip = document.getElementById('tooltip');
+                    document.getElementById('tooltip-title').textContent = d.name;
+                    document.getElementById('tooltip-date').textContent = d.date || '';
+                    tooltip.style.display = 'block';
+                    const touch = event.touches[0];
+                    tooltip.style.left = (touch.pageX + 10) + 'px';
+                    tooltip.style.top = (touch.pageY - 50) + 'px';
+                    setTimeout(() => {
+                        tooltip.style.display = 'none';
+                    }, 2000);
+                });
 
-            // Add city markers
-            const cityMarkers = g.selectAll('.city-marker')
-                .data(CITIES)
+            // Add Seattle marker last so it renders on top (highest z-index priority)
+            const seattleMarker = g.selectAll('.seattle-marker')
+                .data(seattleData)
                 .enter().append('circle')
-                .attr('class', 'city-marker')
+                .attr('class', 'city-marker seattle-marker')
                 .attr('r', d => Math.max(3, d.radius / 2))
                 .attr('cx', d => {
                     const coords = projection([d.longitude, d.latitude]);
@@ -445,7 +493,7 @@
             // Cache selections for better performance (avoid repeated DOM queries)
             const allPaths = g.selectAll('path');
             const allLightBeams = g.selectAll('.light-beam');
-            const allCityMarkers = g.selectAll('.city-marker');
+            const allCityMarkers = g.selectAll('.city-marker'); // Includes both regular cities and Seattle
 
             // Detect if mobile for performance optimization
             const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -465,15 +513,12 @@
                         if (!coords) return '0,0 0,0 0,0';
 
                         const beamHeight = d.radius * 4;
-                        const baseWidth = d.radius / 1.5;
-                        const topWidth = d.radius / 4;
+                        const baseWidth = d.radius / 2.5; // Thinner
+                        const topWidth = d.radius / 6; // Thinner
 
                         return `${coords[0] - baseWidth},${coords[1]} ${coords[0] + baseWidth},${coords[1]} ${coords[0] + topWidth},${coords[1] - beamHeight} ${coords[0] - topWidth},${coords[1] - beamHeight}`;
                     })
-                    .attr('opacity', d => {
-                        const coords = projection([d.longitude, d.latitude]);
-                        return coords && coords[0] >= -radius && coords[0] <= radius ? 1 : 0;
-                    });
+                    .attr('opacity', 1); // Always visible
 
                 // Update city markers
                 allCityMarkers
