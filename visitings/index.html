@@ -13,523 +13,428 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Visitings - 3D Globe</title>
+    <title>Visitings</title>
     <meta name="author" content="Peng, Andy">
-    <meta name="description" content="Interactive 3D Globe of Places I've Visited">
-    <meta name="keywords" content="Visitings, Travel, 3D Globe, Interactive Map">
+    <meta name="description" content="Interactive Globe of Places I've Visited">
+    <meta name="keywords" content="Visitings, Travel, Globe, Map">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" />
 
     <style>
-        :root {
-            --primary-color: #A8DAF9;
-            --secondary-color: #6BB6FF;
-            --accent-color: #FFD700;
-            --bg-dark: #0a0e27;
-            --bg-medium: #1a1f3a;
-            --text-light: #ffffff;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-medium) 50%, var(--bg-dark) 100%);
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            color: var(--text-light);
-            overflow-x: hidden;
-        }
-
-        .header {
-            text-align: center;
-            padding: 30px 20px 20px;
-            background: rgba(10, 14, 39, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(168, 218, 249, 0.2);
-            position: relative;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin: 0;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .subtitle {
-            font-size: 1rem;
-            color: var(--primary-color);
-            margin-top: 10px;
-            opacity: 0.8;
+            background: #ffffff;
+            overflow: hidden;
         }
 
         .view-switcher {
-            position: absolute;
-            top: 30px;
+            position: fixed;
+            top: 20px;
             left: 20px;
-            z-index: 200;
+            z-index: 1000;
         }
 
         .view-switcher a {
             display: inline-block;
-            padding: 10px 20px;
-            background: rgba(10, 14, 39, 0.9);
-            border: 1px solid rgba(168, 218, 249, 0.3);
+            padding: 12px 24px;
+            background: #ffffff;
+            border: 2px solid #2196F3;
             border-radius: 8px;
-            color: var(--primary-color);
+            color: #2196F3;
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
+            font-size: 0.95rem;
+            font-weight: 600;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .view-switcher a:hover {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: var(--bg-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(168, 218, 249, 0.4);
+            background: #2196F3;
+            color: #ffffff;
+            text-decoration: none;
         }
 
-        #globeViz {
+        #globe-container {
             width: 100%;
-            height: calc(100vh - 200px);
-            min-height: 600px;
-            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .controls {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(10, 14, 39, 0.9);
-            padding: 15px 20px;
-            border-radius: 10px;
-            border: 1px solid rgba(168, 218, 249, 0.3);
-            backdrop-filter: blur(10px);
-            z-index: 100;
-            max-width: 180px;
+        svg {
+            cursor: grab;
         }
 
-        .controls button {
-            display: block;
-            width: 100%;
-            margin: 5px 0;
-            padding: 10px 15px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            border: none;
-            border-radius: 5px;
-            color: var(--bg-dark);
-            font-weight: 600;
+        svg:active {
+            cursor: grabbing;
+        }
+
+        .country {
+            fill: #e0e0e0;
+            stroke: #ffffff;
+            stroke-width: 0.5px;
+        }
+
+        .country-visited {
+            fill: #4CAF50;
+            stroke: #ffffff;
+            stroke-width: 0.5px;
+        }
+
+        .country:hover,
+        .country-visited:hover {
+            fill: #2196F3;
+        }
+
+        .city-marker {
+            fill: #FF5722;
+            stroke: #ffffff;
+            stroke-width: 2px;
             cursor: pointer;
-            transition: all 0.3s ease;
+        }
+
+        .city-marker:hover {
+            fill: #F44336;
+            stroke: #FF5722;
+            stroke-width: 3px;
+        }
+
+        .graticule {
+            fill: none;
+            stroke: #e0e0e0;
+            stroke-width: 0.5px;
+            stroke-opacity: 0.5;
+        }
+
+        .sphere {
+            fill: #ffffff;
+            stroke: #cccccc;
+            stroke-width: 2px;
+        }
+
+        .stats {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #ffffff;
+            padding: 16px 24px;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 24px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2196F3;
+            line-height: 1;
+        }
+
+        .stat-label {
             font-size: 0.85rem;
-        }
-
-        .controls button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(168, 218, 249, 0.4);
-        }
-
-        .controls button i {
-            margin-right: 5px;
+            color: #666666;
+            margin-top: 4px;
+            font-weight: 500;
         }
 
         .legend {
-            position: absolute;
+            position: fixed;
             bottom: 20px;
-            left: 20px;
-            background: rgba(10, 14, 39, 0.9);
-            padding: 15px 20px;
-            border-radius: 10px;
-            border: 1px solid rgba(168, 218, 249, 0.3);
-            backdrop-filter: blur(10px);
-            z-index: 100;
+            right: 20px;
+            background: #ffffff;
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .legend-item {
             display: flex;
             align-items: center;
-            margin: 8px 0;
-            font-size: 0.9rem;
+            margin: 10px 0;
+            font-size: 0.95rem;
+            color: #333333;
+            font-weight: 500;
         }
 
         .legend-color {
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
-            margin-right: 10px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            margin-right: 12px;
+            border: 2px solid #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        .stats {
-            text-align: center;
-            padding: 20px;
-            background: rgba(10, 14, 39, 0.6);
-            border-top: 1px solid rgba(168, 218, 249, 0.2);
+        .tooltip {
+            position: fixed;
+            background: #ffffff;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 2px solid #FF5722;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            pointer-events: none;
+            display: none;
+            z-index: 2000;
         }
 
-        .stat-item {
-            display: inline-block;
-            margin: 0 30px;
-            padding: 10px;
+        .tooltip-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
         }
 
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: rgba(168, 218, 249, 0.8);
-            margin-top: 5px;
+        .tooltip-date {
+            color: #666;
+            font-size: 12px;
+            margin-top: 4px;
         }
 
         footer {
-            position: relative;
-            text-align: center;
-            padding: 20px;
-            background: rgba(10, 14, 39, 0.8);
-            border-top: 1px solid rgba(168, 218, 249, 0.2);
-            color: rgba(168, 218, 249, 0.8);
-        }
-
-        .loading {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            z-index: 10;
-        }
-
-        .spinner {
-            border: 3px solid rgba(168, 218, 249, 0.3);
-            border-top: 3px solid var(--primary-color);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 15px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            color: #999999;
+            font-size: 0.85rem;
+            z-index: 999;
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
             .view-switcher {
-                position: relative;
-                top: 0;
-                left: 0;
-                text-align: center;
-                margin-top: 10px;
-            }
-
-            .controls {
                 top: 10px;
-                right: 10px;
-                padding: 10px;
-                max-width: 150px;
+                left: 10px;
             }
 
-            .controls button {
-                font-size: 0.75rem;
-                padding: 8px 10px;
+            .view-switcher a {
+                padding: 10px 16px;
+                font-size: 0.85rem;
             }
 
-            .legend {
+            .stats {
                 bottom: 10px;
                 left: 10px;
-                font-size: 0.8rem;
-            }
-
-            .stat-item {
-                margin: 0 15px;
+                gap: 16px;
+                padding: 12px 16px;
             }
 
             .stat-number {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
+            }
+
+            .legend {
+                display: none;
+            }
+
+            footer {
+                top: 10px;
+                right: 10px;
+                font-size: 0.75rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="view-switcher">
-            <a href="../visitings.html"><i class="fas fa-map"></i> View 2D Map</a>
-        </div>
-        <h1>My Travels Around the World</h1>
-        <p class="subtitle">Interactive 3D Globe Visualization</p>
+    <div class="view-switcher">
+        <a href="../visitings.html"><i class="fas fa-map"></i> View 2D Map</a>
     </div>
 
-    <div id="globeViz">
-        <div class="loading" id="loading">
-            <div class="spinner"></div>
-            Loading Globe...
-        </div>
-
-        <div class="controls">
-            <button onclick="resetView()"><i class="fas fa-sync-alt"></i> Reset View</button>
-            <button onclick="toggleRotation()"><i class="fas fa-play"></i> <span id="rotateText">Auto Rotate</span></button>
-            <button onclick="toggleArcs()"><i class="fas fa-route"></i> <span id="arcsText">Show Routes</span></button>
-            <button onclick="toggleRings()"><i class="fas fa-circle"></i> <span id="ringsText">Show Rings</span></button>
-        </div>
-
-        <div class="legend">
-            <div class="legend-item">
-                <div class="legend-color" style="background: rgba(168, 218, 249, 0.8);"></div>
-                <span>Cities Visited</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background: rgba(107, 182, 255, 0.5);"></div>
-                <span>Countries Visited</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background: rgba(255, 215, 0, 0.6);"></div>
-                <span>Travel Routes</span>
-            </div>
-        </div>
-    </div>
+    <div id="globe-container"></div>
 
     <div class="stats">
         <div class="stat-item">
             <div class="stat-number" id="countriesCount">0</div>
-            <div class="stat-label">Countries Visited</div>
+            <div class="stat-label">Countries</div>
         </div>
         <div class="stat-item">
             <div class="stat-number" id="citiesCount">0</div>
-            <div class="stat-label">Cities & Places</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number" id="arcCount">0</div>
-            <div class="stat-label">Routes</div>
+            <div class="stat-label">Cities</div>
         </div>
     </div>
 
-    <footer>
-        <div class="container mt-0">
-            © Copyright 2025 Andy Peng
+    <div class="legend">
+        <div class="legend-item">
+            <div class="legend-color" style="background: #FF5722;"></div>
+            <span>Cities Visited</span>
         </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #4CAF50;"></div>
+            <span>Countries Visited</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #e0e0e0;"></div>
+            <span>Other Countries</span>
+        </div>
+    </div>
+
+    <div class="tooltip" id="tooltip">
+        <div class="tooltip-title" id="tooltip-title"></div>
+        <div class="tooltip-date" id="tooltip-date"></div>
+    </div>
+
+    <footer>
+        © 2025 Andy Peng
     </footer>
 
-    <!-- Globe.GL Library -->
-    <script src="//unpkg.com/globe.gl"></script>
+    <!-- D3.js for lightweight SVG globe -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
 
     <!-- Data Files -->
     <script src="data/countries.js"></script>
     <script src="data/cities.js"></script>
 
     <script>
-        // Initialize globe
-        const globe = Globe()
-            (document.getElementById('globeViz'))
-            .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
-            .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-            .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
-            .showAtmosphere(true)
-            .atmosphereColor('#A8DAF9')
-            .atmosphereAltitude(0.15);
+        // Set up dimensions
+        const width = Math.min(window.innerWidth, 1200);
+        const height = window.innerHeight;
+        const radius = Math.min(width, height) / 2.5;
 
-        // Set initial view
-        globe.pointOfView({ lat: 39.9, lng: 116.4, altitude: 2.5 });
+        // Create SVG
+        const svg = d3.select('#globe-container')
+            .append('svg')
+            .attr('width', width)
+            .attr('height', height);
 
-        // Prepare countries data for polygons
-        const visitedCountries = Object.keys(COUNTRIES);
+        const g = svg.append('g')
+            .attr('transform', `translate(${width / 2}, ${height / 2})`);
 
-        // Hide loading once globe starts rendering
-        setTimeout(() => {
-            document.getElementById('loading').style.display = 'none';
-        }, 2000);
+        // Create projection (orthographic = 3D globe look)
+        const projection = d3.geoOrthographic()
+            .scale(radius)
+            .translate([0, 0])
+            .clipAngle(90);
 
-        // Fetch countries GeoJSON for highlighting
-        fetch('//unpkg.com/world-atlas/countries-50m.json')
-            .then(res => res.json())
-            .then(worldData => {
-                const countries = topojson.feature(worldData, worldData.objects.countries);
+        const path = d3.geoPath().projection(projection);
 
-                // Filter to only visited countries (using ISO numeric codes)
-                const isoCodeMap = {
-                    'USA': '840',
-                    'CHN': '156',
-                    'NLD': '528',
-                    'BEL': '056'
-                };
+        // Initial rotation to show Beijing area
+        projection.rotate([-116.4, -39.9, 0]);
 
-                const visitedPolygons = countries.features.filter(d => {
-                    return visitedCountries.some(code => isoCodeMap[code] === d.id);
+        // Add sphere (globe outline)
+        g.append('path')
+            .datum({type: 'Sphere'})
+            .attr('class', 'sphere')
+            .attr('d', path);
+
+        // Add graticule (grid lines)
+        const graticule = d3.geoGraticule();
+        g.append('path')
+            .datum(graticule)
+            .attr('class', 'graticule')
+            .attr('d', path);
+
+        // ISO code mapping
+        const isoCodeMap = {
+            'USA': 'United States of America',
+            'CHN': 'China',
+            'NLD': 'Netherlands',
+            'BEL': 'Belgium'
+        };
+
+        const visitedCountryNames = Object.keys(COUNTRIES).map(code => isoCodeMap[code]);
+
+        // Load and render world map
+        d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(world => {
+            const countries = topojson.feature(world, world.objects.countries);
+
+            // Draw countries
+            g.selectAll('.country')
+                .data(countries.features)
+                .enter().append('path')
+                .attr('class', d => {
+                    return visitedCountryNames.includes(d.properties.name) ? 'country-visited' : 'country';
+                })
+                .attr('d', path);
+
+            // Add city markers
+            const cityMarkers = g.selectAll('.city-marker')
+                .data(CITIES)
+                .enter().append('circle')
+                .attr('class', 'city-marker')
+                .attr('r', d => Math.max(3, d.radius / 2))
+                .attr('cx', d => {
+                    const coords = projection([d.longitude, d.latitude]);
+                    return coords ? coords[0] : -1000;
+                })
+                .attr('cy', d => {
+                    const coords = projection([d.longitude, d.latitude]);
+                    return coords ? coords[1] : -1000;
+                })
+                .attr('opacity', d => {
+                    const coords = projection([d.longitude, d.latitude]);
+                    return coords && coords[0] >= -radius && coords[0] <= radius ? 1 : 0;
+                })
+                .on('mouseenter', function(event, d) {
+                    const tooltip = document.getElementById('tooltip');
+                    document.getElementById('tooltip-title').textContent = d.name;
+                    document.getElementById('tooltip-date').textContent = d.date || '';
+                    tooltip.style.display = 'block';
+                    tooltip.style.left = (event.pageX + 10) + 'px';
+                    tooltip.style.top = (event.pageY + 10) + 'px';
+                })
+                .on('mousemove', function(event) {
+                    const tooltip = document.getElementById('tooltip');
+                    tooltip.style.left = (event.pageX + 10) + 'px';
+                    tooltip.style.top = (event.pageY + 10) + 'px';
+                })
+                .on('mouseleave', function() {
+                    document.getElementById('tooltip').style.display = 'none';
                 });
 
-                globe.polygonsData(visitedPolygons)
-                    .polygonAltitude(0.01)
-                    .polygonCapColor(() => 'rgba(107, 182, 255, 0.5)')
-                    .polygonSideColor(() => 'rgba(107, 182, 255, 0.3)')
-                    .polygonStrokeColor(() => '#A8DAF9')
-                    .polygonLabel(({ properties: d }) => `
-                        <div style="background: rgba(10, 14, 39, 0.95); padding: 8px 12px; border-radius: 6px; border: 1px solid #A8DAF9;">
-                            <b>${d.name}</b>
-                        </div>
-                    `);
-            });
+            // Update stats
+            document.getElementById('countriesCount').textContent = Object.keys(COUNTRIES).length;
+            document.getElementById('citiesCount').textContent = CITIES.length;
 
-        // Add cities as points
-        const citiesData = CITIES.map(city => ({
-            lat: city.latitude,
-            lng: city.longitude,
-            name: city.name,
-            date: city.date || 'Multiple visits',
-            radius: city.radius / 3
-        }));
+            // Add drag to rotate globe
+            const drag = d3.drag()
+                .on('drag', function(event) {
+                    const rotate = projection.rotate();
+                    const k = 75 / projection.scale();
+                    projection.rotate([
+                        rotate[0] + event.dx * k,
+                        rotate[1] - event.dy * k
+                    ]);
 
-        globe.pointsData(citiesData)
-            .pointAltitude(0.01)
-            .pointRadius('radius')
-            .pointColor(() => 'rgba(168, 218, 249, 0.9)')
-            .pointLabel(d => `
-                <div style="background: rgba(10, 14, 39, 0.95); padding: 8px 12px; border-radius: 6px; border: 1px solid #A8DAF9;">
-                    <b>${d.name}</b><br/>
-                    ${d.date ? `<small>${d.date}</small>` : ''}
-                </div>
-            `);
+                    // Update all paths
+                    g.selectAll('path').attr('d', path);
 
-        // Create arcs between cities (chronological travel routes)
-        const citiesWithDates = CITIES.filter(c => c.date && c.date !== '');
-        citiesWithDates.sort((a, b) => {
-            if (a.date < b.date) return -1;
-            if (a.date > b.date) return 1;
-            return 0;
+                    // Update city markers
+                    g.selectAll('.city-marker')
+                        .attr('cx', d => {
+                            const coords = projection([d.longitude, d.latitude]);
+                            return coords ? coords[0] : -1000;
+                        })
+                        .attr('cy', d => {
+                            const coords = projection([d.longitude, d.latitude]);
+                            return coords ? coords[1] : -1000;
+                        })
+                        .attr('opacity', d => {
+                            const coords = projection([d.longitude, d.latitude]);
+                            return coords && coords[0] >= -radius && coords[0] <= radius ? 1 : 0;
+                        });
+                });
+
+            svg.call(drag);
         });
 
-        const arcsData = [];
-        for (let i = 0; i < citiesWithDates.length - 1; i++) {
-            arcsData.push({
-                startLat: citiesWithDates[i].latitude,
-                startLng: citiesWithDates[i].longitude,
-                endLat: citiesWithDates[i + 1].latitude,
-                endLng: citiesWithDates[i + 1].longitude,
-                color: 'rgba(255, 215, 0, 0.6)'
-            });
-        }
-
-        document.getElementById('arcCount').textContent = arcsData.length;
-
-        let arcsVisible = false;
-        let ringsVisible = false;
-
-        function toggleArcs() {
-            arcsVisible = !arcsVisible;
-            const button = document.getElementById('arcsText');
-
-            if (arcsVisible) {
-                button.innerHTML = 'Hide Routes';
-                globe.arcsData(arcsData)
-                    .arcColor('color')
-                    .arcDashLength(0.4)
-                    .arcDashGap(0.2)
-                    .arcDashAnimateTime(2000)
-                    .arcStroke(0.5);
-            } else {
-                button.innerHTML = 'Show Routes';
-                globe.arcsData([]);
-            }
-        }
-
-        function toggleRings() {
-            ringsVisible = !ringsVisible;
-            const button = document.getElementById('ringsText');
-
-            if (ringsVisible) {
-                button.innerHTML = 'Hide Rings';
-                globe.ringsData(citiesData)
-                    .ringColor(() => 'rgba(168, 218, 249, 0.5)')
-                    .ringMaxRadius(4)
-                    .ringPropagationSpeed(2)
-                    .ringRepeatPeriod(1500);
-            } else {
-                button.innerHTML = 'Show Rings';
-                globe.ringsData([]);
-            }
-        }
-
-        // Update stats
-        document.getElementById('countriesCount').textContent = visitedCountries.length;
-        document.getElementById('citiesCount').textContent = CITIES.length;
-
-        // Auto-rotation control
-        let autoRotate = false;
-
-        function toggleRotation() {
-            autoRotate = !autoRotate;
-            const button = document.getElementById('rotateText');
-
-            if (autoRotate) {
-                button.innerHTML = 'Stop Rotate';
-                startRotation();
-            } else {
-                button.innerHTML = 'Auto Rotate';
-                stopRotation();
-            }
-        }
-
-        function startRotation() {
-            globe.controls().autoRotate = true;
-            globe.controls().autoRotateSpeed = 0.5;
-        }
-
-        function stopRotation() {
-            globe.controls().autoRotate = false;
-        }
-
-        function resetView() {
-            globe.pointOfView({ lat: 39.9, lng: 116.4, altitude: 2.5 }, 1000);
-            stopRotation();
-            autoRotate = false;
-            document.getElementById('rotateText').innerHTML = 'Auto Rotate';
-        }
-
-        // Responsive sizing
+        // Handle window resize
         window.addEventListener('resize', () => {
-            globe.width(document.getElementById('globeViz').offsetWidth);
-            globe.height(document.getElementById('globeViz').offsetHeight);
+            location.reload(); // Simple approach for resize
         });
-
-        // Smooth entry animation
-        setTimeout(() => {
-            globe.pointOfView({ lat: 20, lng: 0, altitude: 2.5 }, 3000);
-        }, 1000);
-
-        // Show a random city every few seconds during auto-rotate
-        let cityTourInterval;
-        function startCityTour() {
-            if (cityTourInterval) clearInterval(cityTourInterval);
-
-            cityTourInterval = setInterval(() => {
-                if (autoRotate) {
-                    const randomCity = citiesData[Math.floor(Math.random() * citiesData.length)];
-                    globe.pointOfView({
-                        lat: randomCity.lat,
-                        lng: randomCity.lng,
-                        altitude: 1.5
-                    }, 2000);
-                }
-            }, 8000);
-        }
     </script>
-
-    <!-- TopojSON for country boundaries -->
-    <script src="//unpkg.com/topojson-client"></script>
 </body>
 </html>
