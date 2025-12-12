@@ -298,6 +298,23 @@
         const g = svg.append('g')
             .attr('transform', `translate(${width / 2}, ${height / 2})`);
 
+        // Add gradient definition for light beam
+        const defs = svg.append('defs');
+        const gradient = defs.append('linearGradient')
+            .attr('id', 'lightBeamGradient')
+            .attr('x1', '0%')
+            .attr('y1', '100%')
+            .attr('x2', '0%')
+            .attr('y2', '0%');
+
+        gradient.append('stop')
+            .attr('offset', '0%')
+            .attr('style', 'stop-color:#1565C0;stop-opacity:0.8');
+
+        gradient.append('stop')
+            .attr('offset', '100%')
+            .attr('style', 'stop-color:#64B5F6;stop-opacity:0');
+
         // Create projection (orthographic = 3D globe look)
         const projection = d3.geoOrthographic()
             .scale(radius)
@@ -346,6 +363,32 @@
                     return visitedCountryNames.includes(d.properties.name) ? 'country-visited' : 'country';
                 })
                 .attr('d', path);
+
+            // Add light beams for special cities (Seattle)
+            // Note: This is a static SVG element with gradient - no animations, very lightweight
+            // Only recalculates position during globe rotation (user interaction)
+            const seattleData = CITIES.filter(d => d.name === 'Seattle, WA');
+            const lightBeams = g.selectAll('.light-beam')
+                .data(seattleData)
+                .enter().append('polygon')
+                .attr('class', 'light-beam')
+                .attr('points', d => {
+                    const coords = projection([d.longitude, d.latitude]);
+                    if (!coords) return '0,0 0,0 0,0';
+
+                    const beamHeight = d.radius * 4; // 2x marker diameter
+                    const baseWidth = d.radius / 1.5; // Base width
+                    const topWidth = d.radius / 4; // Top width (narrow)
+
+                    // Create cone shape: bottom-left, bottom-right, top-right, top-left
+                    return `${coords[0] - baseWidth},${coords[1]} ${coords[0] + baseWidth},${coords[1]} ${coords[0] + topWidth},${coords[1] - beamHeight} ${coords[0] - topWidth},${coords[1] - beamHeight}`;
+                })
+                .attr('fill', 'url(#lightBeamGradient)')
+                .attr('opacity', d => {
+                    const coords = projection([d.longitude, d.latitude]);
+                    return coords && coords[0] >= -radius && coords[0] <= radius ? 1 : 0;
+                })
+                .style('pointer-events', 'none');
 
             // Add city markers
             const cityMarkers = g.selectAll('.city-marker')
@@ -414,6 +457,23 @@
 
                     // Update all paths
                     g.selectAll('path').attr('d', path);
+
+                    // Update light beams
+                    g.selectAll('.light-beam')
+                        .attr('points', d => {
+                            const coords = projection([d.longitude, d.latitude]);
+                            if (!coords) return '0,0 0,0 0,0';
+
+                            const beamHeight = d.radius * 4;
+                            const baseWidth = d.radius / 1.5;
+                            const topWidth = d.radius / 4;
+
+                            return `${coords[0] - baseWidth},${coords[1]} ${coords[0] + baseWidth},${coords[1]} ${coords[0] + topWidth},${coords[1] - beamHeight} ${coords[0] - topWidth},${coords[1] - beamHeight}`;
+                        })
+                        .attr('opacity', d => {
+                            const coords = projection([d.longitude, d.latitude]);
+                            return coords && coords[0] >= -radius && coords[0] <= radius ? 1 : 0;
+                        });
 
                     // Update city markers
                     g.selectAll('.city-marker')
