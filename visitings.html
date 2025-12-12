@@ -32,9 +32,41 @@
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
     <script src="/assets/js/theme.js"></script> <script src="/assets/js/dark_mode.js"></script>
+    <style>
+        .view-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .view-switcher a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #A8DAF9 0%, #6BB6FF 100%);
+            border: none;
+            border-radius: 8px;
+            color: #0a0e27;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(168, 218, 249, 0.3);
+        }
+        .view-switcher a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(168, 218, 249, 0.5);
+            color: #0a0e27;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Visitings</h1>
+    <div style="position: relative;">
+        <div class="view-switcher">
+            <a href="visitings/index.html"><i class="fas fa-globe"></i> View 3D Globe</a>
+        </div>
+        <h1>Visitings</h1>
+    </div>
     <div id="map1" style="position: relative;"></div>
 
     <script src="countries.js"></script>
