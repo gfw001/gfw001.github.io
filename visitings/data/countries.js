@@ -5,4 +5,5 @@ COUNTRIES =
     CHN: {fillKey: 'visited'},
     NLD: {fillKey: 'visited'},
     BEL: {fillKey: 'visited'},
+    MEX: {fillKey: 'visited'},
 }
