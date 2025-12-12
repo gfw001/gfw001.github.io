@@ -11,7 +11,7 @@
     </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Visitings</title>
     <meta name="author" content="Peng, Andy">
@@ -43,6 +43,9 @@
 
         svg {
             cursor: grab;
+            touch-action: none;
+            -webkit-user-select: none;
+            user-select: none;
         }
 
         svg:active {
@@ -199,6 +202,10 @@
                 font-size: 1.4rem;
             }
 
+            .stat-label {
+                font-size: 0.75rem;
+            }
+
             .legend {
                 display: none;
             }
@@ -207,6 +214,25 @@
                 top: 10px;
                 right: 10px;
                 font-size: 0.75rem;
+            }
+
+            .tooltip {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats {
+                gap: 12px;
+                padding: 8px 12px;
+            }
+
+            .stat-number {
+                font-size: 1.2rem;
+            }
+
+            .stat-label {
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -354,14 +380,30 @@
                 })
                 .on('mouseleave', function() {
                     document.getElementById('tooltip').style.display = 'none';
+                })
+                .on('touchstart', function(event, d) {
+                    event.stopPropagation();
+                    const tooltip = document.getElementById('tooltip');
+                    document.getElementById('tooltip-title').textContent = d.name;
+                    document.getElementById('tooltip-date').textContent = d.date || '';
+                    tooltip.style.display = 'block';
+                    const touch = event.touches[0];
+                    tooltip.style.left = (touch.pageX + 10) + 'px';
+                    tooltip.style.top = (touch.pageY - 50) + 'px';
+                    setTimeout(() => {
+                        tooltip.style.display = 'none';
+                    }, 2000);
                 });
 
             // Update stats
             document.getElementById('countriesCount').textContent = Object.keys(COUNTRIES).length;
             document.getElementById('citiesCount').textContent = CITIES.length;
 
-            // Add drag to rotate globe
+            // Add drag to rotate globe (works for both mouse and touch)
             const drag = d3.drag()
+                .on('start', function(event) {
+                    svg.style('cursor', 'grabbing');
+                })
                 .on('drag', function(event) {
                     const rotate = projection.rotate();
                     const k = 75 / projection.scale();
@@ -387,9 +429,19 @@
                             const coords = projection([d.longitude, d.latitude]);
                             return coords && coords[0] >= -radius && coords[0] <= radius ? 1 : 0;
                         });
+                })
+                .on('end', function(event) {
+                    svg.style('cursor', 'grab');
                 });
 
             svg.call(drag);
+
+            // Prevent default touch behaviors on the SVG
+            svg.on('touchstart', function(event) {
+                if (event.target.tagName !== 'circle') {
+                    event.preventDefault();
+                }
+            });
         });
 
         // Handle window resize
