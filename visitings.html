@@ -1,120 +1,399 @@
 <!DOCTYPE html>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HTV795ZMCP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HTV795ZMCP');
-</script>
-
+<html lang="en">
 <head>
-    <title>Visitings</title>
-    <script src="d3/d3.v3.min.js"></script>
-    <script src="d3/topojson.v1.min.js"></script>
-    <script src="datamaps/datamaps.world.min.js"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HTV795ZMCP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-HTV795ZMCP');
+    </script>
+
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Visitings</title>
     <meta name="author" content="Peng, Andy">
-    <meta name="description" content="Visitings.">
-    <meta name="keywords" content="Visitings.">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
-    <link defer rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
-    <script src="/assets/js/theme.js"></script> <script src="/assets/js/dark_mode.js"></script>
+    <meta name="description" content="Interactive Globe of Places I've Visited">
+    <meta name="keywords" content="Visitings, Travel, Globe, Map">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" />
+
     <style>
-        .view-switcher {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #ffffff;
+            overflow: hidden;
+        }
+
+        #globe-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        svg {
+            cursor: grab;
+        }
+
+        svg:active {
+            cursor: grabbing;
+        }
+
+        .country {
+            fill: #e0e0e0;
+            stroke: #ffffff;
+            stroke-width: 0.5px;
+        }
+
+        .country-visited {
+            fill: #4CAF50;
+            stroke: #ffffff;
+            stroke-width: 0.5px;
+        }
+
+        .country:hover,
+        .country-visited:hover {
+            fill: #2196F3;
+        }
+
+        .city-marker {
+            fill: #26A69A;
+            stroke: #ffffff;
+            stroke-width: 2px;
+            cursor: pointer;
+        }
+
+        .city-marker:hover {
+            fill: #00897B;
+            stroke: #26A69A;
+            stroke-width: 3px;
+        }
+
+        .graticule {
+            fill: none;
+            stroke: #e0e0e0;
+            stroke-width: 0.5px;
+            stroke-opacity: 0.5;
+        }
+
+        .sphere {
+            fill: #ffffff;
+            stroke: #cccccc;
+            stroke-width: 2px;
+        }
+
+        .stats {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #ffffff;
+            padding: 16px 24px;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
             z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 24px;
         }
-        .view-switcher a {
-            display: inline-block;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #A8DAF9 0%, #6BB6FF 100%);
-            border: none;
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2196F3;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666666;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        .legend {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ffffff;
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            font-size: 0.95rem;
+            color: #333333;
+            font-weight: 500;
+        }
+
+        .legend-color {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 12px;
+            border: 2px solid #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .tooltip {
+            position: fixed;
+            background: #ffffff;
+            padding: 10px 14px;
             border-radius: 8px;
-            color: #0a0e27;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(168, 218, 249, 0.3);
+            border: 2px solid #26A69A;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            pointer-events: none;
+            display: none;
+            z-index: 2000;
         }
-        .view-switcher a:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(168, 218, 249, 0.5);
-            color: #0a0e27;
-            text-decoration: none;
+
+        .tooltip-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .tooltip-date {
+            color: #666;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        footer {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            color: #999999;
+            font-size: 0.85rem;
+            z-index: 999;
+        }
+
+        @media (max-width: 768px) {
+            .stats {
+                bottom: 10px;
+                left: 10px;
+                gap: 16px;
+                padding: 12px 16px;
+            }
+
+            .stat-number {
+                font-size: 1.4rem;
+            }
+
+            .legend {
+                display: none;
+            }
+
+            footer {
+                top: 10px;
+                right: 10px;
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div style="position: relative;">
-        <div class="view-switcher">
-            <a href="visitings/index.html"><i class="fas fa-globe"></i> View 3D Globe</a>
-        </div>
-        <h1>Visitings</h1>
-    </div>
-    <div id="map1" style="position: relative;"></div>
+    <div id="globe-container"></div>
 
-    <script src="countries.js"></script>
-    <script src="cities.js"></script>
+    <div class="stats">
+        <div class="stat-item">
+            <div class="stat-number" id="countriesCount">0</div>
+            <div class="stat-label">Countries</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="citiesCount">0</div>
+            <div class="stat-label">Cities</div>
+        </div>
+    </div>
+
+    <div class="legend">
+        <div class="legend-item">
+            <div class="legend-color" style="background: #26A69A;"></div>
+            <span>Cities Visited</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #4CAF50;"></div>
+            <span>Countries Visited</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #e0e0e0;"></div>
+            <span>Other Countries</span>
+        </div>
+    </div>
+
+    <div class="tooltip" id="tooltip">
+        <div class="tooltip-title" id="tooltip-title"></div>
+        <div class="tooltip-date" id="tooltip-date"></div>
+    </div>
+
+    <footer>
+        © 2025 Andy Peng
+    </footer>
+
+    <!-- D3.js for lightweight SVG globe -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+
+    <!-- Data Files -->
+    <script src="visitings/data/countries.js"></script>
+    <script src="visitings/data/cities.js"></script>
 
     <script>
+        // Set up dimensions
+        const width = Math.min(window.innerWidth, 1200);
+        const height = window.innerHeight;
+        const radius = Math.min(width, height) / 2.5;
 
-    var map = new Datamap({
-        scope: 'world',
-        element: document.getElementById('map1'),
-        projection: 'mercator',
-        responsive: true,
-        height: 700,
-        fills: {
-            defaultFill: '#D0D0D0',
-            visited: '#B0B0B0',
-            city: '#A8DAF9'
-        },
-        geographyConfig: {
-            highlightOnHover: true,
-            highlightFillColor: '#A0C0A0',
-            highlightBorderColor: '#F0F0F0',
-            popupOnHover: true,
-            popupTemplate: function(geography, data) {
-                return '<div class="hoverinfo"><b>' + geography.properties.name + '</b></div>';
-            },
-        },
-        bubblesConfig: {
-            borderWidth: 1,
-            borderColor: '#FFFFFF',
-            highlightOnHover: true,
-            popupOnHover: true,
-            popupTemplate: function(geo, data) {
-                return "<div class='hoverinfo'>" + data.name + ":<br>" + data.date + "</div>";
-            }
-        },
+        // Create SVG
+        const svg = d3.select('#globe-container')
+            .append('svg')
+            .attr('width', width)
+            .attr('height', height);
 
-        data: COUNTRIES
-    });
+        const g = svg.append('g')
+            .attr('transform', `translate(${width / 2}, ${height / 2})`);
 
-    map.bubbles(CITIES);
+        // Create projection (orthographic = 3D globe look)
+        const projection = d3.geoOrthographic()
+            .scale(radius)
+            .translate([0, 0])
+            .clipAngle(90);
 
-    window.addEventListener('resize', function() {
-        map.resize();
-    });
+        const path = d3.geoPath().projection(projection);
 
+        // Initial rotation to show Beijing area
+        projection.rotate([-116.4, -39.9, 0]);
+
+        // Add sphere (globe outline)
+        g.append('path')
+            .datum({type: 'Sphere'})
+            .attr('class', 'sphere')
+            .attr('d', path);
+
+        // Add graticule (grid lines)
+        const graticule = d3.geoGraticule();
+        g.append('path')
+            .datum(graticule)
+            .attr('class', 'graticule')
+            .attr('d', path);
+
+        // ISO code mapping
+        const isoCodeMap = {
+            'USA': 'United States of America',
+            'CHN': 'China',
+            'NLD': 'Netherlands',
+            'BEL': 'Belgium'
+        };
+
+        const visitedCountryNames = Object.keys(COUNTRIES).map(code => isoCodeMap[code]);
+
+        // Load and render world map
+        d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(world => {
+            const countries = topojson.feature(world, world.objects.countries);
+
+            // Draw countries
+            g.selectAll('.country')
+                .data(countries.features)
+                .enter().append('path')
+                .attr('class', d => {
+                    return visitedCountryNames.includes(d.properties.name) ? 'country-visited' : 'country';
+                })
+                .attr('d', path);
+
+            // Add city markers
+            const cityMarkers = g.selectAll('.city-marker')
+                .data(CITIES)
+                .enter().append('circle')
+                .attr('class', 'city-marker')
+                .attr('r', d => Math.max(3, d.radius / 2))
+                .attr('cx', d => {
+                    const coords = projection([d.longitude, d.latitude]);
+                    return coords ? coords[0] : -1000;
+                })
+                .attr('cy', d => {
+                    const coords = projection([d.longitude, d.latitude]);
+                    return coords ? coords[1] : -1000;
+                })
+                .attr('opacity', d => {
+                    const coords = projection([d.longitude, d.latitude]);
+                    return coords && coords[0] >= -radius && coords[0] <= radius ? 1 : 0;
+                })
+                .on('mouseenter', function(event, d) {
+                    const tooltip = document.getElementById('tooltip');
+                    document.getElementById('tooltip-title').textContent = d.name;
+                    document.getElementById('tooltip-date').textContent = d.date || '';
+                    tooltip.style.display = 'block';
+                    tooltip.style.left = (event.pageX + 10) + 'px';
+                    tooltip.style.top = (event.pageY + 10) + 'px';
+                })
+                .on('mousemove', function(event) {
+                    const tooltip = document.getElementById('tooltip');
+                    tooltip.style.left = (event.pageX + 10) + 'px';
+                    tooltip.style.top = (event.pageY + 10) + 'px';
+                })
+                .on('mouseleave', function() {
+                    document.getElementById('tooltip').style.display = 'none';
+                });
+
+            // Update stats
+            document.getElementById('countriesCount').textContent = Object.keys(COUNTRIES).length;
+            document.getElementById('citiesCount').textContent = CITIES.length;
+
+            // Add drag to rotate globe
+            const drag = d3.drag()
+                .on('drag', function(event) {
+                    const rotate = projection.rotate();
+                    const k = 75 / projection.scale();
+                    projection.rotate([
+                        rotate[0] + event.dx * k,
+                        rotate[1] - event.dy * k
+                    ]);
+
+                    // Update all paths
+                    g.selectAll('path').attr('d', path);
+
+                    // Update city markers
+                    g.selectAll('.city-marker')
+                        .attr('cx', d => {
+                            const coords = projection([d.longitude, d.latitude]);
+                            return coords ? coords[0] : -1000;
+                        })
+                        .attr('cy', d => {
+                            const coords = projection([d.longitude, d.latitude]);
+                            return coords ? coords[1] : -1000;
+                        })
+                        .attr('opacity', d => {
+                            const coords = projection([d.longitude, d.latitude]);
+                            return coords && coords[0] >= -radius && coords[0] <= radius ? 1 : 0;
+                        });
+                });
+
+            svg.call(drag);
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            location.reload(); // Simple approach for resize
+        });
     </script>
 </body>
-<footer class="fixed-bottom">
-   <div class="container mt-0"> © Copyright 2025 Andy Peng. </div>
-</footer>
+</html>
