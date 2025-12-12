@@ -442,12 +442,64 @@
             document.getElementById('countriesCount').textContent = Object.keys(COUNTRIES).length;
             document.getElementById('citiesCount').textContent = CITIES.length;
 
+            // Cache selections for better performance (avoid repeated DOM queries)
+            const allPaths = g.selectAll('path');
+            const allLightBeams = g.selectAll('.light-beam');
+            const allCityMarkers = g.selectAll('.city-marker');
+
+            // Detect if mobile for performance optimization
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+            // Throttle updates on mobile to reduce CPU load
+            let lastUpdate = 0;
+            const updateInterval = isMobile ? 50 : 16; // 20fps on mobile, 60fps on desktop
+
+            function updateGlobe() {
+                // Update all paths
+                allPaths.attr('d', path);
+
+                // Update light beams
+                allLightBeams
+                    .attr('points', d => {
+                        const coords = projection([d.longitude, d.latitude]);
+                        if (!coords) return '0,0 0,0 0,0';
+
+                        const beamHeight = d.radius * 4;
+                        const baseWidth = d.radius / 1.5;
+                        const topWidth = d.radius / 4;
+
+                        return `${coords[0] - baseWidth},${coords[1]} ${coords[0] + baseWidth},${coords[1]} ${coords[0] + topWidth},${coords[1] - beamHeight} ${coords[0] - topWidth},${coords[1] - beamHeight}`;
+                    })
+                    .attr('opacity', d => {
+                        const coords = projection([d.longitude, d.latitude]);
+                        return coords && coords[0] >= -radius && coords[0] <= radius ? 1 : 0;
+                    });
+
+                // Update city markers
+                allCityMarkers
+                    .attr('cx', d => {
+                        const coords = projection([d.longitude, d.latitude]);
+                        return coords ? coords[0] : -1000;
+                    })
+                    .attr('cy', d => {
+                        const coords = projection([d.longitude, d.latitude]);
+                        return coords ? coords[1] : -1000;
+                    })
+                    .attr('opacity', d => {
+                        const coords = projection([d.longitude, d.latitude]);
+                        return coords && coords[0] >= -radius && coords[0] <= radius ? 1 : 0;
+                    });
+            }
+
             // Add drag to rotate globe (works for both mouse and touch)
             const drag = d3.drag()
                 .on('start', function(event) {
                     svg.style('cursor', 'grabbing');
                 })
                 .on('drag', function(event) {
+                    const now = Date.now();
+
+                    // Update rotation
                     const rotate = projection.rotate();
                     const k = 75 / projection.scale();
                     projection.rotate([
@@ -455,58 +507,34 @@
                         rotate[1] - event.dy * k
                     ]);
 
-                    // Update all paths
-                    g.selectAll('path').attr('d', path);
-
-                    // Update light beams
-                    g.selectAll('.light-beam')
-                        .attr('points', d => {
-                            const coords = projection([d.longitude, d.latitude]);
-                            if (!coords) return '0,0 0,0 0,0';
-
-                            const beamHeight = d.radius * 4;
-                            const baseWidth = d.radius / 1.5;
-                            const topWidth = d.radius / 4;
-
-                            return `${coords[0] - baseWidth},${coords[1]} ${coords[0] + baseWidth},${coords[1]} ${coords[0] + topWidth},${coords[1] - beamHeight} ${coords[0] - topWidth},${coords[1] - beamHeight}`;
-                        })
-                        .attr('opacity', d => {
-                            const coords = projection([d.longitude, d.latitude]);
-                            return coords && coords[0] >= -radius && coords[0] <= radius ? 1 : 0;
-                        });
-
-                    // Update city markers
-                    g.selectAll('.city-marker')
-                        .attr('cx', d => {
-                            const coords = projection([d.longitude, d.latitude]);
-                            return coords ? coords[0] : -1000;
-                        })
-                        .attr('cy', d => {
-                            const coords = projection([d.longitude, d.latitude]);
-                            return coords ? coords[1] : -1000;
-                        })
-                        .attr('opacity', d => {
-                            const coords = projection([d.longitude, d.latitude]);
-                            return coords && coords[0] >= -radius && coords[0] <= radius ? 1 : 0;
-                        });
+                    // Throttle updates on mobile to prevent overwhelming the CPU
+                    if (!isMobile || now - lastUpdate > updateInterval) {
+                        updateGlobe();
+                        lastUpdate = now;
+                    }
                 })
                 .on('end', function(event) {
                     svg.style('cursor', 'grab');
+                    // Final update to ensure smooth finish
+                    updateGlobe();
                 });
 
             svg.call(drag);
-
-            // Prevent default touch behaviors on the SVG
-            svg.on('touchstart', function(event) {
-                if (event.target.tagName !== 'circle') {
-                    event.preventDefault();
-                }
-            });
         });
 
-        // Handle window resize
+        // Handle window resize (debounced to prevent iOS crashes from address bar)
+        let resizeTimer;
         window.addEventListener('resize', () => {
-            location.reload(); // Simple approach for resize
+            clearTimeout(resizeTimer);
+            // Only reload after user stops resizing for 500ms
+            // Prevents iOS address bar show/hide from triggering reload
+            resizeTimer = setTimeout(() => {
+                // Only reload if width actually changed (not just height from address bar)
+                const newWidth = window.innerWidth;
+                if (Math.abs(newWidth - width) > 50) {
+                    location.reload();
+                }
+            }, 500);
         });
     </script>
 </body>
