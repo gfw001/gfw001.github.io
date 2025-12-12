@@ -2,6 +2,7 @@
 COUNTRIES =
 {
     USA: {fillKey: 'visited'},
+    CAN: {fillKey: 'visited'},
     CHN: {fillKey: 'visited'},
     NLD: {fillKey: 'visited'},
     BEL: {fillKey: 'visited'},
