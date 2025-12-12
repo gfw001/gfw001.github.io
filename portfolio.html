@@ -842,7 +842,13 @@
             color: var(--global-hover-color);
           }
         }
-      
+
+        .navbar-nav .nav-item.active>.nav-link,
+        .navbar-nav .nav-item.active>.nav-link .lang-en,
+        .navbar-nav .nav-item.active>.nav-link .lang-zh {
+          color: var(--global-theme-color) !important;
+        }
+
         .navbar-brand.social {
           padding-bottom: 0;
           padding-top: 0;
