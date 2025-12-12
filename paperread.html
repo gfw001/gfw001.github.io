@@ -35,50 +35,43 @@
    </head>
    <style>
       /* Paper reading list specific styles */
-      .paper-list {
+      .paper-table {
+         width: 100%;
          margin-top: 2rem;
+         border-collapse: collapse;
       }
 
-      .paper-item {
-         margin-bottom: 2rem;
-         padding-bottom: 2rem;
-         border-bottom: 1px solid #e0e0e0;
+      .paper-table th {
+         text-align: left;
+         padding: 0.75rem;
+         border-bottom: 2px solid #ddd;
+         font-weight: 600;
+         background-color: #f8f9fa;
       }
 
-      .paper-item:last-child {
+      .paper-table td {
+         padding: 0.5rem 0.75rem;
+         border-bottom: 1px solid #eee;
+         vertical-align: top;
+      }
+
+      .paper-table tr:last-child td {
          border-bottom: none;
       }
 
-      .paper-title {
-         font-size: 1.1rem;
-         font-weight: 600;
-         color: #000;
-         margin-bottom: 0.5rem;
-      }
-
-      .paper-venue {
-         color: #666;
-         font-style: italic;
-         margin-bottom: 0.5rem;
-      }
-
-      .paper-year {
+      .paper-table .year-col {
+         width: 80px;
+         font-weight: 500;
          color: var(--global-theme-color);
+      }
+
+      .paper-table .title-col {
          font-weight: 500;
       }
 
-      h2.year-header {
-         color: var(--global-theme-color);
-         font-size: 1.75rem;
-         font-weight: 600;
-         margin-top: 3rem;
-         margin-bottom: 1.5rem;
-         padding-top: 1rem;
-      }
-
-      h2.year-header:first-of-type {
-         margin-top: 1rem;
-         border-top: none;
+      .paper-table .venue-col {
+         color: #666;
+         font-style: italic;
       }
    </style>
    <body class="fixed-top-nav" data-page="paperread">
@@ -90,87 +83,87 @@
                <p class="post-description">Notable papers in distributed systems, cloud computing, and machine learning</p>
             </header>
             <article>
-               <div class="paper-list">
-                  <h2 class="year-header">2023</h2>
-                  <div class="paper-item">
-                     <div class="paper-title">On-demand Container Loading in AWS Lambda</div>
-                     <div class="paper-venue">USENIX Annual Technical Conference (USENIX ATC '23)</div>
-                  </div>
-                  <div class="paper-item">
-                     <div class="paper-title">Building and operating a pretty big storage system called S3</div>
-                     <div class="paper-venue">USENIX Conference on File and Storage Technologies (USENIX FAST '23)</div>
-                  </div>
-
-                  <h2 class="year-header">2022</h2>
-                  <div class="paper-item">
-                     <div class="paper-title">Amazon DynamoDB: A Scalable, Predictably Performant, and Fully Managed NoSQL Database Service</div>
-                     <div class="paper-venue">USENIX Annual Technical Conference (USENIX ATC '22)</div>
-                  </div>
-
-                  <h2 class="year-header">2021</h2>
-                  <div class="paper-item">
-                     <div class="paper-title">Using lightweight formal methods to validate a key-value storage node in Amazon S3</div>
-                     <div class="paper-venue">ACM Symposium on Operating Systems Principles (SOSP '21)</div>
-                  </div>
-
-                  <h2 class="year-header">2020</h2>
-                  <div class="paper-item">
-                     <div class="paper-title">Firecracker: Lightweight Virtualization for Serverless Applications</div>
-                     <div class="paper-venue">USENIX Symposium on Networked Systems Design and Implementation (NSDI '20)</div>
-                  </div>
-
-                  <h2 class="year-header">2017</h2>
-                  <div class="paper-item">
-                     <div class="paper-title">Attention Is All You Need</div>
-                     <div class="paper-venue">NeurIPS 2017</div>
-                  </div>
-
-                  <h2 class="year-header">2016</h2>
-                  <div class="paper-item">
-                     <div class="paper-title">Borg, Omega, and Kubernetes: Lessons learned from three container-management systems over a decade</div>
-                     <div class="paper-venue">ACM Queue, Volume 14, Issue 1</div>
-                  </div>
-
-                  <h2 class="year-header">2015</h2>
-                  <div class="paper-item">
-                     <div class="paper-title">Large-scale cluster management at Google with Borg</div>
-                     <div class="paper-venue">Proceedings of the European Conference on Computer Systems (EuroSys '15)</div>
-                  </div>
-
-                  <h2 class="year-header">2013</h2>
-                  <div class="paper-item">
-                     <div class="paper-title">Omega: flexible, scalable schedulers for large compute clusters</div>
-                     <div class="paper-venue">ACM European Conference on Computer Systems (EuroSys '13)</div>
-                  </div>
-                  <div class="paper-item">
-                     <div class="paper-title">Spanner: Google's Globally Distributed Database</div>
-                     <div class="paper-venue">ACM Transactions on Computer Systems (TOCS), Volume 31, Issue 3</div>
-                  </div>
-
-                  <h2 class="year-header">2007</h2>
-                  <div class="paper-item">
-                     <div class="paper-title">Dynamo: Amazon's Highly Available Key-value Store</div>
-                     <div class="paper-venue">ACM Symposium on Operating Systems Principles (SOSP '07)</div>
-                  </div>
-
-                  <h2 class="year-header">2006</h2>
-                  <div class="paper-item">
-                     <div class="paper-title">Bigtable: A Distributed Storage System for Structured Data</div>
-                     <div class="paper-venue">USENIX Symposium on Operating Systems Design and Implementation (OSDI '06)</div>
-                  </div>
-
-                  <h2 class="year-header">2004</h2>
-                  <div class="paper-item">
-                     <div class="paper-title">MapReduce: Simplified Data Processing on Large Clusters</div>
-                     <div class="paper-venue">USENIX Symposium on Operating Systems Design and Implementation (OSDI '04)</div>
-                  </div>
-
-                  <h2 class="year-header">2003</h2>
-                  <div class="paper-item">
-                     <div class="paper-title">The Google File System</div>
-                     <div class="paper-venue">ACM Symposium on Operating Systems Principles (SOSP '03)</div>
-                  </div>
-               </div>
+               <table class="paper-table">
+                  <thead>
+                     <tr>
+                        <th>Year</th>
+                        <th>Title</th>
+                        <th>Venue</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td class="year-col">2023</td>
+                        <td class="title-col">On-demand Container Loading in AWS Lambda</td>
+                        <td class="venue-col">USENIX Annual Technical Conference (USENIX ATC '23)</td>
+                     </tr>
+                     <tr>
+                        <td class="year-col">2023</td>
+                        <td class="title-col">Building and operating a pretty big storage system called S3</td>
+                        <td class="venue-col">USENIX Conference on File and Storage Technologies (USENIX FAST '23)</td>
+                     </tr>
+                     <tr>
+                        <td class="year-col">2022</td>
+                        <td class="title-col">Amazon DynamoDB: A Scalable, Predictably Performant, and Fully Managed NoSQL Database Service</td>
+                        <td class="venue-col">USENIX Annual Technical Conference (USENIX ATC '22)</td>
+                     </tr>
+                     <tr>
+                        <td class="year-col">2021</td>
+                        <td class="title-col">Using lightweight formal methods to validate a key-value storage node in Amazon S3</td>
+                        <td class="venue-col">ACM Symposium on Operating Systems Principles (SOSP '21)</td>
+                     </tr>
+                     <tr>
+                        <td class="year-col">2020</td>
+                        <td class="title-col">Firecracker: Lightweight Virtualization for Serverless Applications</td>
+                        <td class="venue-col">USENIX Symposium on Networked Systems Design and Implementation (NSDI '20)</td>
+                     </tr>
+                     <tr>
+                        <td class="year-col">2017</td>
+                        <td class="title-col">Attention Is All You Need</td>
+                        <td class="venue-col">NeurIPS 2017</td>
+                     </tr>
+                     <tr>
+                        <td class="year-col">2016</td>
+                        <td class="title-col">Borg, Omega, and Kubernetes: Lessons learned from three container-management systems over a decade</td>
+                        <td class="venue-col">ACM Queue, Volume 14, Issue 1</td>
+                     </tr>
+                     <tr>
+                        <td class="year-col">2015</td>
+                        <td class="title-col">Large-scale cluster management at Google with Borg</td>
+                        <td class="venue-col">Proceedings of the European Conference on Computer Systems (EuroSys '15)</td>
+                     </tr>
+                     <tr>
+                        <td class="year-col">2013</td>
+                        <td class="title-col">Omega: flexible, scalable schedulers for large compute clusters</td>
+                        <td class="venue-col">ACM European Conference on Computer Systems (EuroSys '13)</td>
+                     </tr>
+                     <tr>
+                        <td class="year-col">2013</td>
+                        <td class="title-col">Spanner: Google's Globally Distributed Database</td>
+                        <td class="venue-col">ACM Transactions on Computer Systems (TOCS), Volume 31, Issue 3</td>
+                     </tr>
+                     <tr>
+                        <td class="year-col">2007</td>
+                        <td class="title-col">Dynamo: Amazon's Highly Available Key-value Store</td>
+                        <td class="venue-col">ACM Symposium on Operating Systems Principles (SOSP '07)</td>
+                     </tr>
+                     <tr>
+                        <td class="year-col">2006</td>
+                        <td class="title-col">Bigtable: A Distributed Storage System for Structured Data</td>
+                        <td class="venue-col">USENIX Symposium on Operating Systems Design and Implementation (OSDI '06)</td>
+                     </tr>
+                     <tr>
+                        <td class="year-col">2004</td>
+                        <td class="title-col">MapReduce: Simplified Data Processing on Large Clusters</td>
+                        <td class="venue-col">USENIX Symposium on Operating Systems Design and Implementation (OSDI '04)</td>
+                     </tr>
+                     <tr>
+                        <td class="year-col">2003</td>
+                        <td class="title-col">The Google File System</td>
+                        <td class="venue-col">ACM Symposium on Operating Systems Principles (SOSP '03)</td>
+                     </tr>
+                  </tbody>
+               </table>
             </article>
          </div>
       </div>
