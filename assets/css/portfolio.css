@@ -237,8 +237,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
-  margin: 32px 0;
+  margin: 8px 0;
   align-items: start;
+}
+
+/* First blocks-container after bio content needs more top margin */
+.bio-content > .blocks-container:first-of-type,
+.lang-zh.bio-content > .blocks-container:first-of-type {
+  margin-top: 32px;
 }
 
 .info-block {
