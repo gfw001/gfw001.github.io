@@ -144,17 +144,10 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-.bio-intro {
-  font-size: 20px !important;
-  font-weight: 400;
-  color: var(--global-text-color);
-  margin-bottom: 16px !important;
-  line-height: 1.8;
-}
-
-.bio-paragraph {
+.bio-text {
   font-size: 18px !important;
   font-weight: 400;
+  color: var(--global-text-color);
   margin-bottom: 16px !important;
   line-height: 1.8;
 }
