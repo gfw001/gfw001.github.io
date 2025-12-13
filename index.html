@@ -47,66 +47,64 @@
             <div class="profile-hs">
               <figure>
                 <picture>
-                  </source> <img src="assets/img/Memoji.png" class="img-fluid z-depth-1 rounded-circle" width="240" height="auto" alt="headshot.jpg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> 
+                  </source> <img src="assets/img/Memoji.png" class="img-fluid z-depth-1 rounded-circle" width="240" height="auto" alt="headshot.jpg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
                 </picture>
               </figure>
             </div>
-            <article>
-               <div class="container-center" style="margin-top: 40px;">
-                 <a href="https://pengandy.com/portfolio">Bio</a> | <a href="https://pengandy.com/blog/">Blog</a> | <a href="/publications">Books & Invited Talks</a> | <a href="/projects">Projects</a> | <a href="/service">Services</a> | <a href="/cv">CV</a>
-               </div>
-               
-               <div class="container-center" style="margin-top: 75px;">
-                  <img src="assets/projects/amazon-logo-squid-ink-smile-orange.png" height="68" style="margin: 0px 0px 0px 15px;">
-               </div>
 
-               <div class="container-center" style="margin-top: 35px;">
-                  <ul class="container-center">
-                     <li>Intrapreneur, Builder, Researcher, Technologist.</li>
-                  </ul>
-               </div>
+            <!-- Card 1: Header + Profile -->
+            <div class="content-card header-card">
+               <img src="assets/img/Memoji.png" class="profile-img-small" alt="Andy Peng Profile">
+               <h1><span class="font-weight-bold">Andy</span> Peng</h1>
+               <p class="subtitle">Intrapreneur, Builder, Researcher, Technologist.</p>
+            </div>
 
-               <div class="container-center" style="margin-top: 45px;">
-                  <p>
-                     <a href="mailto:%70%65%6E%67%61%6E%64%79%2E%62%75%69%6C%64@%67%6D%61%69%6C%2E%63%6F%6D"><img width="85" height="85" src="https://img.icons8.com/color/96/gmail-new.png" alt="gmail-new"/></a>
-                     <a href="https://www.linkedin.com/in/pengandy-us"><img width="85" height="85" src="https://img.icons8.com/color/96/linkedin.png" alt="linkedin"/></a>
-                     <a href="https://twitter.com/pymhq"><img width="85" height="85" src="https://img.icons8.com/ios/96/twitterx--v2.png" alt="twitterx--v2"/></a>
-                  </p>
+            <!-- Card 2: Navigation + Logo + Social -->
+            <div class="content-card navigation-card">
+               <div class="logo-section">
+                  <img src="assets/projects/amazon-logo-squid-ink-smile-orange.png" alt="Amazon">
                </div>
-               <section id="tags" class="home-section wg-tag-cloud  "  >
-               <div class="home-section-bg " ></div>
-               <div class="container-center" >
-               <div class="row" >
-                 <div class="col-sm-2"></div>
-                 <div class="col-sm-8">
-               <div class="tag-cloud" style="margin-top: 120px;">
-                   <span style="font-size:1.9808597661330818rem">ENFJ</span>
-                   <span style="font-size:1.3797423688644388rem">PNW</span>
-                   <span style="font-size:0.8624203575907899rem">Large-Scale Distributed System</span>
-                   <span style="font-size:1.9610478096093238rem">Technical Leadership</span>
-                   <span style="font-size:0.8624203575907899rem">Engineering</span>
-                   <span style="font-size:0.8624203575907899rem">The State of the Art (SOTA)</span>
-                   <span style="font-size:1.4826779887263513rem">Builder</span>
-                   <span style="font-size:0.7rem">Mentoring and Counseling</span>
-                   <span style="font-size:1.4826779887263513rem">Intrapreneur</span>
-                   <span style="font-size:1.6086610056368245rem">Product & Research</span>
-                   <span style="font-size:0.7rem">Zero to One</span>
-                   <span style="font-size:0.8624203575907899rem">Be Curious</span>
-                   <span style="font-size:1.9808597661330818rem">Machine Learning</span>
-                   <span style="font-size:1.4826779887263513rem">Serverless</span>
-                   <span style="font-size:1.4826779887263513rem">Open Source</span>
-                   <span style="font-size:1.7710813632276143rem">LLM</span>
-                   <span style="font-size:1.3797423688644388rem">Technical Advisor</span>
-                   <span style="font-size:0.8624203575907899rem">Virtualization</span>
-                   <span style="font-size:1.1783698208829727rem">Model Evaluation and Benchmark</span>
-                   <span style="font-size:1.2537593519539654rem">Organizational Behavior</span>
-                </div>
-                   </div>
-                   <div class="col-sm-2"></div>
-                </div>
-                </div>
-                </section>
-            </article>
+               <nav class="nav-links">
+                  <a href="https://pengandy.com/portfolio">Bio</a>
+                  <a href="https://pengandy.com/blog/">Blog</a>
+                  <a href="/publications">Books & Talks</a>
+                  <a href="/projects">Projects</a>
+                  <a href="/service">Services</a>
+                  <a href="/cv">CV</a>
+               </nav>
+               <div class="social-icons-compact">
+                  <a href="mailto:%70%65%6E%67%61%6E%64%79%2E%62%75%69%6C%64@%67%6D%61%69%6C%2E%63%6F%6D" title="Email"><i class="fa fa-envelope"></i></a>
+                  <a href="https://www.linkedin.com/in/pengandy-us" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                  <a href="https://twitter.com/pymhq" title="Twitter"><i class="fab fa-twitter"></i></a>
+               </div>
+            </div>
+
+            <!-- Card 3: Tag Cloud -->
+            <div class="content-card tag-card">
+               <h3 class="card-title">Expertise</h3>
+               <div class="tag-cloud">
+                  <span style="font-size:1.9808597661330818rem">ENFJ</span>
+                  <span style="font-size:1.3797423688644388rem">PNW</span>
+                  <span style="font-size:0.8624203575907899rem">Large-Scale Distributed System</span>
+                  <span style="font-size:1.9610478096093238rem">Technical Leadership</span>
+                  <span style="font-size:0.8624203575907899rem">Engineering</span>
+                  <span style="font-size:0.8624203575907899rem">The State of the Art (SOTA)</span>
+                  <span style="font-size:1.4826779887263513rem">Builder</span>
+                  <span style="font-size:0.7rem">Mentoring and Counseling</span>
+                  <span style="font-size:1.4826779887263513rem">Intrapreneur</span>
+                  <span style="font-size:1.6086610056368245rem">Product & Research</span>
+                  <span style="font-size:0.7rem">Zero to One</span>
+                  <span style="font-size:0.8624203575907899rem">Be Curious</span>
+                  <span style="font-size:1.9808597661330818rem">Machine Learning</span>
+                  <span style="font-size:1.4826779887263513rem">Serverless</span>
+                  <span style="font-size:1.4826779887263513rem">Open Source</span>
+                  <span style="font-size:1.7710813632276143rem">LLM</span>
+                  <span style="font-size:1.3797423688644388rem">Technical Advisor</span>
+                  <span style="font-size:0.8624203575907899rem">Virtualization</span>
+                  <span style="font-size:1.1783698208829727rem">Model Evaluation and Benchmark</span>
+                  <span style="font-size:1.2537593519539654rem">Organizational Behavior</span>
+               </div>
+            </div>
          </div>
       </div>
       <footer class="fixed-bottom">
