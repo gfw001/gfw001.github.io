@@ -36,6 +36,7 @@
       <link rel="canonical" href="https://pengandy.com/studio">
       <link rel="shortcut icon" href="/assets/projects/Peng Andys Logo Symbol.png">
       <link rel="stylesheet" href="/assets/css/main.css">
+      <link rel="stylesheet" href="/assets/css/custom-studio.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
       <script src="/assets/js/theme.js"></script> <script src="/assets/js/dark_mode.js"></script> 
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -44,261 +45,59 @@
       <!-- MDB -->
       <link rel="stylesheet" href="css/bootstrap-quotes.min.css" />
    </head>
-   
-   <style>
-     img {
-         pointer-events: none;
-      }
-      .container-center {
-         text-align: center;
-         align-items: center;
-      }
-      .container-left {
-         text-align: left;
-         align-items: left;
-      }
-      .container-center-flex {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 50px;
-      }
-      .row-flex {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            width: 100%;
-            max-width: 1200px;
-            margin-bottom: 5px;
-        }
-      .col-flex {
-            flex: 0 0 calc(50% - 150px);
-            max-width: calc(50% - 150px);
-            margin: 0 20px 40px;
-      }
-      .tag-cloud a {
-        display: inline-block;
-        position: relative;
-        margin: 8px 10px;
-        word-wrap: break-word;
-        transition-duration: 0.2s;
-        transition-property: transform;
-        transition-timing-function: ease-out; }
-      
-      .tag-cloud a:active,
-      .tag-cloud a:focus,
-      .tag-cloud a:hover {
-        color: #104d92;
-        transform: scale(1.2); }
 
-      a {
-         transition: color 200ms ease;
-         text-decoration: none;
-         color: rgb(63, 63, 63);
-      }
-      
-      a:hover {
-         color: rgba(20, 20, 20, 0.6);
-      }
-      /* 1、flex布局 */
-      .case1 {
-         display: flex;
-         /* 水平居中 */
-         justify-content: center;
-         /* 垂直居中 */
-         align-items: center;
-      }
-
-      /* CSS */
-      .button-16 {
-        background-color: #f8f9fa;
-        border: 1px solid #f8f9fa;
-        border-radius: 4px;
-        color: #3c4043;
-        cursor: pointer;
-        font-family: arial,sans-serif;
-        font-size: 14px;
-        height: 36px;
-        line-height: 27px;
-        min-width: 54px;
-        padding: 0 16px;
-        text-align: center;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-        white-space: pre;
-      }
-      
-      .button-16:hover {
-        border-color: #dadce0;
-        box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
-        color: #202124;
-      }
-
-      .button-16:focus {
-        border-color: #4285f4;
-        outline: none;
-      }
-       /* CSS */
-      .button-13 {
-        background-color: #fff;
-        border: 1px solid #d5d9d9;
-        border-radius: 8px;
-        box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
-        box-sizing: border-box;
-        color: #0f1111;
-        cursor: pointer;
-        display: inline-block;
-        font-family: "Amazon Ember",sans-serif;
-        font-size: 14px;
-        line-height: 50px;
-        padding: 0 10px 0 11px;
-        position: relative;
-        text-align: center;
-        text-decoration: none;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-        vertical-align: middle;
-        width: 150px;
-      }
-
-      .button-13:hover {
-        background-color: #f7fafa;
-      }
-      
-      .button-13:focus {
-        border-color: #008296;
-        box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
-        outline: 0;
-      }
-     .blockquote-custom {
-      position: relative;
-      font-size: 1.1rem;
-    }
-
-    .blockquote-custom-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: -40px;
-      left: 19px;
-    }
-    @media (max-width: 1200px) {
-        .col-flex {
-            flex: 0 0 calc(100% - 40px);
-            max-width: calc(100% - 40px);
-        }
-    }
-    @media (max-width: 768px) {
-        .container-center-flex {
-            padding: 0 20px; /* Reduce padding on smaller screens */
-        }
-        .col-flex {
-            margin: 0 0 30px; /* Adjust margins for mobile */
-        }
-    }
-    .language-footer {
-         position: fixed;
-         bottom: 0;
-         right: 0;
-         font-size: 14px;
-         padding: 10px 20px;
-         line-height: 1.5; /* Match the line height of the copyright footer */
-         background-color: transparent;
-      }
-     body {
-      user-select: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-    }
-    .profile-hs {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 10px;
-    }
-    
-    .profile-hs figure {
-      margin: 0;
-    }
-    .mb-0.mt-2.font-italic {
-      color: rgba(0, 0, 0, 0.6); /* 这是一个带有 60% 不透明度的黑色 */
-    }
-    footer.fixed-bottom .footer-link {
-      color: var(--global-text-color);
-      text-decoration: none;
-    }
-    
-    footer.fixed-bottom .footer-link:hover {
-      color: var(--global-text-color);
-      text-decoration: none;
-    }
-   </style>
    <body class="fixed-top-nav ">
+      <!-- Hero Banner with Logo Background -->
+      <div class="hero-banner">
+         <div class="hero-content">
+            <h1>PENG ANDY STUDIO LLC</h1>
+            <p class="subtitle">Professional services by <a href="https://pengandy.com">Andy Peng</a></p>
+            <p class="credentials">Tech Lead at Amazon | NeurIPS 25 Chair | AI/ML Expert</p>
+         </div>
+      </div>
+
       <div class="container-center">
          <div class="post">
-            <div class="profile-hs">
-              <figure>
-                <picture>
-                  </source> <img src="assets/studio/Peng Andys Main Logo 2400x1800.jpg" width="668" height="auto" alt="PEND ANDY STUDIO LLC"> 
-                </picture>
-              </figure>
+            <!-- Services Card -->
+            <div class="content-card services-card">
+               <h3>Professional Services</h3>
+               <div class="services-grid">
+                  <!-- NPO & Research -->
+                  <div class="service-category">
+                     <h4>NPO & Research</h4>
+                     <p><strong>Board Member (NPO Only)</strong></p>
+                     <p>Paper/Patent Advising ($500/hr)</p>
+                     <p>Book Authoring (Advance + Royalty)</p>
+                  </div>
+
+                  <!-- Career Management -->
+                  <div class="service-category">
+                     <h4>Career Management</h4>
+                     <p>Organization Behavior Mentoring ($500/hr)</p>
+                     <p>Mock Interviews ($260-300/hr)</p>
+                     <p>Resume & Career Guide ($200-225/hr)</p>
+                  </div>
+               </div>
             </div>
-            <article>
-               <div class="container-center" style="margin-top: 20px;">
-                  <h2 style="margin-bottom: 10px;">PENG ANDY STUDIO LLC</h2>
-                  <p style="font-size: 16px; color: #666; margin-bottom: 5px;">Professional services by <a href="https://pengandy.com">Andy Peng</a></p>
-                  <p style="font-size: 14px; color: #888; margin-bottom: 30px;">Tech Lead at Amazon | NeurIPS 25 Chair | AI/ML Expert</p>
+
+            <!-- CTA Card -->
+            <div class="content-card cta-card">
+               <div class="cta-buttons">
+                  <a href="https://pengandy.com/professionalservices" class="button-primary">View All Services</a>
+                  <a href="https://calendly.com/pengandy" class="button-primary">Schedule Call</a>
                </div>
+            </div>
 
-               <!-- Service Categories -->
-               <div class="container-center" style="max-width: 900px; margin: 0 auto 40px auto;">
-                  <div class="row" style="margin: 0 -15px;">
-                     <!-- NPO & Research -->
-                     <div class="col-md-6" style="padding: 15px;">
-                        <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 25px; height: 100%; background-color: #fafafa;">
-                           <h4 style="margin-top: 0; margin-bottom: 15px; color: #333;">NPO & Research</h4>
-                           <p style="font-size: 14px; color: #666; margin-bottom: 10px;"><strong>Board Member (NPO Only)</strong></p>
-                           <p style="font-size: 14px; color: #666; margin-bottom: 10px;">Paper/Patent Advising ($500/hr)</p>
-                           <p style="font-size: 14px; color: #666; margin-bottom: 0;">Book Authoring (Advance + Royalty)</p>
-                        </div>
-                     </div>
-
-                     <!-- Career Management -->
-                     <div class="col-md-6" style="padding: 15px;">
-                        <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 25px; height: 100%; background-color: #fafafa;">
-                           <h4 style="margin-top: 0; margin-bottom: 15px; color: #333;">Career Management</h4>
-                           <p style="font-size: 14px; color: #666; margin-bottom: 10px;">Organization Behavior Mentoring ($500/hr)</p>
-                           <p style="font-size: 14px; color: #666; margin-bottom: 10px;">Mock Interviews ($260-300/hr)</p>
-                           <p style="font-size: 14px; color: #666; margin-bottom: 0;">Resume & Career Guide ($200-225/hr)</p>
-                        </div>
-                     </div>
-                  </div>
+            <!-- Contact Card -->
+            <div class="content-card contact-card">
+               <h3>Contact</h3>
+               <div class="social-icons-compact">
+                  <a href="mailto:pengandy.build@gmail.com" title="Email" rel="external nofollow noopener" target="_blank"><img src="https://img.icons8.com/color/96/gmail-new.png" alt="gmail"/></a>
+                  <a href="https://www.linkedin.com/in/pengandy-us" title="LinkedIn" rel="external nofollow noopener" target="_blank"><img src="https://img.icons8.com/color/96/linkedin.png" alt="linkedin"/></a>
+                  <a href="https://twitter.com/pymhq" title="Twitter" rel="external nofollow noopener" target="_blank"><img src="https://img.icons8.com/ios/96/twitterx--v2.png" alt="twitter"/></a>
+                  <a href="https://www.xiaohongshu.com/user/profile/646a8ca2000000000f006c94?xhsshare=CopyLink&appuid=646a8ca2000000000f006c94&apptime=1726950888&share_id=adcee4fb2111492a953479d5aad37577" title="Xiaohongshu" rel="external nofollow noopener" target="_blank"><img src="https://img.icons8.com/ios/96/FA5252/xiao-hong-shu.png" alt="xiaohongshu"/></a>
                </div>
-
-               <!-- CTA Buttons -->
-               <div class="container-center" style="margin-bottom: 40px;">
-                  <a href="https://pengandy.com/professionalservices" class="button-13" style="margin: 0 10px;">View All Services</a>
-                  <a href="https://calendly.com/pengandy" class="button-13" style="margin: 0 10px;">Schedule Call</a>
-               </div>
-
-               <!-- Contact & Social Media -->
-               <div class="container-center" style="margin-bottom: 60px;">
-                  <p style="font-size: 16px; color: #666; margin-bottom: 15px; font-weight: 500;">Contact</p>
-                  <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                     <a href="mailto:pengandy.build@gmail.com" title="Email" rel="external nofollow noopener" target="_blank"><img width="50" height="50" src="https://img.icons8.com/color/96/gmail-new.png" alt="gmail"/></a>
-                     <a href="https://www.linkedin.com/in/pengandy-us" title="LinkedIn" rel="external nofollow noopener" target="_blank"><img width="50" height="50" src="https://img.icons8.com/color/96/linkedin.png" alt="linkedin"/></a>
-                     <a href="https://twitter.com/pymhq" title="Twitter" rel="external nofollow noopener" target="_blank"><img width="50" height="50" src="https://img.icons8.com/ios/96/twitterx--v2.png" alt="twitter"/></a>
-                     <a href="https://www.xiaohongshu.com/user/profile/646a8ca2000000000f006c94?xhsshare=CopyLink&appuid=646a8ca2000000000f006c94&apptime=1726950888&share_id=adcee4fb2111492a953479d5aad37577" title="Xiaohongshu" rel="external nofollow noopener" target="_blank"><img width="50" height="50" src="https://img.icons8.com/ios/96/FA5252/xiao-hong-shu.png" alt="xiaohongshu"/></a>
-                  </div>
-               </div>
-
-            </article>
+            </div>
          </div>
       </div>
       <footer class="fixed-bottom">
