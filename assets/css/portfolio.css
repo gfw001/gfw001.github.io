@@ -185,9 +185,8 @@
 }
 
 .research-keywords {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  line-height: 1.8;
+  font-size: 15px;
 }
 
 /* Personal & Motto */
@@ -218,24 +217,23 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Research Areas inline pills styling */
+/* Research Areas - Clean Text Style */
 .keyword {
-  display: inline-block;
-  padding: 4px 12px;
-  margin: 2px 4px 2px 0;
-  background: rgba(0, 116, 219, 0.08);
-  border: 1px solid rgba(0, 116, 219, 0.2);
-  border-radius: 6px;
-  font-size: 13px;
-  color: var(--global-theme-color);
-  transition: all 0.2s;
+  display: inline;
+  font-size: 15px;
+  color: var(--global-text-color);
+  font-weight: 400;
+  position: relative;
 }
 
-.keyword:hover {
-  background: rgba(0, 116, 219, 0.15);
-  border-color: rgba(0, 116, 219, 0.4);
-  transform: translateY(-1px);
-  box-shadow: 0 2px 6px rgba(0, 116, 219, 0.12);
+.keyword::after {
+  content: " • ";
+  color: var(--global-text-color-light);
+  margin: 0 8px;
+}
+
+.keyword:last-child::after {
+  content: "";
 }
 
 .profile {
@@ -304,13 +302,7 @@ html[data-theme=dark] .bio-card:hover {
 }
 
 html[data-theme=dark] .keyword {
-  background: rgba(38, 152, 186, 0.15);
-  border-color: rgba(38, 152, 186, 0.3);
-}
-
-html[data-theme=dark] .keyword:hover {
-  background: rgba(38, 152, 186, 0.25);
-  border-color: rgba(38, 152, 186, 0.5);
+  color: var(--global-text-color);
 }
 
 html[data-theme=dark] .research-areas-box {
