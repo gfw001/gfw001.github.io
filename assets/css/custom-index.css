@@ -67,21 +67,21 @@ img {
   transition-property: transform;
   transition-timing-function: ease-out;
   cursor: default;
-  color: rgb(0, 116, 219);
+  color: rgb(0, 116, 219) !important;
 }
 
 .tag-cloud a:active,
 .tag-cloud a:focus,
 .tag-cloud a:hover,
 .tag-cloud span:hover {
-  color: #104d92;
+  color: #104d92 !important;
   transform: scale(1.2);
 }
 
 /* Remove bullet points from centered lists */
 .container-center ul {
-  list-style: none;
-  padding-left: 0;
+  list-style: none !important;
+  padding-left: 0 !important;
 }
 
 /* ==========================================================================
