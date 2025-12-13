@@ -1,0 +1,250 @@
+/**
+ * Custom styles for index.html
+ * Extracted from inline styles for better organization and maintainability
+ */
+
+/* ==========================================================================
+   Image Protection
+   ========================================================================== */
+img {
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Container Utilities
+   ========================================================================== */
+.container-center {
+  text-align: center;
+  align-items: center;
+}
+
+.container-left {
+  text-align: left;
+  align-items: left;
+}
+
+.container-center-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* ==========================================================================
+   Flexbox Layout Components
+   ========================================================================== */
+.row-flex {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 5px;
+}
+
+.col-flex {
+  flex: 0 0 calc(50% - 150px);
+  max-width: calc(50% - 150px);
+  margin: 0 20px 40px;
+}
+
+.case1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Tag Cloud
+   ========================================================================== */
+.tag-cloud a,
+.tag-cloud span {
+  display: inline-block;
+  position: relative;
+  margin: 8px 10px;
+  word-wrap: break-word;
+  transition-duration: 0.2s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+  cursor: default;
+}
+
+.tag-cloud a:active,
+.tag-cloud a:focus,
+.tag-cloud a:hover,
+.tag-cloud span:hover {
+  color: #104d92;
+  transform: scale(1.2);
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+a {
+  transition: color 200ms ease;
+  text-decoration: none;
+  color: rgb(0, 116, 219);
+}
+
+a:hover {
+  color: rgba(20, 20, 20, 0.6);
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.button-16 {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  color: #3c4043;
+  cursor: pointer;
+  font-family: arial, sans-serif;
+  font-size: 14px;
+  height: 36px;
+  line-height: 27px;
+  min-width: 54px;
+  padding: 0 16px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
+}
+
+.button-16:hover {
+  border-color: #dadce0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px;
+  color: #202124;
+}
+
+.button-16:focus {
+  border-color: #4285f4;
+  outline: none;
+}
+
+.button-13 {
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember", sans-serif;
+  font-size: 14px;
+  line-height: 50px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 150px;
+}
+
+.button-13:hover {
+  background-color: #f7fafa;
+}
+
+.button-13:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+  outline: 0;
+}
+
+/* ==========================================================================
+   Blockquote Custom
+   ========================================================================== */
+.blockquote-custom {
+  position: relative;
+  font-size: 1.1rem;
+}
+
+.blockquote-custom-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -40px;
+  left: 19px;
+}
+
+/* ==========================================================================
+   Profile Section
+   ========================================================================== */
+.profile-hs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-hs figure {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Text Styles
+   ========================================================================== */
+.mb-0.mt-2.font-italic {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer.fixed-bottom .footer-link {
+  color: var(--global-text-color);
+  text-decoration: none;
+}
+
+footer.fixed-bottom .footer-link:hover {
+  color: var(--global-text-color);
+  text-decoration: none;
+}
+
+.language-footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 14px;
+  padding: 10px 20px;
+  line-height: 1.5;
+  background-color: transparent;
+}
+
+/* ==========================================================================
+   User Selection - Disabled for body
+   ========================================================================== */
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .col-flex {
+    flex: 0 0 calc(100% - 40px);
+    max-width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .container-center-flex {
+    padding: 0 20px;
+  }
+
+  .col-flex {
+    margin: 0 0 30px;
+  }
+}
