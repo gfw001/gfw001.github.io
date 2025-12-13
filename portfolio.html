@@ -32,6 +32,7 @@
       <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
       <link rel="stylesheet" href="/assets/css/main.css">
+      <link rel="stylesheet" href="/assets/css/portfolio.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
       <script src="/assets/js/theme.js"></script> <script src="/assets/js/dark_mode.js"></script>
@@ -1719,7 +1720,51 @@
                             <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
                             </svg>
             		</a> (<a href="https://aws.amazon.com/products/compute/">Serverless Compute</a>, Founding engineer & TLM), <a href="https://aws.amazon.com/fargate/">Fargate</a>, Alexa AI (Healthcare + Conversational AI, Founding engineer of <a href="https://www.cnbc.com/2018/05/10/amazon-is-building-a-health-and-wellness-team-within-alexa.html">Healthcare domain</a>), <a href="https://www.lastweekinaws.com/podcast/screaming-in-the-cloud/stepping-onto-the-aws-commerce-platform-with-james-greenfield/">Commerce Platform</a> (Scale $110B ARR Bill Run) and cross-product line involvement in Lambda, ECS and Elastic Beanstalk. In charge of multiple company wide privileged and confidential programs. Diverse experience encompassing both technical leadership and people management, including cross-company and multidisciplinary organizations collaborations. <br> Organizing committee member for top tier conferences (NeurIPS 25 Co-Chair). Program committee member for ICML, KDD, NeurIPS etc., as well as for Non-Profit Organizations like the Linux Foundation and the Cloud Native Computing Foundation (CNCF). Guest lecturer and mentor at the University of Washington's Foster School of Business. <a href="https://www.ai2incubator.com/">AI2 Incubator</a> Resident Expert. </p>
-		     <p>Research Areas (current): <span class="keyword">AI + ML</span>, <span class="keyword">LLM Inference and Optimization</span>, <span class="keyword">Model Evaluation and Benchmark</span>, <span class="keyword">Containers, Serverless Compute & Virtualization</span>, <span class="keyword">Open Source</span>. </p>
+		     <!-- Research Focus - Card Grid -->
+		     <div class="research-areas-section">
+		       <h3 class="section-title">Research Focus</h3>
+		       <div class="research-grid">
+		         <div class="research-card">
+		           <div class="research-icon">
+		             <i class="fa fa-brain"></i>
+		           </div>
+		           <h4>AI + ML</h4>
+		           <p>Machine learning systems and artificial intelligence</p>
+		         </div>
+
+		         <div class="research-card">
+		           <div class="research-icon">
+		             <i class="fa fa-microchip"></i>
+		           </div>
+		           <h4>LLM Inference</h4>
+		           <p>Large language model optimization and deployment</p>
+		         </div>
+
+		         <div class="research-card">
+		           <div class="research-icon">
+		             <i class="fa fa-chart-bar"></i>
+		           </div>
+		           <h4>Model Evaluation</h4>
+		           <p>Benchmark design and performance metrics</p>
+		         </div>
+
+		         <div class="research-card">
+		           <div class="research-icon">
+		             <i class="fa fa-server"></i>
+		           </div>
+		           <h4>Serverless Compute</h4>
+		           <p>Containers, virtualization, and cloud infrastructure</p>
+		         </div>
+
+		         <div class="research-card">
+		           <div class="research-icon">
+		             <i class="fa fa-code-branch"></i>
+		           </div>
+		           <h4>Open Source</h4>
+		           <p>Community-driven software development</p>
+		         </div>
+		       </div>
+		     </div>
 		     <p>Fan of Orca, Pickleball, Seattle Kraken, Seahawk, Kosaku Shima, Lorde, Quentin Tarantino, Herman Melville.</p>
 		     <p>Collecting magnets and mugs.</p>
 		     <p>Be concise, be curious, be real, and building primitives.</p>
@@ -1729,39 +1774,50 @@
                      <p>美西（📍 西雅图，华州）。机器学习/互联网/公有云从业者，研发工程师和技术顾问。<br> 内部连续创业者，UTL，技术领队，主导多个垂直领域产品研发 <strong>0-1</strong> 及发布：Amazon SageMaker and <a href="https://aws.amazon.com/cn/bedrock/?nc1=h_ls">Bedrock</a>（LLM 推理，优化，Model Eval等），<a href="https://aws.amazon.com/cn/s3/?nc1=h_ls">S3</a>（基础数据服务），<a href="https://aws.amazon.com/cn/apprunner/">App Runner</a> (容器与无服务器计算服务，创始工程师兼技术主管)，<a href="https://aws.amazon.com/cn/fargate/">Fargate</a>，Alexa Healthcare (Conversational AI + 医疗健康，创始工程师)，Payments 等，跨国家、跨企业、跨产品线协作，团队建设及管理经验。亚马逊云科技 Senior Speaker 兼<a href="https://aws.amazon.com/cn/blogs/containers/author/yimipeng/">博客作者</a>。<br> 行业及学术顶会审稿。开源社区非营利机构计划委员会成员 Linux Foundation & CNCF 云原生布道师；UW Foster 商学院 Guest Lecturer；AI2 孵化器 常驻专家。</p>
 		     <p><a href="/professionalservices">接受业务合作</a>：行业董事 (Board Member, NPO Only) / 高校顾问 (University Mentoring and Advising) / <s>技术顾问 (Technical Advisory Council)</s> / 职业发展规划 (Mentoring and Counseling) / 著作出版 (Book Authoring)</p>
                   </div>
-		  <!-- English Links -->
-		  <div class="lang-en">
-			<h3>Links</h3>
-			<ul>
-			<li>
-				<a href="https://foster.uw.edu/academics/degree-programs/master-of-science-in-information-systems/mentors/">University of Washington Foster School of Business Mentor page</a>
-			</li>
-			<li>
-				<a href="https://aws.amazon.com/cn/blogs/containers/author/yimipeng/">AWS Blog author page</a>
-			</li>
-			<li>
-				<a href="https://neurips.cc/Conferences/2025/Committees">NeurIPS Organizing Committee page</a>
-			</li>
-			<li>
-				<a href="https://icml.cc/Conferences/2025/ProgramCommittee">ICML Program Committee page</a>
-			</li>
-			<li>
-				<a href="https://www.cncf.io/people/ambassadors/?p=andy-peng">Cloud Native Computing Foundation (CNCF) Ambassador page</a> <a href="https://youtu.be/uS698pTnw1I">
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
-		                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
-		                </svg>
-				</a>
-			</li>
-			<li>
-				<a href="https://events.linuxfoundation.org/archive/2025/open-source-summit-north-america/program/program-committee/">Open Source Summit Program Committee page</a>
-			</li>
-			<li>
-				<a href="https://events.linuxfoundation.org/archive/2024/ai-dev-europe/program/program-committee/">Open Source Summit GenAI & ML Summit Program Committee page</a>
-			</li>
-			<li>
-				<a href="https://seattleregatta2023.sched.com/speaker/yiming_peng.2589xy9k?iframe=no">Seattle Women in Tech Regatta speaker page</a>
-			</li>
-			</ul>
+		  <!-- English Links - Icon Cards Grid -->
+		  <div class="lang-en links-section">
+			<h2>Links</h2>
+			<div class="links-grid">
+			  <a href="https://foster.uw.edu/academics/degree-programs/master-of-science-in-information-systems/mentors/" class="link-card">
+			    <i class="fa fa-graduation-cap"></i>
+			    <span class="link-title">UW Mentor</span>
+			  </a>
+
+			  <a href="https://aws.amazon.com/cn/blogs/containers/author/yimipeng/" class="link-card">
+			    <i class="fab fa-aws"></i>
+			    <span class="link-title">AWS Blog</span>
+			  </a>
+
+			  <a href="https://neurips.cc/Conferences/2025/Committees" class="link-card">
+			    <i class="fa fa-brain"></i>
+			    <span class="link-title">NeurIPS 2025</span>
+			  </a>
+
+			  <a href="https://icml.cc/Conferences/2025/ProgramCommittee" class="link-card">
+			    <i class="fa fa-flask"></i>
+			    <span class="link-title">ICML 2025</span>
+			  </a>
+
+			  <a href="https://www.cncf.io/people/ambassadors/?p=andy-peng" class="link-card">
+			    <i class="fab fa-linux"></i>
+			    <span class="link-title">CNCF Ambassador</span>
+			  </a>
+
+			  <a href="https://events.linuxfoundation.org/archive/2025/open-source-summit-north-america/program/program-committee/" class="link-card">
+			    <i class="fa fa-code-branch"></i>
+			    <span class="link-title">OSS Program</span>
+			  </a>
+
+			  <a href="https://events.linuxfoundation.org/archive/2024/ai-dev-europe/program/program-committee/" class="link-card">
+			    <i class="fa fa-robot"></i>
+			    <span class="link-title">GenAI Summit</span>
+			  </a>
+
+			  <a href="https://seattleregatta2023.sched.com/speaker/yiming_peng.2589xy9k?iframe=no" class="link-card">
+			    <i class="fa fa-users"></i>
+			    <span class="link-title">Women in Tech</span>
+			  </a>
+			</div>
 		   </div>
 		   <!-- Chinese Links -->
 		   <div class="lang-zh" style="display: none;">
@@ -2321,146 +2377,13 @@
                   </div>
                </div>
                <!-- End News Section -->
-	       <h2><a href="/publications" style="color: inherit;"><span class="lang-en">Selected Publications</span><span class="lang-zh" style="display: none;">分享</span></a></h2>
-               <div class="publications">
-                  <ol class="bibliography">
-		     <li>
-                        <div class="row">
-                           <div class="col-sm-2 abbr"><abbr class="badge">LLM</abbr></div>
-                           <div id="mehtaOpenELMEfficientLanguage2024" class="col-sm-8">
-                              <div class="title"> Opening Keynote: State of Open Source LLM</div>
-                              <div class="author"> Speaker: Andy Peng, Amazon </div>
-                              <div class="periodical"> </div>
-                              <div class="periodical"> </div>
-                              <div class="links"> <a href="https://www.eventbrite.com/e/deepseek-in-production-tickets-1436251630289?aff=andy" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">HTML</a> </div>
-                              <div class="badges"> </div>
-                              <div class="abstract hidden">
-                              </div>
-                              <div class="bibtex hidden">
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-                     <li>
-                        <div class="row">
-                           <div class="col-sm-2 abbr"><abbr class="badge">LLM</abbr></div>
-                           <div id="mehtaOpenELMEfficientLanguage2024" class="col-sm-8">
-                              <div class="title"> LLM 时代需要怎样的软件开发新范式</div>
-                              <div class="author"> Moderator: Monica Xie; Speakers: 黄东旭, PingCAP co-founder & CTO, 贾扬清, Lepton AI co-founder & CEO, Andy Peng, AWS </div>
-                              <div class="periodical"> </div>
-                              <div class="periodical"> </div>
-                              <div class="links"> <a href="https://www.xiaoyuzhoufm.com/episode/676054e37d8426f6929d67cb?s=eyJ1IjogIjYwYjVhNzYxZTBmNWU3MjNiYjU4ZmNlYSJ9" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Podcast</a> </div>
-                              <div class="badges"> </div>
-                              <div class="abstract hidden">
-                              </div>
-                              <div class="bibtex hidden">
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-		     <li>
-                        <div class="row">
-                           <div class="col-sm-2 abbr"><abbr class="badge"><a href="" rel="external nofollow noopener" target="_blank"><small>Women in Tech Regatta</small></a></abbr></div>
-                           <div id="mehtaOpenELMEfficientLanguage2024" class="col-sm-8">
-                              <div class="title"> Myth-Busting Tech Trends</div>
-                              <div class="author"> Moderators: Padmaja Vrudhula, VP Industry Vertical Workload Solutions, Snowflake; Speakers: Andy Peng, Sr. Software Development Engineer, AWS, Morgan Zion, CEO, Alpha Girl Club, Caroline Williams, Founder, The Do Good Only Company </div>
-                              <div class="periodical"> </div>
-                              <div class="periodical"> </div>
-                              <div class="links"> <a href="https://www.womenintechregatta.com/" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">HTML</a> </div>
-                              <div class="badges"> </div>
-                              <div class="abstract hidden">
-                              </div>
-                              <div class="bibtex hidden">
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-		     <li>
-                        <div class="row">
-                           <div class="col-sm-2 abbr"><abbr class="badge"><a href="" rel="external nofollow noopener" target="_blank">KubeCon 2023</a></abbr></div>
-                           <div id="mehtaOpenELMEfficientLanguage2024" class="col-sm-8">
-                              <div class="title"> The open-source community at AWS</div>
-                              <div class="author"> Presenters: Phil Estes, Principal Engineer, AWS and Andy Peng, Sr. Software Development Engineer, AWS </div>
-                              <div class="periodical"> </div>
-                              <div class="periodical"> </div>
-                              <div class="links"> <a href="https://twitter.com/AWSOpen/status/1647989049305575428?s=20" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Tweet @AWSOpen</a> </div>
-                              <div class="badges"> </div>
-                              <div class="abstract hidden">
-                              </div>
-                              <div class="bibtex hidden">
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-		     <li>
-                        <div class="row">
-                           <div class="col-sm-2 abbr"><abbr class="badge">Leadership</abbr></div>
-                           <div id="mehtaOpenELMEfficientLanguage2024" class="col-sm-8">
-                              <div class="title"> Technical Leadership in Team Management</div>
-                              <div class="author"> Moderator: Zheng Luo, Software Engineer, Microsoft Azure; Speaker: Andy Peng, Sr. Software Development Engineer, AWS </div>
-                              <div class="periodical"> </div>
-                              <div class="periodical"> </div>
-                              <div class="links"> <a href="https://mp.weixin.qq.com/s/NkG306k-7dw1jLEvaBBw0A" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">HTML</a> <a href="https://youtu.be/F24kUu2nFDY" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">YouTube</a> </div>
-                              <div class="badges"> </div>
-                              <div class="abstract hidden">
-                              </div>
-                              <div class="bibtex hidden">
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-		     <li>
-                        <div class="row">
-                           <div class="col-sm-2 abbr"><abbr class="badge">KubeCon 2022</abbr></div>
-                           <div id="mehtaOpenELMEfficientLanguage2024" class="col-sm-8">
-                              <div class="title">Building Multi-Tenant Routing And Scaling With Envoy</div>
-                              <div class="author"> Presenter: Andy Peng, Sr. Software Development Engineer, AWS </div>
-                              <div class="periodical"> </div>
-                              <div class="periodical"> </div>
-                              <div class="links"> <a href="https://kccncna2022.sched.com/event/182KU/building-multi-tenant-routing-and-scaling-with-envoy-yiming-peng-amazon-web-services-inc?iframe=no" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">HTML</a> <a href="https://www.youtube.com/watch?v=6-akjOASvxc" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">YouTube</a> </div>
-                              <div class="badges"> </div>
-                              <div class="abstract hidden">
-                              </div>
-                              <div class="bibtex hidden">
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-		     <li>
-                        <div class="row">
-                           <div class="col-sm-2 abbr"><abbr class="badge"><a href="" rel="external nofollow noopener" target="_blank">DockerCon 2022</a></abbr></div>
-                           <div id="mehtaOpenELMEfficientLanguage2024" class="col-sm-8">
-                              <div class="title"> How Developers can get to production web applications at scale easily</div>
-                              <div class="author"> Presenters: Clarinda Mascarenhas, Sr. Container Specialist, AWS and Andy Peng, Sr. Software Development Engineer, AWS </div>
-                              <div class="periodical"> </div>
-                              <div class="periodical"> </div>
-                              <div class="links"> <a href="https://awscontainerdaydocker.splashthat.com/" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">HTML</a> <a href="https://www.youtube.com/watch?v=Iyp9Ugk9oRs" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">YouTube</a> </div>
-                              <div class="badges"> </div>
-                              <div class="abstract hidden">
-                              </div>
-                              <div class="bibtex hidden">
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-		     <li>
-                        <div class="row">
-                           <div class="col-sm-2 abbr"><abbr class="badge"><a href="" rel="external nofollow noopener" target="_blank"><small>Containers from the Couch</small></a></abbr></div>
-                           <div id="mehtaOpenELMEfficientLanguage2024" class="col-sm-8">
-                              <div class="title"> New Feature Launch on AWS App Runner</div>
-                              <div class="author"> Moderator: Adam Keller, Senior Technologist, AWS; Speaker: Andy Peng, Sr. Software Development Engineer, AWS </div>
-                              <div class="periodical"> </div>
-                              <div class="periodical"> </div>
-                              <div class="links"> <a href="https://twitter.com/realadamjkeller/status/1513965561671151617?s=20" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Tweet</a> <a href="https://youtu.be/cVr8N7enCMM" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">YouTube</a> </div>
-                              <div class="badges"> </div>
-                              <div class="abstract hidden">
-                              </div>
-                              <div class="bibtex hidden">
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-                  </ol>
+               <!-- Publications Call-to-Action -->
+               <div class="section-cta">
+                  <h3><span class="lang-en">Publications & Talks</span><span class="lang-zh" style="display: none;">出版物与演讲</span></h3>
+                  <p><span class="lang-en">View my complete collection of publications, conference talks, and presentations.</span><span class="lang-zh" style="display: none;">查看我的出版物、会议演讲和演示的完整集合。</span></p>
+                  <a href="/publications" class="btn-primary-large">
+                     <i class="fa fa-book"></i> <span class="lang-en">View All Publications</span><span class="lang-zh" style="display: none;">查看所有出版物</span>
+                  </a>
                </div>
 	       <div id="service-placeholder"></div>
 
