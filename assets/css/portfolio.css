@@ -181,8 +181,10 @@
 }
 
 .research-keywords {
-  line-height: 1.8;
-  font-size: 18px;
+  line-height: 1.7;
+  font-size: 14px;
+  color: var(--global-text-color);
+  font-weight: 400;
 }
 
 /* Personal & Motto */
@@ -294,9 +296,24 @@
 }
 
 .info-block .contact-note {
-  font-size: 13px;
-  color: var(--global-text-color-light);
+  font-size: 14px;
+  color: var(--global-text-color);
   margin-top: 8px;
+  line-height: 1.7;
+}
+
+/* Standard content text for all info blocks */
+.info-block p,
+.info-block .block-content {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--global-text-color);
+  margin-bottom: 12px;
+}
+
+.info-block a {
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 /* Products Showcase */
@@ -312,6 +329,12 @@
   padding: 20px;
   border-radius: 10px;
   border: 1px solid var(--global-divider-color);
+}
+
+.product-category a,
+.product-category span {
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 .product-category h5 {
