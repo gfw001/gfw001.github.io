@@ -1830,49 +1830,52 @@
 
                   <div class="info-block">
                      <h4>Projects</h4>
-                     <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 16px;">
-                        <!-- Row 1: SageMaker | Fargate -->
-                        <div style="display: flex; gap: 12px; align-items: center;">
-                           <a href="https://aws.amazon.com/sagemaker/" target="_blank" title="SageMaker" style="display: flex; align-items: center; gap: 6px; text-decoration: none; color: var(--global-text-color); font-size: 14px; padding: 6px 10px; border: 1px solid var(--global-divider-color); border-radius: 6px; transition: all 0.2s;">
-                              <img src="/assets/img/aws-icons/sagemaker.svg" alt="SageMaker" style="height: 24px; width: 24px;" />
-                              <span>SageMaker</span>
-                           </a>
-                           <span style="color: var(--global-text-color-light);">|</span>
-                           <a href="https://aws.amazon.com/fargate/" target="_blank" title="Fargate" style="display: flex; align-items: center; gap: 6px; text-decoration: none; color: var(--global-text-color); font-size: 14px; padding: 6px 10px; border: 1px solid var(--global-divider-color); border-radius: 6px; transition: all 0.2s;">
-                              <img src="/assets/img/aws-icons/fargate.svg" alt="Fargate" style="height: 24px; width: 24px;" />
-                              <span>Fargate</span>
-                           </a>
-                        </div>
-                        <!-- Row 2: S3 | Payments -->
-                        <div style="display: flex; gap: 12px; align-items: center;">
-                           <a href="https://aws.amazon.com/s3/" target="_blank" title="S3" style="display: flex; align-items: center; gap: 6px; text-decoration: none; color: var(--global-text-color); font-size: 14px; padding: 6px 10px; border: 1px solid var(--global-divider-color); border-radius: 6px; transition: all 0.2s;">
-                              <img src="/assets/img/aws-icons/s3.svg" alt="S3" style="height: 24px; width: 24px;" />
-                              <span>S3</span>
-                           </a>
-                           <span style="color: var(--global-text-color-light);">|</span>
-                           <div title="Payments" style="display: flex; align-items: center; gap: 6px; color: var(--global-text-color); font-size: 14px; padding: 6px 10px; border: 1px solid var(--global-divider-color); border-radius: 6px;">
-                              <i class="fa fa-credit-card" style="font-size: 20px; color: var(--global-theme-color);"></i>
-                              <span>Payments</span>
+                     <div class="products-showcase" style="margin-top: 16px;">
+                        <!-- 0 → 1 Column -->
+                        <div class="product-category">
+                           <h5><i class="fa fa-rocket"></i>0 → 1</h5>
+                           <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px;">
+                              <!-- Row 1: Bedrock | App Runner -->
+                              <div style="display: flex; gap: 12px; align-items: center; justify-content: center;">
+                                 <a href="https://aws.amazon.com/bedrock/" target="_blank" title="Bedrock" style="padding: 8px;">
+                                    <img src="/assets/img/aws-icons/bedrock.svg" alt="Bedrock" style="height: 32px; width: 32px;" />
+                                 </a>
+                                 <a href="https://aws.amazon.com/apprunner/" target="_blank" title="App Runner" style="padding: 8px;">
+                                    <img src="/assets/img/aws-icons/app-runner.svg" alt="App Runner" style="height: 32px; width: 32px;" />
+                                 </a>
+                              </div>
+                              <!-- Row 2: Alexa Health & Well -->
+                              <div style="display: flex; align-items: center; justify-content: center;">
+                                 <a href="https://www.cnbc.com/2018/05/10/amazon-is-building-a-health-and-wellness-team-within-alexa.html" target="_blank" title="Alexa Health & Well" style="padding: 8px;">
+                                    <i class="fa fa-robot" style="font-size: 32px; color: var(--global-theme-color);"></i>
+                                 </a>
+                              </div>
                            </div>
                         </div>
-                        <!-- Row 3: Bedrock | App Runner -->
-                        <div style="display: flex; gap: 12px; align-items: center;">
-                           <a href="https://aws.amazon.com/bedrock/" target="_blank" title="Bedrock" style="display: flex; align-items: center; gap: 6px; text-decoration: none; color: var(--global-text-color); font-size: 14px; padding: 6px 10px; border: 1px solid var(--global-divider-color); border-radius: 6px; transition: all 0.2s;">
-                              <img src="/assets/img/aws-icons/bedrock.svg" alt="Bedrock" style="height: 24px; width: 24px;" />
-                              <span>Bedrock</span>
-                           </a>
-                           <span style="color: var(--global-text-color-light);">|</span>
-                           <a href="https://aws.amazon.com/apprunner/" target="_blank" title="App Runner" style="display: flex; align-items: center; gap: 6px; text-decoration: none; color: var(--global-text-color); font-size: 14px; padding: 6px 10px; border: 1px solid var(--global-divider-color); border-radius: 6px; transition: all 0.2s;">
-                              <img src="/assets/img/aws-icons/app-runner.svg" alt="App Runner" style="height: 24px; width: 24px;" />
-                              <span>App Runner</span>
-                           </a>
-                        </div>
-                        <!-- Row 4: Alexa Health & Well -->
-                        <div style="display: flex; gap: 12px; align-items: center;">
-                           <a href="https://www.cnbc.com/2018/05/10/amazon-is-building-a-health-and-wellness-team-within-alexa.html" target="_blank" title="Alexa Health & Well" style="display: flex; align-items: center; gap: 6px; text-decoration: none; color: var(--global-text-color); font-size: 14px; padding: 6px 10px; border: 1px solid var(--global-divider-color); border-radius: 6px; transition: all 0.2s;">
-                              <i class="fa fa-heartbeat" style="font-size: 20px; color: var(--global-theme-color);"></i>
-                              <span>Alexa Health & Well</span>
-                           </a>
+
+                        <!-- 10x Column -->
+                        <div class="product-category">
+                           <h5><i class="fa fa-chart-line"></i>10x</h5>
+                           <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px;">
+                              <!-- Row 1: SageMaker | Fargate -->
+                              <div style="display: flex; gap: 12px; align-items: center; justify-content: center;">
+                                 <a href="https://aws.amazon.com/sagemaker/" target="_blank" title="SageMaker" style="padding: 8px;">
+                                    <img src="/assets/img/aws-icons/sagemaker.svg" alt="SageMaker" style="height: 32px; width: 32px;" />
+                                 </a>
+                                 <a href="https://aws.amazon.com/fargate/" target="_blank" title="Fargate" style="padding: 8px;">
+                                    <img src="/assets/img/aws-icons/fargate.svg" alt="Fargate" style="height: 32px; width: 32px;" />
+                                 </a>
+                              </div>
+                              <!-- Row 2: S3 | Payments -->
+                              <div style="display: flex; gap: 12px; align-items: center; justify-content: center;">
+                                 <a href="https://aws.amazon.com/s3/" target="_blank" title="S3" style="padding: 8px;">
+                                    <img src="/assets/img/aws-icons/s3.svg" alt="S3" style="height: 32px; width: 32px;" />
+                                 </a>
+                                 <div title="Payments" style="padding: 8px;">
+                                    <i class="fa fa-credit-card" style="font-size: 32px; color: var(--global-theme-color);"></i>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
                      </div>
                   </div>
@@ -1945,49 +1948,52 @@
 
                   <div class="info-block">
                      <h4>项目</h4>
-                     <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 16px;">
-                        <!-- Row 1: SageMaker | Fargate -->
-                        <div style="display: flex; gap: 12px; align-items: center;">
-                           <a href="https://aws.amazon.com/cn/sagemaker/" target="_blank" title="SageMaker" style="display: flex; align-items: center; gap: 6px; text-decoration: none; color: var(--global-text-color); font-size: 14px; padding: 6px 10px; border: 1px solid var(--global-divider-color); border-radius: 6px; transition: all 0.2s;">
-                              <img src="/assets/img/aws-icons/sagemaker.svg" alt="SageMaker" style="height: 24px; width: 24px;" />
-                              <span>SageMaker</span>
-                           </a>
-                           <span style="color: var(--global-text-color-light);">|</span>
-                           <a href="https://aws.amazon.com/cn/fargate/" target="_blank" title="Fargate" style="display: flex; align-items: center; gap: 6px; text-decoration: none; color: var(--global-text-color); font-size: 14px; padding: 6px 10px; border: 1px solid var(--global-divider-color); border-radius: 6px; transition: all 0.2s;">
-                              <img src="/assets/img/aws-icons/fargate.svg" alt="Fargate" style="height: 24px; width: 24px;" />
-                              <span>Fargate</span>
-                           </a>
-                        </div>
-                        <!-- Row 2: S3 | Payments -->
-                        <div style="display: flex; gap: 12px; align-items: center;">
-                           <a href="https://aws.amazon.com/cn/s3/" target="_blank" title="S3" style="display: flex; align-items: center; gap: 6px; text-decoration: none; color: var(--global-text-color); font-size: 14px; padding: 6px 10px; border: 1px solid var(--global-divider-color); border-radius: 6px; transition: all 0.2s;">
-                              <img src="/assets/img/aws-icons/s3.svg" alt="S3" style="height: 24px; width: 24px;" />
-                              <span>S3</span>
-                           </a>
-                           <span style="color: var(--global-text-color-light);">|</span>
-                           <div title="Payments" style="display: flex; align-items: center; gap: 6px; color: var(--global-text-color); font-size: 14px; padding: 6px 10px; border: 1px solid var(--global-divider-color); border-radius: 6px;">
-                              <i class="fa fa-credit-card" style="font-size: 20px; color: var(--global-theme-color);"></i>
-                              <span>Payments</span>
+                     <div class="products-showcase" style="margin-top: 16px;">
+                        <!-- 0 → 1 Column -->
+                        <div class="product-category">
+                           <h5><i class="fa fa-rocket"></i>0 → 1</h5>
+                           <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px;">
+                              <!-- Row 1: Bedrock | App Runner -->
+                              <div style="display: flex; gap: 12px; align-items: center; justify-content: center;">
+                                 <a href="https://aws.amazon.com/cn/bedrock/" target="_blank" title="Bedrock" style="padding: 8px;">
+                                    <img src="/assets/img/aws-icons/bedrock.svg" alt="Bedrock" style="height: 32px; width: 32px;" />
+                                 </a>
+                                 <a href="https://aws.amazon.com/cn/apprunner/" target="_blank" title="App Runner" style="padding: 8px;">
+                                    <img src="/assets/img/aws-icons/app-runner.svg" alt="App Runner" style="height: 32px; width: 32px;" />
+                                 </a>
+                              </div>
+                              <!-- Row 2: Alexa Health & Well -->
+                              <div style="display: flex; align-items: center; justify-content: center;">
+                                 <a href="https://www.cnbc.com/2018/05/10/amazon-is-building-a-health-and-wellness-team-within-alexa.html" target="_blank" title="Alexa Health & Well" style="padding: 8px;">
+                                    <i class="fa fa-robot" style="font-size: 32px; color: var(--global-theme-color);"></i>
+                                 </a>
+                              </div>
                            </div>
                         </div>
-                        <!-- Row 3: Bedrock | App Runner -->
-                        <div style="display: flex; gap: 12px; align-items: center;">
-                           <a href="https://aws.amazon.com/cn/bedrock/" target="_blank" title="Bedrock" style="display: flex; align-items: center; gap: 6px; text-decoration: none; color: var(--global-text-color); font-size: 14px; padding: 6px 10px; border: 1px solid var(--global-divider-color); border-radius: 6px; transition: all 0.2s;">
-                              <img src="/assets/img/aws-icons/bedrock.svg" alt="Bedrock" style="height: 24px; width: 24px;" />
-                              <span>Bedrock</span>
-                           </a>
-                           <span style="color: var(--global-text-color-light);">|</span>
-                           <a href="https://aws.amazon.com/cn/apprunner/" target="_blank" title="App Runner" style="display: flex; align-items: center; gap: 6px; text-decoration: none; color: var(--global-text-color); font-size: 14px; padding: 6px 10px; border: 1px solid var(--global-divider-color); border-radius: 6px; transition: all 0.2s;">
-                              <img src="/assets/img/aws-icons/app-runner.svg" alt="App Runner" style="height: 24px; width: 24px;" />
-                              <span>App Runner</span>
-                           </a>
-                        </div>
-                        <!-- Row 4: Alexa Health & Well -->
-                        <div style="display: flex; gap: 12px; align-items: center;">
-                           <a href="https://www.cnbc.com/2018/05/10/amazon-is-building-a-health-and-wellness-team-within-alexa.html" target="_blank" title="Alexa Health & Well" style="display: flex; align-items: center; gap: 6px; text-decoration: none; color: var(--global-text-color); font-size: 14px; padding: 6px 10px; border: 1px solid var(--global-divider-color); border-radius: 6px; transition: all 0.2s;">
-                              <i class="fa fa-heartbeat" style="font-size: 20px; color: var(--global-theme-color);"></i>
-                              <span>Alexa Health & Well</span>
-                           </a>
+
+                        <!-- 10x Column -->
+                        <div class="product-category">
+                           <h5><i class="fa fa-chart-line"></i>10x</h5>
+                           <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px;">
+                              <!-- Row 1: SageMaker | Fargate -->
+                              <div style="display: flex; gap: 12px; align-items: center; justify-content: center;">
+                                 <a href="https://aws.amazon.com/cn/sagemaker/" target="_blank" title="SageMaker" style="padding: 8px;">
+                                    <img src="/assets/img/aws-icons/sagemaker.svg" alt="SageMaker" style="height: 32px; width: 32px;" />
+                                 </a>
+                                 <a href="https://aws.amazon.com/cn/fargate/" target="_blank" title="Fargate" style="padding: 8px;">
+                                    <img src="/assets/img/aws-icons/fargate.svg" alt="Fargate" style="height: 32px; width: 32px;" />
+                                 </a>
+                              </div>
+                              <!-- Row 2: S3 | Payments -->
+                              <div style="display: flex; gap: 12px; align-items: center; justify-content: center;">
+                                 <a href="https://aws.amazon.com/cn/s3/" target="_blank" title="S3" style="padding: 8px;">
+                                    <img src="/assets/img/aws-icons/s3.svg" alt="S3" style="height: 32px; width: 32px;" />
+                                 </a>
+                                 <div title="Payments" style="padding: 8px;">
+                                    <i class="fa fa-credit-card" style="font-size: 32px; color: var(--global-theme-color);"></i>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
                      </div>
                   </div>
