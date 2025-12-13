@@ -172,7 +172,7 @@
 }
 
 .research-title {
-  font-size: 14px !important;
+  font-size: 13px !important;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -182,14 +182,14 @@
 
 .research-keywords {
   line-height: 1.7;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--global-text-color);
   font-weight: 400;
 }
 
 /* Personal & Motto */
 .bio-personal {
-  font-size: 14px !important;
+  font-size: 13px !important;
   color: var(--global-text-color-light);
   margin-bottom: 10px !important;
 }
@@ -258,7 +258,7 @@
 }
 
 .info-block h3, .info-block h4 {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -296,7 +296,7 @@
 }
 
 .info-block .contact-note {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--global-text-color);
   margin-top: 8px;
   line-height: 1.7;
@@ -305,14 +305,14 @@
 /* Standard content text for all info blocks */
 .info-block p,
 .info-block .block-content {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.7;
   color: var(--global-text-color);
   margin-bottom: 12px;
 }
 
 .info-block a {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.7;
 }
 
@@ -333,7 +333,7 @@
 
 .product-category a,
 .product-category span {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.7;
 }
 
@@ -350,7 +350,7 @@
 }
 
 .product-category h5 i {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .product-list {
