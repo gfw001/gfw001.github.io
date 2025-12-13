@@ -37,221 +37,198 @@ p, div, span, li {
   margin: 0 auto;
 }
 
-.container-center.mt-5 {
-  margin-top: 0 !important;
+.container-center {
+  margin-top: 3rem !important;
+  padding-top: 1.5rem;
 }
 
 /* ==========================================================================
-   Hero Banner - Logo as Background
+   Studio Header - Simple Text Header (No Logo Background)
    ========================================================================== */
-.hero-banner {
-  position: relative;
-  width: 100%;
-  min-height: 400px;
-  background-image: url('/assets/studio/Peng Andys Main Logo 2400x1800.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  margin-bottom: 24px;
-  overflow: hidden;
-}
-
-.hero-banner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom,
-    rgba(255, 255, 255, 0.3) 0%,
-    rgba(255, 255, 255, 0.7) 50%,
-    rgba(255, 255, 255, 0.95) 100%);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  padding: 32px 24px 40px;
+.studio-header {
   text-align: center;
-  width: 100%;
+  padding: 24px 24px 32px;
+  margin-bottom: 24px;
 }
 
-.hero-content h1 {
+.studio-header h1 {
   font-size: 32px !important;
   font-weight: 700 !important;
   margin: 0 0 8px 0 !important;
-  color: #1a1a1a !important;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  color: var(--global-text-color) !important;
 }
 
-.hero-content .subtitle {
+.studio-header .subtitle {
   font-size: 14px !important;
-  color: #444 !important;
+  color: var(--global-text-color-light) !important;
   margin: 0 0 6px 0 !important;
   font-weight: 400 !important;
 }
 
-.hero-content .credentials {
+.studio-header .credentials {
   font-size: 13px !important;
-  color: #666 !important;
+  color: var(--global-text-color-light) !important;
   margin: 0 !important;
   font-weight: 400 !important;
 }
 
 /* ==========================================================================
-   Card-Based Design
+   Terminal-Style Unified Card
    ========================================================================== */
-.content-card {
-  background: var(--global-card-bg-color);
-  border: 1px solid var(--global-divider-color);
-  border-radius: 12px;
-  padding: 24px;
-  margin-bottom: 16px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
-}
-
-.content-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-}
-
-/* Services Card */
-.services-card {
-  padding: 28px 24px;
-}
-
-.services-card h3 {
-  font-size: 12px !important;
-  font-weight: 600 !important;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 20px !important;
-  color: var(--global-text-color-light) !important;
-  text-align: center;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.service-category {
-  background: rgba(0, 116, 219, 0.03);
-  border: 1px solid rgba(0, 116, 219, 0.15);
+.terminal-unified-card {
+  background: #f8f9fa;
+  border: 2px solid #2c3e50;
   border-radius: 8px;
   padding: 20px;
-  transition: all 0.2s;
-}
-
-.service-category:hover {
-  background: rgba(0, 116, 219, 0.06);
-  border-color: rgba(0, 116, 219, 0.25);
-  transform: translateY(-2px);
-}
-
-.service-category h4 {
-  font-size: 16px !important;
-  font-weight: 600 !important;
-  margin: 0 0 14px 0 !important;
-  color: var(--global-text-color) !important;
-}
-
-.service-category p {
-  font-size: 13px !important;
-  color: var(--global-text-color) !important;
-  margin: 0 0 8px 0 !important;
-  line-height: 1.5 !important;
-}
-
-.service-category p:last-child {
-  margin-bottom: 0 !important;
-}
-
-.service-category strong {
-  font-weight: 600 !important;
-  color: var(--global-theme-color) !important;
-}
-
-/* CTA Card */
-.cta-card {
-  padding: 24px;
-  text-align: center;
-}
-
-.cta-buttons {
-  display: flex;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.button-primary {
-  background-color: #fff;
-  border: 1px solid var(--global-divider-color);
-  border-radius: 8px;
-  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
-  color: var(--global-text-color);
-  cursor: pointer;
-  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace !important;
-  font-size: 13px !important;
-  font-weight: 500 !important;
-  line-height: 1;
-  padding: 12px 24px;
-  text-decoration: none;
-  transition: all 0.2s;
-  display: inline-block;
+/* Terminal Column */
+.terminal-column {
+  background: #ffffff;
+  border: 1px solid #34495e;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 240px;
 }
 
-.button-primary:hover {
-  background-color: rgba(0, 116, 219, 0.05);
-  border-color: rgba(0, 116, 219, 0.3);
-  transform: translateY(-2px);
-  box-shadow: rgba(0, 116, 219, .2) 0 4px 8px 0;
-  color: var(--global-theme-color);
-}
-
-/* Contact Card */
-.contact-card {
-  padding: 24px;
-  text-align: center;
-}
-
-.contact-card h3 {
+.terminal-header {
+  background: #34495e;
+  color: #2ecc71;
+  padding: 10px 14px;
   font-size: 12px !important;
   font-weight: 600 !important;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 16px !important;
-  color: var(--global-text-color-light) !important;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace !important;
+  border-bottom: 2px solid #2c3e50;
 }
 
-.social-icons-compact {
+.terminal-content {
+  padding: 16px;
+  flex: 1;
   display: flex;
-  gap: 16px;
+  flex-direction: column;
+  gap: 12px;
+  background: #ffffff;
+  color: #2c3e50;
+}
+
+/* Services Column */
+.service-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.service-item:last-child {
+  margin-bottom: 0;
+}
+
+.service-label {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: #2c3e50 !important;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.service-detail {
+  font-size: 11px !important;
+  color: #555 !important;
+  display: block;
+  padding-left: 8px;
+  line-height: 1.6 !important;
+}
+
+.service-detail::before {
+  content: '→ ';
+  color: #7f8c8d;
+  margin-right: 4px;
+}
+
+/* Action Columns (View All Services & Schedule Call) */
+.terminal-action {
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
-.social-icons-compact a {
-  transition: transform 0.2s, opacity 0.2s;
-  display: inline-block;
-  opacity: 0.85;
+.terminal-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #ecf0f1;
+  border: 1px solid #34495e;
+  border-radius: 4px;
+  color: #2c3e50 !important;
+  text-decoration: none !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  transition: all 0.2s;
 }
 
-.social-icons-compact a:hover {
-  transform: translateY(-4px);
-  opacity: 1;
+.terminal-link:hover {
+  background: #2ecc71;
+  color: #ffffff !important;
+  border-color: #27ae60;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(46, 204, 113, 0.3);
 }
 
-.social-icons-compact img {
-  width: 44px;
-  height: 44px;
+.terminal-prompt {
+  color: #e74c3c;
+  font-weight: 700 !important;
+}
+
+.terminal-link:hover .terminal-prompt {
+  color: #ffffff;
+}
+
+.terminal-description {
+  font-size: 10px !important;
+  color: #7f8c8d !important;
   display: block;
+  margin-top: 8px;
+  line-height: 1.4 !important;
+}
+
+/* Contact Column */
+.terminal-contact {
+  gap: 8px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #ecf0f1;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  color: #2c3e50 !important;
+  text-decoration: none !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s;
+}
+
+.contact-link:hover {
+  background: #3498db;
+  color: #ffffff !important;
+  border-color: #2980b9;
+  transform: translateX(4px);
+}
+
+.contact-link:hover .terminal-prompt {
+  color: #ffffff;
 }
 
 /* ==========================================================================
@@ -275,50 +252,48 @@ footer.fixed-bottom .footer-link:hover {
 /* ==========================================================================
    Responsive Design
    ========================================================================== */
-@media (max-width: 768px) {
-  .hero-banner {
-    min-height: 300px;
+@media (max-width: 1024px) {
+  .terminal-unified-card {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 16px;
   }
 
-  .hero-content h1 {
+  .terminal-column {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .studio-header h1 {
     font-size: 24px !important;
   }
 
-  .hero-content .subtitle {
+  .studio-header .subtitle {
     font-size: 13px !important;
   }
 
-  .hero-content .credentials {
+  .studio-header .credentials {
     font-size: 12px !important;
   }
 
-  .services-grid {
+  .terminal-unified-card {
     grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .content-card {
-    padding: 20px 16px;
-    margin-bottom: 12px;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
     gap: 12px;
+    padding: 12px;
   }
 
-  .button-primary {
-    width: 100%;
-    max-width: 280px;
+  .terminal-column {
+    min-height: auto;
   }
 
-  .social-icons-compact {
-    gap: 12px;
+  .terminal-header {
+    font-size: 11px !important;
+    padding: 8px 12px;
   }
 
-  .social-icons-compact img {
-    width: 40px;
-    height: 40px;
+  .terminal-content {
+    padding: 12px;
   }
 }
 
@@ -327,94 +302,51 @@ footer.fixed-bottom .footer-link:hover {
     font-size: 13px !important;
   }
 
-  .hero-banner {
-    min-height: 250px;
+  .studio-header {
+    padding: 20px 16px 28px;
   }
 
-  .hero-content {
-    padding: 24px 16px 32px;
-  }
-
-  .hero-content h1 {
+  .studio-header h1 {
     font-size: 20px !important;
   }
 
-  .hero-content .subtitle {
+  .studio-header .subtitle {
     font-size: 12px !important;
   }
 
-  .hero-content .credentials {
+  .studio-header .credentials {
     font-size: 11px !important;
   }
 
-  .service-category {
-    padding: 16px;
+  .terminal-unified-card {
+    padding: 10px;
+    gap: 10px;
   }
 
-  .service-category h4 {
-    font-size: 14px !important;
-  }
-
-  .service-category p {
+  .service-label {
     font-size: 12px !important;
   }
 
-  .social-icons-compact img {
-    width: 36px;
-    height: 36px;
+  .service-detail {
+    font-size: 10px !important;
+  }
+
+  .terminal-link {
+    font-size: 12px !important;
+    padding: 10px 12px;
+  }
+
+  .contact-link {
+    font-size: 11px !important;
+    padding: 7px 10px;
   }
 }
 
 /* ==========================================================================
-   Dark Mode Enhancements
+   Terminal Style - Light Mode Only
    ========================================================================== */
-html[data-theme=dark] .hero-banner::before {
-  background: linear-gradient(to bottom,
-    rgba(30, 30, 30, 0.5) 0%,
-    rgba(30, 30, 30, 0.8) 50%,
-    rgba(30, 30, 30, 0.95) 100%);
-}
-
-html[data-theme=dark] .hero-content h1 {
-  color: #f0f0f0 !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-html[data-theme=dark] .hero-content .subtitle {
-  color: #ccc !important;
-}
-
-html[data-theme=dark] .hero-content .credentials {
-  color: #aaa !important;
-}
-
-html[data-theme=dark] .content-card {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-html[data-theme=dark] .content-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-html[data-theme=dark] .service-category {
-  background: rgba(38, 152, 186, 0.1);
-  border-color: rgba(38, 152, 186, 0.2);
-}
-
-html[data-theme=dark] .service-category:hover {
-  background: rgba(38, 152, 186, 0.15);
-  border-color: rgba(38, 152, 186, 0.3);
-}
-
-html[data-theme=dark] .button-primary {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-html[data-theme=dark] .button-primary:hover {
-  background-color: rgba(38, 152, 186, 0.15);
-  border-color: rgba(38, 152, 186, 0.3);
-}
+/* Terminal colors are hardcoded for light mode as requested */
+/* Dark mode support has been removed per user preference */
 
 /* ==========================================================================
    Utilities
