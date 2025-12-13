@@ -100,10 +100,13 @@ p, div, span, li {
 }
 
 .company-logo img {
-  height: 40px;
+  height: 28px;
+  max-width: 200px;
+  width: auto;
   display: inline-block;
   opacity: 0.85;
   transition: opacity 0.2s;
+  object-fit: contain;
 }
 
 .company-logo img:hover {
@@ -277,7 +280,8 @@ footer.fixed-bottom .footer-link:hover {
   }
 
   .company-logo img {
-    height: 36px;
+    height: 24px;
+    max-width: 150px;
   }
 }
 
@@ -297,6 +301,11 @@ footer.fixed-bottom .footer-link:hover {
   .profile-img-small {
     width: 80px;
     height: 80px;
+  }
+
+  .company-logo img {
+    height: 20px;
+    max-width: 120px;
   }
 
   .tag-cloud span {
