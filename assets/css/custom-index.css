@@ -79,7 +79,7 @@ p, div, span, li {
 .header-card .subtitle {
   font-size: 13px !important;
   color: var(--global-text-color-light) !important;
-  margin: 0 !important;
+  margin: 0 0 16px 0 !important;
   font-weight: 400 !important;
 }
 
@@ -94,18 +94,29 @@ p, div, span, li {
   opacity: 1 !important;
 }
 
-/* Navigation Card - Logo + Nav + Social */
+.company-logo {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.company-logo img {
+  height: 40px;
+  display: inline-block;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.company-logo img:hover {
+  opacity: 1;
+}
+
+/* Navigation Card - Nav + Social (2 columns) */
 .navigation-card {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr auto;
   gap: 20px;
   align-items: center;
   padding: 16px 24px;
-}
-
-.logo-section img {
-  height: 36px;
-  display: block;
 }
 
 .nav-links {
@@ -237,11 +248,6 @@ footer.fixed-bottom .footer-link:hover {
     padding: 20px 16px;
   }
 
-  .logo-section {
-    display: flex;
-    justify-content: center;
-  }
-
   .nav-links {
     flex-direction: column;
     gap: 8px;
@@ -268,6 +274,10 @@ footer.fixed-bottom .footer-link:hover {
   .profile-img-small {
     width: 100px;
     height: 100px;
+  }
+
+  .company-logo img {
+    height: 36px;
   }
 }
 
