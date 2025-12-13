@@ -76,21 +76,21 @@ p, div, span, li {
    Terminal-Style Unified Card
    ========================================================================== */
 .terminal-unified-card {
-  background: #fafaf8;
-  border: 2px solid #4a5568;
+  background: #f8f9fa;
+  border: 2px solid #2c3e50;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 40px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  box-shadow: 0 4px 8px rgba(45, 55, 72, 0.12);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Terminal Column */
 .terminal-column {
   background: #ffffff;
-  border: 1px solid #4a5568;
+  border: 1px solid #34495e;
   border-radius: 6px;
   overflow: hidden;
   display: flex;
@@ -99,13 +99,13 @@ p, div, span, li {
 }
 
 .terminal-header {
-  background: #2d3748;
-  color: #48bb78;
+  background: #34495e;
+  color: #2ecc71;
   padding: 10px 14px;
   font-size: 12px !important;
   font-weight: 600 !important;
   font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace !important;
-  border-bottom: 2px solid #1a202c;
+  border-bottom: 2px solid #2c3e50;
 }
 
 .terminal-content {
@@ -115,7 +115,7 @@ p, div, span, li {
   flex-direction: column;
   gap: 12px;
   background: #ffffff;
-  color: #2d3748;
+  color: #2c3e50;
 }
 
 /* Services Column */
@@ -133,14 +133,14 @@ p, div, span, li {
 .service-label {
   font-size: 13px !important;
   font-weight: 700 !important;
-  color: #2d3748 !important;
+  color: #2c3e50 !important;
   display: block;
   margin-bottom: 4px;
 }
 
 .service-detail {
   font-size: 11px !important;
-  color: #4a5568 !important;
+  color: #555 !important;
   display: block;
   padding-left: 8px;
   line-height: 1.6 !important;
@@ -148,7 +148,7 @@ p, div, span, li {
 
 .service-detail::before {
   content: '→ ';
-  color: #718096;
+  color: #7f8c8d;
   margin-right: 4px;
 }
 
@@ -165,10 +165,10 @@ p, div, span, li {
   justify-content: center;
   gap: 8px;
   padding: 12px 16px;
-  background: #edf2f7;
-  border: 1px solid #4a5568;
+  background: #ecf0f1;
+  border: 1px solid #34495e;
   border-radius: 4px;
-  color: #2d3748 !important;
+  color: #2c3e50 !important;
   text-decoration: none !important;
   font-size: 13px !important;
   font-weight: 600 !important;
@@ -176,15 +176,15 @@ p, div, span, li {
 }
 
 .terminal-link:hover {
-  background: #38a169;
+  background: #2ecc71;
   color: #ffffff !important;
-  border-color: #2f855a;
+  border-color: #27ae60;
   transform: translateY(-2px);
-  box-shadow: 0 2px 6px rgba(56, 161, 105, 0.35);
+  box-shadow: 0 2px 4px rgba(46, 204, 113, 0.3);
 }
 
 .terminal-prompt {
-  color: #ed8936;
+  color: #e74c3c;
   font-weight: 700 !important;
 }
 
@@ -194,7 +194,7 @@ p, div, span, li {
 
 .terminal-description {
   font-size: 10px !important;
-  color: #718096 !important;
+  color: #7f8c8d !important;
   display: block;
   margin-top: 8px;
   line-height: 1.4 !important;
@@ -210,10 +210,10 @@ p, div, span, li {
   align-items: center;
   gap: 8px;
   padding: 8px 12px;
-  background: #edf2f7;
-  border: 1px solid #a0aec0;
+  background: #ecf0f1;
+  border: 1px solid #bdc3c7;
   border-radius: 4px;
-  color: #2d3748 !important;
+  color: #2c3e50 !important;
   text-decoration: none !important;
   font-size: 12px !important;
   font-weight: 500 !important;
@@ -221,9 +221,9 @@ p, div, span, li {
 }
 
 .contact-link:hover {
-  background: #3182ce;
+  background: #3498db;
   color: #ffffff !important;
-  border-color: #2c5282;
+  border-color: #2980b9;
   transform: translateX(4px);
 }
 
