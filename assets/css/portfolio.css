@@ -4,55 +4,6 @@
  */
 
 /* ==========================================================================
-   Publications Call-to-Action
-   ========================================================================== */
-.section-cta {
-  background: var(--global-card-bg-color);
-  border: 1px solid var(--global-divider-color);
-  border-radius: 12px;
-  padding: 32px;
-  text-align: center;
-  margin: 40px auto;
-  max-width: 600px;
-}
-
-.section-cta h3 {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: var(--global-text-color);
-}
-
-.section-cta p {
-  font-size: 14px;
-  color: var(--global-text-color-light);
-  margin-bottom: 20px;
-}
-
-.btn-primary-large {
-  display: inline-block;
-  padding: 12px 32px;
-  background: var(--global-theme-color);
-  color: white !important;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 500;
-  transition: all 0.2s;
-  text-decoration: none !important;
-}
-
-.btn-primary-large:hover {
-  background: var(--global-hover-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 116, 219, 0.3);
-  color: white !important;
-}
-
-.btn-primary-large i {
-  margin-right: 8px;
-}
-
-/* ==========================================================================
    Links Section - Icon Cards Grid
    ========================================================================== */
 .links-section {
@@ -168,6 +119,28 @@
 /* ==========================================================================
    Bio Section - Modern Traditional Style
    ========================================================================== */
+.bio-card {
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  padding: 32px 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.bio-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.bio-card p {
+  margin-bottom: 18px;
+  color: var(--global-text-color);
+  line-height: 1.8;
+  font-size: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
 .bio-section {
   margin: 40px 0;
 }
@@ -181,7 +154,7 @@
 }
 
 /* Research Areas inline pills styling */
-.bio-section .keyword {
+.keyword {
   display: inline-block;
   padding: 4px 12px;
   margin: 2px 4px 2px 0;
@@ -193,7 +166,7 @@
   transition: all 0.2s;
 }
 
-.bio-section .keyword:hover {
+.keyword:hover {
   background: rgba(0, 116, 219, 0.15);
   border-color: rgba(0, 116, 219, 0.4);
   transform: translateY(-1px);
@@ -218,7 +191,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .section-cta {
+  .bio-card {
     padding: 24px 20px;
   }
 
@@ -253,20 +226,24 @@
 /* ==========================================================================
    Dark Mode Enhancements
    ========================================================================== */
-html[data-theme=dark] .section-cta {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
 html[data-theme=dark] .link-card:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-html[data-theme=dark] .bio-section .keyword {
+html[data-theme=dark] .bio-card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme=dark] .bio-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+html[data-theme=dark] .keyword {
   background: rgba(38, 152, 186, 0.15);
   border-color: rgba(38, 152, 186, 0.3);
 }
 
-html[data-theme=dark] .bio-section .keyword:hover {
+html[data-theme=dark] .keyword:hover {
   background: rgba(38, 152, 186, 0.25);
   border-color: rgba(38, 152, 186, 0.5);
 }
