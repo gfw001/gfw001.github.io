@@ -145,7 +145,7 @@
 }
 
 .bio-intro {
-  font-size: 16px !important;
+  font-size: 17px !important;
   font-weight: 400;
   color: var(--global-text-color);
   margin-bottom: 16px !important;
@@ -153,7 +153,7 @@
 }
 
 .bio-paragraph {
-  font-size: 16px !important;
+  font-size: 17px !important;
   font-weight: 400;
   margin-bottom: 16px !important;
   line-height: 1.8;
@@ -193,7 +193,7 @@
 }
 
 .bio-motto {
-  font-size: 16px !important;
+  font-size: 17px !important;
   font-style: normal;
   color: var(--global-text-color);
   margin-bottom: 0 !important;
