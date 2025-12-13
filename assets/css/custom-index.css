@@ -67,6 +67,7 @@ img {
   transition-property: transform;
   transition-timing-function: ease-out;
   cursor: default;
+  color: rgb(0, 116, 219);
 }
 
 .tag-cloud a:active,
@@ -75,6 +76,12 @@ img {
 .tag-cloud span:hover {
   color: #104d92;
   transform: scale(1.2);
+}
+
+/* Remove bullet points from centered lists */
+.container-center ul {
+  list-style: none;
+  padding-left: 0;
 }
 
 /* ==========================================================================
