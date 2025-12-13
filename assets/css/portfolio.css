@@ -145,15 +145,16 @@
 }
 
 .bio-intro {
-  font-size: 16px !important;
-  font-weight: 500;
+  font-size: 15px !important;
+  font-weight: 400;
   color: var(--global-text-color);
-  margin-bottom: 20px !important;
-  line-height: 1.7;
+  margin-bottom: 16px !important;
+  line-height: 1.8;
 }
 
 .bio-paragraph {
   font-size: 15px !important;
+  font-weight: 400;
   margin-bottom: 16px !important;
   line-height: 1.8;
 }
@@ -167,7 +168,7 @@
 /* Research Areas Box */
 .research-areas-box {
   padding: 0;
-  margin: 20px 0;
+  margin: 0;
 }
 
 .research-title {
