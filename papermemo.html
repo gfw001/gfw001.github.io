@@ -28,9 +28,16 @@
       <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
       <link rel="canonical" href="https://pengandy.com/papermemo">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
-      <script src="/assets/js/theme.js?96d6b3e1c3604aca8b6134c7afdd5db6" type="2ef554a3a95c8d10e5edf0a5-text/javascript"></script> 
+      <script src="/assets/js/theme.js?96d6b3e1c3604aca8b6134c7afdd5db6" type="2ef554a3a95c8d10e5edf0a5-text/javascript"></script>
       <script src="/assets/js/dark_mode.js?9b17307bb950ffa2e34be0227f53558f" type="2ef554a3a95c8d10e5edf0a5-text/javascript"></script>
       <script src="/assets/js/components.js" defer></script>
+      <script src="/assets/js/memo-renderer.js"></script>
+      <script>
+         // Configure memo renderer
+         window.memoConfig = {
+            dataFile: '/data/papermemo-data.json'
+         };
+      </script>
    </head>
    <style>
       .paper-table {
@@ -69,94 +76,11 @@
    </style>
    <body data-page="paperread">
       <div class="container mt-5">
-         <div class="post">
-            <header class="post-header">
-               <h1 class="post-title">Paper Memo</h1>
-               <p class="post-description">Notable papers in distributed systems, cloud computing, and machine learning</p>
-            </header>
-            <article>
-               <table class="paper-table">
-                  <thead>
-                     <tr>
-                        <th>Year</th>
-                        <th>Title</th>
-                        <th>Venue</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr>
-                        <td class="year-col">2023</td>
-                        <td class="title-col">On-demand Container Loading in AWS Lambda</td>
-                        <td class="venue-col">USENIX Annual Technical Conference (USENIX ATC '23)</td>
-                     </tr>
-                     <tr>
-                        <td class="year-col">2023</td>
-                        <td class="title-col">Building and operating a pretty big storage system called S3</td>
-                        <td class="venue-col">USENIX Conference on File and Storage Technologies (USENIX FAST '23)</td>
-                     </tr>
-                     <tr>
-                        <td class="year-col">2022</td>
-                        <td class="title-col">Amazon DynamoDB: A Scalable, Predictably Performant, and Fully Managed NoSQL Database Service</td>
-                        <td class="venue-col">USENIX Annual Technical Conference (USENIX ATC '22)</td>
-                     </tr>
-                     <tr>
-                        <td class="year-col">2021</td>
-                        <td class="title-col">Using lightweight formal methods to validate a key-value storage node in Amazon S3</td>
-                        <td class="venue-col">ACM Symposium on Operating Systems Principles (SOSP '21)</td>
-                     </tr>
-                     <tr>
-                        <td class="year-col">2020</td>
-                        <td class="title-col">Firecracker: Lightweight Virtualization for Serverless Applications</td>
-                        <td class="venue-col">USENIX Symposium on Networked Systems Design and Implementation (NSDI '20)</td>
-                     </tr>
-                     <tr>
-                        <td class="year-col">2017</td>
-                        <td class="title-col">Attention Is All You Need</td>
-                        <td class="venue-col">NeurIPS 2017</td>
-                     </tr>
-                     <tr>
-                        <td class="year-col">2016</td>
-                        <td class="title-col">Borg, Omega, and Kubernetes: Lessons learned from three container-management systems over a decade</td>
-                        <td class="venue-col">ACM Queue, Volume 14, Issue 1</td>
-                     </tr>
-                     <tr>
-                        <td class="year-col">2015</td>
-                        <td class="title-col">Large-scale cluster management at Google with Borg</td>
-                        <td class="venue-col">Proceedings of the European Conference on Computer Systems (EuroSys '15)</td>
-                     </tr>
-                     <tr>
-                        <td class="year-col">2013</td>
-                        <td class="title-col">Omega: flexible, scalable schedulers for large compute clusters</td>
-                        <td class="venue-col">ACM European Conference on Computer Systems (EuroSys '13)</td>
-                     </tr>
-                     <tr>
-                        <td class="year-col">2013</td>
-                        <td class="title-col">Spanner: Google's Globally Distributed Database</td>
-                        <td class="venue-col">ACM Transactions on Computer Systems (TOCS), Volume 31, Issue 3</td>
-                     </tr>
-                     <tr>
-                        <td class="year-col">2007</td>
-                        <td class="title-col">Dynamo: Amazon's Highly Available Key-value Store</td>
-                        <td class="venue-col">ACM Symposium on Operating Systems Principles (SOSP '07)</td>
-                     </tr>
-                     <tr>
-                        <td class="year-col">2006</td>
-                        <td class="title-col">Bigtable: A Distributed Storage System for Structured Data</td>
-                        <td class="venue-col">USENIX Symposium on Operating Systems Design and Implementation (OSDI '06)</td>
-                     </tr>
-                     <tr>
-                        <td class="year-col">2004</td>
-                        <td class="title-col">MapReduce: Simplified Data Processing on Large Clusters</td>
-                        <td class="venue-col">USENIX Symposium on Operating Systems Design and Implementation (OSDI '04)</td>
-                     </tr>
-                     <tr>
-                        <td class="year-col">2003</td>
-                        <td class="title-col">The Google File System</td>
-                        <td class="venue-col">ACM Symposium on Operating Systems Principles (SOSP '03)</td>
-                     </tr>
-                  </tbody>
-               </table>
-            </article>
+         <div class="post" id="memo-content">
+            <!-- Content will be dynamically loaded by memo-renderer.js -->
+            <div style="text-align: center; padding: 2rem;">
+               <p>Loading...</p>
+            </div>
          </div>
       </div>
       <div id="footer-placeholder"></div>

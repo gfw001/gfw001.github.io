@@ -1,31 +1,65 @@
 <!DOCTYPE html>
 
 <!--
-MEMO TEMPLATE
-=============
+MEMO TEMPLATE - JavaScript-Based Dynamic Rendering
+===================================================
 
-This is a reusable template for creating memo pages.
+This template uses a JavaScript-based rendering system to separate content from presentation.
 
-INSTRUCTIONS:
-1. Copy this file and rename it (e.g., techmemo.html)
-2. Replace all placeholders marked with [BRACKETS]:
-   - [MEMO_TITLE]: The title of your memo page (e.g., "Tech Memo")
-   - [MEMO_DESCRIPTION]: Brief description for SEO (e.g., "Technology trends and insights")
-   - [MEMO_KEYWORDS]: Keywords for SEO (e.g., "Technology, Innovation")
-   - [MEMO_URL]: URL path for canonical link (e.g., "techmemo")
-   - [MEMO_PAGE_ID]: Unique page identifier (e.g., "techmemo")
-   - [MEMO_SUBTITLE]: Subtitle shown under the title (e.g., "Notable technology trends")
-   - [COLUMN_1_HEADER], [COLUMN_2_HEADER]: Table column headers
-   - [DATA_1], [DATA_2]: Example data in table rows
+QUICK START:
+1. Create a data file in /data/ (e.g., /data/yourmemo-data.json)
+2. Copy this file and rename it (e.g., yourmemo.html)
+3. Update the memoConfig.dataFile path to point to your data file
+4. Update meta tags (title, description, keywords, canonical)
 
-STYLING CUSTOMIZATION:
-- Adjust .col-1 width (default: 180px) for first column
-- Modify .col-2, .col-3 styles for additional columns
-- Change colors by editing CSS variables
+DATA FILE STRUCTURE:
+
+For Bootstrap 2-column table (like LPmemo):
+{
+  "title": "Your Memo Title",
+  "subtitle": "Optional subtitle",
+  "description": "SEO description",
+  "keywords": "keyword1, keyword2",
+  "url": "yourmemo",
+  "pageId": "yourmemo",
+  "tableType": "bootstrap",
+  "items": [
+    {
+      "date": "December, 2025",
+      "title": "Link text",
+      "url": "https://example.com"
+    }
+  ]
+}
+
+For Custom 3-column table (like papermemo):
+{
+  "title": "Your Memo Title",
+  "subtitle": "Optional subtitle",
+  "description": "SEO description",
+  "keywords": "keyword1, keyword2",
+  "url": "yourmemo",
+  "pageId": "yourmemo",
+  "tableType": "custom",
+  "tableClass": "paper-table",
+  "columns": ["Column 1", "Column 2", "Column 3"],
+  "columnClasses": ["year-col", "title-col", "venue-col"],
+  "items": [
+    {
+      "values": ["2025", "Title here", "Venue here"],
+      "url": "https://example.com"
+    }
+  ]
+}
 
 EXAMPLES:
-- Two-column table: Date + Content (see LPmemo.html)
-- Three-column table: Year + Title + Venue (see papermemo.html)
+- LPmemo.html - Bootstrap 2-column table
+- See /data/LPmemo-data.json for data structure
+
+RENDERER:
+- Location: /assets/js/memo-renderer.js
+- Automatically initializes on page load
+- Supports both bootstrap and custom table types
 -->
 
 <!-- Google tag (gtag.js) -->
@@ -44,7 +78,7 @@ EXAMPLES:
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>[MEMO_TITLE] | Andy Peng</title>
+      <title>[MEMO_TITLE]</title>
       <meta name="author" content="Peng, Andy">
       <meta name="description" content="[MEMO_DESCRIPTION]">
       <meta name="keywords" content="[MEMO_KEYWORDS]">
@@ -56,97 +90,24 @@ EXAMPLES:
       <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
       <link rel="canonical" href="https://pengandy.com/[MEMO_URL]">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
-      <link rel="shortcut icon" href="/assets/img/enfj.ico"/>
       <script src="/assets/js/theme.js?96d6b3e1c3604aca8b6134c7afdd5db6" type="2ef554a3a95c8d10e5edf0a5-text/javascript"></script>
       <script src="/assets/js/dark_mode.js?9b17307bb950ffa2e34be0227f53558f" type="2ef554a3a95c8d10e5edf0a5-text/javascript"></script>
       <script src="/assets/js/components.js" defer></script>
+      <script src="/assets/js/memo-renderer.js"></script>
+      <script>
+         // Configure memo renderer - UPDATE THIS PATH
+         window.memoConfig = {
+            dataFile: '/data/[YOUR_DATA_FILE].json'
+         };
+      </script>
    </head>
-   <style>
-      /* Memo table specific styles */
-      .memo-table {
-         width: 100%;
-         margin-top: 2rem;
-         border-collapse: collapse;
-      }
-
-      .memo-table th {
-         text-align: left;
-         padding: 0.75rem;
-         border-bottom: 2px solid #ddd;
-         font-weight: 600;
-         background-color: #f8f9fa;
-      }
-
-      .memo-table td {
-         padding: 0.75rem;
-         border-bottom: 1px solid #eee;
-         vertical-align: top;
-      }
-
-      .memo-table tr:last-child td {
-         border-bottom: none;
-      }
-
-      .memo-table tr:hover {
-         background-color: #f8f9fa;
-      }
-
-      /* Column styles - customize based on your table structure */
-      .memo-table .col-1 {
-         width: 180px;
-         font-family: monospace;
-         font-weight: 500;
-         color: var(--global-theme-color);
-         white-space: nowrap;
-      }
-
-      .memo-table .col-2 {
-         line-height: 1.6;
-      }
-
-      .memo-table .col-3 {
-         color: #666;
-         font-style: italic;
-         line-height: 1.6;
-      }
-
-      .memo-table a {
-         text-decoration: none;
-         color: inherit;
-         transition: color 0.2s ease;
-      }
-
-      .memo-table a:hover {
-         color: var(--global-theme-color);
-      }
-   </style>
    <body data-page="[MEMO_PAGE_ID]">
       <div class="container mt-5">
-         <div class="post">
-            <header class="post-header">
-               <h1 class="post-title">[MEMO_TITLE]</h1>
-               <p class="post-description">[MEMO_SUBTITLE]</p>
-            </header>
-            <article>
-               <table class="memo-table">
-                  <thead>
-                     <tr>
-                        <th>[COLUMN_1_HEADER]</th>
-                        <th>[COLUMN_2_HEADER]</th>
-                        <!-- Add more columns if needed -->
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <!-- Example row - duplicate and modify as needed -->
-                     <tr>
-                        <td class="col-1">[DATA_1]</td>
-                        <td class="col-2">[DATA_2]</td>
-                        <!-- Add more columns if needed -->
-                     </tr>
-                     <!-- Add more rows here -->
-                  </tbody>
-               </table>
-            </article>
+         <div class="post" id="memo-content">
+            <!-- Content will be dynamically loaded by memo-renderer.js -->
+            <div style="text-align: center; padding: 2rem;">
+               <p>Loading...</p>
+            </div>
          </div>
       </div>
       <div id="footer-placeholder"></div>

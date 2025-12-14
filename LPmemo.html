@@ -31,90 +31,21 @@
       <script src="/assets/js/theme.js?96d6b3e1c3604aca8b6134c7afdd5db6" type="2ef554a3a95c8d10e5edf0a5-text/javascript"></script>
       <script src="/assets/js/dark_mode.js?9b17307bb950ffa2e34be0227f53558f" type="2ef554a3a95c8d10e5edf0a5-text/javascript"></script>
       <script src="/assets/js/components.js" defer></script>
+      <script src="/assets/js/memo-renderer.js"></script>
+      <script>
+         // Configure memo renderer
+         window.memoConfig = {
+            dataFile: '/data/LPmemo-data.json'
+         };
+      </script>
    </head>
-   <style>
-      .memo-list {
-         margin-top: 2rem;
-         line-height: 2;
-      }
-
-      .memo-list p {
-         margin-bottom: 1rem;
-      }
-
-      .memo-date {
-         font-family: monospace;
-         margin-right: 0.5rem;
-      }
-   </style>
    <body data-page="lpmemo">
       <div class="container mt-5">
-         <div class="post">
-            <header class="post-header">
-               <h1 class="post-title">Leadership Memo</h1>
-            </header>
-            <article>
-               <div class="memo-list">
-                  <p><span class="memo-date">December 2025</span> <a href="https://youtu.be/Yxdsy9rUJGA?si=O2HrRLGsqJY9vGxR">J.P. Morgan Presents ACQUIRED at AWS re:Invent (Matt Garman interview)</a></p>
-                  <p><span class="memo-date">October 2025</span> <a href="https://www.aboutamazon.com/news/company-news/amazon-workforce-reduction">Staying nimble and continuing to strengthen our organizations Written by Beth Galetti, Senior Vice President of People Experience and Technology at Amazon</a></p>
-                  <p><span class="memo-date">October 2025</span> <a href="https://youtu.be/HB3Rq6ZLliM?si=clyOJk97IpVCVwGR">Jeff Bezos & John Elkann - Italian Tech Week 2025</a></p>
-                  <p><span class="memo-date">July 2025</span> <a href="https://www.vogue.com/article/lauren-sanchez-and-jeff-bezos-are-married">Vogue | Lauren Sánchez and Jeff Bezos Are Married</a></p>
-                  <p><span class="memo-date">May 2025</span> <a href="https://howleaderslead.com/leaders/227/Andy-Jassy/">How Leaders Lead with David Novak | Inside the Mind of Amazon's CEO Andy Jassy: Jeff Bezos, AI + Leadership</a></p>
-                  <p><span class="memo-date">May 2025</span> <a href="https://youtu.be/Nl-PpoKtxc4?si=ITq8C3vpZjKZHFQn">Harvard Business Review | Amazon CEO Andy Jassy on Agility, AI Strategy, and the Changing Role of Managers</a></p>
-                  <p><span class="memo-date">April 2025</span> <a href="https://www.bizjournals.com/seattle/news/2025/04/10/jeff-bezos-amazon-hunts-point-mansion-sale.html">Amazon founder Jeff Bezos confirmed as seller of $63 million Hunts Point mansion</a></p>
-                  <p><span class="memo-date">April 2025</span> <a href="https://www.aboutamazon.com/news/company-news/amazon-ceo-andy-jassy-2024-letter-to-shareholders">CEO Andy Jassy's 2024 Letter to Shareholders</a></p>
-                  <p><span class="memo-date">January 2025</span> <a href="https://darioamodei.com/on-deepseek-and-export-controls">Dario Amodei | On DeepSeek and Export Controls</a></p>
-                  <p><span class="memo-date">January 2025</span> <a href="https://about.starbucks.com/press/2025/back-to-starbucks-transforming-our-support-organization/">Back to Starbucks: Transforming our support organization</a></p>
-                  <p><span class="memo-date">November 2024</span> <a href="https://www.wsj.com/opinion/musk-and-ramaswamy-the-doge-plan-to-reform-government-supreme-court-guidance-end-executive-power-grab-fa51c020">WSJ | Elon Musk and Vivek Ramaswamy: The DOGE Plan to Reform Government</a></p>
-                  <p><span class="memo-date">November 2024</span> <a href="https://x.com/elonmusk/status/1859483544612913376">@elonmusk Tweet</a></p>
-                  <p><span class="memo-date">November 2024</span> <a href="https://x.com/elonmusk/status/1856502787930050927">@elonmusk Tweet</a></p>
-                  <p><span class="memo-date">November 2024</span> <a href="https://www.aboutamazon.com/news/workplace/amazon-s-team-members">Amazon's S-team: Meet the 29 members who make up our senior leadership team</a></p>
-                  <p><span class="memo-date">October 2024</span> <a href="https://www.washingtonpost.com/opinions/2024/10/28/jeff-bezos-washington-post-trust/">Opinion The hard truth: Americans don't trust the news media By Jeff Bezos</a></p>
-                  <p><span class="memo-date">September 2024</span> <a href="https://www.aboutamazon.com/news/company-news/ceo-andy-jassy-latest-update-on-amazon-return-to-office-manager-team-ratio">Message from CEO Andy Jassy: Strengthening our culture and teams</a></p>
-                  <p><span class="memo-date">July 2024</span> <a href="https://www.aboutamazon.com/news/workplace/amazon-ceo-andy-jassy-leadership-principles-video-podcast">Amazon CEO Andy Jassy explains 8 things you may not know about the company's Leadership Principles</a></p>
-                  <p><span class="memo-date">May 2024</span> <a href="https://www.aboutamazon.com/news/company-news/aws-ceo-matt-garman-leadership-update">An update from incoming AWS CEO Matt Garman on AWS leadership structure</a></p>
-                  <p><span class="memo-date">May 2024</span> <a href="https://www.aboutamazon.com/news/company-news/leadership-update-aws-adam-selipsky-matt-garman">Andy Jassy makes AWS leadership announcement</a></p>
-                  <p><span class="memo-date">May 2024</span> <a href="https://www.aboutamazon.com/news/company-news/amazon-ceo-andy-jassy-linkedin-interview">The Path | Andy Jassy</a></p>
-                  <p><span class="memo-date">April 2024</span> <a href="https://www.aboutamazon.com/news/company-news/amazon-ceo-andy-jassy-2023-letter-to-shareholders">CEO Andy Jassy's 2023 Letter to Shareholders</a></p>
-                  <p><span class="memo-date">November 2023</span> <a href="https://x.com/eshear/status/1726526112019382275">Emmett Shear's tweet: the interim CEO of OpenAI</a></p>
-                  <p><span class="memo-date">October 2023</span> <a href="https://www.aboutamazon.com/news/innovation-at-amazon/project-kuiper-prototype-satellite-test-mission">How Amazon's Project Kuiper is preparing for its first satellite test mission, and what we hope to learn</a></p>
-                  <p><span class="memo-date">September 2023</span> <a href="https://www.aboutamazon.com/news/company-news/3-new-leaders-join-amazon-steam">3 new leaders join Amazon Steam</a></p>
-                  <p><span class="memo-date">August 2023</span> <a href="https://www.appeconomyinsights.com/p/amazon-llm-as-a-service">Amazon Q2 FY23 Income Statement</a></p>
-                  <p><span class="memo-date">May 2023</span> <a href="https://www.nytimes.com/2023/05/19/style/bezos-yacht-koru.html">Jeff Bezos' New Yacht Is Finally Ready to Set Sail</a></p>
-                  <p><span class="memo-date">April 2023</span> <a href="https://www.aboutamazon.com/news/company-news/amazon-ceo-andy-jassy-2022-letter-to-shareholders">CEO Andy Jassy's 2022 Letter to Shareholders</a></p>
-                  <p><span class="memo-date">March 2023</span> <a href="https://www.aboutamazon.com/news/company-news/update-from-ceo-andy-jassy-on-amazons-operating-plan-and-additional-role-eliminations">Update from CEO Andy Jassy on Amazon's operating plan and additional role eliminations</a></p>
-                  <p><span class="memo-date">February 2023</span> <a href="https://www.aboutamazon.com/news/company-news/andy-jassy-update-on-amazon-return-to-office">Update from Andy Jassy on return to office plans</a></p>
-                  <p><span class="memo-date">January 2023</span> <a href="https://www.aboutamazon.com/news/company-news/update-from-ceo-andy-jassy-on-role-eliminations">Update from CEO Andy Jassy on role eliminations</a></p>
-                  <p><span class="memo-date">November 2022</span> <a href="https://www.aboutamazon.com/news/company-news/a-note-from-ceo-andy-jassy-about-role-eliminations">A note from CEO Andy Jassy about role eliminations</a></p>
-                  <p><span class="memo-date">November 2022</span> <a href="https://www.aboutamazon.com/news/company-news/a-team-update-from-dave-limp">A team update from Dave Limp</a></p>
-                  <p><span class="memo-date">August 2022</span> <a href="https://www.youtube.com/watch?v=zfjFHa5wY0E">History of Silicon Innovation at AWS</a></p>
-                  <p><span class="memo-date">July 2022</span> <a href="https://www.aboutamazon.com/news/transportation/amazon-and-rivian-ceos-on-innovating-to-protect-the-planet">Amazon and Rivian CEOs on innovating to protect the planet</a></p>
-                  <p><span class="memo-date">July 2022</span> <a href="https://www.aboutamazon.com/news/entertainment/watch-the-new-teaser-trailer-for-the-lord-of-the-rings-the-rings-of-power">Watch the new teaser trailer for The Lord of the Rings: The Rings of Power</a></p>
-                  <p><span class="memo-date">July 2022</span> <a href="https://www.amazon.science/how-silicon-innovation-became-the-secret-sauce-behind-awss-success">How silicon innovation became the 'secret sauce' behind AWS's success</a></p>
-                  <p><span class="memo-date">May 2022</span> <a href="https://time.com/collection/time100-companies-2022/6159473/amazon-ceo-andy-jassy-interview/">[TIME] Andy Jassy on Figuring Out What's Next for Amazon</a></p>
-                  <p><span class="memo-date">April 2022</span> <a href="https://www.aboutamazon.com/news/company-news/2021-letter-to-shareholders">2021 Letter to Shareholders</a></p>
-                  <p><span class="memo-date">October 2021</span> <a href="https://www.blueorigin.com/news/first-astronaut-crew-receive-guinness-world-records">Blue Origin's first astronaut spaceflight breaks four Guinness World Records titles</a></p>
-                  <p><span class="memo-date">August 2021</span> <a href="https://www.youtube.com/watch?v=fxnLn9V2pog">15 Years of EC2 Innovation: James Hamilton</a></p>
-                  <p><span class="memo-date">July 2021</span> <a href="https://www.aboutamazon.com/news/company-news/two-new-leadership-principles">Amazon announces two new Leadership Principles</a></p>
-                  <p><span class="memo-date">May 2021</span> <a href="https://www.aboutamazon.com/news/company-news/amazon-and-mgm-have-signed-an-agreement-for-amazon-to-acquire-mgm">Amazon and MGM have signed an agreement for Amazon to acquire MGM</a></p>
-                  <p><span class="memo-date">April 2021</span> <a href="https://www.aboutamazon.com/news/company-news/2020-letter-to-shareholders">2020 Letter to Shareholders</a></p>
-                  <p><span class="memo-date">March 2021</span> <a href="https://www.aboutamazon.com/news/company-news/aws-announces-next-ceo">AWS announces next CEO</a></p>
-                  <p><span class="memo-date">February 2021</span> <a href="https://www.aboutamazon.com/news/company-news/email-from-jeff-bezos-to-employees">Email from Jeff Bezos to employees</a></p>
-                  <p><span class="memo-date">January 2021</span> <a href="https://www.aboutamazon.com/news/innovation-at-amazon/amazons-response-to-spacex-comments">Amazon's response to SpaceX comments</a></p>
-                  <p><span class="memo-date">September 2020</span> <a href="https://www.aboutamazon.com/news/retail/whole-foods-ceo-says-relationship-with-amazon-was-love-at-first-sight">Whole Foods' CEO says the relationship with Amazon was 'love at first sight'</a></p>
-                  <p><span class="memo-date">June 2020</span> <a href="https://www.aboutamazon.com/news/company-news/were-acquiring-zoox-to-help-bring-their-vision-of-autonomous-ride-hailing-to-reality">We're acquiring Zoox to help bring their vision of autonomous ride-hailing to reality</a></p>
-                  <p><span class="memo-date">April 2020</span> <a href="https://www.aboutamazon.com/news/company-news/2019-letter-to-shareholders">2019 Letter to Shareholders</a></p>
-                  <p><span class="memo-date">April 2019</span> <a href="https://www.aboutamazon.com/news/company-news/2018-letter-to-shareholders">2018 Letter to Shareholders</a></p>
-                  <p><span class="memo-date">April 2018</span> <a href="https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders">2017 Letter to Shareholders</a></p>
-                  <p><span class="memo-date">July 2017</span> <a href="https://twitter.com/VisualCap/status/890619133724774400">The Jeff Bezos Empire in One Giant Chart</a></p>
-                  <p><span class="memo-date">May 2017</span> <a href="https://www.aboutamazon.com/news/amazon-offices/the-spheres-welcome-first-plant">The Spheres welcome first plant</a></p>
-                  <p><span class="memo-date">April 2017</span> <a href="https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders">2016 Letter to Shareholders</a></p>
-                  <p><span class="memo-date">January 2017</span> <a href="https://www.seattletimes.com/business/amazon/amazons-spheres-are-centerpiece-of-4-billion-effort-to-transform-seattles-urban-core/">Amazon's Spheres: Lush nature paradise to adorn $4 billion urban campus</a></p>
-                  <p><span class="memo-date">December 2016</span> <a href="https://www.youtube.com/watch?v=NrmMk1Myrxc">Introducing Amazon Go and the world's most advanced shopping technology</a></p>
-                  <p><span class="memo-date">October 2013</span> <a href="https://www.washingtonpost.com/business/economy/washington-post-closes-sale-to-amazon-founder-jeff-bezos/2013/10/01/fca3b16a-2acf-11e3-97a3-ff2758228523_story.html">Washington Post closes sale to Amazon founder Jeff Bezos</a></p>
-                  <p><span class="memo-date">March 1997</span> <a href="https://www.aboutamazon.com/news/company-news/amazons-original-1997-letter-to-shareholders">Amazon's original 1997 letter to shareholders</a></p>
-               </div>
-            </article>
+         <div class="post" id="memo-content">
+            <!-- Content will be dynamically loaded by memo-renderer.js -->
+            <div style="text-align: center; padding: 2rem;">
+               <p>Loading...</p>
+            </div>
          </div>
       </div>
       <div id="footer-placeholder"></div>
