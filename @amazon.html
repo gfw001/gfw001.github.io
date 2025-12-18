@@ -37,7 +37,7 @@
          position: relative;
          padding-left: 50px;
          padding-bottom: 40px;
-         border-left: 2px solid #e0e0e0;
+         border-left: 2px solid #e8e8e8;
       }
 
       .timeline-item:last-child {
@@ -51,40 +51,37 @@
          width: 14px;
          height: 14px;
          border-radius: 50%;
-         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+         background: #4a90e2;
          border: 3px solid white;
-         box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+         box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+      }
+
+      .timeline-marker.golden {
+         background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+         box-shadow: 0 2px 8px rgba(243, 156, 18, 0.3);
       }
 
       .timeline-marker.current {
-         background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-         box-shadow: 0 2px 12px rgba(245, 87, 108, 0.5);
+         background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+         box-shadow: 0 2px 12px rgba(243, 156, 18, 0.5);
          animation: pulse 2s infinite;
       }
 
       @keyframes pulse {
          0% {
-            box-shadow: 0 2px 12px rgba(245, 87, 108, 0.5);
+            box-shadow: 0 2px 12px rgba(243, 156, 18, 0.5);
          }
          50% {
-            box-shadow: 0 2px 20px rgba(245, 87, 108, 0.8);
+            box-shadow: 0 2px 20px rgba(243, 156, 18, 0.8);
          }
          100% {
-            box-shadow: 0 2px 12px rgba(245, 87, 108, 0.5);
+            box-shadow: 0 2px 12px rgba(243, 156, 18, 0.5);
          }
       }
 
       .timeline-content {
-         background: white;
-         border-radius: 8px;
-         padding: 24px;
-         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-         transition: all 0.3s ease;
-      }
-
-      .timeline-content:hover {
-         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-         transform: translateX(4px);
+         background: transparent;
+         padding: 0;
       }
 
       .role-header {
@@ -108,28 +105,22 @@
          display: inline-block;
          font-size: 0.875rem;
          color: #718096;
-         background: #f7fafc;
-         padding: 4px 12px;
-         border-radius: 4px;
+         padding: 4px 0;
          margin-top: 8px;
       }
 
       .badge-founding {
          display: inline-block;
-         background: #e8f4f8;
-         color: #2c5282;
-         padding: 2px 8px;
-         border-radius: 3px;
+         color: #2563eb;
+         font-family: 'Courier New', monospace;
          font-size: 0.75rem;
          font-weight: 600;
       }
 
       .badge-zero-to-one {
          display: inline-block;
-         background: #e8f4f8;
-         color: #2c5282;
-         padding: 2px 8px;
-         border-radius: 3px;
+         color: #2563eb;
+         font-family: 'Courier New', monospace;
          font-size: 0.75rem;
          font-weight: 600;
       }
@@ -137,65 +128,57 @@
       .notes-section {
          margin-top: 16px;
          padding-top: 16px;
-         border-top: 1px solid #e2e8f0;
+         border-top: 1px solid #e8e8e8;
       }
 
       .note-item {
-         margin-bottom: 12px;
+         margin-bottom: 10px;
          padding-left: 20px;
          position: relative;
          line-height: 1.6;
          color: #4a5568;
+         font-size: 0.9rem;
       }
 
       .note-item:before {
          content: "▸";
          position: absolute;
          left: 0;
-         color: #667eea;
+         color: #4a90e2;
          font-weight: bold;
       }
 
-      .notable-person {
-         font-weight: 600;
-         color: #2d3748;
-         background: #fff4e6;
-         padding: 2px 6px;
-         border-radius: 3px;
-         white-space: nowrap;
+      .entity-person,
+      .entity-company,
+      .entity-product,
+      .entity-model,
+      .entity-metric {
+         font-family: 'Courier New', monospace;
+         color: #2563eb;
+         font-weight: 500;
       }
 
       .highlight-link {
-         color: #667eea;
+         color: #4a90e2;
          text-decoration: none;
-         border-bottom: 1px dotted #667eea;
          transition: all 0.2s ease;
       }
 
       .highlight-link:hover {
-         color: #764ba2;
-         border-bottom: 1px solid #764ba2;
+         color: #2563eb;
       }
 
-      .page-header {
-         margin-bottom: 40px;
-         padding-bottom: 20px;
-         border-bottom: 2px solid #e2e8f0;
+      .navbar .nav-link {
+         color: var(--global-text-color);
       }
 
-      .page-header h1 {
-         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-         -webkit-background-clip: text;
-         -webkit-text-fill-color: transparent;
-         background-clip: text;
-         font-weight: 700;
+      .navbar .nav-link:hover {
+         color: var(--global-hover-color);
       }
 
-      .highlight-text {
-         background: #fff4e6;
-         padding: 2px 6px;
-         border-radius: 3px;
-         font-weight: 600;
+      .navbar .nav-item.active .nav-link {
+         font-weight: bolder;
+         color: var(--global-theme-color);
       }
    </style>
 </head>
@@ -205,10 +188,6 @@
 
    <div class="container mt-5">
       <div class="post">
-         <header class="post-header page-header">
-            <h1 class="post-title">@amazon</h1>
-         </header>
-
          <article>
             <div class="timeline-container">
 
@@ -225,22 +204,22 @@
                      </div>
                      <div class="notes-section">
                         <div class="note-item">
-                           <span class="badge-founding">Founding Engineer</span> <span class="badge-zero-to-one">0→1</span> Inference Optimization (SageMaker & Bedrock Science): Architected and built the EAGLE head-training platform
+                           <span class="badge-founding">Founding Engineer</span> <span class="badge-zero-to-one">0→1</span> Inference Optimization (<span class="entity-product">SageMaker</span> & <span class="entity-product">Bedrock</span> Science): Architected and built the EAGLE head-training platform
                         </div>
                         <div class="note-item">
-                           <span class="badge-founding">Founding Engineer</span> of Bedrock's Anthropic inference engine (Bedrock Forklift)
+                           <span class="badge-founding">Founding Engineer</span> of <span class="entity-product">Bedrock</span>'s <span class="entity-company">Anthropic</span> inference engine (<span class="entity-product">Bedrock Forklift</span>)
                         </div>
                         <div class="note-item">
-                           Partnered closely with Anthropic leadership, including co-founder <span class="notable-person">Ben Mann</span>; <span class="notable-person">James Bradbury, Head of Compute</span>; and <span class="notable-person">Ron Diamant, VP & Distinguished Engineer at Annapurna ML</span>
+                           Partnered closely with <span class="entity-company">Anthropic</span> leadership, including co-founder <span class="entity-person">Ben Mann</span>; <span class="entity-person">James Bradbury</span>, Head of Compute; and <span class="entity-person">Ron Diamant</span>, VP & Distinguished Engineer at Annapurna ML
                         </div>
                         <div class="note-item">
-                           Led launches of Claude 3 Opus, Claude 3.5 Sonnet v2, and Haiku, enabling 90%+ of Bedrock inference traffic on Trainium
+                           Led launches of <span class="entity-model">Claude 3 Opus</span>, <span class="entity-model">Claude 3.5 Sonnet v2</span>, and <span class="entity-model">Haiku</span>, enabling 90%+ of <span class="entity-product">Bedrock</span> inference traffic on Trainium
                         </div>
                         <div class="note-item">
                            Scaled the organization from 2 to 30+ engineers
                         </div>
                         <div class="note-item">
-                           Delivered company-wide initiatives, publicly highlighted by <span class="highlight-text">the CEO</span> and cited in <span class="highlight-text">quarterly earnings reports</span> (2024–2025)
+                           Delivered company-wide initiatives, publicly highlighted by <span class="entity-metric">the CEO</span> and cited in <span class="entity-metric">quarterly earnings reports</span> (2024–2025)
                         </div>
                         <div class="note-item" style="font-style: italic; color: #718096;">
                            Additional Privileged & Confidential Initiatives
@@ -251,7 +230,7 @@
 
                <!-- S3 -->
                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
+                  <div class="timeline-marker golden"></div>
                   <div class="timeline-content">
                      <div class="role-header">
                         <div class="role-title">Engineer III, Tech Lead (L6)</div>
@@ -265,11 +244,11 @@
 
                <!-- Serverless & Containers - Manager -->
                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
+                  <div class="timeline-marker golden"></div>
                   <div class="timeline-content">
                      <div class="role-header">
                         <div class="role-title">Engineer III & ULT / Manager (L6)</div>
-                        <div class="role-team">Serverless & Containers (AWS App Runner & Fargate)</div>
+                        <div class="role-team">Serverless & Containers (<span class="entity-product">AWS App Runner</span> & <span class="entity-product">Fargate</span>)</div>
                         <div class="role-period">
                            <i class="far fa-calendar-alt"></i> Apr 2022 - Oct 2022 · Seattle, WA
                         </div>
@@ -279,10 +258,10 @@
                            Uber TL of an organization of 70 (4 two-pizza teams)
                         </div>
                         <div class="note-item">
-                           Oversee two public products (Hundreds MM dollar ARR) engineering division
+                           Oversee two public products (<span class="entity-metric">Hundreds MM dollar ARR</span>) engineering division
                         </div>
                         <div class="note-item">
-                           Presented new product features at DockerCon with executive leadership <span class="notable-person">Inbal Shani (CPO, Twilio; former CPO, GitHub)</span>
+                           Presented new product features at DockerCon with executive leadership <span class="entity-person">Inbal Shani</span> (CPO, Twilio; former CPO, GitHub)
                         </div>
                      </div>
                   </div>
@@ -290,24 +269,24 @@
 
                <!-- Serverless & Containers - Engineer II -->
                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
+                  <div class="timeline-marker golden"></div>
                   <div class="timeline-content">
                      <div class="role-header">
                         <div class="role-title">Engineer II (L5)</div>
-                        <div class="role-team">Serverless & Containers (AWS App Runner & Fargate)</div>
+                        <div class="role-team">Serverless & Containers (<span class="entity-product">AWS App Runner</span> & <span class="entity-product">Fargate</span>)</div>
                         <div class="role-period">
                            <i class="far fa-calendar-alt"></i> Jul 2020 - Apr 2022 · Seattle, WA
                         </div>
                      </div>
                      <div class="notes-section">
                         <div class="note-item">
-                           <span class="badge-founding">Founding Engineer</span> <span class="badge-zero-to-one">0→1</span> Launched AWS App Runner, a serverless compute product incubated from AWS Fargate (Firecracker microVM)
+                           <span class="badge-founding">Founding Engineer</span> <span class="badge-zero-to-one">0→1</span> Launched <span class="entity-product">AWS App Runner</span>, a serverless compute product incubated from <span class="entity-product">AWS Fargate</span> (Firecracker microVM)
                         </div>
                         <div class="note-item">
-                           Publicly highlighted by <span class="highlight-text">the CEO</span>: <a href="https://x.com/aselipsky/status/1395149027658801152?s=20" target="_blank" class="highlight-link">Adam Selipsky's announcement</a>
+                           Publicly highlighted by <span class="entity-metric">the CEO</span>: <a href="https://x.com/aselipsky/status/1395149027658801152?s=20" target="_blank" class="highlight-link">Adam Selipsky's announcement</a>
                         </div>
                         <div class="note-item">
-                           Cited in <span class="highlight-text">Amazon's Q2 2021 earnings report</span>: <a href="https://aws.amazon.com/apprunner/" target="_blank" class="highlight-link">aws.amazon.com/apprunner</a>
+                           Cited in <span class="entity-metric">Amazon's Q2 2021 earnings report</span>: <a href="https://aws.amazon.com/apprunner/" target="_blank" class="highlight-link">aws.amazon.com/apprunner</a>
                         </div>
                      </div>
                   </div>
@@ -326,10 +305,10 @@
                      </div>
                      <div class="notes-section">
                         <div class="note-item">
-                           <span class="badge-founding">Founding Engineer</span> Launched medication management cited in <span class="highlight-text">Amazon's Q4 2019 earnings report</span>
+                           <span class="badge-founding">Founding Engineer</span> Launched medication management cited in <span class="entity-metric">Amazon's Q4 2019 earnings report</span>
                         </div>
                         <div class="note-item">
-                           Partnered closely with <span class="notable-person">Rachel Jiang</span>, <span class="notable-person">Yvonne Chou (Chief of Staff, AI2)</span> and <span class="notable-person">Missy Krasner (ex-Box Vice President)</span>
+                           Partnered closely with <span class="entity-person">Rachel Jiang</span>, <span class="entity-person">Yvonne Chou</span> (Chief of Staff, AI2) and <span class="entity-person">Missy Krasner</span> (ex-Box Vice President)
                         </div>
                      </div>
                   </div>
