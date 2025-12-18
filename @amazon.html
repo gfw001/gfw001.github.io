@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HTV795ZMCP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HTV795ZMCP');
+</script>
+
+<html lang="en">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Amazon Journey</title>
+   <meta name="author" content="Peng, Andy">
+   <meta name="description" content="Amazon Career Timeline">
+   <meta name="keywords" content="Amazon, AWS, Career">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+   <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
+   <link rel="canonical" href="https://pengandy.com/@amazon">
+   <script src="/assets/js/theme.js?96d6b3e1c3604aca8b6134c7afdd5db6" type="text/javascript"></script>
+   <script src="/assets/js/dark_mode.js?9b17307bb950ffa2e34be0227f53558f" type="text/javascript"></script>
+   <script src="/assets/js/components.js" defer></script>
+
+   <style>
+      .timeline-container {
+         position: relative;
+         padding: 20px 0;
+      }
+
+      .timeline-item {
+         position: relative;
+         padding-left: 50px;
+         padding-bottom: 40px;
+         border-left: 2px solid #e0e0e0;
+      }
+
+      .timeline-item:last-child {
+         border-left: 2px solid transparent;
+      }
+
+      .timeline-marker {
+         position: absolute;
+         left: -8px;
+         top: 0;
+         width: 14px;
+         height: 14px;
+         border-radius: 50%;
+         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+         border: 3px solid white;
+         box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+      }
+
+      .timeline-marker.current {
+         background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+         box-shadow: 0 2px 12px rgba(245, 87, 108, 0.5);
+         animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+         0% {
+            box-shadow: 0 2px 12px rgba(245, 87, 108, 0.5);
+         }
+         50% {
+            box-shadow: 0 2px 20px rgba(245, 87, 108, 0.8);
+         }
+         100% {
+            box-shadow: 0 2px 12px rgba(245, 87, 108, 0.5);
+         }
+      }
+
+      .timeline-content {
+         background: white;
+         border-radius: 8px;
+         padding: 24px;
+         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+         transition: all 0.3s ease;
+      }
+
+      .timeline-content:hover {
+         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+         transform: translateX(4px);
+      }
+
+      .role-header {
+         margin-bottom: 16px;
+      }
+
+      .role-title {
+         font-size: 1.25rem;
+         font-weight: 600;
+         color: #2d3748;
+         margin-bottom: 6px;
+      }
+
+      .role-team {
+         font-size: 1rem;
+         color: #4a5568;
+         margin-bottom: 4px;
+      }
+
+      .role-period {
+         display: inline-block;
+         font-size: 0.875rem;
+         color: #718096;
+         background: #f7fafc;
+         padding: 4px 12px;
+         border-radius: 4px;
+         margin-top: 8px;
+      }
+
+      .badge-founding {
+         display: inline-block;
+         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+         color: white;
+         padding: 4px 12px;
+         border-radius: 12px;
+         font-size: 0.75rem;
+         font-weight: 600;
+         text-transform: uppercase;
+         letter-spacing: 0.5px;
+         margin-left: 8px;
+         box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+      }
+
+      .badge-zero-to-one {
+         display: inline-block;
+         background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+         color: white;
+         padding: 4px 12px;
+         border-radius: 12px;
+         font-size: 0.75rem;
+         font-weight: 600;
+         margin-left: 8px;
+         box-shadow: 0 2px 8px rgba(245, 87, 108, 0.3);
+      }
+
+      .notes-section {
+         margin-top: 16px;
+         padding-top: 16px;
+         border-top: 1px solid #e2e8f0;
+      }
+
+      .note-item {
+         margin-bottom: 12px;
+         padding-left: 20px;
+         position: relative;
+         line-height: 1.6;
+         color: #4a5568;
+      }
+
+      .note-item:before {
+         content: "▸";
+         position: absolute;
+         left: 0;
+         color: #667eea;
+         font-weight: bold;
+      }
+
+      .notable-person {
+         font-weight: 600;
+         color: #2d3748;
+         background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+         padding: 2px 6px;
+         border-radius: 3px;
+         white-space: nowrap;
+      }
+
+      .highlight-link {
+         color: #667eea;
+         text-decoration: none;
+         border-bottom: 1px dotted #667eea;
+         transition: all 0.2s ease;
+      }
+
+      .highlight-link:hover {
+         color: #764ba2;
+         border-bottom: 1px solid #764ba2;
+      }
+
+      .page-header {
+         margin-bottom: 40px;
+         padding-bottom: 20px;
+         border-bottom: 2px solid #e2e8f0;
+      }
+
+      .page-header h1 {
+         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+         background-clip: text;
+         font-weight: 700;
+      }
+
+      .onboard-badge {
+         display: inline-block;
+         background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+         color: #1a202c;
+         padding: 6px 16px;
+         border-radius: 20px;
+         font-size: 0.875rem;
+         font-weight: 600;
+         margin-top: 10px;
+      }
+   </style>
+</head>
+
+<body class="fixed-top-nav" data-page="amazon">
+   <div id="navbar-placeholder"></div>
+
+   <div class="container mt-5">
+      <div class="post">
+         <header class="post-header page-header">
+            <h1 class="post-title">Amazon Journey</h1>
+            <p class="text-muted">A timeline of teams, roles, and impact</p>
+            <span class="onboard-badge">Onboarded: Pi Day 2016</span>
+         </header>
+
+         <article>
+            <div class="timeline-container">
+
+               <!-- Bedrock & SageMaker Research -->
+               <div class="timeline-item">
+                  <div class="timeline-marker current"></div>
+                  <div class="timeline-content">
+                     <div class="role-header">
+                        <div class="role-title">
+                           Engineer III, Tech Lead (L6)
+                           <span class="badge-founding">Founding Engineer</span>
+                        </div>
+                        <div class="role-team">Bedrock & SageMaker Research</div>
+                        <div class="role-period">
+                           <i class="far fa-calendar-alt"></i> Dec 2023 - Present · Bellevue/Seattle, WA
+                        </div>
+                     </div>
+                     <div class="notes-section">
+                        <div class="note-item">
+                           Inference Optimization (SageMaker & Bedrock Science): Architected and built the EAGLE head-training platform from <span class="badge-zero-to-one">0→1</span>
+                        </div>
+                        <div class="note-item">
+                           <span class="badge-founding">Founding Engineer</span> of Bedrock's Anthropic inference engine (Bedrock Forklift)
+                        </div>
+                        <div class="note-item">
+                           Partnered closely with Anthropic leadership, including co-founder <span class="notable-person">Ben Mann</span>; <span class="notable-person">James Bradbury, Head of Compute</span>; and <span class="notable-person">Ron Diamant, VP & Distinguished Engineer at Annapurna ML</span>
+                        </div>
+                        <div class="note-item">
+                           Led launches of Claude 3 Opus, Claude 3.5 Sonnet v2, and Haiku, enabling 90%+ of Bedrock inference traffic on Trainium
+                        </div>
+                        <div class="note-item">
+                           Scaled the organization from 2 to 30+ engineers
+                        </div>
+                        <div class="note-item">
+                           Delivered company-wide initiatives, publicly highlighted by the CEO and cited in quarterly earnings reports (2024–2025)
+                        </div>
+                        <div class="note-item" style="font-style: italic; color: #718096;">
+                           Additional Privileged & Confidential Initiatives
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- S3 -->
+               <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                     <div class="role-header">
+                        <div class="role-title">Engineer III, Tech Lead (L6)</div>
+                        <div class="role-team">Amazon S3</div>
+                        <div class="role-period">
+                           <i class="far fa-calendar-alt"></i> Nov 2022 - Dec 2023 · Seattle, WA
+                        </div>
+                     </div>
+                     <div class="notes-section">
+                        <div class="note-item">
+                           <em>Notes to be added</em>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Serverless & Containers - Manager -->
+               <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                     <div class="role-header">
+                        <div class="role-title">Engineer III & ULT / Manager (L6)</div>
+                        <div class="role-team">Serverless & Containers (AWS App Runner & Fargate)</div>
+                        <div class="role-period">
+                           <i class="far fa-calendar-alt"></i> Apr 2022 - Oct 2022 · Seattle, WA
+                        </div>
+                     </div>
+                     <div class="notes-section">
+                        <div class="note-item">
+                           Uber TL of an organization of 70 (4 two-pizza teams)
+                        </div>
+                        <div class="note-item">
+                           Oversee two public products (Hundreds MM dollar ARR) engineering division
+                        </div>
+                        <div class="note-item">
+                           Presented new product features at DockerCon with executive leadership <span class="notable-person">Inbal Shani (CPO, Twilio; former CPO, GitHub)</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Serverless & Containers - Engineer II -->
+               <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                     <div class="role-header">
+                        <div class="role-title">
+                           Engineer II (L5)
+                           <span class="badge-founding">Founding Engineer</span>
+                           <span class="badge-zero-to-one">0→1</span>
+                        </div>
+                        <div class="role-team">Serverless & Containers (AWS App Runner & Fargate)</div>
+                        <div class="role-period">
+                           <i class="far fa-calendar-alt"></i> Jul 2020 - Apr 2022 · Seattle, WA
+                        </div>
+                     </div>
+                     <div class="notes-section">
+                        <div class="note-item">
+                           <span class="badge-founding">Founding Engineer</span>. Launched <span class="badge-zero-to-one">AWS App Runner 0→1</span>, a serverless compute product incubated from AWS Fargate (Firecracker microVM)
+                        </div>
+                        <div class="note-item">
+                           Publicly highlighted by the CEO: <a href="https://x.com/aselipsky/status/1395149027658801152?s=20" target="_blank" class="highlight-link">Adam Selipsky's announcement</a>
+                        </div>
+                        <div class="note-item">
+                           Cited in Amazon's Q2 2021 earnings report: <a href="https://aws.amazon.com/apprunner/" target="_blank" class="highlight-link">aws.amazon.com/apprunner</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Alexa AI Health & Wellness -->
+               <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                     <div class="role-header">
+                        <div class="role-title">
+                           Engineer II (L5)
+                           <span class="badge-founding">Founding Engineer</span>
+                        </div>
+                        <div class="role-team">Alexa AI Health & Wellness (Conversational AI)</div>
+                        <div class="role-period">
+                           <i class="far fa-calendar-alt"></i> Mar 2019 - Jul 2020 · Seattle, WA
+                        </div>
+                     </div>
+                     <div class="notes-section">
+                        <div class="note-item">
+                           <span class="badge-founding">Founding Engineer</span>. Launched medication management cited in Amazon's Q4 2019 earnings report
+                        </div>
+                        <div class="note-item">
+                           Partnered closely with <span class="notable-person">Rachel Jiang</span>, <span class="notable-person">Yvonne Chou (Chief of Staff, AI2)</span> and <span class="notable-person">Missy Krasner (ex-Box Vice President)</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- AWS Payments - Engineer II -->
+               <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                     <div class="role-header">
+                        <div class="role-title">Engineer II (L5)</div>
+                        <div class="role-team">AWS Payments</div>
+                        <div class="role-period">
+                           <i class="far fa-calendar-alt"></i> Jul 2018 - Mar 2019 · Seattle, WA
+                        </div>
+                     </div>
+                     <div class="notes-section">
+                        <div class="note-item">
+                           <em>Notes to be added</em>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- AWS Payments - Engineer I -->
+               <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                     <div class="role-header">
+                        <div class="role-title">Engineer I (L4)</div>
+                        <div class="role-team">AWS Payments</div>
+                        <div class="role-period">
+                           <i class="far fa-calendar-alt"></i> Pi Day 2016 - Jun 2018 · Seattle, WA
+                        </div>
+                     </div>
+                     <div class="notes-section">
+                        <div class="note-item">
+                           <em>Notes to be added</em>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </article>
+      </div>
+   </div>
+
+   <div id="footer-placeholder"></div>
+
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
