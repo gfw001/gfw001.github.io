@@ -125,36 +125,47 @@
          font-weight: 600;
       }
 
+      .team-tag {
+         display: inline-block;
+         color: #2563eb;
+         font-family: 'Courier New', monospace;
+         font-size: 0.75rem;
+         font-weight: 600;
+         margin-right: 6px;
+      }
+
       .notes-section {
          margin-top: 16px;
          padding-top: 16px;
          border-top: 1px solid #e8e8e8;
-      }
-
-      .note-item {
-         margin-bottom: 10px;
-         padding-left: 20px;
-         position: relative;
-         line-height: 1.6;
+         line-height: 1.7;
          color: #4a5568;
          font-size: 0.9rem;
       }
 
-      .note-item:before {
-         content: "▸";
-         position: absolute;
-         left: 0;
-         color: #4a90e2;
-         font-weight: bold;
+      .notes-section p {
+         margin-bottom: 0.6rem;
       }
 
-      .entity-person,
-      .entity-company,
-      .entity-product,
-      .entity-model,
-      .entity-metric {
-         font-family: 'Courier New', monospace;
-         color: #2563eb;
+      .entity-revenue {
+         font-weight: 600;
+         color: #d97706;
+      }
+
+      .entity-person {
+         font-weight: 500;
+      }
+
+      .entity-company {
+         font-weight: 600;
+      }
+
+      .entity-model {
+         font-style: italic;
+         font-weight: 500;
+      }
+
+      .entity-product {
          font-weight: 500;
       }
 
@@ -196,34 +207,18 @@
                   <div class="timeline-marker current"></div>
                   <div class="timeline-content">
                      <div class="role-header">
-                        <div class="role-title">Engineer III, Tech Lead (L6)</div>
-                        <div class="role-team">Bedrock & SageMaker Research</div>
+                        <div class="role-title">Research Engineer III, Tech Lead (L6)</div>
+                        <div class="role-team"><span class="team-tag">GenAI</span>Bedrock & SageMaker</div>
                         <div class="role-period">
                            <i class="far fa-calendar-alt"></i> Dec 2023 - Present · Bellevue/Seattle, WA
                         </div>
                      </div>
                      <div class="notes-section">
-                        <div class="note-item">
-                           <span class="badge-founding">Founding Engineer</span> <span class="badge-zero-to-one">0→1</span> Inference Optimization (<span class="entity-product">SageMaker</span> & <span class="entity-product">Bedrock</span> Science): Architected and built the EAGLE head-training platform
-                        </div>
-                        <div class="note-item">
-                           <span class="badge-founding">Founding Engineer</span> of <span class="entity-product">Bedrock</span>'s <span class="entity-company">Anthropic</span> inference engine (<span class="entity-product">Bedrock Forklift</span>)
-                        </div>
-                        <div class="note-item">
-                           Partnered closely with <span class="entity-company">Anthropic</span> leadership, including co-founder <span class="entity-person">Ben Mann</span>; <span class="entity-person">James Bradbury</span>, Head of Compute; and <span class="entity-person">Ron Diamant</span>, VP & Distinguished Engineer at Annapurna ML
-                        </div>
-                        <div class="note-item">
-                           Led launches of <span class="entity-model">Claude 3 Opus</span>, <span class="entity-model">Claude 3.5 Sonnet v2</span>, and <span class="entity-model">Haiku</span>, enabling 90%+ of <span class="entity-product">Bedrock</span> inference traffic on Trainium
-                        </div>
-                        <div class="note-item">
-                           Scaled the organization from 2 to 30+ engineers
-                        </div>
-                        <div class="note-item">
-                           Delivered company-wide initiatives, publicly highlighted by <span class="entity-metric">the CEO</span> and cited in <span class="entity-metric">quarterly earnings reports</span> (2024–2025)
-                        </div>
-                        <div class="note-item" style="font-style: italic; color: #718096;">
-                           Additional Privileged & Confidential Initiatives
-                        </div>
+                        <p><span class="badge-founding">Founding Engineer</span> <span class="badge-zero-to-one">0→1</span> of <span class="entity-product">Bedrock</span>'s <span class="entity-company">Anthropic</span> inference engine and SageMaker inference optimization. Architected the EAGLE head-training platform and Bedrock Forklift system.</p>
+                        <p>Partnered with <span class="entity-company">Anthropic</span> leadership including co-founder <span class="entity-person">Ben Mann</span>, <span class="entity-person">James Bradbury</span> (Head of Compute), and <span class="entity-person">Ron Diamant</span> (VP & Distinguished Engineer, Annapurna ML).</p>
+                        <p>Led launches of <span class="entity-model">Claude 3 Opus</span>, <span class="entity-model">Claude 3.5 Sonnet v2</span>, and <span class="entity-model">Haiku</span>, enabling 90%+ of Bedrock inference traffic on Trainium. Scaled the team from 2 to 30+ engineers.</p>
+                        <p>Work publicly highlighted by the CEO and cited in <span class="entity-revenue">quarterly earnings reports</span> (2024–2025).</p>
+                        <p style="font-style: italic; color: #718096;">Additional Privileged & Confidential Initiatives</p>
                      </div>
                   </div>
                </div>
@@ -234,7 +229,7 @@
                   <div class="timeline-content">
                      <div class="role-header">
                         <div class="role-title">Engineer III, Tech Lead (L6)</div>
-                        <div class="role-team">Amazon S3</div>
+                        <div class="role-team"><span class="team-tag">Data</span>Amazon S3</div>
                         <div class="role-period">
                            <i class="far fa-calendar-alt"></i> Nov 2022 - Dec 2023 · Seattle, WA
                         </div>
@@ -248,21 +243,13 @@
                   <div class="timeline-content">
                      <div class="role-header">
                         <div class="role-title">Engineer III & ULT / Manager (L6)</div>
-                        <div class="role-team">Serverless & Containers (<span class="entity-product">AWS App Runner</span> & <span class="entity-product">Fargate</span>)</div>
+                        <div class="role-team"><span class="team-tag">Serverless</span>AWS App Runner & Fargate</div>
                         <div class="role-period">
                            <i class="far fa-calendar-alt"></i> Apr 2022 - Oct 2022 · Seattle, WA
                         </div>
                      </div>
                      <div class="notes-section">
-                        <div class="note-item">
-                           Uber TL of an organization of 70 (4 two-pizza teams)
-                        </div>
-                        <div class="note-item">
-                           Oversee two public products (<span class="entity-metric">Hundreds MM dollar ARR</span>) engineering division
-                        </div>
-                        <div class="note-item">
-                           Presented new product features at DockerCon with executive leadership <span class="entity-person">Inbal Shani</span> (CPO, Twilio; former CPO, GitHub)
-                        </div>
+                        <p>Uber TL of an organization of 70 engineers (4 teams) overseeing two public products with <span class="entity-revenue">hundreds of millions in ARR</span>. Presented new features at DockerCon with <span class="entity-person">Inbal Shani</span> (CPO, <span class="entity-company">Twilio</span>; former CPO, <span class="entity-company">GitHub</span>).</p>
                      </div>
                   </div>
                </div>
@@ -273,21 +260,13 @@
                   <div class="timeline-content">
                      <div class="role-header">
                         <div class="role-title">Engineer II (L5)</div>
-                        <div class="role-team">Serverless & Containers (<span class="entity-product">AWS App Runner</span> & <span class="entity-product">Fargate</span>)</div>
+                        <div class="role-team"><span class="team-tag">Serverless</span>AWS App Runner & Fargate</div>
                         <div class="role-period">
                            <i class="far fa-calendar-alt"></i> Jul 2020 - Apr 2022 · Seattle, WA
                         </div>
                      </div>
                      <div class="notes-section">
-                        <div class="note-item">
-                           <span class="badge-founding">Founding Engineer</span> <span class="badge-zero-to-one">0→1</span> Launched <span class="entity-product">AWS App Runner</span>, a serverless compute product incubated from <span class="entity-product">AWS Fargate</span> (Firecracker microVM)
-                        </div>
-                        <div class="note-item">
-                           Publicly highlighted by <span class="entity-metric">the CEO</span>: <a href="https://x.com/aselipsky/status/1395149027658801152?s=20" target="_blank" class="highlight-link">Adam Selipsky's announcement</a>
-                        </div>
-                        <div class="note-item">
-                           Cited in <span class="entity-metric">Amazon's Q2 2021 earnings report</span>: <a href="https://aws.amazon.com/apprunner/" target="_blank" class="highlight-link">aws.amazon.com/apprunner</a>
-                        </div>
+                        <p><span class="badge-founding">Founding Engineer</span> <span class="badge-zero-to-one">0→1</span> Launched <span class="entity-product">AWS App Runner</span>, a serverless compute product incubated from AWS Fargate (Firecracker microVM). Publicly highlighted by the CEO <a href="https://x.com/aselipsky/status/1395149027658801152?s=20" target="_blank" class="highlight-link">Adam Selipsky</a> and cited in <span class="entity-revenue">Amazon's Q2 2021 earnings report</span>.</p>
                      </div>
                   </div>
                </div>
@@ -298,18 +277,13 @@
                   <div class="timeline-content">
                      <div class="role-header">
                         <div class="role-title">Engineer II (L5)</div>
-                        <div class="role-team">Alexa AI Health & Wellness (Conversational AI)</div>
+                        <div class="role-team"><span class="team-tag">Conversational AI</span>Alexa AI Health & Wellness</div>
                         <div class="role-period">
                            <i class="far fa-calendar-alt"></i> Mar 2019 - Jul 2020 · Seattle, WA
                         </div>
                      </div>
                      <div class="notes-section">
-                        <div class="note-item">
-                           <span class="badge-founding">Founding Engineer</span> Launched medication management cited in <span class="entity-metric">Amazon's Q4 2019 earnings report</span>
-                        </div>
-                        <div class="note-item">
-                           Partnered closely with <span class="entity-person">Rachel Jiang</span>, <span class="entity-person">Yvonne Chou</span> (Chief of Staff, AI2) and <span class="entity-person">Missy Krasner</span> (ex-Box Vice President)
-                        </div>
+                        <p><span class="badge-founding">Founding Engineer</span> Launched medication management cited in <span class="entity-revenue">Amazon's Q4 2019 earnings report</span>. Partnered with <span class="entity-person">Rachel Jiang</span>, <span class="entity-person">Yvonne Chou</span> (Chief of Staff, <span class="entity-company">AI2</span>), and <span class="entity-person">Missy Krasner</span> (former VP, <span class="entity-company">Box</span>).</p>
                      </div>
                   </div>
                </div>
@@ -320,7 +294,7 @@
                   <div class="timeline-content">
                      <div class="role-header">
                         <div class="role-title">Engineer II (L5)</div>
-                        <div class="role-team">AWS Payments</div>
+                        <div class="role-team"><span class="team-tag">Fintech</span>AWS Payments</div>
                         <div class="role-period">
                            <i class="far fa-calendar-alt"></i> Jul 2018 - Mar 2019 · Seattle, WA
                         </div>
@@ -334,7 +308,7 @@
                   <div class="timeline-content">
                      <div class="role-header">
                         <div class="role-title">Engineer I (L4)</div>
-                        <div class="role-team">AWS Payments</div>
+                        <div class="role-team"><span class="team-tag">Fintech</span>AWS Payments</div>
                         <div class="role-period">
                            <i class="far fa-calendar-alt"></i> Pi Day 2016 - Jun 2018 · Seattle, WA
                         </div>
