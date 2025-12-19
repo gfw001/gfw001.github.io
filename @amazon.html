@@ -28,6 +28,12 @@
    <script src="/assets/js/components.js" defer></script>
 
    <style>
+      body {
+         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Helvetica Neue', Arial, sans-serif;
+         -webkit-font-smoothing: antialiased;
+         -moz-osx-font-smoothing: grayscale;
+      }
+
       .timeline-container {
          position: relative;
          padding: 20px 0;
@@ -37,7 +43,7 @@
          position: relative;
          padding-left: 50px;
          padding-bottom: 40px;
-         border-left: 2px solid #e8e8e8;
+         border-left: 2px solid #e8f0f7;
       }
 
       .timeline-item:last-child {
@@ -51,31 +57,31 @@
          width: 14px;
          height: 14px;
          border-radius: 50%;
-         background: #4a90e2;
+         background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
          border: 3px solid white;
-         box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+         box-shadow: 0 2px 10px rgba(59, 130, 246, 0.35);
       }
 
       .timeline-marker.golden {
-         background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-         box-shadow: 0 2px 8px rgba(243, 156, 18, 0.3);
+         background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+         box-shadow: 0 2px 10px rgba(245, 158, 11, 0.35);
       }
 
       .timeline-marker.current {
-         background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-         box-shadow: 0 2px 12px rgba(243, 156, 18, 0.5);
+         background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+         box-shadow: 0 2px 14px rgba(245, 158, 11, 0.5);
          animation: pulse 2s infinite;
       }
 
       @keyframes pulse {
          0% {
-            box-shadow: 0 2px 12px rgba(243, 156, 18, 0.5);
+            box-shadow: 0 2px 14px rgba(245, 158, 11, 0.5);
          }
          50% {
-            box-shadow: 0 2px 20px rgba(243, 156, 18, 0.8);
+            box-shadow: 0 2px 22px rgba(245, 158, 11, 0.75);
          }
          100% {
-            box-shadow: 0 2px 12px rgba(243, 156, 18, 0.5);
+            box-shadow: 0 2px 14px rgba(245, 158, 11, 0.5);
          }
       }
 
@@ -85,103 +91,120 @@
       }
 
       .role-header {
-         margin-bottom: 16px;
+         margin-bottom: 18px;
       }
 
       .role-title {
-         font-size: 1.25rem;
+         font-size: 1.3rem;
          font-weight: 600;
-         color: #2d3748;
-         margin-bottom: 6px;
+         color: #1e293b;
+         margin-bottom: 8px;
+         letter-spacing: -0.01em;
       }
 
       .role-team {
-         font-size: 1rem;
-         color: #4a5568;
-         margin-bottom: 4px;
+         font-size: 1.05rem;
+         color: #475569;
+         margin-bottom: 6px;
+         font-weight: 500;
       }
 
       .role-period {
          display: inline-block;
-         font-size: 0.875rem;
-         color: #718096;
+         font-size: 0.9rem;
+         color: #64748b;
          padding: 4px 0;
          margin-top: 8px;
+         font-weight: 400;
       }
 
       .badge-founding {
          display: inline-block;
-         color: #4a90e2;
-         font-size: 0.8rem;
+         color: #1e40af;
+         font-size: 0.78rem;
          font-weight: 600;
-         padding: 2px 8px;
-         background: rgba(74, 144, 226, 0.1);
-         border-radius: 3px;
-         margin-right: 4px;
+         padding: 3px 10px;
+         background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(37, 99, 235, 0.08) 100%);
+         border: 1px solid rgba(59, 130, 246, 0.2);
+         border-radius: 4px;
+         margin-right: 6px;
+         letter-spacing: 0.02em;
       }
 
       .badge-zero-to-one {
          display: inline-block;
-         color: #4a90e2;
-         font-size: 0.8rem;
+         color: #1e40af;
+         font-size: 0.78rem;
          font-weight: 600;
-         padding: 2px 8px;
-         background: rgba(74, 144, 226, 0.1);
-         border-radius: 3px;
+         padding: 3px 10px;
+         background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(37, 99, 235, 0.08) 100%);
+         border: 1px solid rgba(59, 130, 246, 0.2);
+         border-radius: 4px;
          margin-right: 8px;
+         letter-spacing: 0.02em;
       }
 
       .team-tag {
          display: inline-block;
-         color: #4a90e2;
-         font-size: 0.8rem;
+         color: #1e40af;
+         font-size: 0.78rem;
          font-weight: 600;
-         padding: 2px 8px;
-         background: rgba(74, 144, 226, 0.1);
-         border-radius: 3px;
-         margin-right: 6px;
+         padding: 3px 10px;
+         background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(37, 99, 235, 0.08) 100%);
+         border: 1px solid rgba(59, 130, 246, 0.2);
+         border-radius: 4px;
+         margin-right: 8px;
+         letter-spacing: 0.02em;
       }
 
       .notes-section {
-         margin-top: 16px;
-         line-height: 1.7;
-         color: #4a5568;
-         font-size: 0.9rem;
+         margin-top: 18px;
+         line-height: 1.75;
+         color: #475569;
+         font-size: 0.95rem;
+         font-weight: 400;
       }
 
       .notes-section p {
-         margin-bottom: 0.6rem;
+         margin-bottom: 0.7rem;
       }
 
       .entity-revenue {
          font-weight: 600;
+         color: #334155;
       }
 
       .entity-person {
          font-weight: 500;
+         color: #334155;
       }
 
       .entity-company {
          font-weight: 600;
+         color: #334155;
       }
 
       .entity-model {
          font-style: italic;
          font-weight: 500;
+         color: #334155;
       }
 
       .entity-product {
          font-weight: 500;
+         color: #334155;
       }
 
       .highlight-link {
-         color: #4a90e2;
+         color: #2563eb;
          text-decoration: none;
          transition: all 0.2s ease;
+         border-bottom: 1px solid rgba(37, 99, 235, 0.2);
       }
 
       .highlight-link:hover {
-         color: #2563eb;
+         color: #1e40af;
+         border-bottom-color: rgba(30, 64, 175, 0.4);
       }
    </style>
 </head>
@@ -206,7 +229,7 @@
                         </div>
                      </div>
                      <div class="notes-section">
-                        <p><span class="badge-founding">Founding Engineer</span> <span class="badge-zero-to-one">0→1</span> inference optimization (SageMaker and <span class="entity-product">Bedrock</span> Science) and <span class="entity-company">Anthropic</span> inference engine (<span class="entity-product">Bedrock</span> Forklift). Led releases of <span class="entity-model">Claude 3 Opus</span>, <span class="entity-model">3.5 Sonnet v2</span>, and <span class="entity-model">Haiku</span>, featured in <span class="badge-founding">Q1 and Q3 2024</span> earnings reports and publicly underscored by CEOs. Partnered with <span class="entity-company">Anthropic</span>, <span class="entity-person">Ben Mann</span> (Co-founder), <span class="entity-person">James Bradbury</span> (Head of Compute); and <span class="entity-person">Ron Diamant</span> (VP & Distinguished Engineer, Annapurna ML). <span style="font-style: italic; color: #718096;">More Privileged & Confidential initiatives.</span></p>
+                        <p><span class="badge-founding">Founding Engineer</span> <span class="badge-zero-to-one">0→1</span> <span class="entity-company">Anthropic</span> <span class="entity-model">Claude</span> inference powering 90% of <span class="entity-company">Amazon</span> LLM traffic at <span class="entity-product">AWS Bedrock</span>, featured in <span class="badge-founding">Q1 and Q3 2024</span> earnings reports and publicly underscored by CEOs. <span class="badge-founding">Founding Engineer</span> <span class="badge-zero-to-one">0→1</span> <span class="entity-model">Claude</span> inference on <span class="entity-product">Trainium</span> chip, launched at <span class="badge-founding">re:Invent 2024</span>. <span class="badge-founding">Founding Engineer</span> <span class="badge-zero-to-one">0→1</span> <span class="entity-company">Palantir</span>-<span class="entity-company">Anthropic</span> partnership enabling classified environment compute. <span class="badge-founding">Founding Engineer</span> <span class="badge-zero-to-one">0→1</span> speculative decoding inference optimization at <span class="entity-product">AWS SageMaker</span>, unveiled at <span class="badge-founding">re:Invent 2025</span>. Led production releases of <span class="entity-model">Claude 3 Opus</span>, <span class="entity-model">3.5 Sonnet v2</span>, and <span class="entity-model">Haiku</span>. Partnered with <span class="entity-company">Anthropic</span>, <span class="entity-person">Ben Mann</span> (Co-founder), <span class="entity-person">James Bradbury</span> (Head of Compute); and <span class="entity-person">Ron Diamant</span> (VP & Distinguished Engineer, Annapurna ML). <span style="font-style: italic; color: #64748b;">More Privileged & Confidential initiatives.</span></p>
                      </div>
                   </div>
                </div>
