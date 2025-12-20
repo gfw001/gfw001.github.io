@@ -36,14 +36,15 @@
 
       .timeline-container {
          position: relative;
-         padding: 20px 0;
+         padding: 30px 0;
+         max-width: 900px;
       }
 
       .timeline-item {
          position: relative;
-         padding-left: 50px;
-         padding-bottom: 40px;
-         border-left: 2px solid #e8f0f7;
+         padding-left: 60px;
+         padding-bottom: 50px;
+         border-left: 2px solid #e2e8f0;
       }
 
       .timeline-item:last-child {
@@ -52,36 +53,40 @@
 
       .timeline-marker {
          position: absolute;
-         left: -8px;
+         left: -9px;
          top: 0;
-         width: 14px;
-         height: 14px;
+         width: 16px;
+         height: 16px;
          border-radius: 50%;
          background: #0076df;
          border: 3px solid white;
-         box-shadow: 0 2px 8px rgba(0, 118, 223, 0.3);
+         box-shadow: 0 2px 10px rgba(0, 118, 223, 0.35);
+         transition: all 0.3s ease;
       }
 
       .timeline-marker.golden {
          background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-         box-shadow: 0 2px 10px rgba(245, 158, 11, 0.35);
+         box-shadow: 0 2px 12px rgba(245, 158, 11, 0.4);
       }
 
       .timeline-marker.current {
          background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-         box-shadow: 0 2px 14px rgba(245, 158, 11, 0.5);
+         box-shadow: 0 2px 16px rgba(245, 158, 11, 0.6);
          animation: pulse 2s infinite;
       }
 
       @keyframes pulse {
          0% {
-            box-shadow: 0 2px 14px rgba(245, 158, 11, 0.5);
+            box-shadow: 0 2px 16px rgba(245, 158, 11, 0.6);
+            transform: scale(1);
          }
          50% {
-            box-shadow: 0 2px 22px rgba(245, 158, 11, 0.75);
+            box-shadow: 0 4px 24px rgba(245, 158, 11, 0.8);
+            transform: scale(1.05);
          }
          100% {
-            box-shadow: 0 2px 14px rgba(245, 158, 11, 0.5);
+            box-shadow: 0 2px 16px rgba(245, 158, 11, 0.6);
+            transform: scale(1);
          }
       }
 
@@ -91,112 +96,182 @@
       }
 
       .role-header {
-         margin-bottom: 18px;
+         margin-bottom: 20px;
+         padding-bottom: 16px;
+         border-bottom: 1px solid #f1f5f9;
       }
 
       .role-title {
-         font-size: 1.3rem;
+         font-size: 1.35rem;
          font-weight: 600;
-         color: #1e293b;
-         margin-bottom: 8px;
-         letter-spacing: -0.01em;
+         color: #0f172a;
+         margin-bottom: 10px;
+         letter-spacing: -0.02em;
+         line-height: 1.3;
       }
 
       .role-team {
          font-size: 1.05rem;
          color: #475569;
-         margin-bottom: 6px;
+         margin-bottom: 8px;
          font-weight: 500;
+         line-height: 1.4;
       }
 
       .role-period {
-         display: inline-block;
+         display: inline-flex;
+         align-items: center;
+         gap: 6px;
          font-size: 0.9rem;
          color: #64748b;
-         padding: 4px 0;
-         margin-top: 8px;
+         padding: 6px 0;
+         margin-top: 6px;
          font-weight: 400;
+      }
+
+      .role-period i {
+         opacity: 0.7;
       }
 
       .badge-founding {
          display: inline-block;
-         color: #0076df;
-         font-size: 0.8rem;
+         color: #0369a1;
+         font-size: 0.78rem;
          font-weight: 600;
-         padding: 2px 8px;
-         background: rgba(0, 118, 223, 0.1);
-         border-radius: 3px;
-         margin-right: 4px;
+         padding: 4px 10px;
+         background: linear-gradient(135deg, rgba(14, 165, 233, 0.12) 0%, rgba(3, 105, 161, 0.08) 100%);
+         border: 1px solid rgba(14, 165, 233, 0.2);
+         border-radius: 4px;
+         margin-right: 6px;
+         margin-bottom: 4px;
+         letter-spacing: 0.01em;
+         transition: all 0.2s ease;
+      }
+
+      .badge-founding:hover {
+         background: linear-gradient(135deg, rgba(14, 165, 233, 0.18) 0%, rgba(3, 105, 161, 0.12) 100%);
+         border-color: rgba(14, 165, 233, 0.3);
       }
 
       .badge-zero-to-one {
          display: inline-block;
-         color: #0076df;
-         font-size: 0.8rem;
+         color: #0369a1;
+         font-size: 0.78rem;
          font-weight: 600;
-         padding: 2px 8px;
-         background: rgba(0, 118, 223, 0.1);
-         border-radius: 3px;
-         margin-right: 8px;
+         padding: 4px 10px;
+         background: linear-gradient(135deg, rgba(14, 165, 233, 0.12) 0%, rgba(3, 105, 161, 0.08) 100%);
+         border: 1px solid rgba(14, 165, 233, 0.2);
+         border-radius: 4px;
+         margin-right: 6px;
+         margin-bottom: 4px;
+         letter-spacing: 0.01em;
+         transition: all 0.2s ease;
+      }
+
+      .badge-zero-to-one:hover {
+         background: linear-gradient(135deg, rgba(14, 165, 233, 0.18) 0%, rgba(3, 105, 161, 0.12) 100%);
+         border-color: rgba(14, 165, 233, 0.3);
       }
 
       .team-tag {
          display: inline-block;
-         color: #0076df;
-         font-size: 0.8rem;
+         color: #0284c7;
+         font-size: 0.82rem;
          font-weight: 600;
-         padding: 2px 8px;
-         background: rgba(0, 118, 223, 0.1);
-         border-radius: 3px;
-         margin-right: 6px;
+         padding: 4px 12px;
+         background: linear-gradient(135deg, rgba(7, 89, 133, 0.08) 0%, rgba(2, 132, 199, 0.06) 100%);
+         border: 1px solid rgba(7, 89, 133, 0.15);
+         border-radius: 5px;
+         margin-right: 8px;
+         letter-spacing: 0.02em;
       }
 
       .notes-section {
-         margin-top: 18px;
-         line-height: 1.75;
-         color: #475569;
+         margin-top: 20px;
+         padding: 20px 24px;
+         background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+         border-left: 3px solid #0ea5e9;
+         border-radius: 6px;
+         box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+         line-height: 1.8;
+         color: #334155;
          font-size: 0.95rem;
          font-weight: 400;
       }
 
       .notes-section p {
-         margin-bottom: 0.7rem;
+         margin-bottom: 0;
       }
 
       .entity-revenue {
          font-weight: 600;
-         color: #334155;
+         color: #1e293b;
+         background: linear-gradient(135deg, rgba(220, 38, 38, 0.08) 0%, rgba(239, 68, 68, 0.05) 100%);
+         padding: 2px 6px;
+         border-radius: 3px;
       }
 
       .entity-person {
-         font-weight: 500;
-         color: #334155;
+         font-weight: 600;
+         color: #1e293b;
+         background: rgba(148, 163, 184, 0.12);
+         padding: 2px 6px;
+         border-radius: 3px;
       }
 
       .entity-company {
          font-weight: 600;
-         color: #334155;
+         color: #1e293b;
+         background: rgba(59, 130, 246, 0.08);
+         padding: 2px 6px;
+         border-radius: 3px;
       }
 
       .entity-model {
          font-style: italic;
          font-weight: 500;
-         color: #334155;
+         color: #1e293b;
+         background: rgba(168, 85, 247, 0.08);
+         padding: 2px 6px;
+         border-radius: 3px;
       }
 
       .entity-product {
-         font-weight: 500;
-         color: #334155;
+         font-weight: 600;
+         color: #1e293b;
+         background: rgba(34, 197, 94, 0.08);
+         padding: 2px 6px;
+         border-radius: 3px;
       }
 
       .highlight-link {
-         color: #0076df;
+         color: #0284c7;
          text-decoration: none;
+         border-bottom: 1px solid rgba(2, 132, 199, 0.3);
          transition: all 0.2s ease;
+         font-weight: 500;
       }
 
       .highlight-link:hover {
-         color: #00369f;
+         color: #0369a1;
+         border-bottom-color: #0369a1;
+         background: rgba(2, 132, 199, 0.05);
+      }
+
+      /* Responsive improvements */
+      @media (max-width: 768px) {
+         .timeline-item {
+            padding-left: 40px;
+         }
+
+         .notes-section {
+            padding: 16px 18px;
+            font-size: 0.92rem;
+         }
+
+         .role-title {
+            font-size: 1.2rem;
+         }
       }
    </style>
 </head>
