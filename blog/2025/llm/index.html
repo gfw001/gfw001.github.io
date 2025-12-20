@@ -63,24 +63,23 @@
      /* Timeline Styles */
      .timeline {
        position: relative;
-       max-width: 800px;
-       margin: 30px auto;
-       padding: 20px 0;
+       max-width: 700px;
+       margin: 20px auto;
+       padding: 15px 0;
      }
 
      .timeline::before {
        content: '';
        position: absolute;
-       left: 50%;
-       transform: translateX(-50%);
+       left: 20px;
        width: 2px;
        height: 100%;
-       background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+       background: #ddd;
      }
 
      .timeline-item {
        position: relative;
-       margin-bottom: 40px;
+       margin-bottom: 25px;
        width: 100%;
      }
 
@@ -90,73 +89,43 @@
 
      .timeline-content {
        position: relative;
-       width: 45%;
-       padding: 20px;
-       background: rgba(102, 126, 234, 0.05);
-       border-radius: 8px;
-       border-left: 3px solid #667eea;
-     }
-
-     .timeline-item:nth-child(odd) .timeline-content {
-       margin-left: auto;
-     }
-
-     .timeline-item:nth-child(even) .timeline-content {
-       margin-right: auto;
-       border-left: none;
-       border-right: 3px solid #764ba2;
+       margin-left: 50px;
+       padding: 10px 15px;
+       background: #f9f9f9;
+       border-radius: 4px;
+       border-left: 2px solid #999;
      }
 
      .timeline-date {
-       font-weight: bold;
-       color: #667eea;
-       font-size: 1.1em;
-       margin-bottom: 8px;
-     }
-
-     .timeline-item:nth-child(even) .timeline-date {
-       color: #764ba2;
+       font-weight: 500;
+       color: #666;
+       font-size: 0.85em;
+       margin-bottom: 4px;
      }
 
      .timeline-description {
-       color: #4a5568;
-       line-height: 1.6;
+       color: #555;
+       font-size: 0.9em;
+       line-height: 1.4;
      }
 
      .timeline-marker {
        position: absolute;
-       left: 50%;
-       top: 20px;
+       left: 20px;
+       top: 12px;
        transform: translateX(-50%);
-       width: 16px;
-       height: 16px;
+       width: 10px;
+       height: 10px;
        border-radius: 50%;
-       background: #667eea;
-       border: 3px solid #fff;
-       box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+       background: #999;
+       border: 2px solid #fff;
        z-index: 1;
      }
 
-     .timeline-item:nth-child(even) .timeline-marker {
-       background: #764ba2;
-       box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.2);
-     }
-
      @media (max-width: 768px) {
-       .timeline::before {
-         left: 20px;
-       }
-
        .timeline-content {
-         width: calc(100% - 60px);
-         margin-left: 60px !important;
-         margin-right: 0 !important;
-         border-left: 3px solid #667eea !important;
-         border-right: none !important;
-       }
-
-       .timeline-marker {
-         left: 20px;
+         margin-left: 40px;
+         padding: 8px 12px;
        }
      }
 
@@ -190,18 +159,18 @@
             <!-- ========================================== -->
 
             <h2>1. Open Source vs Closed Source Foundation Model</h2>
-            <p>2025 has been a year of shifts in the foundation model landscape. While we've seen more powerful models from <span class="highlight">Anthropic</span> and <span class="highlight">OpenAI</span>, the shift between open source and closed source continues to evolve. Companies like <span class="highlight">Meta</span> and <span class="highlight">xAI</span> switched their previously open-source models to closed source. OpenAI shipped <span class="highlight">gpt-oss</span> in August 2025, marking their first major open-source model release.</p>
-            <p>Despite these industry shifts, my favorite AI breakthrough this year remains <a href="https://pengandy.com/blog/2025/deepseek/" target="_blank">DeepSeek</a>. DeepSeek proved that <em>open source is the way</em>. Their unwavering commitment to openness, even as giants like Meta retreated, has inspired a new generation of open-source models including <span class="highlight">Qwen</span>, <span class="highlight">Kimi</span>, <span class="highlight">Xiaomi MiMo</span>, and <span class="highlight">AI2's OLMo</span>. Open source enables innovation, research, and democratization of AI technology.</p>
+            <p>2025 has been a year of shifts in the foundation model landscape. While we've seen more powerful models from Anthropic and OpenAI, the shift between open source and closed source continues to evolve. Companies like Meta and xAI switched their previously open-source models to closed source. OpenAI shipped gpt-oss in August 2025, marking their first major open-source model release.</p>
+            <p>Despite these industry shifts, my favorite AI breakthrough this year remains <a href="https://pengandy.com/blog/2025/deepseek/" target="_blank">DeepSeek</a>. DeepSeek proved that <em>open source is the way</em>. Their unwavering commitment to openness, even as giants like Meta retreated, has inspired a new generation of open-source models including Qwen, Kimi, Xiaomi MiMo, and AI2's OLMo. Open source enables innovation, research, and democratization of AI technology.</p>
             <br>
 
             <h2>2. Academia vs Industry Fusion</h2>
             <p>NeurIPS 2025 in San Diego was a crowded and hugely successful event, showcasing the vibrant intersection of academic research and industrial innovation. The conference highlighted both the opportunities and challenges facing the AI research community. It is important to maintain fairness, impartiality, transparency, and high quality in academic sharing, while protecting researchers' privacy. The community rallied to support <a href="https://openreview.net/forum/pineau%7Ca_message_from_ai_research_leaders_join_us_in_supporting_openreview" target="_blank">OpenReview</a>, the essential infrastructure for academic peer review. The <a href="https://blog.neurips.cc/2025/12/15/supporting-our-communitys-infrastructure-neurips-foundations-donation-to-openreview/" target="_blank">NeurIPS Foundation made a significant donation</a> to ensure its sustainability.</p>
-            <p>The ongoing discussion about <a href="https://pengandy.com/blog/2025/RSRCHORENG/" target="_blank">research vs engineering</a> has intensified this year. We're seeing fascinating position changes between veterans and young researchers, reflecting the evolving landscape of AI careers. 2025 marks a watershed moment as more 95s young researchers are becoming executives at major companies and startups, commanding compensation comparable to NBA stars in Bay Area tech. Notable examples include <span class="highlight">Shengjia Zhao</span> (Chief Scientist at Meta Superintelligence Labs), <span class="highlight">Shunyu Yao (姚顺雨)</span> at Tencent, and <span class="highlight">Fuli Luo (罗福莉)</span> at Xiaomi. These leaders share a common profile: former researchers at OpenAI or top labs like DeepSeek, PhD from Stanford or UC Berkeley, and undergraduate degrees from Tsinghua or Peking University. We also have new research-type companies like <span class="highlight">Thinking Machines Lab</span> (founded by former OpenAI CTO) and Amazon recently appointing <span class="highlight">Pieter Abbeel</span> (UC Berkeley professor, co-founder of Covariant) to lead their frontier model research team.</p>
+            <p>The ongoing discussion about <a href="https://pengandy.com/blog/2025/RSRCHORENG/" target="_blank">research vs engineering</a> has intensified this year. We're seeing fascinating position changes between veterans and young researchers, reflecting the evolving landscape of AI careers. 2025 marks a watershed moment as more 95s young researchers are becoming executives at major companies and startups, commanding compensation comparable to NBA stars in Bay Area tech. Notable examples include Shengjia Zhao (Chief Scientist at Meta Superintelligence Labs), Shunyu Yao (姚顺雨) at Tencent, and Fuli Luo (罗福莉) at Xiaomi. These leaders share a common profile: former researchers at OpenAI or top labs like DeepSeek, PhD from Stanford or UC Berkeley, and undergraduate degrees from Tsinghua or Peking University. For startup, we also have new research-type companies like Thinking Machines Lab (founded by former OpenAI CTO) and for corporate, Amazon recently appointing Pieter Abbeel (UC Berkeley professor, co-founder of Covariant) to lead their frontier model research team.</p>
             <p>We're witnessing a destructive restructuring of the AI talent landscape. In this new era, everyone needs to find their position. The traditional career paths are being rewritten, and adaptability has become the most valuable skill.</p>
             <br>
 
             <h2>3. Open Source Ecosystem in Place</h2>
-            <p>The shift toward <a href="https://pengandy.com/blog/2025/llmnative/" target="_blank">GPU-CPU Native</a> infrastructure has accelerated dramatically. Key projects driving this revolution include <span class="highlight">vLLM</span>, <span class="highlight">SGLang</span>, <span class="highlight">llm-d</span>, <span class="highlight">Nvidia's Dynamo</span>, and <span class="highlight">LMCache</span>. Looking back at ATC 25, there was no concept of disaggregated inference at all. Just one year later, industry standards have emerged and are growing rapidly.</p>
+            <p>The shift toward <a href="https://pengandy.com/blog/2025/llmnative/" target="_blank">GPU-CPU Native</a> infrastructure has accelerated dramatically. Key projects driving this revolution include vLLM, SGLang, llm-d, Nvidia's Dynamo, and LMCache. Looking back at ATC 25, there was no concept of disaggregated inference at all. Just one year later, industry standards have emerged and are growing rapidly.</p>
             <p>The <a href="https://pengandy.com/blog/2025/cncf10yo/" target="_blank">Cloud Native Computing Foundation (CNCF) turned 10</a>. The Linux Foundation and open-source AI community have remained incredibly active in 2025, driving both agentic AI and foundation model ecosystems forward.</p>
 
             <div class="timeline">
@@ -261,11 +230,11 @@
             <br>
 
             <h2>5. Overhyped Products</h2>
-            <p>Not everything that glitters is gold. <span class="highlight">Nano Banana</span> and <span class="highlight">Amazon's Kiro</span> fell short of expectations, heavily dependent on intensive prompting.</p>
+            <p>Not everything that glitters is gold. Nano Banana and Amazon's Kiro fell short of expectations, heavily dependent on intensive prompting.</p>
             <br>
 
             <h2>6. Productivity</h2>
-            <p>Coding: <span class="highlight">Cursor</span> and <span class="highlight">Claude Code</span>. Doc: <span class="highlight">ChatGPT</span>. Knowledge: <span class="highlight">Perplexity</span>.</p>
+            <p>Coding: Cursor and Claude Code. Doc: ChatGPT. Knowledge: Perplexity.</p>
 
             <!-- ========================================== -->
             <!-- YOUR CONTENT ENDS HERE -->
