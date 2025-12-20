@@ -19,7 +19,7 @@ Finally, we deploy this design to LinkedIn's experimentation platform and apply 
 
 This work is part of a two-paper series.
 In the <a href="https://arxiv.org/abs/1704.01190" target="_blank">first paper</a> we introduce the methodology and main theoretical results and
-in the <a href="{{ '/assets/publications/2017_detecting_network_effects/paper.pdf' | prepend: site.baseurl }}" target="_blank">second paper</a> we present implementation guidelines for using the methodology on large-scale experimentation platforms.
+in the <a href="{{ '/assets/invited-talks/2017_detecting_network_effects/paper.pdf' | prepend: site.baseurl }}" target="_blank">second paper</a> we present implementation guidelines for using the methodology on large-scale experimentation platforms.
 
 **Illustration of the proposed experimental design for detecting network effects.** <br/>
 {%

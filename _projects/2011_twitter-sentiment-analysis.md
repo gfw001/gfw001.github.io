@@ -4,7 +4,7 @@ title: Sentiment Analysis of Financial Tweets
 ---
 
 
-This is a work done during my stay at the Jozef Stefan Institute in Ljubljana (Slovenia) in the context of the European project FIRST: large-scale information extraction and integration infrastructure for supporting financial decision-making ([http://project-first.eu](http://project-first.eu)). The results were published in a workshop paper at ECML'11. More details can be found [here]({{ "/assets/publications/2011_active_learning/paper.pdf" | prepend: site.baseurl }}).
+This is a work done during my stay at the Jozef Stefan Institute in Ljubljana (Slovenia) in the context of the European project FIRST: large-scale information extraction and integration infrastructure for supporting financial decision-making ([http://project-first.eu](http://project-first.eu)). The results were published in a workshop paper at ECML'11. More details can be found [here]({{ "/assets/invited-talks/2011_active_learning/paper.pdf" | prepend: site.baseurl }}).
 
 The objective was to develop a system for real-time monitoring of the stock market discussions on Twitter and analyzing their sentiment. Users have seen Twitter as a platform suitable for expressing opinions about stocks. Proof for this is the informal convention to use "$"" as a prefix to the stock symbol when referring to a stock. For instance, the "$GOOG" tag indicates that the tweet discusses the Google stocks or the "$AAPL" tag refers to the Apple stocks. This makes it easy to retrieve financial tweets for stocks of interest.
 
