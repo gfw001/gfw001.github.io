@@ -148,6 +148,30 @@
 	    color: var(--global-text-color);
 	}
 
+	/* Enhanced metadata display for clarity */
+	.paper .meta-item {
+	    margin-bottom: 0.3rem;
+	    line-height: 1.5;
+	}
+
+	.paper .meta-label {
+	    font-weight: 600;
+	    color: var(--global-theme-color);
+	    display: inline;
+	    margin-right: 0.3rem;
+	}
+
+	.paper .meta-value {
+	    display: inline;
+	    color: var(--global-text-color);
+	}
+
+	.paper .venue-line {
+	    font-style: italic;
+	    color: #666;
+	    margin-top: 0.3rem;
+	}
+
 	.paper .button {
 	    margin-right: 0.5rem;
 	    margin-top: 0.5rem;
@@ -372,12 +396,13 @@
     </div>
     <div class="publication-content">
       <div class="paper">
-        <p class="title"><b>Closing Keynote: LLM Native Primitives: Next Golden Path</b>
+        <p class="title"><b>LLM Native Primitives: Next Golden Path</b>
           <a class="button" href="https://luma.com/iqjrwcal" target="_blank">Event Page</a>
         </p>
-        <p>Keynote Speaker: Andy Peng, Amazon</p>
-        <p><i>UW AI & Robotics Data Summit 2025</i></p>
-        <p><i>Boeing Advanced Research Center (BARC), University of Washington</i></p>
+        <p class="meta-item"><span class="meta-label">Speaker:</span><span class="meta-value">Andy Peng (Amazon)</span></p>
+        <p class="meta-item"><span class="meta-label">Role:</span><span class="meta-value">Closing Keynote</span></p>
+        <p class="venue-line">UW AI & Robotics Data Summit 2025</p>
+        <p class="venue-line">Boeing Advanced Research Center, University of Washington</p>
       </div>
     </div>
   </div>
@@ -388,12 +413,13 @@
     </div>
     <div class="publication-content">
       <div class="paper">
-        <p class="title"><b>Opening Keynote: State of Open Source LLM</b>
+        <p class="title"><b>State of Open Source LLM</b>
           <a class="button" href="https://www.eventbrite.com/e/deepseek-in-production-tickets-1436251630289?aff=andy" target="_blank">HTML</a>
           <a class="button" href="https://www.linkedin.com/events/deepseekdemystifiedsummit7349071392195104771/" target="_blank">Event Page</a>
         </p>
-        <p>Keynote Speaker: Andy Peng, Amazon</p>
-        <p><i>Packt GenAI Summit 2025</i></p>
+        <p class="meta-item"><span class="meta-label">Speaker:</span><span class="meta-value">Andy Peng (Amazon)</span></p>
+        <p class="meta-item"><span class="meta-label">Role:</span><span class="meta-value">Opening Keynote</span></p>
+        <p class="venue-line">Packt GenAI Summit 2025</p>
       </div>
     </div>
   </div>
@@ -410,8 +436,10 @@
           <a class="button" href="https://www.xiaoyuzhoufm.com/episode/676054e37d8426f6929d67cb?s=eyJ1IjogIjYwYjVhNzYxZTBmNWU3MjNiYjU4ZmNlYSJ9" target="_blank">Podcast</a>
           <a class="button" href="https://mp.weixin.qq.com/s/wOZknRagMGyp8AluNqAzYg" target="_blank">HTML</a>
         </p>
-        <p>Moderator: Monica Xie, Head of BizOps & Partnership, Dyna Robotics; Speakers: 黄东旭, PingCAP co-founder & CTO, 贾扬清, VP Nvidia, Lepton AI co-founder & CEO, Andy Peng, Amazon</p>
-        <p><i>OnBoard!</i></p>
+        <p class="meta-item"><span class="meta-label">Panelist:</span><span class="meta-value">Andy Peng (Amazon)</span></p>
+        <p class="meta-item"><span class="meta-label">Moderator:</span><span class="meta-value">Monica Xie (Head of BizOps & Partnership, Dyna Robotics)</span></p>
+        <p class="meta-item"><span class="meta-label">Co-panelists:</span><span class="meta-value">黄东旭 (PingCAP co-founder & CTO), 贾扬清 (VP Nvidia, Lepton AI co-founder & CEO)</span></p>
+        <p class="venue-line">OnBoard! Podcast</p>
       </div>
     </div>
   </div>
@@ -422,11 +450,12 @@
     </div>
     <div class="publication-content">
       <div class="paper">
-        <p class="title"><b>Panel Discussion: GenAI 茶话会</b>
+        <p class="title"><b>GenAI 茶话会</b>
           <a class="button" href="https://www.xiaohongshu.com/discovery/item/6688bd8b000000001c0250fe?source=webshare&xhsshare=pc_web&xsec_token=ABKX1wuwAQJwr-A9ZoGU-cldn7AEkGNosdYsdMrzpMeqg=&xsec_source=pc_share" target="_blank">Rednote Post</a>
         </p>
-        <p>Speakers: Andy Peng, Senior Research Engineer, AWS Bedrock, Xiaopeng Li, Senior Applied Scientist, AWS NDGE Science, Raphael Shu, Senior Applied Scientist, AWS Bedrock</p>
-        <p><i>SMILE: Seattle Amazonian Chinese League</i></p>
+        <p class="meta-item"><span class="meta-label">Panelist:</span><span class="meta-value">Andy Peng (Senior Research Engineer, AWS Bedrock)</span></p>
+        <p class="meta-item"><span class="meta-label">Co-panelists:</span><span class="meta-value">Xiaopeng Li (Senior Applied Scientist, AWS NDGE Science), Raphael Shu (Senior Applied Scientist, AWS Bedrock)</span></p>
+        <p class="venue-line">Panel Discussion, SMILE: Seattle Amazonian Chinese League</p>
       </div>
     </div>
   </div>
@@ -442,8 +471,10 @@
         <p class="title"><b>Myth-Busting Tech Trends</b>
           <a class="button" href="https://www.womenintechregatta.com/" target="_blank">HTML</a>
         </p>
-        <p>Moderators: <a href="https://seattleregatta2023.sched.com/moderator/pvrudhula" style="color:#3A3B3C">Padmaja Vrudhula, VP Industry Vertical Workload Solutions, Snowflake</a>; Speakers: <a href="https://seattleregatta2023.sched.com/speaker/yiming_peng.2589xy9k?iframe=no" style="color:#3A3B3C">Andy Peng, Sr. Software Engineer, AWS</a>, <a href="https://seattleregatta2023.sched.com/speaker/morganziondesigns" style="color:#3A3B3C">Morgan Zion, CEO, Alpha Girl Club</a>, <a href="https://seattleregatta2023.sched.com/speaker/caroline542" style="color:#3A3B3C">Caroline Williams, Founder, The Do Good Only Company</a></p>
-        <p><i>Seattle Women in Tech Regatta 2023</i></p>
+        <p class="meta-item"><span class="meta-label">Panelist:</span><span class="meta-value"><a href="https://seattleregatta2023.sched.com/speaker/yiming_peng.2589xy9k?iframe=no" style="color:#3A3B3C">Andy Peng (Sr. Software Engineer, AWS)</a></span></p>
+        <p class="meta-item"><span class="meta-label">Moderator:</span><span class="meta-value"><a href="https://seattleregatta2023.sched.com/moderator/pvrudhula" style="color:#3A3B3C">Padmaja Vrudhula (VP Industry Vertical Workload Solutions, Snowflake)</a></span></p>
+        <p class="meta-item"><span class="meta-label">Co-panelists:</span><span class="meta-value"><a href="https://seattleregatta2023.sched.com/speaker/morganziondesigns" style="color:#3A3B3C">Morgan Zion (CEO, Alpha Girl Club)</a>, <a href="https://seattleregatta2023.sched.com/speaker/caroline542" style="color:#3A3B3C">Caroline Williams (Founder, The Do Good Only Company)</a></span></p>
+        <p class="venue-line">Seattle Women in Tech Regatta 2023</p>
       </div>
     </div>
   </div>
@@ -457,8 +488,9 @@
         <p class="title"><b>The open-source community at AWS: containerd and Envoy</b>
           <a class="button" href="https://twitter.com/AWSOpen/status/1647989049305575428?s=20" target="_blank">Tweet</a>
         </p>
-        <p>Presenters: Phil Estes, Principal Engineer, AWS and Andy Peng, Sr. Software Engineer, Amazon</p>
-        <p><i>KubeCon + CloudNativeCon Europe 2023</i></p>
+        <p class="meta-item"><span class="meta-label">Presenter:</span><span class="meta-value">Andy Peng (Sr. Software Engineer, Amazon)</span></p>
+        <p class="meta-item"><span class="meta-label">Co-presenter:</span><span class="meta-value">Phil Estes (Principal Engineer, AWS)</span></p>
+        <p class="venue-line">KubeCon + CloudNativeCon Europe 2023</p>
       </div>
     </div>
   </div>
@@ -473,8 +505,9 @@
           <a class="button" href="https://mp.weixin.qq.com/s/NkG306k-7dw1jLEvaBBw0A" target="_blank">HTML</a>
           <a class="button" href="https://youtu.be/F24kUu2nFDY" target="_blank">YouTube</a>
         </p>
-        <p>Moderator: Zheng Luo, Software Engineer, Microsoft Azure; Speaker: Andy Peng, Sr. Engineer / TLM, Amazon</p>
-        <p><i>CUC Meetup</i></p>
+        <p class="meta-item"><span class="meta-label">Speaker:</span><span class="meta-value">Andy Peng (Sr. Engineer / TLM, Amazon)</span></p>
+        <p class="meta-item"><span class="meta-label">Moderator:</span><span class="meta-value">Zheng Luo (Software Engineer, Microsoft Azure)</span></p>
+        <p class="venue-line">CUC Meetup</p>
       </div>
     </div>
   </div>
@@ -491,8 +524,8 @@
           <a class="button" href="https://kccncna2022.sched.com/event/182KU/building-multi-tenant-routing-and-scaling-with-envoy-yiming-peng-amazon-web-services-inc?iframe=no" target="_blank">HTML</a>
           <a class="button" href="https://www.youtube.com/watch?v=6-akjOASvxc" target="_blank">YouTube</a>
         </p>
-        <p>Presenter: Andy Peng, Sr. Software Engineer, Amazon</p>
-        <p><i>KubeCon + CloudNativeCon North America 2022</i></p>
+        <p class="meta-item"><span class="meta-label">Speaker:</span><span class="meta-value">Andy Peng (Sr. Software Engineer, Amazon)</span></p>
+        <p class="venue-line">KubeCon + CloudNativeCon North America 2022</p>
       </div>
     </div>
   </div>
@@ -507,8 +540,9 @@
           <a class="button" href="https://awscontainerdaydocker.splashthat.com/" target="_blank">HTML</a>
           <a class="button" href="https://www.youtube.com/watch?v=Iyp9Ugk9oRs" target="_blank">YouTube</a>
         </p>
-        <p>Presenters: Clarinda Mascarenhas, Sr. Container Specialist, AWS and Andy Peng, Sr. Software Engineer, Amazon</p>
-        <p><i>DockerCon 2022</i></p>
+        <p class="meta-item"><span class="meta-label">Presenter:</span><span class="meta-value">Andy Peng (Sr. Software Engineer, Amazon)</span></p>
+        <p class="meta-item"><span class="meta-label">Co-presenter:</span><span class="meta-value">Clarinda Mascarenhas (Sr. Container Specialist, AWS)</span></p>
+        <p class="venue-line">DockerCon 2022</p>
       </div>
     </div>
   </div>
@@ -523,8 +557,9 @@
           <a class="button" href="https://twitter.com/realadamjkeller/status/1513965561671151617?s=20" target="_blank">Tweet</a>
           <a class="button" href="https://youtu.be/cVr8N7enCMM" target="_blank">YouTube</a>
         </p>
-        <p>Moderator: Adam Keller, Senior Technologist, AWS; Speaker: Andy Peng, Sr. Software Engineer, Amazon</p>
-        <p><i>Containers from the Couch</i></p>
+        <p class="meta-item"><span class="meta-label">Speaker:</span><span class="meta-value">Andy Peng (Sr. Software Engineer, Amazon)</span></p>
+        <p class="meta-item"><span class="meta-label">Moderator:</span><span class="meta-value">Adam Keller (Senior Technologist, AWS)</span></p>
+        <p class="venue-line">Containers from the Couch</p>
       </div>
     </div>
   </div>
@@ -545,9 +580,9 @@
         <p class="title"><b>Transforming AI: Modern Business Redefine</b>
           <a class="button" href="https://www.linkedin.com/posts/margaretmz_it-has-been-a-wonderful-experience-teaching-ugcPost-7190422362406735872-K7Bs?utm_source=share&utm_medium=member_desktop" target="_blank">Linkedin Post</a>
         </p>
-        <p></p>
-        <p><i>MSIS 549 (2): MACHINE LEARNING AND ARTIFICIAL INTELLIGENCE FOR BUSINESS APPLICATIONS</i></p>
-        <p><i>University of Washington</i></p>
+        <p class="meta-item"><span class="meta-label">Guest Lecturer:</span><span class="meta-value">Andy Peng (Amazon)</span></p>
+        <p class="venue-line">MSIS 549 (2): Machine Learning and Artificial Intelligence for Business Applications</p>
+        <p class="venue-line">University of Washington</p>
       </div>
     </div>
   </div>
@@ -562,9 +597,11 @@
           <a class="button" href="https://www.linkedin.com/posts/uw-foster-msis_msis-genai-demoday-ugcPost-7173432871800483841-wW0C?utm_source=share&utm_medium=member_desktop" target="_blank">UW Foster MSIS Post</a>
           <a class="button" href="https://www.linkedin.com/posts/leonard-boussioux_forging-ai-champions-a-transformative-ugcPost-7188941809279000576-ZKov?utm_source=share&utm_medium=member_desktop" target="_blank">Linkedin Post</a>
         </p>
-        <p>Hosted by Léonard Boussioux, Professor at University of Washington (Foster, Allen CSE). Co-present with Jay Bartot, Affiliate Professor, University of Washington and Partner, Madrona Venture Labs.</p>
-        <p><i>MSIS 547 (2): Managing in the Era of Cloud Computing</i></p>
-        <p><i>University of Washington</i></p>
+        <p class="meta-item"><span class="meta-label">Guest Lecturer:</span><span class="meta-value">Andy Peng (Amazon)</span></p>
+        <p class="meta-item"><span class="meta-label">Host:</span><span class="meta-value">Léonard Boussioux (Professor, University of Washington - Foster, Allen CSE)</span></p>
+        <p class="meta-item"><span class="meta-label">Co-presenter:</span><span class="meta-value">Jay Bartot (Affiliate Professor, University of Washington and Partner, Madrona Venture Labs)</span></p>
+        <p class="venue-line">MSIS 547 (2): Managing in the Era of Cloud Computing</p>
+        <p class="venue-line">University of Washington</p>
       </div>
     </div>
   </div>
