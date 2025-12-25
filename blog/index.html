@@ -56,7 +56,7 @@
                     document.getElementById('subscribe-form').addEventListener('submit', function(e) {
                       e.preventDefault();
                       var email = document.getElementById('email-input').value;
-                      fetch('https://script.google.com/macros/s/AKfycbwrz29kZAOs4a0jBYjpHlE6ehmHMPchhfF2zSck_aePLNfpgUFfikzqh74kytx0BOOs/exec', {
+                      fetch('https://script.google.com/macros/s/AKfycbwpEQTvHOiHFx2Zy8Bpc6YA3ODqHPGqxs-0Mz_8rp3Cc8szDz60bsP22XK0f7yzxcMjfQ/exec', {
                         method: 'POST',
                         body: JSON.stringify({ email: email }),
                         headers: { 'Content-Type': 'application/json' }

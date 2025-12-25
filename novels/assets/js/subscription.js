@@ -6,8 +6,8 @@
 (function() {
   'use strict';
 
-  // Google Apps Script URL (reused from blog)
-  const SUBSCRIPTION_URL = 'https://script.google.com/macros/s/AKfycbwrz29kZAOs4a0jBYjpHlE6ehmHMPchhfF2zSck_aePLNfpgUFfikzqh74kytx0BOOs/exec';
+  // Google Apps Script URL
+  const SUBSCRIPTION_URL = 'https://script.google.com/macros/s/AKfycbwpEQTvHOiHFx2Zy8Bpc6YA3ODqHPGqxs-0Mz_8rp3Cc8szDz60bsP22XK0f7yzxcMjfQ/exec';
 
   /**
    * Validate email address
