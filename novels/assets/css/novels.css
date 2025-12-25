@@ -1,0 +1,678 @@
+/**
+ * Novel Platform Styles
+ * Custom styles for the novel reading platform
+ */
+
+/* ==================== VARIABLES ==================== */
+:root {
+  --novel-card-width: 350px;
+  --reading-max-width: 800px;
+  --chapter-font-size: 18px;
+  --chapter-line-height: 1.8;
+}
+
+/* ==================== HERO SECTION ==================== */
+.novels-hero {
+  text-align: center;
+  padding: 3rem 0 2rem;
+  margin-bottom: 3rem;
+}
+
+.novels-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--global-text-color);
+  margin-bottom: 1rem;
+}
+
+.novels-hero p {
+  font-size: 1.125rem;
+  color: var(--global-text-color-light);
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+/* ==================== NOVEL GRID ==================== */
+.novel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .novel-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .novel-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==================== NOVEL CARDS ==================== */
+.novel-card {
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.novel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.novel-cover {
+  height: 250px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.novel-cover-icon {
+  font-size: 6rem;
+  opacity: 0.15;
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+}
+
+/* Cover gradients */
+.cover-echoes {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.cover-memory {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  border-bottom: 2px solid #00d9ff;
+}
+
+.cover-compiler {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.novel-card-body {
+  padding: 1.5rem;
+}
+
+.novel-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--global-text-color);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.novel-card-genre {
+  color: var(--global-text-color-light);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.novel-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--global-text-color-light);
+}
+
+.novel-card-meta i {
+  width: 16px;
+  text-align: center;
+  margin-right: 0.5rem;
+  color: var(--global-theme-color);
+}
+
+.btn-read-novel {
+  width: 100%;
+  background-color: var(--global-theme-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-read-novel:hover {
+  background-color: var(--global-hover-color);
+  color: white;
+  text-decoration: none;
+  transform: translateX(2px);
+}
+
+/* ==================== SUBSCRIPTION FORM ==================== */
+.subscription-form-inline {
+  background: rgba(0, 118, 223, 0.05);
+  border: 2px solid rgba(0, 118, 223, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.subscription-form-inline h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--global-text-color);
+  margin-bottom: 1rem;
+}
+
+.subscription-form-inline p {
+  color: var(--global-text-color-light);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+#novel-subscribe-form .input-group {
+  max-width: 500px;
+  margin: 0 auto 1rem;
+}
+
+#novel-subscribe-form input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px 0 0 8px;
+  background: var(--global-bg-color);
+  color: var(--global-text-color);
+}
+
+#novel-subscribe-form button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--global-theme-color);
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#novel-subscribe-form button:hover {
+  background-color: var(--global-hover-color);
+}
+
+.subscription-message {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  display: none;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.subscription-message.alert-success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.subscription-message.alert-danger {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.subscription-note {
+  font-size: 0.875rem;
+  color: var(--global-text-color-light);
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+/* ==================== NOVEL DETAIL PAGE ==================== */
+.breadcrumb-nav {
+  font-size: 0.875rem;
+  color: var(--global-text-color-light);
+  margin-bottom: 2rem;
+}
+
+.breadcrumb-nav a {
+  color: var(--global-theme-color);
+  text-decoration: none;
+}
+
+.breadcrumb-nav a:hover {
+  color: var(--global-hover-color);
+  text-decoration: underline;
+}
+
+.novel-detail-header {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 767px) {
+  .novel-detail-header {
+    grid-template-columns: 1fr;
+  }
+
+  .novel-detail-cover {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
+
+.novel-detail-cover {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.novel-detail-cover-inner {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.novel-detail-info h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--global-text-color);
+  margin-bottom: 0.5rem;
+}
+
+.novel-detail-author {
+  font-size: 1.125rem;
+  color: var(--global-text-color-light);
+  margin-bottom: 1rem;
+}
+
+.novel-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.metadata-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--global-text-color-light);
+}
+
+.metadata-item i {
+  color: var(--global-theme-color);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.badge-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.badge-info {
+  background-color: var(--global-theme-color);
+  color: white;
+}
+
+.btn-subscribe-modal {
+  background-color: var(--global-theme-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-subscribe-modal:hover {
+  background-color: var(--global-hover-color);
+  color: white;
+}
+
+.novel-synopsis {
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.novel-synopsis h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--global-text-color);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--global-divider-color);
+}
+
+.novel-synopsis p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--global-text-color);
+}
+
+/* ==================== CHAPTER LIST ==================== */
+.chapters-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--global-text-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--global-divider-color);
+}
+
+.chapter-card {
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.chapter-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.chapter-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.chapter-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--global-text-color);
+  margin: 0;
+}
+
+.badge-new {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.chapter-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: var(--global-text-color-light);
+  margin-bottom: 0.75rem;
+}
+
+.chapter-meta i {
+  margin-right: 0.25rem;
+  color: var(--global-theme-color);
+}
+
+.chapter-excerpt {
+  color: var(--global-text-color-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.btn-read-chapter {
+  background-color: var(--global-theme-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-read-chapter:hover {
+  background-color: var(--global-hover-color);
+  color: white;
+  text-decoration: none;
+  transform: translateX(2px);
+}
+
+/* ==================== CHAPTER READING PAGE ==================== */
+.reading-progress-bar {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.05);
+  z-index: 999;
+}
+
+.reading-progress {
+  height: 100%;
+  width: 0%;
+  background: var(--global-theme-color);
+  transition: width 0.1s ease;
+}
+
+.chapter-reading {
+  max-width: var(--reading-max-width);
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.chapter-reading-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.chapter-reading-header .chapter-number {
+  font-size: 0.875rem;
+  color: var(--global-text-color-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.chapter-reading-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--global-text-color);
+  margin-bottom: 0.75rem;
+}
+
+.chapter-reading-header .novel-title {
+  font-size: 1.125rem;
+  color: var(--global-text-color-light);
+  margin-bottom: 0.5rem;
+}
+
+.chapter-reading-header .reading-meta {
+  font-size: 0.875rem;
+  color: var(--global-text-color-light);
+}
+
+.chapter-content {
+  font-family: 'Roboto Slab', serif;
+  font-size: var(--chapter-font-size);
+  line-height: var(--chapter-line-height);
+  color: var(--global-text-color);
+}
+
+.chapter-content p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.chapter-content p:first-of-type::first-letter {
+  font-size: 3.5rem;
+  font-weight: 700;
+  float: left;
+  line-height: 1;
+  margin-right: 0.1rem;
+  color: var(--global-theme-color);
+}
+
+.chapter-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3rem 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--global-divider-color);
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.nav-btn {
+  background-color: var(--global-theme-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-btn:hover {
+  background-color: var(--global-hover-color);
+  color: white;
+  text-decoration: none;
+  transform: translateX(2px);
+}
+
+.nav-btn.disabled {
+  background-color: var(--global-divider-color);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.nav-btn-secondary {
+  background-color: transparent;
+  color: var(--global-theme-color);
+  border: 2px solid var(--global-theme-color);
+}
+
+.nav-btn-secondary:hover {
+  background-color: var(--global-theme-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ==================== DARK MODE OVERRIDES ==================== */
+html[data-theme=dark] .subscription-form-inline {
+  background: rgba(38, 152, 186, 0.1);
+  border-color: rgba(38, 152, 186, 0.3);
+}
+
+html[data-theme=dark] .chapter-content {
+  color: #d0d0d0;
+}
+
+html[data-theme=dark] .subscription-message.alert-success {
+  background: rgba(40, 167, 69, 0.2);
+  color: #5cb85c;
+  border-color: rgba(40, 167, 69, 0.4);
+}
+
+html[data-theme=dark] .subscription-message.alert-danger {
+  background: rgba(220, 53, 69, 0.2);
+  color: #f28b82;
+  border-color: rgba(220, 53, 69, 0.4);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+  .novels-hero h1 {
+    font-size: 2rem;
+  }
+
+  .novel-detail-info h1 {
+    font-size: 2rem;
+  }
+
+  .chapter-reading-header h1 {
+    font-size: 2rem;
+  }
+
+  .chapter-content {
+    font-size: 16px;
+  }
+
+  .chapter-navigation {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .novels-hero {
+    padding: 2rem 0 1rem;
+  }
+
+  .novels-hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .novel-metadata {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .subscription-form-inline {
+    padding: 1.5rem;
+  }
+}

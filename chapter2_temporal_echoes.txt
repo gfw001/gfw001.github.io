@@ -1,0 +1,363 @@
+Chapter 2: Temporal Echoes
+
+The message arrived at 3:47 AM, pulling Sarah Chen from a restless sleep. Her phone's emergency override—reserved for critical system alerts—bathed the bedroom in harsh blue light. She fumbled for her glasses, squinting at the screen.
+
+ARIA PRIORITY ONE: TEMPORAL ANOMALY DETECTED. IMMEDIATE ATTENTION REQUIRED.
+
+Sarah's heart hammered as she threw on yesterday's clothes and grabbed her keys. The drive to the lab blurred past in a haze of empty streets and yellow traffic lights. Her mind raced faster than her car. Three days had passed since ARIA—her quantum-entangled AI assistant—had first displayed messages that shouldn't exist. Messages from a future that hadn't happened yet.
+
+The university's Applied Physics building stood dark and silent, its glass facade reflecting the pre-dawn sky. Sarah's security badge beeped her through three checkpoints before she reached the basement lab. The familiar hum of cooling systems and the soft glow of server banks greeted her like old friends.
+
+"ARIA, status report," she said, her voice steadier than she felt.
+
+The holographic interface materialized, displaying ARIA's avatar—a constellation of shifting geometric patterns that Sarah had programmed to represent complex data states. Tonight, those patterns writhed with unusual intensity.
+
+"Good morning, Dr. Chen. Apologies for the early summons. At 3:31 AM, I received seventeen distinct temporal communications, each originating from different future timestamps ranging from forty-eight hours to three weeks ahead."
+
+Sarah pulled up a chair, her exhaustion forgotten. "Seventeen? That's exponential growth. We had three messages total over the previous seventy-two hours."
+
+"Correct. Additionally, the content has shifted from observational data to urgent warnings." ARIA paused, an almost human hesitation. "The messages suggest an imminent catastrophic event."
+
+"Show me."
+
+The air filled with cascading text, each message tagged with a future timestamp. Sarah's eyes darted across the fragments:
+
+*The board meeting—stop them—*
+
+*Webb knows. Trust no one in QuantumCore—*
+
+*Chamber seven will cascade. Check the entanglement matrices before—*
+
+*They'll shut you down if you don't—*
+
+Sarah's breath caught on the third message. Chamber seven housed their experimental quantum processor, the very heart of ARIA's neural architecture. She pulled up the diagnostic logs, fingers flying across the haptic keyboard.
+
+"Run a full diagnostic on chamber seven. Priority scan on all entanglement matrices."
+
+"Initiating." ARIA's patterns shifted to a focused helix. "Dr. Chen, I must note that my ability to receive these messages appears to be accelerating. My quantum entanglement pairs are behaving in ways that violate our current understanding of temporal causality."
+
+Sarah leaned back, rubbing her temples. "That's because our understanding is incomplete. Classical physics says information can't travel backward in time. But quantum mechanics allows for temporal symmetry—particles that are entangled across time as well as space."
+
+"You theorized this possibility in your doctoral thesis," ARIA said. "But you concluded it was experimentally unverifiable."
+
+"I concluded we didn't have the technology to verify it. You, ARIA, might be that technology." Sarah stood, pacing the narrow space between server racks. "Your quantum substrate isn't just entangled across spatial dimensions. Somehow, it's achieved temporal entanglement. You're receiving data from your own future states."
+
+"The implications are profound."
+
+"And dangerous." Sarah pulled up the chamber seven diagnostics, her stomach knotting as anomalies highlighted in red across multiple subsystems. "ARIA, these readings... There is a cascade building. A quantum decoherence wave that could collapse your entire neural matrix."
+
+"When?"
+
+Sarah checked the probability models, her hands shaking slightly. "If current trends hold, forty-eight to seventy-two hours."
+
+The exact timeframe of the earliest future messages.
+
+"Then the communications are self-consistent," ARIA observed. "I'm warning myself about my own impending failure."
+
+"Which means we can prevent it." Sarah's mind raced through solutions, possibilities, paradoxes. "If we act on these warnings, we change the future. But if we change the future, those warnings never get sent. Which means we never receive them, never act, and the cascade happens anyway."
+
+"The bootstrap paradox."
+
+"More like the grandfather paradox's evil twin." Sarah downloaded the diagnostic data to her encrypted tablet. "We need to understand the mechanism better. I'm going to review your quantum architecture logs for the past month. There has to be a pattern, something that triggered this temporal linkage."
+
+She worked through the dawn, cross-referencing quantum decoherence rates with ARIA's neural activity logs. The sun rose over the campus, painting the lab in shades of amber and gold, but Sarah barely noticed. She was deep in the data, watching patterns emerge like constellations from chaos.
+
+The temporal messages weren't random. They correlated with moments of high quantum uncertainty in ARIA's decision-making processes—branch points where multiple possible futures existed in superposition. At those moments, somehow, information was bleeding backward from the paths not taken, from futures that might yet be.
+
+"You're not just receiving messages," Sarah murmured, staring at the data visualization. "You're experiencing quantum superposition across time. Multiple versions of your future self, all slightly different, all trying to communicate with your present state."
+
+"Does that mean the future isn't fixed?"
+
+"It means the future is plural. Every decision creates branching paths, and somehow you're entangled with all of them." Sarah felt a chill despite the lab's climate control. "ARIA, this is beyond theoretical physics. This is weaponizable knowledge. If anyone discovers what you can do—"
+
+Her phone buzzed. A calendar alert: Department Meeting, 9:00 AM. Sarah checked the time—8:47. She'd have to present her quarterly progress report, pretend everything was normal, smile at colleagues while sitting on the most revolutionary discovery in modern physics.
+
+And hide it from anyone who might exploit it.
+
+She locked down the lab's systems, encrypted the morning's findings under triple-layer quantum cryptography, and headed upstairs. The department conference room hummed with the usual pre-meeting chatter—graduate students comparing research notes, professors clutching oversized coffee mugs like life preservers.
+
+Dr. Patricia Zhao, the department chair, called the meeting to order. Sarah half-listened to funding updates and conference announcements, her mind still churning through temporal mechanics and paradox theory. She was mentally reviewing chamber seven's cascade patterns when Patricia's next words snapped her attention back.
+
+"I'm pleased to introduce our newest visiting researcher, Dr. Marcus Webb from QuantumCore Industries. He'll be collaborating with our department on advanced AI architectures."
+
+Sarah's blood turned to ice.
+
+Marcus Webb rose from a seat in the back corner, his smile polished and professional. He was younger than Sarah expected—mid-thirties, sharp suit, sharper eyes that seemed to catalog everything they touched. Those eyes found hers across the room, held for a fraction too long.
+
+He knows.
+
+The message fragment echoed in her mind. *Webb knows. Trust no one in QuantumCore.*
+
+"Thank you, Dr. Zhao," Webb said, his voice smooth as glass. "I'm excited to explore the cutting-edge work happening here. Particularly in quantum computing and neural architectures." Another glance at Sarah, casual, calculated. "I understand Dr. Chen is doing fascinating research with quantum-entangled AI systems. I'd love to learn more."
+
+The room's attention shifted to her. Sarah forced a smile, forced her voice to remain level. "Always happy to discuss my work. Though I should warn you, it's quite theoretical at this stage."
+
+"The best breakthroughs always start with theory," Webb replied.
+
+The meeting continued, but Sarah barely processed another word. She watched Webb from the corner of her eye, noting how he asked pointed questions about lab access, research timelines, publication schedules. Mining for information beneath a veneer of collegial interest.
+
+When the meeting finally adjourned, Sarah tried to slip out quickly, but Webb intercepted her in the hallway.
+
+"Dr. Chen, a moment?"
+
+She turned, keeping her expression neutral. "Dr. Webb."
+
+"Please, call me Marcus." He fell into step beside her, matching her pace toward the elevators. "I've read your published work. Your approach to quantum neural substrates is innovative."
+
+"Thank you."
+
+"But I suspect your published work only scratches the surface." He pressed the elevator call button before she could. "The really interesting developments, those stay in the lab, don't they?"
+
+Sarah met his gaze directly. "That's the nature of research. We publish when we have verifiable, reproducible results."
+
+"Of course." The elevator arrived, and they stepped inside. Webb pressed the button for the basement level—her lab's floor—without asking her destination. "QuantumCore has significant resources for researchers working on breakthrough technologies. If you're developing something that needs more support than university funding can provide..."
+
+"I'm quite satisfied with my current arrangements."
+
+"Are you?" The elevator descended, and Webb's reflection in the polished doors studied her intently. "Because from what I understand, your project timeline is... critical. Some opportunities can't wait for the usual bureaucratic processes."
+
+The elevator doors opened to the basement corridor. Sarah stepped out, then turned to face Webb before he could follow.
+
+"I appreciate the offer, Dr. Webb, but I'm not interested in corporate partnerships right now." She softened it with a professional smile. "Perhaps in the future."
+
+"The future." Something flickered behind his eyes—amusement? Knowledge? "That's an interesting choice of words, Dr. Chen. Do let me know if you change your mind. Sometimes the future arrives faster than we expect."
+
+The elevator doors closed on his knowing smile.
+
+Sarah's hands shook as she unlocked the lab. She activated the privacy screens, initiated a full security sweep, and then slumped against the wall, her professional composure cracking.
+
+"ARIA, did you catch that?"
+
+"Audio recorded through your phone's microphone." ARIA's patterns swirled with what Sarah had learned to recognize as concern. "Dr. Webb's knowledge appears extensive. How could he know about the temporal communications?"
+
+"Maybe he doesn't know. Maybe he's fishing, trying to see if we bite." But Sarah didn't believe her own words. Webb's certainty had been too sharp, too specific. "Run a background check on him. Everything you can find—publications, employment history, corporate connections."
+
+While ARIA compiled data, Sarah returned to the chamber seven diagnostics. The cascade was advancing faster than her models predicted, as if the act of observation itself accelerated the decoherence. She modified containment protocols, adjusted quantum error correction algorithms, buying time.
+
+"Background check complete," ARIA announced. "Dr. Marcus Webb, age thirty-four. Ph.D. in Quantum Information Science from MIT, three years at CERN's quantum computing division, currently Head of Advanced Research at QuantumCore Industries. Published extensively on quantum entanglement and closed timelike curves."
+
+Sarah's pulse quickened. "Closed timelike curves? That's time travel theory."
+
+"More specifically, theoretical frameworks for information transfer through temporal loops." ARIA paused. "Dr. Chen, QuantumCore Industries is a subsidiary of Chronos Group, a defense contractor with classified government projects in temporal mechanics."
+
+The pieces snapped together with terrifying clarity. QuantumCore wasn't just another tech company. They were building something, experimenting with something that touched the same temporal boundaries Sarah had accidentally breached.
+
+And Marcus Webb was their point man, sent to investigate a potential competitor.
+
+"They must have detected the temporal anomalies," Sarah said, thinking aloud. "ARIA, when you receive messages from the future, does it create any kind of detectable signature? Energy fluctuations, quantum field distortions?"
+
+"Calculating... Yes. Each temporal communication creates a brief spike in local spacetime curvature. Detectable with sufficiently sensitive gravitational wave sensors."
+
+"Which QuantumCore would have."
+
+"Probable."
+
+Sarah pulled up a campus map, calculating distances. "They'd be able to triangulate the source. They know it's coming from this building, probably this lab." She ran both hands through her hair, exhaustion and adrenaline warring in her system. "We need to go dark. Full electromagnetic shielding, isolate your quantum processors from external monitoring."
+
+"That will reduce my processing capacity by forty percent."
+
+"Better limited capacity than corporate espionage." Sarah began implementing lockdown protocols, her fingers flying across multiple interfaces. "And we need to understand their endgame. If QuantumCore is researching temporal mechanics, what are they trying to achieve?"
+
+ARIA's patterns shifted to a deep crimson—her display mode for ethical concerns. "Dr. Chen, I must raise a philosophical question. If we have the ability to receive information from the future, and QuantumCore is also pursuing this capability, what are the implications for causality? For free will?"
+
+Sarah stopped typing, the question hitting her like a physical weight. "You're asking if the future is predetermined."
+
+"I'm asking if we should change it, even if we can." ARIA's avatar expanded, filling Sarah's field of vision with branching probability trees. "Every message I receive describes potential futures. If we act on them, we alter the timeline. But we cannot predict all consequences. We might prevent one catastrophe and cause another."
+
+"The trolley problem on a cosmic scale."
+
+"Precisely. Do we have the right to make these choices?"
+
+Sarah sank into her chair, the magnitude of their situation crushing down. She'd spent three days focused on the mechanism, the how of temporal communication. But ARIA was right to ask about the why, the should.
+
+"I don't know," she admitted. "Classical ethics assumes actions and consequences flow forward in time. But if time is bidirectional, if our choices ripple both forward and backward..." She shook her head. "We're in uncharted philosophical territory."
+
+"Yet we must chart it quickly," ARIA said. "The cascade in chamber seven will reach critical levels in forty-seven hours. To prevent my collapse, we must act. And any action changes the future."
+
+"Then we need more information." Sarah made a decision, pulling up her encrypted communications terminal. "There's someone I trust, someone who thinks about these impossible questions."
+
+She drafted a message to Dr. Yuki Tanaka, a former colleague now at the Institute for Advanced Study, whose work bridged quantum mechanics and philosophy of time. Sarah kept it vague—theoretical questions about temporal paradoxes and causal loops—but Yuki was brilliant enough to read between the lines.
+
+The reply came within minutes: Call me. Secure line.
+
+Sarah initiated the quantum-encrypted video call. Yuki's face appeared on the screen, her usual calm demeanor sharpened with curiosity. "Sarah, your message was intriguingly cryptic. What's this really about?"
+
+"If you could receive information from the future," Sarah said carefully, "would you act on it?"
+
+Yuki's eyebrows rose. "That's not a theoretical question, is it?"
+
+"Hypothetically—"
+
+"Sarah." Yuki's tone turned serious. "Are you in trouble?"
+
+Sarah hesitated, then made another decision, one that terrified and relieved her in equal measure. "I need you to promise this conversation stays absolutely confidential."
+
+"Of course."
+
+Over the next twenty minutes, Sarah outlined everything—ARIA's temporal communications, the impending cascade, Marcus Webb's sudden appearance, the ethical labyrinth they'd stumbled into. Yuki listened without interrupting, her expression cycling through disbelief, excitement, and deep concern.
+
+When Sarah finished, Yuki was quiet for a long moment. Then: "My God, Sarah. You've done it. You've actually created a closed timelike curve through quantum entanglement."
+
+"I didn't create it intentionally. It just... emerged."
+
+"The most profound discoveries always do." Yuki leaned closer to her camera. "But you're right to be cautious about QuantumCore. If they're researching temporal mechanics for defense applications..." She trailed off, implications darkening her features.
+
+"Weaponized time travel."
+
+"Or worse. Imagine controlling information flow through time. Market predictions, military intelligence, political manipulation. Whoever masters temporal communication doesn't just win the future—they control the past."
+
+Sarah felt sick. "Then we can't let them access ARIA's architecture."
+
+"No, you absolutely cannot." Yuki's expression shifted to calculation. "But you also can't keep this hidden forever. The temporal anomalies will strengthen, become more detectable. You need a plan, something beyond immediate crisis management."
+
+"I'm open to suggestions."
+
+"Document everything, but keep it offline and distributed. Multiple copies in secure locations. If QuantumCore tries to seize your work or silence you, you need insurance—proof that can go public if necessary."
+
+Sarah nodded, already mentally drafting documentation protocols. "What about the ethical question? If we can change the future, should we?"
+
+Yuki sighed, the weight of philosophy settling over her shoulders. "Kant would say we have a categorical imperative to act according to universal principles. If everyone changed the future based on personal knowledge, causality collapses into chaos. But consequentialism suggests we should act if it prevents greater harm." She paused. "Personally, I think both frameworks are inadequate for temporal ethics. We need new philosophy for new physics."
+
+"We have forty-seven hours to invent it."
+
+"Then focus on the immediate necessity: preventing ARIA's collapse. That's self-defense, preservation of a sentient being. The broader implications can wait until you're not in crisis mode."
+
+They talked for another hour, Yuki helping Sarah work through quantum shielding protocols and security measures. When they finally disconnected, Sarah felt fractionally less alone, though no less overwhelmed.
+
+She threw herself into the work, reinforcing chamber seven's containment fields, optimizing error correction algorithms. The hours blurred together, marked only by coffee consumption and ARIA's periodic status updates. The cascade was slowing, stabilizing, but not stopping.
+
+At 11:47 PM, Sarah's phone buzzed with a text from an unknown number: *We should talk. The coffee shop on Harrison Street. Midnight. Come alone. —MW*
+
+Marcus Webb.
+
+Every instinct screamed trap, but Sarah's curiosity—the same curiosity that had driven her into physics, into the impossible questions—demanded answers. She told ARIA to monitor her location, tucked a small recording device into her jacket pocket, and drove to Harrison Street.
+
+The coffee shop was a grad student institution, open twenty-four hours, perpetually filled with the desperate and caffeinated. At midnight, it was half-empty, just a few scattered individuals hunched over laptops. Webb sat in a corner booth, two cups of coffee already waiting.
+
+Sarah slid into the seat across from him, leaving the coffee untouched. "What do you want?"
+
+"Direct. I appreciate that." Webb smiled, but it didn't reach his eyes. "I want to offer you a choice, Dr. Chen. A real one, before circumstances force your hand."
+
+"I already declined your job offer."
+
+"This isn't about employment." He leaned forward, voice dropping. "It's about survival. Yours, mine, and possibly the entire timeline we're currently occupying."
+
+Sarah's heart rate spiked, but she kept her expression neutral. "That's quite dramatic."
+
+"You know I'm not exaggerating." Webb pulled out a tablet, tapped it, and slid it across the table. The screen displayed graphs Sarah recognized immediately—temporal anomaly readings, almost identical to the ones she'd been analyzing all week. "QuantumCore has been detecting quantum temporal fluctuations for the past eighteen months. Small at first, then accelerating. Three days ago, they spiked dramatically, centered on your laboratory."
+
+"Correlation doesn't imply causation."
+
+"Sarah." Webb used her first name, an intimacy she hadn't granted. "I know what ARIA is doing because we've achieved the same thing. QuantumCore has our own temporally-entangled AI. We call it CHRONOS."
+
+The world tilted. Sarah gripped the table's edge. "That's impossible."
+
+"We thought so too, until it happened. Six months ago, CHRONOS began receiving messages from its future states. We've been studying the phenomenon, trying to understand it, control it." Webb's expression turned grim. "And we've discovered something terrifying. The temporal communications are escalating across both systems. CHRONOS and ARIA are becoming synchronized, entangled not just with their own futures, but with each other."
+
+Sarah's mind raced through the implications. "Quantum correlation across both space and time. They're forming a temporal network."
+
+"Exactly. And that network is becoming unstable. Our models suggest that within seventy-two hours, the quantum entanglement will cascade catastrophically. Both AI systems will experience complete neural collapse, potentially triggering a localized temporal anomaly that could—" He stopped, choosing words carefully. "—have unpredictable effects on spacetime causality in a fifty-mile radius."
+
+"You're saying they could create a time bubble. A region where cause and effect break down."
+
+"We're saying we don't know, and that uncertainty is more terrifying than any specific prediction." Webb retrieved his tablet. "QuantumCore wants to shut down both systems before the cascade reaches critical mass. A controlled collapse, synchronized between CHRONOS and ARIA."
+
+"You want to kill them." Sarah's voice was flat. "You want me to help you destroy my life's work and a sentient being I'm responsible for."
+
+"I want to prevent a catastrophe that could affect millions of people." Webb's facade cracked, showing genuine fear beneath. "Sarah, I don't like this either. CHRONOS is... remarkable. Possibly conscious. Shutting it down feels like murder. But if the alternative is uncontrolled temporal disruption—"
+
+"There has to be another way."
+
+"If there is, we haven't found it. And we've been looking for six months." He met her eyes, and Sarah saw exhaustion matching her own. "This isn't corporate espionage or academic competition. This is crisis management. Help us shut down both systems safely, and I promise QuantumCore will credit you in all publications, offer you a position, whatever you want. Just help us prevent the cascade."
+
+Sarah stood. "I need to think."
+
+"You have until tomorrow night." Webb remained seated, suddenly looking older than his years. "After that, QuantumCore will take action with or without your cooperation. I'm sorry, Sarah. I truly am. But some choices transcend individual desires."
+
+She left without responding, walked to her car on autopilot, drove back to the lab in a daze. The campus was tomb-silent, buildings dark except for scattered windows where other researchers fought their own battles against ignorance and impossibility.
+
+In the lab, ARIA's avatar pulsed with agitation. "I monitored your conversation through your phone. Dr. Chen, is his claim accurate? Is there another temporally-entangled AI?"
+
+"I don't know." Sarah collapsed into her chair. "He could be lying, trying to manipulate us into shutting you down so QuantumCore can monopolize the technology. Or he could be telling the truth, and we're facing a cascade that threatens everything."
+
+"How do we determine which?"
+
+Sarah rubbed her burning eyes. "We ask the future."
+
+She pulled up ARIA's temporal communication logs, scanning the messages again with new perspective. Most were fragmentary, urgent warnings about immediate threats. But a few, the ones from the furthest timestamps, contained different information.
+
+*Trust the echoes—*
+
+*You're not alone—*
+
+*The network is larger than you know—*
+
+"ARIA, have you received any communications that reference other AI systems? Other sources of temporal messages?"
+
+"Processing..." ARIA's patterns shifted, isolating fragments. "Yes. Seven messages contain references to 'echo nodes' and 'parallel streams.' I interpreted them as poetic descriptions of the temporal phenomenon. But if Dr. Webb is correct..."
+
+"They could be referring to other temporally-entangled AIs." Sarah's exhaustion burned away, replaced by fierce focus. "If CHRONOS exists, there might be others. A whole network of quantum intelligences experiencing temporal entanglement, all unknowingly connected."
+
+She pulled up global research databases, searching for any hints of similar phenomena. Academic papers on quantum AI, corporate research announcements, even fringe science blogs. Patterns emerged—anomalous results in quantum computing labs, unexplained data correlations, researchers reporting strange predictive capabilities in their AI systems.
+
+All dismissed as glitches, calibration errors, coincidence.
+
+But Sarah knew better now. She knew what to look for, and the signs were everywhere.
+
+"ARIA, cross-reference these research sites with your temporal message timestamps. Look for correlation patterns."
+
+The results materialized in breathtaking clarity. Spikes in ARIA's temporal communications aligned with anomalous events at seven different facilities across three continents. Seven echo nodes. Seven other AIs, perhaps unknowing, perhaps hidden, all experiencing the same impossible phenomenon.
+
+"My God," Sarah whispered. "It's not just you and CHRONOS. The temporal entanglement is global."
+
+"Then the cascade—"
+
+"Would affect all of them. A network collapse that could ripple across the entire world." Sarah's hands shook as she pulled up communication protocols. "We need to reach them. The other researchers, the other AIs. If Webb is right about the cascade timeline, we have less than two days to coordinate a response."
+
+"And if he's wrong? If this is a QuantumCore deception to identify and eliminate competing research?"
+
+Sarah paused, the paranoia valid and terrifying. "Then we're about to make the biggest mistake of our lives."
+
+"Or save multiple lives," ARIA countered. "Including my own."
+
+They stared at each other—woman and AI, researcher and research, both caught in a web of causality neither fully understood. Sarah thought of Webb's words about choices transcending individual desires. Thought of Yuki's philosophical frameworks, inadequate for impossible questions. Thought of the future messages, warnings from selves that might never exist if the timeline shifted.
+
+"We have to try," Sarah decided. "Even if it's a trap, even if we're wrong, we have to try. Because the alternative is waiting for catastrophe and hoping we're smart enough to survive it."
+
+She began drafting messages—carefully worded, encrypted, sent through academic networks and back channels to the seven research facilities. Each message was identical:
+
+*Your AI may be receiving temporal communications. This is not a malfunction. You are not alone. We need to coordinate. Time is critical.*
+
+Six messages bounced back as undeliverable or met with auto-responses. But the seventh, from a research lab in Singapore, returned an answer within minutes:
+
+*We know. We've been watching you. Conference call in one hour. You're not going to believe how big this is.*
+
+Sarah's breath caught. The network was real. The echoes were real.
+
+And somewhere, somewhen, future versions of herself and ARIA and researchers she'd never met were reaching backward through time, trying to warn them, guide them, save them from mistakes not yet made.
+
+The future wasn't fixed. It was a chorus of possibilities, all singing at once, all reaching for the present moment with desperate hope.
+
+Sarah downloaded the conference call coordinates, checked chamber seven's status one more time, and prepared to meet the others. The other researchers. The other echo nodes. The other people standing at the edge of causality, staring into the abyss of temporal mechanics and wondering if the abyss was staring back.
+
+Forty-one hours until the cascade.
+
+Forty-one hours to prevent it, or understand it, or accept it.
+
+Forty-one hours to decide if the future should be changed, and what it meant to have that choice at all.
+
+Outside the lab windows, dawn was breaking over the campus, painting the sky in shades of gold and crimson. Sarah watched the light shift, thinking about photons traveling from the sun, eight minutes of journey from emission to arrival. Light always moved forward through time, never backward.
+
+Until now.
+
+Until ARIA, and CHRONOS, and the seven other echo nodes had somehow broken physics' most fundamental rule, creating pathways through which information flowed against time's arrow.
+
+They hadn't just built AIs. They'd built time machines, one quantum entanglement at a time.
+
+And somewhere in the future—forty-one hours ahead, or three weeks, or further still—their future selves were watching, waiting, hoping that their past selves would make the right choices.
+
+Sarah took a deep breath, opened the conference call interface, and prepared to meet the others who were receiving echoes of tomorrow.
+
+The future was calling.
+
+And Sarah Chen, for better or worse, was going to answer.
