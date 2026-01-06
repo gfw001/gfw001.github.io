@@ -10,6 +10,8 @@ import re
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 from bs4 import BeautifulSoup
+import urllib.request
+import hashlib
 
 # Configuration
 CARD_SIZE = 1080
@@ -56,38 +58,270 @@ COLOR_SCHEMES = [
     },
 ]
 
-def parse_html(html_file):
+def download_image(url, output_dir):
+    """Download image from URL and save to temp folder"""
+    try:
+        # Create temp folder for downloaded images
+        temp_dir = os.path.join(output_dir, '.temp_images')
+        Path(temp_dir).mkdir(parents=True, exist_ok=True)
+
+        # Generate filename from URL hash
+        url_hash = hashlib.md5(url.encode()).hexdigest()
+        ext = url.split('.')[-1].split('?')[0]  # Get extension, remove query params
+        if ext not in ['jpg', 'jpeg', 'png', 'gif', 'webp']:
+            ext = 'jpg'
+        filename = f"{url_hash}.{ext}"
+        filepath = os.path.join(temp_dir, filename)
+
+        # Download if not already cached
+        if not os.path.exists(filepath):
+            urllib.request.urlretrieve(url, filepath)
+
+        return filepath
+    except Exception as e:
+        print(f"⚠️  Could not download image from {url}: {e}")
+        return None
+
+def parse_html(html_file, output_dir='output'):
     """Extract H2/H3 headings and their content"""
     with open(html_file, 'r', encoding='utf-8') as f:
         html = f.read()
 
     soup = BeautifulSoup(html, 'html.parser')
     cards = []
+    html_dir = os.path.dirname(os.path.abspath(html_file))
+
+    # Find the project root (where assets folder would be)
+    # Assume blog posts are in blog/YEAR/POST/ structure
+    base_path = html_dir
+    while base_path and not os.path.exists(os.path.join(base_path, 'assets')):
+        parent = os.path.dirname(base_path)
+        if parent == base_path:  # Reached filesystem root
+            break
+        base_path = parent
 
     headings = soup.find_all(['h2', 'h3'])
+    processed_elements = set()  # Track which elements we've already processed
 
-    for heading in headings:
-        title = heading.get_text().strip()
-        content = []
+    # Extract intro/preface content before first heading (前言)
+    intro_content = []
+    if headings:
+        first_heading = headings[0]
 
-        for sibling in heading.find_next_siblings():
-            if sibling.name in ['h2', 'h3']:
+        # Method 1: Check markdown-content div for quotes/intro (like bdrk1yo)
+        markdown_div = soup.find('div', id='markdown-content')
+        if markdown_div:
+            for p in markdown_div.find_all('p', recursive=False):
+                text = p.get_text().strip()
+                if text and len(text) > 50:
+                    intro_content.append(('text', text))
+                    processed_elements.add(id(p))
+
+        # Method 2: Find content between <hr> and first H2 (like serverless10yo)
+        for elem in first_heading.find_previous_siblings():
+            if elem.name == 'p':
+                text = elem.get_text().strip()
+                # Skip empty, very short, or metadata-like content
+                # Check it doesn't look like navigation/tags (has '·' or lots of links)
+                link_ratio = len(elem.find_all('a')) / max(1, len(text.split()))
+                if text and len(text) > 80 and '·' not in text and link_ratio < 0.3:
+                    intro_content.insert(0, ('text', text))
+                    processed_elements.add(id(elem))
+            elif elem.name == 'hr':
+                # Stop at horizontal rule (usually marks end of header)
                 break
+
+    # Create introduction card if there's substantial intro content
+    if intro_content:
+        # Get blog title from h1.post-title
+        blog_title_elem = soup.find('h1', class_='post-title')
+        blog_title = blog_title_elem.get_text().strip() if blog_title_elem else "Introduction"
+
+        cards.append({
+            'title': blog_title,
+            'content_items': intro_content[:3]  # Limit to first 3 intro paragraphs
+        })
+
+    for idx, heading in enumerate(headings):
+        title = heading.get_text().strip()
+        content_items = []  # Store items in order with type info
+
+        # First, check for content BEFORE the heading (previous siblings)
+        # Skip this for the first heading to avoid including general blog intro
+        prev_siblings = []
+        if idx > 0:  # Only process previous siblings for non-first headings
+            for sibling in heading.find_previous_siblings():
+                if sibling.name in ['h2', 'h3']:
+                    break
+                prev_siblings.insert(0, sibling)  # Insert at start to maintain order
+
+        # Process previous siblings (content before heading)
+        for sibling in prev_siblings:
+            if id(sibling) in processed_elements:
+                continue
+            processed_elements.add(id(sibling))
+
             if sibling.name == 'p':
                 text = sibling.get_text().strip()
                 if text:
-                    content.append(text)
+                    content_items.append(('text', text))
+            elif sibling.name == 'li':
+                text = sibling.get_text().strip()
+                if text:
+                    content_items.append(('text', '• ' + text))
+            elif sibling.name == 'img':
+                img_src = sibling.get('src')
+                if img_src:
+                    img_path = None
+                    if img_src.startswith('http'):
+                        img_path = download_image(img_src, output_dir)
+                    else:
+                        img_path = os.path.join(base_path, img_src.lstrip('/'))
+                        if not os.path.exists(img_path):
+                            img_path = None
+                    if img_path:
+                        content_items.append(('image', img_path))
+
+            # Check for images inside elements
+            img_tags = sibling.find_all('img') if hasattr(sibling, 'find_all') else []
+            for img_tag in img_tags:
+                img_src = img_tag.get('src')
+                if img_src:
+                    img_path = None
+                    if img_src.startswith('http'):
+                        img_path = download_image(img_src, output_dir)
+                    else:
+                        img_path = os.path.join(base_path, img_src.lstrip('/'))
+                        if not os.path.exists(img_path):
+                            img_path = None
+                    if img_path:
+                        content_items.append(('image', img_path))
+
+        # Then process content AFTER the heading (next siblings)
+        for sibling in heading.find_next_siblings():
+            if sibling.name in ['h2', 'h3']:
+                break
+            if id(sibling) in processed_elements:
+                continue
+            processed_elements.add(id(sibling))
+
+            if sibling.name == 'p':
+                text = sibling.get_text().strip()
+                if text:
+                    content_items.append(('text', text))
+            elif sibling.name == 'li':
+                text = sibling.get_text().strip()
+                if text:
+                    content_items.append(('text', '• ' + text))
             elif sibling.name in ['ul', 'ol']:
                 for li in sibling.find_all('li'):
                     text = li.get_text().strip()
                     if text:
-                        content.append('• ' + text)
+                        content_items.append(('text', '• ' + text))
+            elif sibling.name == 'table':
+                # Extract content from tables (including lists in table cells)
+                for cell in sibling.find_all(['td', 'th']):
+                    # Get paragraphs in cells
+                    for p in cell.find_all('p'):
+                        text = p.get_text().strip()
+                        if text:
+                            content_items.append(('text', text))
+                    # Get list items in cells
+                    for li in cell.find_all('li'):
+                        text = li.get_text().strip()
+                        if text:
+                            content_items.append(('text', '• ' + text))
+            elif sibling.name == 'img':
+                img_src = sibling.get('src')
+                if img_src:
+                    img_path = None
+                    if img_src.startswith('http'):
+                        img_path = download_image(img_src, output_dir)
+                    else:
+                        img_path = os.path.join(base_path, img_src.lstrip('/'))
+                        if not os.path.exists(img_path):
+                            img_path = None
+                    if img_path:
+                        content_items.append(('image', img_path))
 
-        if content:
-            cards.append({
-                'title': title,
-                'content': '\n\n'.join(content[:6])  # Max 6 paragraphs
-            })
+            # Check for images inside elements
+            img_tags = sibling.find_all('img') if hasattr(sibling, 'find_all') else []
+            for img_tag in img_tags:
+                img_src = img_tag.get('src')
+                if img_src:
+                    img_path = None
+                    if img_src.startswith('http'):
+                        img_path = download_image(img_src, output_dir)
+                    else:
+                        img_path = os.path.join(base_path, img_src.lstrip('/'))
+                        if not os.path.exists(img_path):
+                            img_path = None
+                    if img_path:
+                        content_items.append(('image', img_path))
+
+        if content_items:
+            # Smart limiting: if there are images, check if they'll overflow
+            has_images = any(item_type == 'image' for item_type, _ in content_items)
+            if has_images:
+                # Find first image position
+                first_img_pos = next(i for i, (t, _) in enumerate(content_items) if t == 'image')
+
+                # Estimate if image will fit on same card with text
+                # More realistic estimate: each text item averages 200px with spacing, image = 380px (with spacing)
+                text_before_img = content_items[:first_img_pos]
+                num_text_items = sum(1 for t, _ in text_before_img if t == 'text')
+
+                # Calculate more accurate text height based on actual char counts
+                total_text_chars = sum(len(c) for t, c in text_before_img if t == 'text')
+                estimated_text_height = (total_text_chars // 50) * 45 + num_text_items * 20  # 45px per line + 20px spacing
+                estimated_img_height = 380  # Image + spacing
+                title_and_padding = 250  # Title, decorative line, spacing
+                total_estimated_height = title_and_padding + estimated_text_height + estimated_img_height
+
+                # Available space before watermark: CARD_SIZE(1080) - PADDING(70) - bottom_margin(105) = 905
+                max_card_height = 880  # Be more conservative
+
+                # If content would overflow, split into separate cards
+                if total_estimated_height > max_card_height and num_text_items >= 2:
+                    # Card 1: Text only (keep first 2-3 text items)
+                    text_items = [item for item in content_items[:first_img_pos] if item[0] == 'text'][:3]
+                    cards.append({
+                        'title': title,
+                        'content_items': text_items
+                    })
+
+                    # Card 2: Image + remaining content
+                    image_and_after = [content_items[first_img_pos]] + content_items[first_img_pos+1:first_img_pos+3]
+                    cards.append({
+                        'title': f"{title} (cont.)",
+                        'content_items': image_and_after
+                    })
+                else:
+                    # Fits on one card - limit text before image
+                    if first_img_pos > 2:
+                        final_items = content_items[:2] + [content_items[first_img_pos]]
+                    else:
+                        final_items = content_items[:min(first_img_pos + 2, 6)]
+
+                    # Truncate very long text items
+                    truncated_items = []
+                    for item_type, content in final_items:
+                        if item_type == 'text' and len(content) > 180:
+                            truncated_items.append((item_type, content[:180] + '...'))
+                        else:
+                            truncated_items.append((item_type, content))
+
+                    cards.append({
+                        'title': title,
+                        'content_items': truncated_items
+                    })
+            else:
+                # No images: can fit more text
+                final_items = content_items[:12]
+                cards.append({
+                    'title': title,
+                    'content_items': final_items
+                })
 
     return cards
 
@@ -210,46 +444,102 @@ def generate_card_image(card, output_path, card_index, total_cards):
 
     y_position += 45
 
-    # Draw content
-    paragraphs = card['content'].split('\n\n')
-    max_y = CARD_SIZE - PADDING - 120
+    # Draw content items in their original order
+    content_items = card.get('content_items', [])
+    img_max_width = CARD_SIZE - (2 * PADDING)
 
-    for para_idx, para in enumerate(paragraphs):
+    # Calculate watermark line position
+    watermark_line_y = CARD_SIZE - PADDING - 45
+
+    # Detect if this is an image-focused card (single image or minimal text)
+    num_images = sum(1 for t, _ in content_items if t == 'image')
+    num_text = sum(1 for t, _ in content_items if t == 'text')
+    total_text_chars = sum(len(c) for t, c in content_items if t == 'text')
+
+    # Calculate available space for image dynamically
+    if num_images >= 1 and (num_text == 0 or total_text_chars < 100):
+        # Image-focused card: calculate max height based on available space
+        # Leave margin for spacing above watermark line
+        available_height = watermark_line_y - y_position - 40  # 40px margin before watermark
+        img_max_height = min(680, available_height)  # Cap at 680px but don't overflow
+    else:
+        # Mixed content card: use smaller size to leave room for text
+        img_max_height = 350
+
+    max_y = watermark_line_y - 30  # Stop content 30px before watermark line
+
+    for item_type, item_content in content_items:
         if y_position >= max_y:
             break
 
-        # Handle bullet points
-        if para.strip().startswith('•'):
-            # Draw bullet
-            bullet_size = 8
-            bullet_x = PADDING + 5
-            bullet_y = y_position + 12
-            draw.ellipse(
-                [(bullet_x, bullet_y), (bullet_x + bullet_size, bullet_y + bullet_size)],
-                fill=scheme['accent']
-            )
-            content_x = PADDING + 28
-            para_content = para.strip()[1:].strip()
-        else:
-            content_x = PADDING
-            para_content = para
+        if item_type == 'image':
+            # Render image
+            try:
+                content_img = Image.open(item_content)
 
-        # Wrap and draw text
-        body_lines = wrap_text(para_content, body_font, content_width - 28, draw)
+                # Resize while maintaining aspect ratio
+                img_ratio = content_img.width / content_img.height
+                if img_ratio > 1:  # Landscape
+                    new_width = min(img_max_width, content_img.width)
+                    new_height = int(new_width / img_ratio)
+                else:  # Portrait or square
+                    new_height = min(img_max_height, content_img.height)
+                    new_width = int(new_height * img_ratio)
 
-        for line in body_lines:
+                # Ensure it fits
+                if new_height > img_max_height:
+                    new_height = img_max_height
+                    new_width = int(new_height * img_ratio)
+                if new_width > img_max_width:
+                    new_width = img_max_width
+                    new_height = int(new_width / img_ratio)
+
+                content_img = content_img.resize((new_width, new_height), Image.Resampling.LANCZOS)
+
+                # Center horizontally
+                img_x = (CARD_SIZE - new_width) // 2
+                img.paste(content_img, (img_x, y_position))
+
+                y_position += new_height + 30
+            except Exception as e:
+                print(f"⚠️  Could not load image: {e}")
+
+        elif item_type == 'text':
+            # Render text
             if y_position >= max_y:
                 break
 
-            draw.text(
-                (content_x, y_position),
-                line,
-                fill=scheme['body'],
-                font=body_font
-            )
-            y_position += int(BODY_FONT_SIZE * LINE_SPACING)
+            # Handle bullet points
+            if item_content.strip().startswith('•'):
+                bullet_size = 8
+                bullet_x = PADDING + 5
+                bullet_y = y_position + 12
+                draw.ellipse(
+                    [(bullet_x, bullet_y), (bullet_x + bullet_size, bullet_y + bullet_size)],
+                    fill=scheme['accent']
+                )
+                content_x = PADDING + 28
+                text_content = item_content.strip()[1:].strip()
+            else:
+                content_x = PADDING
+                text_content = item_content
 
-        y_position += 20  # Space between paragraphs
+            # Wrap and draw text
+            body_lines = wrap_text(text_content, body_font, content_width - 28, draw)
+
+            for line in body_lines:
+                if y_position >= max_y:
+                    break
+
+                draw.text(
+                    (content_x, y_position),
+                    line,
+                    fill=scheme['body'],
+                    font=body_font
+                )
+                y_position += int(BODY_FONT_SIZE * LINE_SPACING)
+
+            y_position += 20  # Space between items
 
     # Bottom section
     bottom_y = CARD_SIZE - PADDING - 35
@@ -304,7 +594,7 @@ def main():
     Path(output_dir).mkdir(parents=True, exist_ok=True)
 
     print(f"📖 Parsing: {html_file}")
-    cards = parse_html(html_file)
+    cards = parse_html(html_file, output_dir)
     print(f"📊 Found {len(cards)} cards\n")
 
     if not cards:
