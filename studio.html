@@ -1,131 +1,412 @@
-
+<!DOCTYPE html>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HTV795ZMCP"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-HTV795ZMCP');
 </script>
 
-<!DOCTYPE html> 
 <html lang="en">
-   <head>
-      <!--
-      <link rel="stylesheet" href=/libs/external/skeleton/normalize.css>
-      <link rel="stylesheet" href=/libs/external/skeleton/skeleton.css>
-      <link rel="stylesheet" href=/libs/custom/my_css.css>
-      --> 
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>PENG ANDY STUDIO</title>
+   <meta name="author" content="Peng, Andy">
+   <meta name="description" content="PENG ANDY STUDIO LLC - Professional Services">
+   <meta name="keywords" content="PENG ANDY STUDIO LLC">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+   <link rel="canonical" href="https://pengandy.com/studio">
+   <link rel="shortcut icon" href="/assets/projects/Peng Andys Logo Symbol.png">
+   <link rel="stylesheet" href="/assets/css/main.css">
 
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>PENG ANDY STUDIO</title>
-      <meta name="author" content="Peng, Andy">
-      <meta name="description" content="PENG ANDY STUDIO LLC">
-      <meta name="keywords" content="PENG ANDY STUDIO LLC">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
-      <link defer rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
-      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
-      <link rel="canonical" href="https://pengandy.com/studio">
-      <link rel="shortcut icon" href="/assets/projects/Peng Andys Logo Symbol.png">
-      <link rel="stylesheet" href="/assets/css/main.css">
-      <link rel="stylesheet" href="/assets/css/custom-studio.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
-      <script src="/assets/js/theme.js"></script> <script src="/assets/js/dark_mode.js"></script> 
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-      <!-- MDB icon -->
-      <link rel="icon" href="assets/img/mdb-favicon.ico" type="image/x-icon" />
-      <!-- MDB -->
-      <link rel="stylesheet" href="css/bootstrap-quotes.min.css" />
-   </head>
+   <style>
+      :root {
+         --primary: #2C3E50;
+         --secondary: #34495E;
+         --accent: #3498DB;
+         --text: #2C3E50;
+         --text-light: #7F8C8D;
+         --border: #E8ECEF;
+         --bg: #FFFFFF;
+         --bg-alt: #F8F9FA;
+      }
 
-   <body class="fixed-top-nav ">
-      <div class="container-center">
-         <div class="studio-header">
-            <h1>PENG ANDY STUDIO LLC</h1>
-            <p class="subtitle">Professional services by <a href="https://pengandy.com">Andy Peng</a></p>
-            <p class="credentials">a builder with curiosity</p>
+      body {
+         background: var(--bg-alt);
+         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+         color: var(--text);
+         line-height: 1.6;
+         margin: 0;
+         padding: 0;
+      }
+
+      .studio-container {
+         max-width: 1100px;
+         margin: 0 auto;
+         padding: 3rem 1.5rem;
+      }
+
+      .studio-header {
+         text-align: center;
+         margin-bottom: 3rem;
+         padding-bottom: 2rem;
+         border-bottom: 1px solid var(--border);
+      }
+
+      .studio-header h1 {
+         font-size: 2rem;
+         font-weight: 700;
+         color: var(--primary);
+         margin-bottom: 0.5rem;
+         letter-spacing: -0.02em;
+      }
+
+      .studio-header .subtitle {
+         color: var(--text-light);
+         font-size: 1rem;
+         margin: 0;
+      }
+
+      /* Featured Book Section */
+      .featured-book {
+         background: var(--bg);
+         border: 1px solid var(--border);
+         border-radius: 8px;
+         padding: 2.5rem;
+         margin-bottom: 3rem;
+         display: grid;
+         grid-template-columns: 280px 1fr;
+         gap: 2.5rem;
+         align-items: center;
+      }
+
+      .book-cover {
+         width: 100%;
+         border-radius: 4px;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .book-info h2 {
+         font-size: 1.5rem;
+         font-weight: 600;
+         color: var(--primary);
+         margin-bottom: 1rem;
+      }
+
+      .book-info .bestseller-badge {
+         display: inline-block;
+         background: #FF9900;
+         color: white;
+         padding: 0.35rem 0.75rem;
+         border-radius: 4px;
+         font-size: 0.85rem;
+         font-weight: 600;
+         margin-bottom: 1rem;
+      }
+
+      .book-info p {
+         color: var(--text-light);
+         margin-bottom: 1.5rem;
+         line-height: 1.7;
+      }
+
+      .book-info .btn-amazon {
+         display: inline-block;
+         background: var(--primary);
+         color: white;
+         padding: 0.75rem 1.5rem;
+         border-radius: 4px;
+         text-decoration: none;
+         font-weight: 500;
+         transition: background 0.2s;
+      }
+
+      .book-info .btn-amazon:hover {
+         background: var(--secondary);
+         color: white;
+      }
+
+      /* Services Section */
+      .section-title {
+         font-size: 1.75rem;
+         font-weight: 600;
+         color: var(--primary);
+         margin-bottom: 1.5rem;
+         padding-bottom: 0.75rem;
+         border-bottom: 2px solid var(--border);
+      }
+
+      .services-grid {
+         display: grid;
+         gap: 1rem;
+         margin-bottom: 3rem;
+      }
+
+      .service-item {
+         background: var(--bg);
+         border: 1px solid var(--border);
+         border-radius: 4px;
+         padding: 1rem 1.25rem;
+         display: grid;
+         grid-template-columns: 140px 1fr;
+         gap: 1.5rem;
+         align-items: center;
+      }
+
+      .service-badge {
+         background: var(--primary);
+         color: white;
+         padding: 0.5rem 0.75rem;
+         border-radius: 3px;
+         font-size: 0.75rem;
+         font-weight: 600;
+         text-align: center;
+         letter-spacing: 0.5px;
+         font-family: 'SF Mono', 'Consolas', monospace;
+      }
+
+      .service-name {
+         font-size: 1rem;
+         font-weight: 500;
+         color: var(--text);
+         margin: 0;
+      }
+
+      /* Action Cards */
+      .action-cards {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+         gap: 1.5rem;
+         margin-bottom: 3rem;
+      }
+
+      .action-card {
+         background: var(--bg);
+         border: 1px solid var(--border);
+         border-radius: 4px;
+         padding: 1.5rem;
+         text-align: center;
+      }
+
+      .action-card h3 {
+         font-size: 1.1rem;
+         font-weight: 600;
+         color: var(--primary);
+         margin-bottom: 1rem;
+      }
+
+      .action-card a {
+         display: inline-block;
+         color: var(--accent);
+         text-decoration: none;
+         font-weight: 500;
+      }
+
+      .action-card a:hover {
+         text-decoration: underline;
+      }
+
+      /* Disclaimer */
+      .disclaimer {
+         background: var(--bg);
+         border: 1px solid var(--border);
+         border-radius: 4px;
+         padding: 1.5rem;
+         margin-bottom: 3rem;
+      }
+
+      .disclaimer h3 {
+         font-size: 1rem;
+         font-weight: 600;
+         color: var(--primary);
+         margin-bottom: 0.75rem;
+      }
+
+      .disclaimer p {
+         color: var(--text-light);
+         margin: 0;
+         font-size: 0.9rem;
+      }
+
+      /* Footer */
+      footer {
+         text-align: center;
+         padding: 2rem 0;
+         color: var(--text-light);
+         font-size: 0.9rem;
+         border-top: 1px solid var(--border);
+         margin-top: 3rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+         .featured-book {
+            grid-template-columns: 1fr;
+            text-align: center;
+         }
+
+         .book-cover {
+            max-width: 280px;
+            margin: 0 auto;
+         }
+
+         .service-item {
+            grid-template-columns: 1fr;
+            text-align: center;
+         }
+
+         .studio-header h1 {
+            font-size: 1.5rem;
+         }
+
+         .action-cards {
+            grid-template-columns: 1fr;
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <div class="studio-container">
+      <!-- Header -->
+      <div class="studio-header">
+         <h1>PENG ANDY STUDIO LLC</h1>
+         <p class="subtitle">Professional services by <a href="https://pengandy.com" style="color: var(--accent);">Andy Peng</a></p>
+      </div>
+
+      <!-- Featured Book -->
+      <section class="featured-book">
+         <div>
+            <img src="/assets/blog/deepseek/packtds.jpg" alt="DeepSeek in Practice" class="book-cover">
          </div>
-         <div class="post">
-            <!-- Unified Terminal-Style Card -->
-            <div class="terminal-unified-card">
-               <!-- Column 1: Services -->
-               <div class="terminal-column">
-                  <div class="terminal-header">$ services --list</div>
-                  <div class="terminal-content">
-                     <div class="service-item">
-                        <span class="service-label">NPO & Research</span>
-                        <span class="service-detail">Board Member (NPO Only)</span>
-                        <span class="service-detail">Paper/Patent Advising</span>
-                        <span class="service-detail">Book Authoring (Advance + Royalty)</span>
-                     </div>
-                     <div class="service-item">
-                        <span class="service-label">Career Management</span>
-                        <span class="service-detail">Org Behavior Mentoring</span>
-                        <span class="service-detail">Mock Interviews</span>
-                        <span class="service-detail">Resume & Career Guide</span>
-                     </div>
-                  </div>
-               </div>
+         <div class="book-info">
+            <h2>Recent Publication</h2>
+            <span class="bestseller-badge">Amazon Best Seller #65 in Computer Neural Networks</span>
+            <p>
+               <strong>DeepSeek in Practice</strong> — From basics to fine-tuning, distillation, agent design, and prompt engineering of open source LLM.
+               Co-authored by Andy Peng, Alex Strick van Linschoten, and Duarte O.Carmo, published by Packt.
+            </p>
+            <a href="https://a.co/d/8tUgb3q" class="btn-amazon" target="_blank">View on Amazon →</a>
+         </div>
+      </section>
 
-               <!-- Column 2: View All Services -->
-               <div class="terminal-column">
-                  <div class="terminal-header">$ explore</div>
-                  <div class="terminal-content terminal-action">
-                     <a href="https://pengandy.com/professionalservices" class="terminal-link">
-                        <span class="terminal-prompt">></span> View All Services
-                     </a>
-                  </div>
-               </div>
+      <!-- Professional Services -->
+      <section>
+         <h2 class="section-title">Professional Services</h2>
+         <div class="services-grid">
+            <div class="service-item">
+               <div class="service-badge">MARKET RATE</div>
+               <div class="service-name">Part-time CTO</div>
+            </div>
 
-               <!-- Column 3: Schedule Call -->
-               <div class="terminal-column">
-                  <div class="terminal-header">$ book --session</div>
-                  <div class="terminal-content terminal-action">
-                     <a href="https://calendly.com/pengandy" class="terminal-link">
-                        <span class="terminal-prompt">></span> Schedule Call
-                     </a>
-                  </div>
-               </div>
+            <div class="service-item">
+               <div class="service-badge">NPO</div>
+               <div class="service-name">Board Member, Non-Profit Organization Only</div>
+            </div>
 
-               <!-- Column 4: Contact -->
-               <div class="terminal-column">
-                  <div class="terminal-header">$ connect</div>
-                  <div class="terminal-content terminal-contact">
-                     <a href="mailto:pengandy.build@gmail.com" title="Email" class="contact-link">
-                        <span class="terminal-prompt">></span> Email
-                     </a>
-                     <a href="https://www.linkedin.com/in/pengandy-us" title="LinkedIn" class="contact-link">
-                        <span class="terminal-prompt">></span> LinkedIn
-                     </a>
-                     <a href="https://twitter.com/pymhq" title="Twitter" class="contact-link">
-                        <span class="terminal-prompt">></span> Twitter
-                     </a>
-                     <a href="https://www.xiaohongshu.com/user/profile/646a8ca2000000000f006c94?xhsshare=CopyLink&appuid=646a8ca2000000000f006c94&apptime=1726950888&share_id=adcee4fb2111492a953479d5aad37577" title="Xiaohongshu" class="contact-link">
-                        <span class="terminal-prompt">></span> Xiaohongshu
-                     </a>
-                  </div>
-               </div>
+            <div class="service-item">
+               <div class="service-badge">FREE</div>
+               <div class="service-name">University Mentoring and Advising</div>
+            </div>
+
+            <div class="service-item">
+               <div class="service-badge">NEGOTIABLE</div>
+               <div class="service-name">Paper Advising</div>
+            </div>
+
+            <div class="service-item">
+               <div class="service-badge">FREE</div>
+               <div class="service-name">Paper Collaboration</div>
+            </div>
+
+            <div class="service-item">
+               <div class="service-badge">NEGOTIABLE</div>
+               <div class="service-name">Patent Advising</div>
+            </div>
+
+            <div class="service-item">
+               <div class="service-badge">FREE</div>
+               <div class="service-name">Patent Collaboration</div>
+            </div>
+
+            <div class="service-item">
+               <div class="service-badge">ADVANCE + ROYALTY</div>
+               <div class="service-name">Book Authoring</div>
+            </div>
+
+            <div class="service-item">
+               <div class="service-badge">FREE</div>
+               <div class="service-name">Book Review</div>
+            </div>
+
+            <div class="service-item">
+               <div class="service-badge">$500 / HOUR</div>
+               <div class="service-name">Organization Behavior Mentoring</div>
+            </div>
+
+            <div class="service-item">
+               <div class="service-badge">$300 / HOUR</div>
+               <div class="service-name">Mock Interview - System Design Q&A</div>
+            </div>
+
+            <div class="service-item">
+               <div class="service-badge">$260 / HOUR</div>
+               <div class="service-name">Mock Interview - Behavioral Questions</div>
+            </div>
+
+            <div class="service-item">
+               <div class="service-badge">$225 / HOUR</div>
+               <div class="service-name">Career Management / Team Match / Selection Guide</div>
+            </div>
+
+            <div class="service-item">
+               <div class="service-badge">$200 / HOUR</div>
+               <div class="service-name">Resume Polishing</div>
+            </div>
+
+            <div class="service-item">
+               <div class="service-badge">FREE</div>
+               <div class="service-name">Referral (Prerequisite: Resume and background must meet role requirements)</div>
             </div>
          </div>
-      </div>
-      <footer class="fixed-bottom">
-         <div class="container mt-0 d-flex justify-content-between align-items-center">
-            <div>© Copyright 2026 PENG ANDY STUDIO LLC.</div>
-         </div>
-      </footer>
-      <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script> <script defer src="/assets/js/masonry.js" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js"></script> <script defer src="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.js"></script> <script src="/assets/js/no_defer.js"></script> <script defer src="/assets/js/common.js"></script> <script defer src="/assets/js/copy_code.js" type="text/javascript"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script type="text/javascript">window.MathJax={tex:{tags:"ams"}};</script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script> <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script type="text/javascript">function progressBarSetup(){"max"in document.createElement("progress")?(initializeProgressElement(),$(document).on("scroll",function(){progressBar.attr({value:getCurrentScrollPosition()})}),$(window).on("resize",initializeProgressElement)):(resizeProgressBar(),$(document).on("scroll",resizeProgressBar),$(window).on("resize",resizeProgressBar))}function getCurrentScrollPosition(){return $(window).scrollTop()}function initializeProgressElement(){let e=$("#navbar").outerHeight(!0);$("body").css({"padding-top":e}),$("progress-container").css({"padding-top":e}),progressBar.css({top:e}),progressBar.attr({max:getDistanceToScroll(),value:getCurrentScrollPosition()})}function getDistanceToScroll(){return $(document).height()-$(window).height()}function resizeProgressBar(){progressBar.css({width:getWidthPercentage()+"%"})}function getWidthPercentage(){return getCurrentScrollPosition()/getDistanceToScroll()*100}const progressBar=$("#progress");window.onload=function(){setTimeout(progressBarSetup,50)};</script> 
-      <!-- MDB -->
-      <script type="text/javascript" src="js/mdb.min.js"></script>
-      <!-- Custom scripts -->
-      <script type="text/javascript"></script>
-   </body>
-</html>
+      </section>
 
+      <!-- Action Cards -->
+      <div class="action-cards">
+         <div class="action-card">
+            <h3>Schedule a Call</h3>
+            <a href="https://calendly.com/pengandy" target="_blank">Book Session →</a>
+         </div>
+
+         <div class="action-card">
+            <h3>Payment</h3>
+            <a href="https://www.paypal.biz/pengandystudio" target="_blank">PayPal →</a>
+         </div>
+
+         <div class="action-card">
+            <h3>Contact</h3>
+            <a href="mailto:pengandy.build@gmail.com">Email →</a>
+         </div>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="disclaimer">
+         <h3>Disclaimer</h3>
+         <p>We do not provide any form or type of professional services that would violate Amazon's Conflict of Interest Policy.</p>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+         <div>© Copyright 2026 PENG ANDY STUDIO LLC.</div>
+      </footer>
+   </div>
+
+   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+</body>
+</html>
