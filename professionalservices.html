@@ -35,100 +35,85 @@
       <link rel="canonical" href="https://pengandy.com/professionalservices">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
       <style>
-         /* Nature-inspired modern design */
+         /* Clean, Modern, Professional, Technical Design */
          :root {
-            --nature-green: #6B8E23;
-            --nature-sage: #8FBC8F;
-            --nature-moss: #556B2F;
-            --nature-cream: #F5F5DC;
-            --nature-earth: #DEB887;
-            --nature-sky: #E8F4F8;
-            --shadow-soft: 0 4px 12px rgba(107, 142, 35, 0.1);
-            --shadow-medium: 0 6px 20px rgba(107, 142, 35, 0.15);
+            --primary: #2C3E50;
+            --secondary: #34495E;
+            --accent: #3498DB;
+            --text: #2C3E50;
+            --text-light: #7F8C8D;
+            --border: #E8ECEF;
+            --bg: #FFFFFF;
+            --bg-alt: #F8F9FA;
          }
 
          body {
-            background: linear-gradient(135deg, #F5F5DC 0%, #E8F4F8 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-alt);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
          }
 
          .container {
-            max-width: 1100px;
+            max-width: 960px;
          }
 
-         /* Language toggle styling */
+         /* Language toggle */
          .lang-en, .lang-zh {
-            transition: opacity 0.3s ease-in-out;
+            transition: none;
          }
 
          .btn-group {
-            background: white;
-            border-radius: 50px;
-            box-shadow: var(--shadow-soft);
-            padding: 4px;
-            overflow: hidden;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
          }
 
          .btn-group .btn {
-            min-width: 120px;
-            border-radius: 50px;
+            min-width: 100px;
             border: none;
-            padding: 10px 24px;
-            transition: all 0.3s ease;
-            color: var(--nature-moss);
+            border-radius: 0;
+            padding: 8px 20px;
+            color: var(--text);
             background: transparent;
+            font-size: 0.9rem;
+            font-weight: 500;
          }
 
-         .btn-group .btn:hover {
-            background: var(--nature-sky);
+         .btn-group .btn:first-child {
+            border-radius: 4px 0 0 4px;
+         }
+
+         .btn-group .btn:last-child {
+            border-radius: 0 4px 4px 0;
          }
 
          .btn-group .btn.active {
-            font-weight: 600;
-            background: linear-gradient(135deg, var(--nature-green) 0%, var(--nature-sage) 100%);
-            color: white;
-            box-shadow: var(--shadow-soft);
+            background: var(--primary);
+            color: var(--bg);
          }
 
-         /* Card styling with nature theme */
+         /* Card styling */
          .card {
-            border: none;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow-medium);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
-         }
-
-         .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(107, 142, 35, 0.2);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: var(--bg);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
          }
 
          .card-title {
-            color: var(--nature-moss);
-            position: relative;
-            padding-bottom: 12px;
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
          }
 
-         .card-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--nature-green) 0%, var(--nature-sage) 100%);
-            border-radius: 2px;
-         }
-
-         /* List items with modern styling */
+         /* List items */
          .list-group-item {
             border: none;
-            border-bottom: 1px solid rgba(107, 142, 35, 0.1);
-            padding: 20px 16px;
-            transition: all 0.3s ease;
+            border-bottom: 1px solid var(--border);
+            padding: 1.25rem 1rem;
             background: transparent;
          }
 
@@ -137,122 +122,78 @@
          }
 
          .list-group-item:hover {
-            background: linear-gradient(90deg, rgba(143, 188, 143, 0.05) 0%, transparent 100%);
-            transform: translateX(4px);
+            background: var(--bg-alt);
          }
 
-         /* Badge styling with nature colors */
+         /* Badge styling */
          .badge {
-            border-radius: 12px;
-            padding: 8px 12px;
+            border-radius: 3px;
+            padding: 6px 10px;
             font-size: 0.75rem;
             font-weight: 600;
-            letter-spacing: 0.3px;
-            background: linear-gradient(135deg, var(--nature-green) 0%, var(--nature-sage) 100%);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            box-shadow: var(--shadow-soft);
-            text-transform: none;
+            background: var(--primary);
+            color: var(--bg);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
          }
 
          .badge.danger-color-dark {
-            background: linear-gradient(135deg, var(--nature-green) 0%, var(--nature-sage) 100%);
+            background: var(--primary);
          }
 
          /* Title styling */
          .title {
-            color: var(--nature-moss);
-            font-size: 1.05rem;
-            line-height: 1.6;
+            color: var(--text);
+            font-size: 1rem;
+            font-weight: 500;
          }
 
          /* Disclaimer section */
          .font-italic {
-            color: var(--nature-green);
+            color: var(--primary);
             font-weight: 600;
+            font-style: normal;
          }
 
-         .subitems .subitem {
-            color: #555;
-            line-height: 1.8;
+         .subitems {
+            margin: 0.5rem 0 0 0;
+            padding-left: 1.5rem;
+         }
+
+         .subitems li {
+            color: var(--text-light);
+            font-size: 0.9rem;
          }
 
          /* Links */
          a {
-            color: var(--nature-green);
+            color: var(--accent);
             text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
          }
 
          a:hover {
-            color: var(--nature-moss);
+            text-decoration: underline;
          }
 
-         a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--nature-green);
-            transition: width 0.3s ease;
+         /* Clean table layout */
+         .table-cv {
+            margin: 0;
          }
 
-         a:hover::after {
-            width: 100%;
-         }
-
-         /* Organic decorative elements */
-         .card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(143, 188, 143, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-         }
-
-         /* Smooth animations */
-         @keyframes fadeInUp {
-            from {
-               opacity: 0;
-               transform: translateY(20px);
-            }
-            to {
-               opacity: 1;
-               transform: translateY(0);
-            }
-         }
-
-         .card {
-            animation: fadeInUp 0.6s ease-out;
-         }
-
-         .card:nth-child(2) {
-            animation-delay: 0.1s;
-         }
-
-         .card:nth-child(3) {
-            animation-delay: 0.2s;
-         }
-
-         .card:nth-child(4) {
-            animation-delay: 0.3s;
-         }
-
-         /* Responsive adjustments */
+         /* Responsive */
          @media (max-width: 768px) {
             .badge {
                font-size: 0.65rem;
-               padding: 6px 10px;
+               padding: 5px 8px;
             }
 
             .title {
-               font-size: 0.95rem;
+               font-size: 0.9rem;
+            }
+
+            .card-title {
+               font-size: 1.25rem;
             }
          }
       </style>
@@ -288,7 +229,10 @@
                                     <table class="table-cv">
                                        <tbody>
                                           <tr>
-                                             <td> <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px;">按市场同级别时薪</span> </td>
+                                             <td> <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px;">
+                                                <span class="lang-en">Market Rate</span>
+                                                <span class="lang-zh" style="display: none;">按市场同级别时薪</span>
+                                             </span> </td>
                                           </tr>
                                        </tbody>
                                     </table>
@@ -345,7 +289,10 @@
                                     <table class="table-cv">
                                        <tbody>
                                           <tr>
-                                             <td> <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px;">价格面议</span> </td>
+                                             <td> <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px;">
+                                                <span class="lang-en">Negotiable</span>
+                                                <span class="lang-zh" style="display: none;">价格面议</span>
+                                             </span> </td>
                                           </tr>
                                        </tbody>
                                     </table>
@@ -383,7 +330,10 @@
                                     <table class="table-cv">
                                        <tbody>
                                           <tr>
-                                             <td> <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px;">价格面议</span> </td>
+                                             <td> <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px;">
+                                                <span class="lang-en">Negotiable</span>
+                                                <span class="lang-zh" style="display: none;">价格面议</span>
+                                             </span> </td>
                                           </tr>
                                        </tbody>
                                     </table>
