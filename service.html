@@ -69,8 +69,8 @@
                </div>
              `;
              
-             // Then load the actual content
-             fetch('/components/service-content.html')
+             // Then load the actual content (with cache busting)
+             fetch('/components/service-content.html?v=' + Date.now())
                .then(response => response.text())
                .then(html => {
                  const contentPlaceholder = document.getElementById('service-content-placeholder');
