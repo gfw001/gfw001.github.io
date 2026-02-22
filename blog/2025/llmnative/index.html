@@ -62,6 +62,22 @@
       margin-right: auto;
       width: 50%;
     }
+    /* 2026 Comment Note */
+    .comment-note-2026 {
+      margin: 12px 0 0 0;
+      padding: 8px 14px;
+      border-left: 2px solid #b0c4de;
+      background: linear-gradient(to right, #f5f8fb, transparent);
+      font-size: 0.88em;
+      color: #5a6a7a;
+      line-height: 1.5;
+      border-radius: 0 3px 3px 0;
+    }
+    .comment-note-2026 .note-date {
+      font-size: 0.82em;
+      color: #8a9bae;
+      letter-spacing: 0.3px;
+    }
    </style>
    <body class="fixed-top-nav" data-page="blog">
       <div id="navbar-placeholder"></div>
@@ -127,8 +143,11 @@
               Request Variance: LLM requests vary in size and resource use, RAG → long inputs, short outputs, Reasoning → short inputs, long outputs. This unevenness causes overloaded replicas, leading to longer inter-token latency.
             </li>
             <li>
-              Decode ≠ Prefill: LLM inference is two workloads, Prefill is compute-bound and Decode is memory-bound. Prefill needs a lot of computing resources to convert input into data structure that gets handed off to the next process. Decode (token generation) is that the model generates each token sequentially one at a time. And this puts a very different set of demands on AI infrastructure. Each time a token is generated, the entire model has to be read from memory, but only a small amount of compute is used. For this reason, token generation puts lots of demand on memory but only a small amount of compute. And for agentic AI scenario, customers care about fast prefill and really fast token generation. Standard deployments run both phases on the same GPU—inefficient. Disaggregated serving become necessary, separating these phases to independently scale and optimize them. 
+              Decode ≠ Prefill: LLM inference is two workloads, Prefill is compute-bound and Decode is memory-bound. Prefill needs a lot of computing resources to convert input into data structure that gets handed off to the next process. Decode (token generation) is that the model generates each token sequentially one at a time. And this puts a very different set of demands on AI infrastructure. Each time a token is generated, the entire model has to be read from memory, but only a small amount of compute is used. For this reason, token generation puts lots of demand on memory but only a small amount of compute. And for agentic AI scenario, customers care about fast prefill and really fast token generation. Standard deployments run both phases on the same GPU—inefficient. Disaggregated serving become necessary, separating these phases to independently scale and optimize them.
             </li>
+            <div class="comment-note-2026">
+              <span class="note-date">Feb 2026 ·</span> Amazon published an article, <strong>"What is AI inference? The backbone of the AI revolution,"</strong> that explains this process in a clear, easy-to-understand way.
+            </div>
             <li>
               Prompt caching essential. Many workloads are multi-turn (chat agents, tool-use, code completion). Routing to replicas with cached context avoids redundant prefill computation. This improves tail latencies by orders of magnitude when done right.
             </li>
