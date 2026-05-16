@@ -230,6 +230,47 @@
 
             <br>
 
+            <h2>4. My vLLM Community Engagements (2026)</h2>
+
+            <p>
+               A running log of my own contributions and discussions across <a href="https://github.com/vllm-project" target="_blank">vllm-project</a> repositories, tracked under my GitHub handle <a href="https://github.com/pymhq" target="_blank">@pymhq</a>. Split by quarter to make the cadence easier to follow.
+            </p>
+
+            <h3>Q2 2026 (Apr&ndash;Jun)</h3>
+            <ul>
+               <li>
+                  <strong>May 14</strong> &mdash; <em>Issue authored</em>: <a href="https://github.com/vllm-project/vllm/issues/42687" target="_blank">vllm#42687 &mdash; [Bug] Gemma-4 fails to start on GPUs with &lt;70GB memory due to <code>max_num_batched_tokens</code> &lt; multimodal token size</a>. Capacity-planning footgun that hits any sub-H100 deployment of Gemma-4 with images.
+               </li>
+               <li>
+                  <strong>May 13</strong> &mdash; <em>PR review</em>: <a href="https://github.com/vllm-project/vllm/pull/42536" target="_blank">vllm#42536 &mdash; Remove verifier model type check in speculative config</a>. Reviewed and commented; PR landed.
+               </li>
+            </ul>
+
+            <h3>Q1 2026 (Jan&ndash;Mar)</h3>
+            <ul>
+               <li>
+                  <strong>Mar 30</strong> &mdash; <em>RFC comment</em>: <a href="https://github.com/vllm-project/speculators/issues/335" target="_blank">speculators#335 &mdash; [RFC] Use vLLM's <code>extract_hidden_states</code> system (and enable online training)</a>. Discussed wiring the hidden-states extraction path (vllm#33118) into speculators for online-training workflows.
+               </li>
+               <li>
+                  <strong>Mar 12</strong> &mdash; <em>RFC comment</em>: <a href="https://github.com/vllm-project/speculators/issues/292" target="_blank">speculators#292 &mdash; [RFC] Add P-EAGLE support in training</a>. Contributed to the design discussion for training-side P-EAGLE in the speculators library.
+               </li>
+               <li>
+                  <strong>Mar 10</strong> &mdash; <em>Issue authored</em>: <a href="https://github.com/vllm-project/vllm/issues/36718" target="_blank">vllm#36718 &mdash; [Bug] vLLM 0.15.0 startup on H200 failed at deep_gemm</a>. Production-deployment regression on H200; reported with reproduction details.
+               </li>
+               <li>
+                  <strong>Feb 28</strong> &mdash; <em>Discussion comment</em>: <a href="https://github.com/vllm-project/vllm/issues/26679" target="_blank">vllm#26679 &mdash; [Feature] Ensure output consistency when using LoRA with Eagle3 Speculative Decoding</a>. Weighed in on the LoRA &times; EAGLE-3 acceptance-length question that fed into the Feb 23 SIG discussion.
+               </li>
+               <li>
+                  <strong>Feb 16</strong> &mdash; <em>Issue authored</em>: <a href="https://github.com/vllm-project/vllm/issues/34643" target="_blank">vllm#34643 &mdash; [Bug] vLLM leaves orphan processes when parent dies on OOM</a>. Surfaced while stress-testing Qwen3 30B Coder; also referenced in the Feb 16 SIG meeting above.
+               </li>
+            </ul>
+
+            <p style="font-size: 0.9em; color: #555;">
+               Engagement to date skews toward bug reports from production SageMaker deployments and design discussion on the speculators side. PR contributions are next on the list.
+            </p>
+
+            <br>
+
 
             <!-- ========================================== -->
             <!-- YOUR CONTENT ENDS HERE -->
