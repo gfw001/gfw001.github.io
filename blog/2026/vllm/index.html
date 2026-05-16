@@ -174,6 +174,38 @@
                <li><strong>Feb 16</strong> &mdash; <a href="https://github.com/vllm-project/vllm/issues/34643" target="_blank">vllm#34643</a> (issue): vLLM leaves orphan processes when parent dies on OOM. Surfaced during Qwen3 30B Coder testing; raised at the Feb 16 SIG.</li>
             </ul>
 
+            <h3>Mar 30 &mdash; Extracting Hidden States from vLLM</h3>
+
+            <p>
+               The vLLM team published <a href="https://vllm.ai/blog/2026-03-30-extract-hidden-states" target="_blank">Extracting hidden states from vLLM</a> (by Fynn Schmitt-Ulms), introducing a native hidden-states extraction system landing in vLLM 0.18.0+. It closes the long-standing gap that forced downstream training libraries to either swap in a separate transformer implementation (losing vLLM's performance) or patch vLLM internals (creating maintenance burden) just to capture intermediate-layer representations.
+            </p>
+
+            <div class="release-note">
+               <strong>How it works</strong>
+               <ul style="margin-top: 8px;">
+                  <li>Reuses existing Eagle-3 model pathways and the KV Connector API &mdash; no bespoke hooks per model.</li>
+                  <li>Stores hidden states in dummy draft-model attention layers via vLLM's paged memory system.</li>
+                  <li>Flexible output sinks: disk or device-to-device transfer.</li>
+                  <li>No overhead on standard inference workloads when the feature is off.</li>
+               </ul>
+            </div>
+
+            <p>
+               As a concrete sizing example, Qwen3-8B with 8k tokens across 4 layers produces 268 MB of FP16 hidden-state data &mdash; manageable for offline capture, and the motivation behind ongoing work on async writes and device-to-device connectors for multi-node training scenarios.
+            </p>
+
+            <p>
+               <strong>Why it matters for speculative decoding:</strong> hidden states are the training signal for EAGLE-style draft heads (including P-EAGLE). A performant, native extraction path is the prerequisite for online training of these draft models &mdash; which is exactly what <a href="https://github.com/vllm-project/speculators/issues/335" target="_blank">speculators#335</a> is wiring up on the training side.
+            </p>
+
+            <p>
+               <strong>Read more:</strong>
+            </p>
+            <ul>
+               <li><a href="https://vllm.ai/blog/2026-03-30-extract-hidden-states" target="_blank">vLLM blog: Extracting hidden states from vLLM</a></li>
+               <li>RFC: <a href="https://github.com/vllm-project/vllm/issues/33118" target="_blank">vllm#33118</a> &mdash; hidden states extraction</li>
+            </ul>
+
             <h3>Feb 26 &mdash; Speculative Decoding: P-EAGLE Goes Live in vLLM 0.16.0</h3>
 
             <p>
