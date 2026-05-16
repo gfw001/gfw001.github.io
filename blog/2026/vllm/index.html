@@ -133,7 +133,7 @@
             </header>
             <article class="post-content">
                <div id="markdown-content">
-                  <p>A roundup of community contributions and milestones from the vLLM ecosystem in February 2026.</p>
+                  <p>A timeline of community contributions and milestones from the vLLM ecosystem in 2026 — big-feature releases alongside my own engagements as <a href="https://github.com/pymhq" target="_blank">@pymhq</a>, organized by quarter (newest first).</p>
                </div>
             </article>
             <p style="font-size: 0.82em; color: #888; line-height: 1.6;">
@@ -147,10 +147,56 @@
             <!-- YOUR CONTENT STARTS HERE -->
             <!-- ========================================== -->
 
-            <h2>1. Speculative Decoding: P-EAGLE Goes Live in vLLM 0.16.0</h2>
+            <h2>Q2 2026 (Apr&ndash;Jun)</h2>
 
             <p>
-               On February 26, 2026, <a href="https://github.com/vllm-project/vllm/releases/tag/v0.16.0" target="_blank">vLLM 0.16.0</a> shipped with P-EAGLE support — a meaningful milestone for speculative decoding in production inference. The release bundles several related improvements:
+               Production-deployment validation and a small upstream spec-decoding cleanup so far this quarter.
+            </p>
+
+            <h3>May 14 &mdash; vllm#42687: Gemma-4 startup bug on sub-H100 GPUs</h3>
+            <p>
+               I filed <a href="https://github.com/vllm-project/vllm/issues/42687" target="_blank">vllm#42687</a>: Gemma-4 fails to start on GPUs with &lt;70GB memory because the default <code>max_num_batched_tokens</code> falls below the multimodal token-size threshold. A capacity-planning footgun for any sub-H100 multimodal deployment.
+            </p>
+
+            <h3>May 13 &mdash; vllm#42536: speculative-config cleanup (PR review)</h3>
+            <p>
+               I reviewed <a href="https://github.com/vllm-project/vllm/pull/42536" target="_blank">vllm#42536 &mdash; Remove verifier model type check in speculative config</a>. The PR removes a stale guard now that the speculator stack handles the check itself. Merged.
+            </p>
+
+            <br>
+            <hr>
+            <br>
+
+            <h2>Q1 2026 (Jan&ndash;Mar)</h2>
+
+            <p>
+               The launch quarter &mdash; vLLM 0.16.0 shipped P-EAGLE on Feb 26, the Model Acceleration SIG kicked off mid-month, and efficient multi-LoRA serving for MoE models landed alongside the release. Spec-decoding RFCs and deployment-validation bug reports filled out the rest of the quarter.
+            </p>
+
+            <h3>Mar 30 &mdash; speculators#335: extract_hidden_states + online training (RFC)</h3>
+            <p>
+               I weighed in on <a href="https://github.com/vllm-project/speculators/issues/335" target="_blank">speculators#335</a>, which wires the hidden-states extraction path from <a href="https://github.com/vllm-project/vllm/issues/33118" target="_blank">vllm#33118</a> into the speculators training loop &mdash; a prerequisite for online training of EAGLE-style draft heads.
+            </p>
+
+            <h3>Mar 12 &mdash; speculators#292: P-EAGLE support in training (RFC)</h3>
+            <p>
+               I commented on <a href="https://github.com/vllm-project/speculators/issues/292" target="_blank">speculators#292 &mdash; Add P-EAGLE support in training</a>, which carries the parallel-drafting collapse back into the training recipe.
+            </p>
+
+            <h3>Mar 10 &mdash; vllm#36718: H200 startup bug at deep_gemm</h3>
+            <p>
+               I filed <a href="https://github.com/vllm-project/vllm/issues/36718" target="_blank">vllm#36718</a>: vLLM 0.15.0 startup on H200 fails inside deep_gemm. Production-deployment regression, reported with reproduction details.
+            </p>
+
+            <h3>Feb 28 &mdash; vllm#26679: LoRA &times; Eagle3 output consistency</h3>
+            <p>
+               I picked up the thread from the Feb 23 SIG meeting in <a href="https://github.com/vllm-project/vllm/issues/26679" target="_blank">vllm#26679 &mdash; Ensure output consistency when using LoRA with Eagle3 Speculative Decoding</a>.
+            </p>
+
+            <h3>Feb 26 &mdash; Speculative Decoding: P-EAGLE Goes Live in vLLM 0.16.0</h3>
+
+            <p>
+               <a href="https://github.com/vllm-project/vllm/releases/tag/v0.16.0" target="_blank">vLLM 0.16.0</a> shipped with P-EAGLE support &mdash; a meaningful milestone for speculative decoding in production inference. The release bundles several related improvements:
             </p>
 
             <div class="release-note">
@@ -162,14 +208,14 @@
                </ul>
             </div>
 
-            <h3>What is P-EAGLE?</h3>
+            <h4>What is P-EAGLE?</h4>
             <p>
-               P-EAGLE (Parallel-Drafting EAGLE) rethinks the drafting step in EAGLE-style speculative decoding. Where EAGLE generates K draft tokens through K sequential forward passes, P-EAGLE collapses them into a <em>single</em> forward pass — cutting the overhead of the draft phase significantly. The result is a throughput lift that comes essentially for free once the checkpoints are in place.
+               P-EAGLE (Parallel-Drafting EAGLE) rethinks the drafting step in EAGLE-style speculative decoding. Where EAGLE generates K draft tokens through K sequential forward passes, P-EAGLE collapses them into a <em>single</em> forward pass &mdash; cutting the overhead of the draft phase significantly. The result is a throughput lift that comes essentially for free once the checkpoints are in place.
             </p>
 
             <p>
-               <span class="perf-badge">1.36× output tokens/sec</span> on GPT-OSS 120B &nbsp;
-               <span class="perf-badge">1.17× output tokens/sec</span> on Qwen3-Coder 30B
+               <span class="perf-badge">1.36&times; output tokens/sec</span> on GPT-OSS 120B &nbsp;
+               <span class="perf-badge">1.17&times; output tokens/sec</span> on Qwen3-Coder 30B
             </p>
             <p style="font-size: 0.9em; color: #555;">
                Both models match the acceptance length of autoregressive EAGLE-3 in vLLM benchmarks, with no quality regression.
@@ -181,54 +227,15 @@
             <ul>
                <li>Preprint: <a href="http://arxiv.org/abs/2602.01469" target="_blank">arxiv.org/abs/2602.01469</a></li>
                <li>HuggingFace checkpoints:
-                  <a href="https://huggingface.co/amazon/gpt-oss-120b-p-eagle" target="_blank">amazon/gpt-oss-120b-p-eagle</a> &nbsp;·&nbsp;
+                  <a href="https://huggingface.co/amazon/gpt-oss-120b-p-eagle" target="_blank">amazon/gpt-oss-120b-p-eagle</a> &nbsp;&middot;&nbsp;
                   <a href="https://huggingface.co/amazon/Qwen3-Coder-30B-A3B-Instruct-P-EAGLE" target="_blank">amazon/Qwen3-Coder-30B-A3B-Instruct-P-EAGLE</a>
                </li>
             </ul>
 
-            <p>
-               On the design side, two open RFCs in the <a href="https://github.com/vllm-project/speculators" target="_blank">speculators</a> library extend P-EAGLE further. I weighed in on both: <a href="https://github.com/vllm-project/speculators/issues/292" target="_blank">speculators#292 &mdash; Add P-EAGLE support in training</a> (Mar 12), which carries the drafting collapse back into the training recipe, and <a href="https://github.com/vllm-project/speculators/issues/335" target="_blank">speculators#335 &mdash; Use vLLM's <code>extract_hidden_states</code> system (and enable online training)</a> (Mar 30), which wires the hidden-states path from <a href="https://github.com/vllm-project/vllm/issues/33118" target="_blank">vllm#33118</a> into the training loop.
-            </p>
+            <h3>Feb 26 &mdash; Speeding Up Multi-LoRA Serving for MoE Models</h3>
 
             <p>
-               Downstream config cleanup has continued in vLLM main as well &mdash; I reviewed <a href="https://github.com/vllm-project/vllm/pull/42536" target="_blank">vllm#42536 &mdash; Remove verifier model type check in speculative config</a> (May 13, merged), which removes a stale guard now that the speculator stack handles the check itself.
-            </p>
-
-            <br>
-
-            <h2>2. vLLM SIG: Model Acceleration (Quantization &amp; Speculators)</h2>
-
-            <p>
-               February marked the launch of the <strong>Model Acceleration SIG</strong> within the vLLM community — a dedicated working group covering quantization and speculative decoding. Two meetings took place this month.
-            </p>
-
-            <div class="sig-box">
-               <div class="sig-date">Feb 16, 2026 &mdash; Inaugural Meeting &nbsp;<span style="font-size:0.85em;font-weight:400;color:#888;">(Year of the Horse 🐴)</span></div>
-               <ul>
-                  <li>Discussed the hidden states extraction RFC: <a href="https://github.com/vllm-project/vllm/issues/33118" target="_blank">#33118</a> — a prerequisite for enabling EAGLE-style draft heads without model-specific hooks.</li>
-                  <li>I reported an OOM-handling bug surfaced during testing with Qwen3 30B Coder: <a href="https://github.com/vllm-project/vllm/issues/34643" target="_blank">#34643</a>.</li>
-               </ul>
-               <img src="/assets/blog/vllm/sig-meeting-0216.png" alt="vLLM SIG Model Acceleration inaugural meeting recording — Feb 16, 2026" class="img-fluid" style="max-width: 100%; height: auto; margin-top: 12px; border-radius: 4px;">
-            </div>
-
-            <div class="sig-box">
-               <div class="sig-date">Feb 23, 2026 &mdash; Second Meeting</div>
-               <ul>
-                  <li>Explored the interaction between LoRA adapters and EAGLE draft heads — specifically how LoRA fine-tuning affects acceptance length and what that means for speculative decoding pipelines. I picked up the thread on the output-consistency side in <a href="https://github.com/vllm-project/vllm/issues/26679" target="_blank">vllm#26679</a> (Feb 28).</li>
-                  <li>Discussed feasibility of integrating these patterns upstream in vLLM.</li>
-               </ul>
-            </div>
-
-            <p style="font-size: 0.92em; color: #555;">
-               Outside the SIG cadence, two more deployment-validation bugs surfaced from our production SageMaker stacks and were filed upstream: <a href="https://github.com/vllm-project/vllm/issues/36718" target="_blank">vllm#36718 &mdash; vLLM 0.15.0 startup on H200 failed at deep_gemm</a> (Mar 10) and <a href="https://github.com/vllm-project/vllm/issues/42687" target="_blank">vllm#42687 &mdash; Gemma-4 fails to start on GPUs with &lt;70GB memory due to <code>max_num_batched_tokens</code> &lt; multimodal token size</a> (May 14).
-            </p>
-
-            <br>
-
-            <h2>3. Speeding Up Multi-LoRA Serving for MoE Models</h2>
-
-            <p>
-               Also on February 26, the vLLM team published work on efficient multi-LoRA serving for Mixture-of-Experts models — a problem that grows quickly in complexity as the number of fine-tuned variants scales. The approach targets the specific characteristics of MoE routing to reduce overhead when switching between adapters.
+               Also on Feb 26, the vLLM team published work on efficient multi-LoRA serving for Mixture-of-Experts models &mdash; a problem that grows quickly in complexity as the number of fine-tuned variants scales. The approach targets the specific characteristics of MoE routing to reduce overhead when switching between adapters.
             </p>
 
             <p>
@@ -239,6 +246,31 @@
                <li><a href="https://blog.vllm.ai/2026/02/26/multi-lora.html" target="_blank">vLLM blog: Multi-LoRA Serving</a></li>
                <li><a href="https://aws.amazon.com/blogs/machine-learning/efficiently-serve-dozens-of-fine-tuned-models-with-vllm-on-amazon-sagemaker-ai-and-amazon-bedrock/" target="_blank">Amazon Science blog: Efficiently Serve Dozens of Fine-Tuned Models with vLLM on Amazon SageMaker AI and Amazon Bedrock</a></li>
             </ul>
+
+            <h3>Feb 23 &mdash; vLLM SIG Model Acceleration: Second Meeting</h3>
+
+            <div class="sig-box">
+               <div class="sig-date">Feb 23, 2026 &mdash; Second Meeting</div>
+               <ul>
+                  <li>Explored the interaction between LoRA adapters and EAGLE draft heads &mdash; specifically how LoRA fine-tuning affects acceptance length and what that means for speculative decoding pipelines.</li>
+                  <li>Discussed feasibility of integrating these patterns upstream in vLLM.</li>
+               </ul>
+            </div>
+
+            <h3>Feb 16 &mdash; vLLM SIG Model Acceleration: Inaugural Meeting (+ vllm#34643)</h3>
+
+            <p>
+               February marked the launch of the <strong>Model Acceleration SIG</strong> within the vLLM community &mdash; a dedicated working group covering quantization and speculative decoding.
+            </p>
+
+            <div class="sig-box">
+               <div class="sig-date">Feb 16, 2026 &mdash; Inaugural Meeting &nbsp;<span style="font-size:0.85em;font-weight:400;color:#888;">(Year of the Horse 🐴)</span></div>
+               <ul>
+                  <li>Discussed the hidden states extraction RFC: <a href="https://github.com/vllm-project/vllm/issues/33118" target="_blank">#33118</a> &mdash; a prerequisite for enabling EAGLE-style draft heads without model-specific hooks.</li>
+                  <li>I reported an OOM-handling bug surfaced during testing with Qwen3 30B Coder: <a href="https://github.com/vllm-project/vllm/issues/34643" target="_blank">#34643</a>.</li>
+               </ul>
+               <img src="/assets/blog/vllm/sig-meeting-0216.png" alt="vLLM SIG Model Acceleration inaugural meeting recording — Feb 16, 2026" class="img-fluid" style="max-width: 100%; height: auto; margin-top: 12px; border-radius: 4px;">
+            </div>
 
 
             <!-- ========================================== -->
