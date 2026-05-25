@@ -304,11 +304,15 @@
             </ul>
 
             <p>
-               The heights aren't arbitrary &mdash; each cycle absorbed and stood on the previous one. NLP's understanding problem became a sub-task of LLMs; cloud-native infrastructure became the substrate LLMs are served and sandboxed on. You can even read it in the institutions: the Linux Foundation has carried the baton across the right half of this chart &mdash; from the CNCF (cloud native) to the PyTorch Foundation and now an Agentic AI Foundation. The ladder only goes up.
+               The heights aren't arbitrary &mdash; each cycle absorbed and stood on the previous one. NLP's understanding problem became a sub-task of LLMs; cloud-native infrastructure became the substrate LLMs are served and sandboxed on. You can even read it in the institutions: the Linux Foundation has carried the baton across the right half of this chart &mdash; from the CNCF (cloud native) to the PyTorch Foundation and now the Agentic AI Foundation (AAIF). The ladder only goes up.
             </p>
 
             <p>
-               <strong>So what's the next step on the ladder?</strong> If you read the invited talks as tea leaves, the signal is consistent: the next cycle isn't a bigger model, it's <em>the system designing itself</em>. Lidong Zhou's "system intelligence," Mark Saroufim's AI-written kernels, and Roger Wang's AI-generated pull requests all point the same direction &mdash; AI moving from the <em>workload</em> running on our systems to the <em>author</em> of those systems. Speculative decoding is a fitting bellwether: a technique that started as one inference trick is now a whole co-designed space spanning training, serving, MoE routing, and laptop NPUs. The cycles get shorter, taller, and more self-referential each time. My bet for the next plateau: <strong>self-optimizing, agent-built systems</strong> &mdash; where the draft-then-verify pattern we're perfecting for tokens gets applied to the code and configuration of the systems themselves.
+               <strong>So what's the next step on the ladder?</strong> My bet points past the screen and into the physical world: <strong>robotics, world models, and embodied AI</strong> &mdash; systems that don't just generate tokens but perceive, predict, and act. The ingredients are converging: LLMs supply the reasoning prior, world models supply simulation and prediction, and the cloud-native + agentic substrate (right down to Firecracker microVMs) supplies the runtime.
+            </p>
+
+            <p>
+               But here's the honest catch, and it's why this plateau hasn't crystallized yet: the <em>definition</em> is still wide open. Embodied AI is a Hamlet &mdash; <span lang="zh">一千个人眼里有一千个哈姆雷特</span> (a thousand people, a thousand Hamlets). Ask ten builders what it means and you'll get ten answers: a humanoid? a self-driving stack? a world model you can query? an agent with an API and a gripper? Each of the previous three cycles eventually crystallized around a clear <em>unit of work</em> &mdash; an intent, a container, a token. The next one won't truly take off until it finds its unit. Until then, the MLSys-style work above &mdash; efficient inference, hardware/software co-design, self-optimizing infrastructure &mdash; is exactly what lays the track for whichever definition ends up winning.
             </p>
 
             <br>
