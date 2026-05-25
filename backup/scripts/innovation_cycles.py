@@ -63,15 +63,15 @@ def cloud(x):
 # accelerating floor, then the vertical RLHF/ChatGPT takeoff in late 2022.
 # Each (year, sigma, amplitude): a small crest that recedes (波峰波谷).
 LLM_SPIKES = [
-    (2016.2, 0.30, 0.22),   # AlphaGo defeats Lee Sedol (Mar 2016)
-    (2017.95, 0.28, 0.13),  # AlphaZero (Dec 2017)
-    (2019.10, 0.30, 0.12),  # AlphaStar / OpenAI Five (2019)
+    (2016.2, 0.32, 0.24),   # AlphaGo defeats Lee Sedol (Mar 2016) -- the peak
+    (2017.95, 0.26, 0.10),  # AlphaZero (Dec 2017) -- tapering down
+    (2019.10, 0.28, 0.07),  # AlphaStar / OpenAI Five (2019) -- tapering further
 ]
 
 def llm(x):
-    creep = 0.02 + 0.0015 * (x - Y0) ** 2
+    creep = 0.02 + 0.0010 * (x - Y0) ** 2
     spikes = sum(gauss(x, mu, sig, amp) for mu, sig, amp in LLM_SPIKES)
-    return creep + spikes + logistic(x, 2023.0, 0.55, 0.78)
+    return creep + spikes + logistic(x, 2022.7, 0.50, 0.80)
 
 def polyline_points(fn, step=0.05):
     pts = []
