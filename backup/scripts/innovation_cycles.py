@@ -48,9 +48,13 @@ def logistic(x, x0, k, amp):
 def nlp(x):
     return gauss(x, 2019.3, 1.7, 0.82) + 0.10 * math.exp(-((x - 2024) ** 2) / 8)
 
-# Cloud Native (Kubernetes / containers / serverless): peaks ~2021.5
+# Cloud Native (Kubernetes / containers / serverless): rises to ~2021.5, then
+# plateaus -- it became the default substrate, so it stays level rather than
+# declining on the right.
 def cloud(x):
-    return gauss(x, 2021.5, 1.8, 0.92)
+    if x <= 2021.5:
+        return gauss(x, 2021.5, 1.8, 0.92)
+    return 0.92
 
 # LLM / AI Native: near-zero until late 2022, S-curve still climbing in 2026
 def llm(x):
