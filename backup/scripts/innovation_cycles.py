@@ -166,13 +166,13 @@ svg.append(f'<text x="{L}" y="{BOT_T-8}" font-size="13.5" font-weight="700" fill
 svg.append(f'<line x1="{L}" y1="{BOT_B}" x2="{R}" y2="{BOT_B}" stroke="{AXIS}" stroke-width="1.4"/>')
 svg.append(f'<line x1="{L}" y1="{BOT_T-2}" x2="{L}" y2="{BOT_B}" stroke="{AXIS}" stroke-width="1.4"/>')
 
-# (start, end, height0..1, color, label, ongoing?)
+# (start, end, height0..1, color, label, sub-label, ongoing?)
 eras = [
-    (2019.0, 2020.0, 0.26, C_NLP,   "NLP", False),
-    (2020.0, 2022.0, 0.55, C_CLOUD, "Container &amp; Serverless", False),
-    (2023.0, 2026.2, 0.88, C_LLM,   "LLM (ongoing)", True),
+    (2019.0, 2020.0, 0.26, C_NLP,   "NLP", "(Alexa AI)", False),
+    (2020.0, 2022.0, 0.55, C_CLOUD, "Container &amp; Serverless", "(Fargate, App Runner / Lambda)", False),
+    (2023.0, 2026.2, 0.88, C_LLM,   "LLM (ongoing)", "(Bedrock, SageMaker)", True),
 ]
-for x0, x1, h, color, label, ongoing in eras:
+for x0, x1, h, color, label, sub, ongoing in eras:
     y = ybot(h)
     xa, xb = xpix(x0), xpix(x1)
     # drop guides to baseline
@@ -191,8 +191,11 @@ for x0, x1, h, color, label, ongoing in eras:
         lx = xb + 10
     # year range under the segment
     yr_txt = f"{int(x0)}–{int(x1)}" if not ongoing else f"{int(x0)}–now"
-    svg.append(f'<text x="{(xa+xb)/2:.1f}" y="{y-9:.1f}" font-size="11" font-weight="600" '
+    cxm = (xa + xb) / 2
+    svg.append(f'<text x="{cxm:.1f}" y="{y-22:.1f}" font-size="11" font-weight="600" '
                f'fill="{color}" text-anchor="middle">{label}</text>')
+    svg.append(f'<text x="{cxm:.1f}" y="{y-10:.1f}" font-size="8.5" '
+               f'fill="#8a8a8a" text-anchor="middle">{sub}</text>')
     svg.append(f'<text x="{lx:.1f}" y="{y+4:.1f}" font-size="10.5" fill="#777">{yr_txt}</text>')
 
 # ---- year tick labels (shared, drawn under bottom panel) ----------------
