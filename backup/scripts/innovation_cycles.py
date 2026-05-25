@@ -58,11 +58,20 @@ def cloud(x):
 
 # LLM / AI Native: NOT zero before 2022. It sits on a long research lineage --
 # RL foundations from the 1980s (Barto & Sutton, 2024 Turing Award) and the
-# 2017 Transformer -- modeled as a slowly accelerating floor, then the vertical
-# ChatGPT-era takeoff in late 2022; still climbing in 2026.
+# 2017 Transformer -- with real public-attention spikes from RL milestones
+# (AlphaGo 2016, AlphaZero 2017, AlphaStar/OpenAI Five 2019) along a slowly
+# accelerating floor, then the vertical RLHF/ChatGPT takeoff in late 2022.
+# Each (year, sigma, amplitude): a small crest that recedes (波峰波谷).
+LLM_SPIKES = [
+    (2016.2, 0.30, 0.22),   # AlphaGo defeats Lee Sedol (Mar 2016)
+    (2017.95, 0.28, 0.13),  # AlphaZero (Dec 2017)
+    (2019.10, 0.30, 0.12),  # AlphaStar / OpenAI Five (2019)
+]
+
 def llm(x):
     creep = 0.02 + 0.0015 * (x - Y0) ** 2
-    return creep + logistic(x, 2023.3, 0.55, 0.80)
+    spikes = sum(gauss(x, mu, sig, amp) for mu, sig, amp in LLM_SPIKES)
+    return creep + spikes + logistic(x, 2023.0, 0.55, 0.78)
 
 def polyline_points(fn, step=0.05):
     pts = []
@@ -130,6 +139,17 @@ for yr, v, color, note in peaks:
     svg.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="3.4" fill="{color}"/>')
     svg.append(f'<text x="{cx:.1f}" y="{cy-8:.1f}" font-size="10.5" fill="{color}" '
                f'text-anchor="middle">{note}</text>')
+
+# small RL-milestone spikes on the LLM/AI Native floor (波峰波谷 before takeoff)
+llm_marks = [(2016.2, "AlphaGo &#8217;16", "start"),
+             (2017.95, "AlphaZero &#8217;17", "middle"),
+             (2019.10, "AlphaStar &#8217;19", "middle")]
+for yr, note, anchor in llm_marks:
+    cx, cy = xpix(yr), ytop(llm(yr))
+    svg.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="2.8" fill="{C_LLM}"/>')
+    tx = cx - 4 if anchor == "start" else cx
+    svg.append(f'<text x="{tx:.1f}" y="{cy-7:.1f}" font-size="9" fill="{C_LLM}" '
+               f'text-anchor="{anchor}">{note}</text>')
 
 # right-side legend for panel 1
 ly = TOP_T + 14
