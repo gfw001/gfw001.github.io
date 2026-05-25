@@ -165,6 +165,10 @@
                Speculative decoding (SD) is one of the loudest themes at MLSys 2026 &mdash; nine papers across the program, and the conversation has clearly shifted. It's no longer "does draft-then-verify work?" but "where does it actually pay off, and where is it an illusion?" Below I group the papers by the problem they attack. Each links to its MLSys page and arXiv preprint.
             </p>
 
+            <p style="font-size:0.86em;color:#777;">
+               <i class="fa-brands fa-linkedin"></i> <strong>Note:</strong> <a href="https://www.linkedin.com/posts/semianalysis_mlsys-2026-is-next-week-mlsys-is-the-conference-ugcPost-7461611567596617729-ZfoH" target="_blank">SemiAnalysis's MLSys 2026 preview</a> flags the same currents from the analyst side &mdash; speculative decoding for RL's long-tail rollouts, sparse attention moving into production, hardware/software co-design via disaggregation, and MoE-serving challenges.
+            </p>
+
             <p class="group-label">1 &middot; RL + Speculative Decoding</p>
             <p style="font-size:0.9em;color:#555;">The rollout/generation stage now dominates RL post-training time. Both papers retarget SD at the RL loop &mdash; where the drafter and policy are both moving.</p>
 
@@ -181,7 +185,8 @@
                <div class="pauthors">Zelei Shao, Vikranth Srivatsa, Sanjana Srivastava, Qingyang Wu, Alpay Ariyak, Xiaoxia Wu, Ameen Patel, Jue Wang, Percy Liang, Tri Dao, Ce Zhang, Yiying Zhang, Ben Athiwaratkun, Chenfeng Xu, Junxiong Wang</div>
                <p class="psum">A small fraction of long rollouts dominates wall-clock time. DAS drops the neural drafter for an adaptive, nonparametric one built from recent rollouts via an incrementally maintained suffix tree, plus a length-aware policy that spends more speculation budget on the long trajectories that set the makespan &mdash; without changing model outputs.</p>
                <div class="metric">up to 50% rollout-time reduction, identical training curves</div>
-               <div class="plinks"><a href="https://mlsys.org/virtual/2026/oral/3766" target="_blank">MLSys</a> &middot; <a href="https://arxiv.org/abs/2511.13841" target="_blank">arXiv:2511.13841</a> &middot; <a href="https://arxiv.org/pdf/2511.13841" target="_blank">PDF</a></div>
+               <div class="plinks"><a href="https://mlsys.org/virtual/2026/oral/3766" target="_blank">MLSys</a> &middot; <a href="https://arxiv.org/abs/2511.13841" target="_blank">arXiv:2511.13841</a> &middot; <a href="https://arxiv.org/pdf/2511.13841" target="_blank">PDF</a> &middot; <a href="https://www.linkedin.com/posts/yiyingzhang_reinforcement-learning-rl-post-training-ugcPost-7462931498493706240-VnUg" target="_blank"><i class="fa-brands fa-linkedin"></i> author's note</a></div>
+               <p class="psum" style="margin-top:6px;font-size:0.84em;color:#777;">Co-author Yiying Zhang's write-up (with Together AI) reports the split: <strong>50% faster rollout on math RL, 25% on code RL</strong> &mdash; the trick is exploiting recurring prompt patterns across training epochs, since RL weights keep moving unlike fixed-model serving.</p>
             </div>
 
             <p class="group-label">2 &middot; Self-Speculative Decoding</p>
