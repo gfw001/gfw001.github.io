@@ -48,17 +48,21 @@ def logistic(x, x0, k, amp):
 def nlp(x):
     return gauss(x, 2019.3, 1.7, 0.82) + 0.10 * math.exp(-((x - 2024) ** 2) / 8)
 
-# Cloud Native (Kubernetes / containers / serverless): rises to ~2021.5, then
-# plateaus -- it became the default substrate, so it stays level rather than
-# declining on the right.
+# Cloud Native (Kubernetes 2014, CNCF 2015, de-facto standard 2017): crests
+# early (~2017-18), then plateaus -- it became the default substrate, so it
+# stays level rather than declining on the right.
 def cloud(x):
-    if x <= 2021.5:
-        return gauss(x, 2021.5, 1.8, 0.92)
-    return 0.92
+    if x <= 2017.5:
+        return gauss(x, 2017.5, 1.6, 0.90)
+    return 0.90
 
-# LLM / AI Native: near-zero until late 2022, S-curve still climbing in 2026
+# LLM / AI Native: NOT zero before 2022. It sits on a long research lineage --
+# RL foundations from the 1980s (Barto & Sutton, 2024 Turing Award) and the
+# 2017 Transformer -- modeled as a slowly accelerating floor, then the vertical
+# ChatGPT-era takeoff in late 2022; still climbing in 2026.
 def llm(x):
-    return logistic(x, 2023.5, 0.55, 1.0)
+    creep = 0.02 + 0.0015 * (x - Y0) ** 2
+    return creep + logistic(x, 2023.3, 0.55, 0.80)
 
 def polyline_points(fn, step=0.05):
     pts = []
@@ -118,8 +122,8 @@ for fn, color, label in [(nlp, C_NLP, "NLP / Conversational AI"),
                f'stroke-linejoin="round" stroke-linecap="round"/>')
 
 # peak markers (evidence: approximate peak years)
-peaks = [(2019.3, nlp(2019.3), C_NLP, "~2019–20"),
-         (2021.5, cloud(2021.5), C_CLOUD, "~2021–22"),
+peaks = [(2017.5, cloud(2017.5), C_CLOUD, "~2017–18"),
+         (2019.3, nlp(2019.3), C_NLP, "~2019–20"),
          (2026.2, llm(2026.2), C_LLM, "rising")]
 for yr, v, color, note in peaks:
     cx, cy = xpix(yr), ytop(v)
