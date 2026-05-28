@@ -155,6 +155,42 @@
                <li><strong>May 13</strong> &mdash; <a href="https://github.com/vllm-project/vllm/pull/42536" target="_blank">vllm#42536</a> (PR review): Remove verifier model type check in speculative config. Stale guard removed now that the speculator stack handles the check itself. Merged.</li>
             </ul>
 
+            <h3>May 26 &mdash; EAGLE 3.1: Stabilizing the Drafter Against Attention Drift</h3>
+
+            <p>
+               The EAGLE, vLLM, and TorchSpec teams jointly published <a href="https://vllm.ai/blog/2026-05-26-eagle-3-1" target="_blank">EAGLE 3.1</a>, an enhanced speculative-decoding algorithm that tackles <em>attention drift</em> &mdash; the instability that degrades EAGLE-3 drafting under different chat templates, long-context inputs, and out-of-distribution system prompts.
+            </p>
+
+            <div class="release-note">
+               <strong>What changed in EAGLE 3.1</strong>
+               <ul style="margin-top: 8px;">
+                  <li>FC normalization applied after each target hidden state.</li>
+                  <li>Post-norm hidden-state feedback fed into subsequent decoding steps.</li>
+                  <li>Together these stabilize the drafter across deeper speculation levels and varied deployment scenarios.</li>
+               </ul>
+            </div>
+
+            <p>
+               <span class="perf-badge">up to 2&times; acceptance length</span> vs. EAGLE 3 on long-context inputs &nbsp;
+               <span class="perf-badge">2.03&times; output tokens/sec</span> Kimi K2.6 @ C=1
+            </p>
+            <p style="font-size: 0.9em; color: #555;">
+               On the SPEED-Bench coding dataset with Kimi K2.6, per-user output throughput improves 2.03&times; at concurrency 1, 1.71&times; at C=4, and 1.66&times; at C=16.
+            </p>
+
+            <p>
+               <strong>Why it matters here:</strong> attention drift was a known failure mode for the EAGLE-style draft heads this newsletter tracks &mdash; the same family as P-EAGLE. EAGLE 3.1 lands in vLLM <a href="https://github.com/vllm-project/vllm/releases/tag/v0.22.0" target="_blank">v0.22.0</a>.
+            </p>
+
+            <p>
+               <strong>Resources:</strong>
+            </p>
+            <ul>
+               <li><a href="https://vllm.ai/blog/2026-05-26-eagle-3-1" target="_blank">vLLM blog: EAGLE 3.1</a></li>
+               <li>TorchSpec training support: <a href="https://github.com/lightseekorg/TorchSpec" target="_blank">lightseekorg/TorchSpec</a></li>
+               <li>Draft model: <a href="https://huggingface.co/lightseekorg/kimi-k2.6-eagle3.1-mla" target="_blank">lightseekorg/kimi-k2.6-eagle3.1-mla</a></li>
+            </ul>
+
             <br>
             <hr>
             <br>
