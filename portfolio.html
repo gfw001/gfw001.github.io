@@ -1939,6 +1939,14 @@
             </article>
          </div>
       </div>
+
+      <!-- Recommendations Section -->
+      <div class="container mt-5">
+         <div class="post">
+            <div id="recommendations-placeholder"></div>
+         </div>
+      </div>
+
       <footer class="fixed-bottom">
          <div class="container mt-0"> © Copyright 2026 Andy Peng. </div>
       </footer>
@@ -1976,6 +1984,32 @@
             var preferredLang = localStorage.getItem('preferredLanguage') || 'en';
             switchLanguage(preferredLang);
          });
+      </script>
+
+      <script>
+         // Load recommendations component
+         (function() {
+           const placeholder = document.getElementById('recommendations-placeholder');
+           if (placeholder) {
+             // Create the card structure
+             placeholder.innerHTML = `
+               <div class="card mt-3 p-3">
+                 <h3 class="card-title font-weight-medium">Recommendations</h3>
+                 <div id="recommendations-content-placeholder"></div>
+               </div>
+             `;
+
+             // Load the actual content
+             fetch('/components/recommendations-content.html')
+               .then(response => response.text())
+               .then(html => {
+                 const contentPlaceholder = document.getElementById('recommendations-content-placeholder');
+                 if (contentPlaceholder) {
+                   contentPlaceholder.innerHTML = html;
+                 }
+               });
+           }
+         })();
       </script>
    </body>
 </html>

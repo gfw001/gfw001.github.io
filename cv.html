@@ -569,13 +569,6 @@
          </div>
       </div>
 
-      <!-- Recommendations Section -->
-      <div class="container mt-5">
-         <div class="post">
-            <div id="recommendations-placeholder"></div>
-         </div>
-      </div>
-
       <div id="footer-placeholder"></div>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
@@ -607,30 +600,5 @@
          })();
       </script>
 
-      <script>
-         // Load recommendations component for CV
-         (function() {
-           const placeholder = document.getElementById('recommendations-placeholder');
-           if (placeholder) {
-             // Create the card structure
-             placeholder.innerHTML = `
-               <div class="card mt-3 p-3">
-                 <h3 class="card-title font-weight-medium">Recommendations</h3>
-                 <div id="recommendations-content-placeholder"></div>
-               </div>
-             `;
-
-             // Load the actual content
-             fetch('/components/recommendations-content.html')
-               .then(response => response.text())
-               .then(html => {
-                 const contentPlaceholder = document.getElementById('recommendations-content-placeholder');
-                 if (contentPlaceholder) {
-                   contentPlaceholder.innerHTML = html;
-                 }
-               });
-           }
-         })();
-      </script>
    </body>
 </html>
