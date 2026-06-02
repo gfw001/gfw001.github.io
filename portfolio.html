@@ -1728,20 +1728,62 @@
                   </div>
                </div>
 
-               <!-- Row 1: Research Areas & Contact -->
+               <!-- About blocks: left column (Research Areas + Links) and right column (Contact + Paid Service + Interests) are independent stacks -->
                <div class="lang-en blocks-container">
-                  <div class="info-block research-areas-box">
-                     <h4 class="research-title">Research Areas</h4>
-                     <div class="research-keywords" style="margin-top: 12px;">
-                        <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">machine learning</code></span>
-                        <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">agentic ai</code></span>
-                        <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">model customization & inference optimization</code></span>
-                        <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">model evaluation and benchmark</code></span>
-                        <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">serverless containers & virtualization</code></span>
-                        <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">open source</code></span>
+                  <!-- Left column -->
+                  <div style="display: flex; flex-direction: column; gap: 32px;">
+                     <div class="info-block research-areas-box">
+                        <h4 class="research-title">Research Areas</h4>
+                        <div class="research-keywords" style="margin-top: 12px;">
+                           <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">machine learning</code></span>
+                           <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">agentic ai</code></span>
+                           <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">model customization & inference optimization</code></span>
+                           <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">model evaluation and benchmark</code></span>
+                           <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">serverless containers & virtualization</code></span>
+                           <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">open source</code></span>
+                        </div>
+                     </div>
+
+                     <div class="info-block">
+                        <h4>Links</h4>
+                        <div class="links-grid" style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 12px; margin-top: 16px;">
+                           <a href="https://neurips.cc/Conferences/2025/Committees" class="link-card">
+                              <i class="fa fa-brain"></i>
+                              <span class="link-title">NeurIPS</span>
+                           </a>
+                           <a href="https://icml.cc/Conferences/2025/ProgramCommittee" class="link-card">
+                              <i class="fa fa-robot"></i>
+                              <span class="link-title">ICML</span>
+                           </a>
+                           <a href="https://www.cncf.io/people/ambassadors/?p=andy-peng" class="link-card">
+                              <i class="fab fa-linux"></i>
+                              <span class="link-title">CNCF Ambassador</span>
+                           </a>
+                           <a href="https://events.linuxfoundation.org/archive/2025/open-source-summit-north-america/program/program-committee/" class="link-card">
+                              <i class="fa fa-code-branch"></i>
+                              <span class="link-title">OSS Program Committee</span>
+                           </a>
+                           <a href="https://foster.uw.edu/academics/degree-programs/master-of-science-in-information-systems/mentors/" class="link-card">
+                              <i class="fa fa-graduation-cap"></i>
+                              <span class="link-title">UW Mentor</span>
+                           </a>
+                           <a href="https://aws.amazon.com/cn/blogs/containers/author/yimipeng/" class="link-card">
+                              <i class="fa fa-laptop-code"></i>
+                              <span class="link-title">Blog Author</span>
+                           </a>
+                           <a href="https://www.amazon.com/stores/author/B0G1JDQFSK" class="link-card">
+                              <i class="fa fa-book"></i>
+                              <span class="link-title">Book Author</span>
+                           </a>
+                           <a href="https://seattleregatta2023.sched.com/speaker/yiming_peng.2589xy9k?iframe=no" class="link-card">
+                              <i class="fa fa-users"></i>
+                              <span class="link-title">Women in Tech</span>
+                           </a>
+                        </div>
                      </div>
                   </div>
 
+                  <!-- Right column -->
                   <div style="display: flex; flex-direction: column; gap: 32px;">
                      <div class="info-block">
                         <h4>Contact</h4>
@@ -1776,20 +1818,62 @@
                   </div>
                </div>
 
-               <!-- Chinese Row 1: Research Areas & Contact -->
+               <!-- Chinese About blocks -->
                <div class="lang-zh blocks-container" style="display: none;">
-                  <div class="info-block research-areas-box">
-                     <h4 class="research-title">研究领域</h4>
-                     <div class="research-keywords" style="margin-top: 12px;">
-                        <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">机器学习</code></span>
-                        <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">智能体 ai</code></span>
-                        <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">LLM 推理与优化</code></span>
-                        <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">模型评估与基准</code></span>
-                        <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">无服务器容器与虚拟化</code></span>
-                        <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">开源</code></span>
+                  <!-- Left column -->
+                  <div style="display: flex; flex-direction: column; gap: 32px;">
+                     <div class="info-block research-areas-box">
+                        <h4 class="research-title">研究领域</h4>
+                        <div class="research-keywords" style="margin-top: 12px;">
+                           <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">机器学习</code></span>
+                           <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">智能体 ai</code></span>
+                           <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">LLM 推理与优化</code></span>
+                           <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">模型评估与基准</code></span>
+                           <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">无服务器容器与虚拟化</code></span>
+                           <span style="display: inline-block; margin: 4px 6px 4px 0;"><code style="background-color: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 4px; color: #007bff;">开源</code></span>
+                        </div>
+                     </div>
+
+                     <div class="info-block">
+                        <h4>外部链接</h4>
+                        <div class="links-grid" style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 12px; margin-top: 16px;">
+                           <a href="https://neurips.cc/Conferences/2025/Committees" class="link-card">
+                              <i class="fa fa-brain"></i>
+                              <span class="link-title">NeurIPS 联合主席</span>
+                           </a>
+                           <a href="https://icml.cc/Conferences/2025/ProgramCommittee" class="link-card">
+                              <i class="fa fa-robot"></i>
+                              <span class="link-title">ICML</span>
+                           </a>
+                           <a href="https://www.cncf.io/people/ambassadors/?p=andy-peng" class="link-card">
+                              <i class="fab fa-linux"></i>
+                              <span class="link-title">CNCF 大使</span>
+                           </a>
+                           <a href="https://events.linuxfoundation.org/archive/2025/open-source-summit-north-america/program/program-committee/" class="link-card">
+                              <i class="fa fa-code-branch"></i>
+                              <span class="link-title">OSS 计划委员会</span>
+                           </a>
+                           <a href="https://foster.uw.edu/academics/degree-programs/master-of-science-in-information-systems/mentors/" class="link-card">
+                              <i class="fa fa-graduation-cap"></i>
+                              <span class="link-title">西雅图华盛顿大学导师</span>
+                           </a>
+                           <a href="https://aws.amazon.com/cn/blogs/containers/author/yimipeng/" class="link-card">
+                              <i class="fa fa-laptop-code"></i>
+                              <span class="link-title">博客作者</span>
+                           </a>
+                           <a href="https://www.amazon.com/stores/author/B0G1JDQFSK" class="link-card">
+                              <i class="fa fa-book"></i>
+                              <span class="link-title">Packt 作者：《DeepSeek in Practice》</span>
+                           </a>
+                           <a href="https://seattleregatta2023.sched.com/speaker/yiming_peng.2589xy9k?iframe=no" class="link-card">
+                              <i class="fa fa-users"></i>
+                              <span class="link-title">Women in Tech</span>
+                           </a>
+                        </div>
                      </div>
                   </div>
 
+                  <!-- Right column -->
                   <div style="display: flex; flex-direction: column; gap: 32px;">
                      <div class="info-block">
                         <h4>联系方式</h4>
@@ -1823,105 +1907,6 @@
                         <p style="color: var(--global-text-color-light);">Orca、匹克球、西雅图海妖冰球队、海鹰橄榄球队、岛耕作、Lorde、昆汀·塔伦蒂诺、赫尔曼·梅尔维尔。冰箱贴和马克杯。</p>
                      </div>
                   </div>
-               </div>
-
-               <!-- Row 2: Links & Products -->
-               <div class="lang-en blocks-container">
-                  <div class="info-block">
-			<h4>Links</h4>
-			<div class="links-grid" style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 12px; margin-top: 16px;">
-
-			  <a href="https://neurips.cc/Conferences/2025/Committees" class="link-card">
-			    <i class="fa fa-brain"></i>
-			    <span class="link-title">NeurIPS</span>
-			  </a>
-
-			  <a href="https://icml.cc/Conferences/2025/ProgramCommittee" class="link-card">
-			    <i class="fa fa-robot"></i>
-			    <span class="link-title">ICML</span>
-			  </a>
-
-			  <a href="https://www.cncf.io/people/ambassadors/?p=andy-peng" class="link-card">
-			    <i class="fab fa-linux"></i>
-			    <span class="link-title">CNCF Ambassador</span>
-			  </a>
-
-			  <a href="https://events.linuxfoundation.org/archive/2025/open-source-summit-north-america/program/program-committee/" class="link-card">
-			    <i class="fa fa-code-branch"></i>
-			    <span class="link-title">OSS Program Committee</span>
-			  </a>
-			  <a href="https://foster.uw.edu/academics/degree-programs/master-of-science-in-information-systems/mentors/" class="link-card">
-			    <i class="fa fa-graduation-cap"></i>
-			    <span class="link-title">UW Mentor</span>
-			  </a>
-
-			  <a href="https://aws.amazon.com/cn/blogs/containers/author/yimipeng/" class="link-card">
-			    <i class="fa fa-laptop-code"></i>
-			    <span class="link-title">Blog Author</span>
-			  </a>
-
-			  <a href="https://www.amazon.com/stores/author/B0G1JDQFSK" class="link-card">
-			    <i class="fa fa-book"></i>
-			    <span class="link-title">Book Author</span>
-			  </a>
-
-			  <a href="https://seattleregatta2023.sched.com/speaker/yiming_peng.2589xy9k?iframe=no" class="link-card">
-			    <i class="fa fa-users"></i>
-			    <span class="link-title">Women in Tech</span>
-			  </a>
-			</div>
-                  </div>
-
-               </div>
-
-		   <!-- Chinese Links & Office -->
-		   <div class="lang-zh blocks-container" style="display: none;">
-                  <div class="info-block">
-			<h4>外部链接</h4>
-			<div class="links-grid" style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 12px; margin-top: 16px;">
-
-			  <a href="https://neurips.cc/Conferences/2025/Committees" class="link-card">
-			    <i class="fa fa-brain"></i>
-			    <span class="link-title">NeurIPS 联合主席</span>
-			  </a>
-
-			  <a href="https://icml.cc/Conferences/2025/ProgramCommittee" class="link-card">
-			    <i class="fa fa-robot"></i>
-			    <span class="link-title">ICML</span>
-			  </a>
-
-			  <a href="https://www.cncf.io/people/ambassadors/?p=andy-peng" class="link-card">
-			    <i class="fab fa-linux"></i>
-			    <span class="link-title">CNCF 大使</span>
-			  </a>
-
-			  <a href="https://events.linuxfoundation.org/archive/2025/open-source-summit-north-america/program/program-committee/" class="link-card">
-			    <i class="fa fa-code-branch"></i>
-			    <span class="link-title">OSS 计划委员会</span>
-			  </a>
-
-			  <a href="https://foster.uw.edu/academics/degree-programs/master-of-science-in-information-systems/mentors/" class="link-card">
-			    <i class="fa fa-graduation-cap"></i>
-			    <span class="link-title">西雅图华盛顿大学导师</span>
-			  </a>
-
-			  <a href="https://aws.amazon.com/cn/blogs/containers/author/yimipeng/" class="link-card">
-			    <i class="fa fa-laptop-code"></i>
-			    <span class="link-title">博客作者</span>
-			  </a>
-
-			  <a href="https://www.amazon.com/stores/author/B0G1JDQFSK" class="link-card">
-			    <i class="fa fa-book"></i>
-			    <span class="link-title">Packt 作者：《DeepSeek in Practice》</span>
-			  </a>
-
-			  <a href="https://seattleregatta2023.sched.com/speaker/yiming_peng.2589xy9k?iframe=no" class="link-card">
-			    <i class="fa fa-users"></i>
-			    <span class="link-title">Women in Tech</span>
-			  </a>
-			</div>
-                  </div>
-
                </div>
 
                </div>
